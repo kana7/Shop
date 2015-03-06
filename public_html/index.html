@@ -6,11 +6,46 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shop:Style board</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/bootstrap.css" rel="stylesheet"/>
+        <link href="css/style1" rel="stylesheet"/>
+        <style>
+            [class*="col"] { margin-bottom: 20px; }
+            img { 
+                width: 100%; 
+            }
+            body { 
+                margin-top: 10px;
+            }
+        </style>
     </head>
     <body>
-        <div>TODO write content</div>
+        <div class="container-fluid">
+            <div class="row">
+                <nav>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active" id="nav1"><a href="#" onclick="style1()">Design 1</a></li>
+                        <li role="presentation" id="nav2"><a href="#" onclick="style2()">Design 2</a></li>
+                        <li role="presentation" id="nav3"><a href="#" onclick="style3()">Design 3</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/jquery.js"></script>
+        <script>
+                            function style1() {
+
+                            }
+                            function style2() {
+
+                            }
+                            function style3() {
+
+                            }
+        </script>
     </body>
 </html>
