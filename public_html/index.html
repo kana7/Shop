@@ -11,41 +11,75 @@ and open the template in the editor.
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/bootstrap.css" rel="stylesheet"/>
-        <link href="css/style1" rel="stylesheet"/>
+        <link href="css/tuto.css" rel="stylesheet"/>
+        <link id="style" href="css/style1.css" rel="stylesheet"/>
         <style>
-            [class*="col"] { margin-bottom: 20px; }
-            img { 
-                width: 100%; 
-            }
-            body { 
-                margin-top: 10px;
+            section
+            {
+                margin-top: 20px;
             }
         </style>
     </head>
     <body>
         <div class="container-fluid">
             <div class="row">
-                <nav>
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active" id="nav1"><a href="#" onclick="style1()">Design 1</a></li>
-                        <li role="presentation" id="nav2"><a href="#" onclick="style2()">Design 2</a></li>
-                        <li role="presentation" id="nav3"><a href="#" onclick="style3()">Design 3</a></li>
-                    </ul>
-                </nav>
+                <footer>
+                    <nav>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active" id="nav1"><a href="#">Design 1</a></li>
+                            <li role="presentation" class="" id="nav2"><a href="#">Design 2</a></li>
+                            <li role="presentation" class="" id="nav3"><a href="#">Design 3</a></li>
+                        </ul>
+                    </nav>
+                </footer>
             </div>
+            <section class="container">
+                <div class="row">
+                    <div class="col-lg-6"><h3>Logo</h3></div>
+                    <div class="col-lg-6"><h3>Color</h3></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5"><h3>Form</h3></div>
+                    <div class="col-lg-7"><h3>Nav Bar</h3></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4"><h3>Icons</h3></div>
+                    <div class="col-lg-4"><h3>Boutons</h3></div>
+                    <div class="col-lg-4"><h3>Buffer</h3></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-7"><h3>Text</h3></div>
+                    <div class="col-lg-5"><h3>Tab</h3></div>
+                </div>
+            </section>
         </div>
         <script src="js/bootstrap.js"></script>
         <script src="js/jquery.js"></script>
         <script>
-                            function style1() {
+            $(function () {
 
-                            }
-                            function style2() {
+                $('#nav1 a').click(function () {
+                    $('#style').attr('href', 'css/style1.css');
+                    $('#nav1').attr('class', 'active');
+                    $('#nav2').removeClass('active');
+                    $('#nav3').removeClass('active');
+                });
 
-                            }
-                            function style3() {
+                $('#nav2 a').click(function () {
+                    $('#style').attr('href', 'css/style2.css');
+                    $('#nav2').attr('class', 'active');
+                    $('#nav1').removeClass('active');
+                    $('#nav3').removeClass('active');
+                });
 
-                            }
+                $('#nav3 a').click(function () {
+                    $('#style').attr('href', 'css/style3.css');
+                    $('#nav3').attr('class', 'active');
+                    $('#nav2').removeClass('active');
+                    $('#nav1').removeClass('active');
+                });
+
+            });
         </script>
     </body>
 </html>
