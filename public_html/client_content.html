@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <link href="BlueCameleon/css/ossbo.css" rel="stylesheet" type="text/css" />
+        <link href="BlueCameleon/css/ossbo_box.css" rel="stylesheet" type="text/css" />
+        <link href="BlueCameleon/css/ossbo_services.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="BlueCameleon/css/ossprint.css" rel="stylesheet" type="text/css" media="print" />
+        <script type="text/javascript" src="BlueCameleon/js/ossbo.js"></script>
+        <link href="http://jquery.bluechameleon.com/js/themes/redmond/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+        <style>#ui-datepicker-div {display: none}</style>
+        <script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
+    </head>
+    <body bgcolor="#FFFFFF">
+        <script type="text/javascript">
+function ViewClient(idClient, azShowAttributes)
+{
+    AjaxLoad('ClientDetails', 'http://shop.internet.lu/Scripts/sql.exe', 'SqlDB=ossLOLShop&Sql=ViewClientDetails.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&ContextUsage=0&ContextClient=' + encodeURIComponent(idClient) + '&_ClientId=' + encodeURIComponent(idClient) + '&_MerchantPrefs=1121002202010112111121112011101110010010&_ShowAttributes=' + encodeURIComponent(azShowAttributes));
+}
+        </script>
+        <H1>Gestion client</H1>
+        <TABLE border="0" cellspacing="0" cellpadding="0" width="100%">
+            <COLGROUP>
+                <COL width="50%">
+                <COL width="5%">
+                <COL width="45%">
+            </COLGROUP>
+            <TR valign="top"><TD>
+                    <div id="ClientDetails"><script type="text/javascript">ViewClient(140840, 'ACCOUNT');</script></div>
+                </TD><TD>&nbsp;</TD><TD><TABLE>
+                        <TR><TD><B>Etat abonnements:&nbsp;</B></TD>
+                            <TD>
+                                <FONT color="#00FF00">activ&eacute;</FONT></TD></TR>
+                        <TR><TD><B>Abonnements actifs:&nbsp;</B></TD><TD>5</TD></TR>
+                        <TR><TD><B>Ordre(s) de domiciliation:</B>&nbsp;</TD>
+                            <TD><A href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewClientPayment.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&ContextUsage=0&ContextClient=140840&Param=11444">toutes commandes</A></TD></TR>
+                        <TR><TD colspan="2">
+                        <link href="BlueCameleon/css/property.css" rel="stylesheet" type="text/css" media="screen" />
+                        <style type="text/css" media="screen">
+                            .tooltip{width:400px;margin:0;padding:5px;color:black;background:#fff;border:2px solid #ccc;}
+                            .tooltip p{margin:0;text-align:justify;}
+                        </style>
+                        <script type="text/javascript" src="BlueCameleon/js/jquery.simpletooltip-min.js"></script>
+                        <script type="text/javascript">
+                        $(function () {
+                            $("a.tooltiplink").simpletooltip();
+                        });
+                        </script>
+                        <form name="PropertyObjectViewForm" method="post" action="http://shop.internet.lu/Scripts/sql.exe">
+                            <input type="hidden" name="Sql" id="Sql" value="Property:PropertyObjectView.phs">
+                            <input type="hidden" name="SqlDB" value="ossLOLShop">
+                            <input type="hidden" name="xid" value="1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj">
+                            <input type="hidden" name="_CustomScriptId" value="186">
+                            <input type="hidden" name="_LibraryId" value="0">
+                            <input type="hidden" name="_ObjectType" value="1">
+                            <input type="hidden" name="_ObjectId" value="140840">
+                            <input type="hidden" name="_HRef" value="ViewClients_View.phs">
+                            <input type="hidden" name="_ParamList" value="Param=140840;ContextUsage=0">
+                            <table class="OssData" style="border:1px solid black;width:100%">
+                                <tr><td>
+                                        <table class="OssData" border="0" >
+                                            Il n&apos;y a aucune propri&eacute;t&eacute;
+                                        </table>
+                                    </td></tr>
+                            </table>
+                        </form>
+                </TD></TR>
+            <TR><TD colspan="2"><style>
+                #tabSurveyClient {border-collapse: collapse;text-align:left;}
+                #tabSurveyClient tr {height:30px;}
+                #tabSurveyClient td, th {border: 1px solid #000;padding:2px 5px;}
+                .tabSurveyClientNoBorder {border:none!important;}
+            </style>
+            <p>Il n&apos;y a pas d&apos;enqu&ecirc;te</p>
+        </TD></TR></TABLE></TD></TR>
+</TABLE>
+<P></P>
+<table width="100%"><tr><td><UL style="list-style: none; margin-left:0px; margin:0px; padding:0px;">
+                <LI style="float:left; margin-right:2px">
+                    <FORM method="post" action="http://shop.internet.lu/Scripts/sql.exe" style="margin-bottom:0;">
+                        <INPUT type="hidden" name="SqlDB" value="ossLOLShop" />
+                        <INPUT type="hidden" name="Sql" value="ViewOrders.phs" />
+                        <INPUT type="hidden" name="xid" value="1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" />
+                        <INPUT type="hidden" name="ContextClient" value="140840" />
+                        <INPUT type="hidden" name="ContextUsage" value="0" />
+                        <button type="submit" name="_ParentMenu">Offres et commandes</button>
+                    </FORM>
+                </LI>
+                <LI style="float:left; margin-right:2px">
+                    <FORM method="post" action="http://shop.internet.lu/Scripts/sql.exe" style="margin-bottom:0;">
+                        <INPUT type="hidden" name="SqlDB" value="ossLOLShop" />
+                        <INPUT type="hidden" name="Sql" value="ViewSubscription.phs" />
+                        <INPUT type="hidden" name="xid" value="1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" />
+                        <INPUT type="hidden" name="ContextClient" value="140840" />
+                        <INPUT type="hidden" name="ContextUsage" value="0" />
+                        <button type="submit" name="_ParentMenu">Abonnements</button>
+                    </FORM>
+                </LI>
+            </UL></td></tr>
+    <tr><td><UL style="list-style: none; margin-left:0px; margin:0px; padding:0px;">
+                <LI style="float:left; margin-right:2px">
+                    <FORM method="post" action="http://shop.internet.lu/Scripts/sql.exe" style="margin-bottom:0;">
+                        <INPUT type="hidden" name="SqlDB" value="ossLOLShop" />
+                        <INPUT type="hidden" name="Sql" value="ViewAccount.phs" />
+                        <INPUT type="hidden" name="xid" value="1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" />
+                        <INPUT type="hidden" name="ContextClient" value="140840" />
+                        <INPUT type="hidden" name="ContextUsage" value="0" />
+                        <button type="submit" name="_ParentMenu">Afficher compte</button>
+                    </FORM>
+                </LI>
+                <LI style="float:left; margin-right:2px">
+                    <FORM method="post" action="http://shop.internet.lu/Scripts/sql.exe" style="margin-bottom:0;">
+                        <INPUT type="hidden" name="SqlDB" value="ossLOLShop" />
+                        <INPUT type="hidden" name="Sql" value="ViewBills.phs" />
+                        <INPUT type="hidden" name="xid" value="1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" />
+                        <INPUT type="hidden" name="ContextClient" value="140840" />
+                        <INPUT type="hidden" name="ContextUsage" value="0" />
+                        <button type="submit" name="_ParentMenu">Factures et notes de cr&eacute;dit</button>
+                    </FORM>
+                </LI>
+                <LI style="float:left; margin-right:2px">
+                    <FORM method="post" action="http://shop.internet.lu/Scripts/sql.exe" style="margin-bottom:0;">
+                        <INPUT type="hidden" name="SqlDB" value="ossLOLShop" />
+                        <INPUT type="hidden" name="Sql" value="AccountManage.phs" />
+                        <INPUT type="hidden" name="xid" value="1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" />
+                        <INPUT type="hidden" name="ContextClient" value="140840" />
+                        <INPUT type="hidden" name="ContextUsage" value="0" />
+                        <button type="submit" name="_ParentMenu">Comptabilit&eacute; client</button>
+                    </FORM>
+                </LI>
+                <LI style="float:left; margin-right:2px">
+                    <FORM method="post" action="http://shop.internet.lu/Scripts/sql.exe" style="margin-bottom:0;">
+                        <INPUT type="hidden" name="SqlDB" value="ossLOLShop" />
+                        <INPUT type="hidden" name="Sql" value="ViewBillAddons.phs" />
+                        <INPUT type="hidden" name="xid" value="1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" />
+                        <INPUT type="hidden" name="ContextClient" value="140840" />
+                        <INPUT type="hidden" name="ContextUsage" value="0" />
+                        <button type="submit" name="_ParentMenu">Suppl&eacute;ments factures</button>
+                    </FORM>
+                </LI>
+                <LI style="float:left; margin-right:2px">
+                    <FORM method="post" action="http://shop.internet.lu/Scripts/sql.exe" style="margin-bottom:0;">
+                        <INPUT type="hidden" name="SqlDB" value="ossLOLShop" />
+                        <INPUT type="hidden" name="Sql" value="MonthlyBillManage.phs" />
+                        <INPUT type="hidden" name="xid" value="1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" />
+                        <INPUT type="hidden" name="ContextClient" value="140840" />
+                        <INPUT type="hidden" name="ContextUsage" value="0" />
+                        <button type="submit" name="_ParentMenu">Factures mensuelles</button>
+                    </FORM>
+                </LI>
+            </UL></td></tr>
+    <tr><td><UL style="list-style: none; margin-left:0px; margin:0px; padding:0px;">
+                <LI style="float:left; margin-right:2px">
+                    <FORM method="post" action="http://shop.internet.lu/Scripts/sql.exe" style="margin-bottom:0;">
+                        <INPUT type="hidden" name="SqlDB" value="ossLOLShop" />
+                        <INPUT type="hidden" name="Sql" value="ClientPaymentManage.phs" />
+                        <INPUT type="hidden" name="xid" value="1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" />
+                        <INPUT type="hidden" name="ContextClient" value="140840" />
+                        <INPUT type="hidden" name="ContextUsage" value="0" />
+                        <INPUT type="hidden" name="ContextObjectType" value="201" />
+                        <button type="submit" name="_ParentMenu">Ordres de domiciliation</button>
+                    </FORM>
+                </LI>
+                <LI style="float:left; margin-right:2px">
+                    <FORM method="post" action="http://shop.internet.lu/Scripts/sql.exe" style="margin-bottom:0;">
+                        <INPUT type="hidden" name="SqlDB" value="ossLOLShop" />
+                        <INPUT type="hidden" name="Sql" value="ClientPaymentManage.phs" />
+                        <INPUT type="hidden" name="xid" value="1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" />
+                        <INPUT type="hidden" name="ContextClient" value="140840" />
+                        <INPUT type="hidden" name="ContextUsage" value="0" />
+                        <INPUT type="hidden" name="ContextObjectType" value="101" />
+                        <button type="submit" name="_ParentMenu">Paiements par carte de cr&eacute;dit</button>
+                    </FORM>
+                </LI>
+            </UL></td></tr>
+    <tr><td><UL style="list-style: none; margin:0px; padding:0px;">
+                <LI style="float:left; margin-right:2px">
+                    <INPUT type="button" value="Liste tickets" onclick="window.open('http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=PopupCustomScript.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_MerchantId=1&_CustomScriptId=20&_ReturnScriptLink=&_ObjectId=140840&_ObjectTypeId=1&_ObjectLibraryId=0', 'OssClient140840Popup20', 'width=800,height=600,menubar=no,scrollbars=no,toolbar=no,status=no,resizable=yes,scrollbars=yes');">
+                </LI>
+                <LI style="float:left; margin-right:2px">
+                    <INPUT type="button" value="Listes" onclick="window.open('http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewFeaturedObjSet.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_ObjectLibrary=0&_ObjectType=1&_ObjectId=140840', 'FeaturedClientObjectSet140840', 'width=1000,height=600,menubar=no,scrollbars=no,toolbar=no,status=no,resizable=yes,scrollbars=yes');">
+                </LI>
+                <LI style="float:left; margin-right:2px">
+                    <INPUT type="button" value="Rendez-vous" onclick="window.open('http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=PopupCustomScript.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_MerchantId=1&_CustomScriptId=66&_ReturnScriptLink=&_ContextClient=140840&_ClientId=140840&_ObjectId=140840&_ObjectTypeId=1&_ObjectLibraryId=0', 'OssClient140840Popup66', 'width=1000,height=600,menubar=no,scrollbars=no,toolbar=no,status=no,resizable=yes,scrollbars=yes');">
+                </LI>
+                <LI style="float:left; margin-right:2px">
+                    <INPUT type="button" value="Actions commerciales" onclick="window.open('http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=PopupCustomScript.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_MerchantId=1&_CustomScriptId=136&_ReturnScriptLink=&_ContextClient=140840&_ClientId=140840&_ObjectId=140840&_ObjectTypeId=1&_ObjectLibraryId=0', 'OssClient140840Popup136', 'width=1000,height=600,menubar=no,scrollbars=no,toolbar=no,status=no,resizable=yes,scrollbars=yes');">
+                </LI>
+                <LI style="float:left; margin-right:2px">
+                    <INPUT type="button" value="Formulaires" onclick="window.open('http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=PopupCustomScript.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_MerchantId=1&_CustomScriptId=173&_ReturnScriptLink=&_ContextClient=140840&_ClientId=140840&_ObjectId=140840&_ObjectTypeId=1&_ObjectLibraryId=0', 'OssClient140840Popup173', 'width=1000,height=600,menubar=no,scrollbars=no,toolbar=no,status=no,resizable=yes,scrollbars=yes');">
+                </LI>
+                <LI style="float:left; margin-right:2px">
+                    <INPUT type="button" value="Documents" onclick="window.open('http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=PopupCustomScript.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_MerchantId=1&_CustomScriptId=185&_ReturnScriptLink=&_ContextClient=140840&_ClientId=140840&_ObjectId=140840&_ObjectTypeId=1&_ObjectLibraryId=0', 'OssClient140840Popup185', 'width=1000,height=600,menubar=no,scrollbars=no,toolbar=no,status=no,resizable=yes,scrollbars=yes');">
+                </LI>
+                <LI style="float:left; margin-right:2px">
+                    <INPUT type="button" value="ServiceMap" onclick="window.open('http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=PopupCustomScript.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_MerchantId=1&_CustomScriptId=219&_ReturnScriptLink=&_ContextClient=140840&_ClientId=140840&_ObjectId=140840&_ObjectTypeId=1&_ObjectLibraryId=0', 'OssClient140840Popup219', 'width=1000,height=600,menubar=no,scrollbars=no,toolbar=no,status=no,resizable=yes,scrollbars=yes');">
+                </LI>
+                <LI style="float:left; margin-right:2px">
+                    <INPUT type="button" value="Intervention" onclick="window.open('http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=PopupCustomScript.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_MerchantId=1&_CustomScriptId=230&_ReturnScriptLink=&_ContextClient=140840&_ClientId=140840&_ObjectId=140840&_ObjectTypeId=1&_ObjectLibraryId=0', 'OssClient140840Popup230', 'width=1000,height=600,menubar=no,scrollbars=no,toolbar=no,status=no,resizable=yes,scrollbars=yes');">
+                </LI>
+                <LI style="float:left; margin-right:2px">
+                    <INPUT type="button" value="Tâches" onclick="window.open('http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=PopupCustomScript.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_MerchantId=1&_CustomScriptId=242&_ReturnScriptLink=&_ContextClient=140840&_ClientId=140840&_ObjectId=140840&_ObjectTypeId=1&_ObjectLibraryId=0', 'OssClient140840Popup242', 'width=1000,height=600,menubar=no,scrollbars=no,toolbar=no,status=no,resizable=yes,scrollbars=yes');">
+                </LI>
+                <LI style="float:left; margin-right:2px">
+                    <INPUT type="button" value="Email" onclick="window.open('http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=PopupCustomScript.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_MerchantId=1&_CustomScriptId=249&_ReturnScriptLink=&_ContextClient=140840&_ClientId=140840&_ObjectId=140840&_ObjectTypeId=1&_ObjectLibraryId=0', 'OssClient140840Popup249', 'width=1000,height=600,menubar=no,scrollbars=no,toolbar=no,status=no,resizable=yes,scrollbars=yes');">
+                </LI>
+                <LI style="float:left; margin-right:2px">
+                    <INPUT type="button" value="Résiliation" onclick="window.open('http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=PopupCustomScript.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_MerchantId=1&_CustomScriptId=266&_ReturnScriptLink=&_ContextClient=140840&_ClientId=140840&_ObjectId=140840&_ObjectTypeId=1&_ObjectLibraryId=0', 'OssClient140840Popup266', 'width=1000,height=600,menubar=no,scrollbars=no,toolbar=no,status=no,resizable=yes,scrollbars=yes');">
+                </LI>
+                <LI style="float:left; margin-right:2px">
+                    <FORM method="post" action="http://shop.internet.lu/Scripts/sql.exe" style="margin-bottom:0;">
+                        <INPUT type="hidden" name="SqlDB" value="ossLOLShop" />
+                        <INPUT type="hidden" name="Sql" value="ViewClientLogin.phs" />
+                        <INPUT type="hidden" name="xid" value="1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" />
+                        <INPUT type="hidden" name="ContextClient" value="140840" />
+                        <INPUT type="hidden" name="ContextUsage" value="0" />
+                        <button type="submit" name="_ParentMenu">Login client</button>
+                    </FORM>
+                </LI>
+            </UL></td></tr>
+</table>
+<HR>
+<FORM method="post" action="http://shop.internet.lu/Scripts/sql.exe" style="margin-bottom:0;">
+    <INPUT type="hidden" name="SqlDB" value="ossLOLShop" />
+    <INPUT type="hidden" name="Sql" value="ViewClients.phs" />
+    <INPUT type="hidden" name="xid" value="1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" />
+    <INPUT type="hidden" name="ContextUsage" value="0" />
+    <button type="submit" name="_ParentMenu">Chercher nouveau client</button>
+</FORM>
+</body>
+</html>
