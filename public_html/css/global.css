@@ -1,0 +1,15 @@
+
+.box{
+    display: table;
+    border-collapse: collapse;
+     border: #000000 solid 1px;
+     background-color: whitesmoke;
+}
+
+.box h3:not([title]){
+    margin-left: 20px;
+}
+
+.button-group{
+    margin-left: 15px;
+}
