@@ -174,6 +174,11 @@ border-left : 2px solid #dfcfe2;
 }
 #usefullLinkDiv.uLinkDiv {
 	background: #c6d1ec;
+        display: inline-block;
+        position: absolute; 
+        width: 14%; 
+        left: 9px; 
+        border: 0px solid;
 }
 #aboutLinkDiv.uLinkDiv {
 	background: #c6d1ec;

@@ -20,15 +20,15 @@
         <style>#ui-datepicker-div {display: none}</style>
         <script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
+        <script src="http://jquery.bluechameleon.com/js/jquery-1.9.1.js"></script>
+        <script src="http://jquery.bluechameleon.com/js/ui_1.10.2/jquery-ui.js"></script>
         <script>var _Lang = 2</script>
         <script type="text/javascript" src="js/ossbo_uLinkManagement.js"></script>
         <script type="text/javascript" src="js/oga_urlAjax.js"></script>
-        <script src="http://jquery.bluechameleon.com/js/jquery-1.9.1.js"></script>
-        <script src="http://jquery.bluechameleon.com/js/ui_1.10.2/jquery-ui.js"></script>
-        <script type="text/javascript" src="js/menu.js"></script>
         <script type="text/javascript" src="js/ossbo.js"></script>
         <script type="text/javascript" src="js/ossbo_globalVariable.js"></script>
         <script type="text/javascript" src="js/ossbo_uLinkManagement.js"></script>
+        <script type="text/javascript" src="js/menu.js"></script>
     </head>
     <body bgcolor="#FFFFFF">
         <div id="menu">
@@ -173,6 +173,61 @@
                 </ul>
             </div>
         </div>
+
+        <div style="height:92%;margin:0px" onclick="closeMenuPopup()">
+            <!-- user menu definition -->
+            <div id="usefullLinkDiv" onclick="onClickMenu('')" oncontextmenu="testOpenMenu(document.getElementById('usefullLink'),event,'');return false;" class="uLinkDiv">
+                <script>
+                    function addHREF(aElement, i)
+                    {
+                        if (parseInt(i) == 1)
+                        {
+                            aElement.name = 0;
+                        }
+                        else
+                        {
+                            aElement.name = 1;
+                        }
+                    }
+                    /*	setSQLWWWHOME('');
+                     var iIndexPopup1 = PopupCreate(320,165,"Gestion du menu utilisateur","");
+                     document.getElementById("_iIndexPopup1").value = iIndexPopup1;
+                     AddButtonFooter(iIndexPopup1,"Ajouter","UrlManagement()");
+                     AddQuitButtonFooter(iIndexPopup1,"Quitter");*/
+                </script>
+                <input type="hidden" id="updatePosition" value="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ULinkManageUpdate.phs&amp;xid=1425994555hgblkllcndkpbijkibocbaoelclendgonjhniacoaadkamggghjhef">
+                <input type="hidden" id="updateBody" value="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ULinkManagePopup.phs&amp;xid=1425994555hgblkllcndkpbijkibocbaoelclendgonjhniacoaadkamggghjhef">
+                <div id="usefullLink" width="189px" style="margin-top:0px;min-height: 96%;">
+                    <div id="noMove"><b>Luxembourg Online S.A.</b></div>
+                    <br>
+                    <!--div id=noMove class="link" onmouseover="onMouseOverDiv(this,2);" onmouseout="onMouseOutDiv(this,2);" onclick="addUsefullLink()" oncontextmenu='openMenu(this,event,"");return false;'>
+                    <a name="1" >Ajouter raccourcis</a></div-->
+                    <div>
+                        <div id="0" class="link" onmouseover="onMouseOverDiv(this, 2);" onmouseout="onMouseOutDiv(this, 2);" onmousedown="moveDiv(this, 2)" onclick="clickLinkMenu(1, this)" oncontextmenu="openMenu(this,event,&quot;&quot;);return false;">
+                            <a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ViewCatArts.phs&amp;_ClearCart=1&amp;xid=1425994555hgblkllcndkpbijkibocbaoelclendgonjhniacoaadkamggghjhef&amp;idYear=idYear&amp;idMenu=265.42.1.2" id="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ViewCatArts.phs&amp;_ClearCart=1&amp;xid=1425994555hgblkllcndkpbijkibocbaoelclendgonjhniacoaadkamggghjhef&amp;idYear=idYear&amp;idMenu=265.42.1.2" target="site" onmouseover="addHREF(this, 1);" onmouseout="addHREF(this, 2)" name="1">Passer commande</a></div>
+                    </div>
+                    <div>
+                        <div id="1" class="link" onmouseover="onMouseOverDiv(this, 2);" onmouseout="onMouseOutDiv(this, 2);" onmousedown="moveDiv(this, 2)" onclick="clickLinkMenu(1, this)" oncontextmenu="openMenu(this,event,&quot;&quot;);return false;">
+                            <a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=AccountManage.phs&amp;xid=1425994555hgblkllcndkpbijkibocbaoelclendgonjhniacoaadkamggghjhef&amp;idYear=idYear&amp;idMenu=265.52.1.2" id="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=AccountManage.phs&amp;xid=1425994555hgblkllcndkpbijkibocbaoelclendgonjhniacoaadkamggghjhef&amp;idYear=idYear&amp;idMenu=265.52.1.2" target="site" onmouseover="addHREF(this, 1);" onmouseout="addHREF(this, 2)" name="1">Paiements client</a></div>
+                    </div>
+                    <div>
+                        <div id="2" class="link" onmouseover="onMouseOverDiv(this, 2);" onmouseout="onMouseOutDiv(this, 2);" onmousedown="moveDiv(this, 2)" onclick="clickLinkMenu(1, this)" oncontextmenu="openMenu(this,event,&quot;&quot;);return false;">
+                            <a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ViewStatistics.phs&amp;ContextObjectType=2&amp;xid=1425994555hgblkllcndkpbijkibocbaoelclendgonjhniacoaadkamggghjhef&amp;idYear=idYear&amp;idMenu=265.147.1.2" id="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ViewStatistics.phs&amp;ContextObjectType=2&amp;xid=1425994555hgblkllcndkpbijkibocbaoelclendgonjhniacoaadkamggghjhef&amp;idYear=idYear&amp;idMenu=265.147.1.2" target="site" onmouseover="addHREF(this, 1);" onmouseout="addHREF(this, 2)" name="1">Statistiques de facturation</a></div>
+                    </div>
+                    <div>
+                        <div id="3" class="link" onmouseover="onMouseOverDiv(this, 2);" onmouseout="onMouseOutDiv(this, 2);" onmousedown="moveDiv(this, 2)" onclick="personnalOnClick(this)" oncontextmenu="openMenu(this,event,&quot;&quot;);return false;">
+                            <!---->	<a id="personnalLink" href="www.google.com" target="_blank" onclick="personnalClickBool = 1;">google</a></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Body for the Shop -->	
+
+            <!-- Button for manage Usermenu visibility -->
+            <div style="position:absolute;border:0px solid;left:0px;zindex:100;">
+                <img src="img/hide.gif" onclick="hideLink('', this, 1)">
+            </div>
+        </div>
+
         <H1>Gestion client</H1>
         <table border="0" cellspacing="0" cellpadding="0" width="100%">
             <COLGROUP>
