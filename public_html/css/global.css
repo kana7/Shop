@@ -23,7 +23,18 @@ section{
 
 .row .last{
     height: 250px;
-    max-height: 100%;
+}
+
+@media all and (max-width: 768px){
+    .row .ligne{
+        height: auto;
+        padding-bottom: 25px;
+    }
+
+    .row .last{
+        height: auto;
+        padding-bottom: 25px;
+    }
 }
 
 
@@ -53,12 +64,12 @@ table tr th{
 }
 
 .glyphicon {
-  position: relative;
-  top: 1px;
-  font-size: 2.0em;
-  display: inline-block;
-  font-family: 'Glyphicons Halflings';
-  font-style: normal;
-  font-weight: normal;
-  line-height: 45px;
+    position: relative;
+    top: 1px;
+    font-size: 2.0em;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 45px;
 }
