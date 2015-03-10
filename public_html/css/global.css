@@ -3,11 +3,9 @@ section{
 }
 
 .box{
-    display: table;
     border-collapse: collapse;
     border: #000000 solid 1px;
     background-color: whitesmoke;
-    height: 200px;
 }
 
 .box h3:not([title]){
@@ -15,9 +13,19 @@ section{
 }
 
 .row>p{
-    height: 193px;
+    margin-top: 15px;
     width: 50%;
 }
+
+.row .ligne{
+    height: 215px;
+}
+
+.row .last{
+    height: 250px;
+    max-height: 100%;
+}
+
 
 .button-group{
     position: relative;
