@@ -1,51 +1,211 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-        <link href="BlueCameleon/css/ossbo.css" rel="stylesheet" type="text/css" />
-        <link href="BlueCameleon/css/ossbo_box.css" rel="stylesheet" type="text/css" />
-        <link href="BlueCameleon/css/ossbo_services.css" rel="stylesheet" type="text/css" media="screen" />
-        <link href="BlueCameleon/css/ossprint.css" rel="stylesheet" type="text/css" media="print" />
-        <script type="text/javascript" src="BlueCameleon/js/ossbo.js"></script>
+        <TITLE>Luxembourg Online S.A. - Online Shopping System</TITLE>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/ossbo_menu.css">
+        <link rel="stylesheet" type="text/css" href="css/menu.css">
+        <link rel="stylesheet" type="text/css" href="css/menu_specific.css">
+        <link rel="stylesheet" type="text/css" href="css/popup/popupMain.css">
+        <link rel="stylesheet" type="text/css" href="css/ossbo_div.css">
+        <link rel="stylesheet" type="text/css" href="css/ossbo_usermenu.css">
+        <link rel="stylesheet" type="text/css" href="css/ossbo_services.css">
+        <link rel="stylesheet" type="text/css" href="css/ossbo.css">
+        <link rel="stylesheet" type="text/css" href="css/oga_popup.css">
+        <link rel="stylesheet" type="text/css" href="css/property.css">
+        <link rel="stylesheet" type="text/css" href="css/ossprint.css">
         <link href="http://jquery.bluechameleon.com/js/themes/redmond/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
         <style>#ui-datepicker-div {display: none}</style>
         <script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
+        <script>var _Lang = 2</script>
+        <script type="text/javascript" src="js/ossbo_uLinkManagement.js"></script>
+        <script type="text/javascript" src="js/oga_urlAjax.js"></script>
+        <script src="http://jquery.bluechameleon.com/js/jquery-1.9.1.js"></script>
+        <script src="http://jquery.bluechameleon.com/js/ui_1.10.2/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/menu.js"></script>
+        <script type="text/javascript" src="js/ossbo.js"></script>
+        <script type="text/javascript" src="js/ossbo_globalVariable.js"></script>
+        <script type="text/javascript" src="js/ossbo_uLinkManagement.js"></script>
     </head>
     <body bgcolor="#FFFFFF">
-        <script type="text/javascript">
-function ViewClient(idClient, azShowAttributes)
-{
-    AjaxLoad('ClientDetails', 'http://shop.internet.lu/Scripts/sql.exe', 'SqlDB=ossLOLShop&Sql=ViewClientDetails.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&ContextUsage=0&ContextClient=' + encodeURIComponent(idClient) + '&_ClientId=' + encodeURIComponent(idClient) + '&_MerchantPrefs=1121002202010112111121112011101110010010&_ShowAttributes=' + encodeURIComponent(azShowAttributes));
-}
-        </script>
+        <div id="menu">
+            <div id="menu">
+                <ul class="menu">
+                    <li id="1" class="main"><span>Accueil</span></li>
+
+                    <li id="3" class="main"><a href="#" class="parent"><span>Général</span></a>
+                        <ul style="display: none;">	
+                            <li id="15" class="main"><a href="#" class="parent"><span>Commerçant</span></a></li>
+                            <li id="35" class="main"><a href="#" class="parent"><span>Utilisateurs</span></a></li>
+                            <li id="37" class="main"><a href="#" class="parent"><span>Personnalisation</span></a></li>
+                            <li id="38" class="main"><a href="#" class="parent"><span>Divers</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li id="36" class="main"><a href="#" class="parent"><span>Articles</span></a>
+                        <ul style="display: none;">	
+                            <li class="main"><span>Articles</span></li>
+                            <li class="main"><span>Catégories</span></li>
+                            <li class="main"><span>Stock</span></li>
+                            <li id="40" class="main"><a href="#" class="parent"><span>Configuration</span></a></li>
+                            <li class="main"><span>Types d'article</span></li>
+                        </ul>
+                    </li>
+                    <li id="5" class="main"><a href="#" class="parent"><span>Clients</span></a>
+                        <ul style="display: none;">	
+                            <li class="main"><span>Passer commande</span></li>
+                            <li class="main"><span>Vente en magasin</span></li>
+                            <li class="main"><span>Clients</span></li>
+                            <li class="main"><span>Abonnements</span></li>
+                            <li class="main"><span>Commandes</span></li>
+                            <li class="main"><span>Statistiques de commandes</span></li>
+                            <li id="39" class="main"><a href="#" class="parent"><span>Personnalisation</span></a></li>
+                            <li class="main"><span>FreeManage</span></li>
+                            <li class="main"><span>Credit Control</span></li>
+                        </ul>
+                    </li>
+                    <li id="6" class="main"><a href="#" class="parent"><span>Vente</span></a>
+                        <ul style="display: none;">	
+                            <li class="main"><span>Facturation</span></li>
+                            <li class="main"><span>Paiements client</span></li>
+                            <li class="main"><span>Statistiques de facturation</span></li>
+                            <li class="main"><span>Domiciliations</span></li>
+                            <li class="main"><span>Paiements par carte de crédit</span></li>
+                            <li id="41" class="main"><a href="#" class="parent"><span>Comptes bancaires commerçant</span></a></li>
+                            <li class="main"><span>Système externe</span></li>
+                        </ul>
+                    </li>
+                    <li id="7" class="main"><a href="#" class="parent"><span>Accès Internet</span></a>
+                        <ul style="display: none;">	
+                            <li class="main"><span>ADSL</span></li>
+                            <li class="main"><span>CATV</span></li>
+                            <li class="main"><span>Eltrona CATV</span></li>
+                            <li class="main"><span>Esch CATV</span></li>
+                            <li class="main"><span>Ettelbruck CATV</span></li>
+                            <li class="main"><span>NSN CATV</span></li>
+                            <li class="main"><span>Walferdange CATV</span></li>
+                            <li class="main"><span>Mondercange CATV</span></li>
+                            <li class="main"><span>Dégroupage</span></li>
+                            <li class="main"><span>Dégroupage ADSL</span></li>
+                            <li class="main"><span>Dégroupage SDSL</span></li>
+                            <li class="main"><span>HotspotEsch</span></li>
+                            <li class="main"><span>HotspotLOL</span></li>
+                            <li class="main"><span>LOL Fiber (POST)</span></li>
+                            <li class="main"><span>LOL Fiber (FTTH/FTTO)</span></li>
+                        </ul>
+                    </li>
+                    <li id="8" class="main"><a href="#" class="parent"><span>Téléphonie</span></a>
+                        <ul style="display: none;">	
+                            <li class="main"><span>Line Rental Service</span></li>
+                            <li class="main"><span>Classic Phone</span></li>
+                            <li class="main"><span>Dégroupage Phone</span></li>
+                            <li class="main"><span>CATVPhone</span></li>
+                            <li class="main"><span>I-Phone</span></li>
+                            <li class="main"><span>PABXPhone</span></li>
+                            <li class="main"><span>Portabilité</span></li>
+                            <li class="main"><span>PhoneBook</span></li>
+                            <li class="main"><span>CDR Tarification</span></li>
+                            <li class="main"><span>LOL Mobile</span></li>
+                            <li class="main"><span>Vox Articles</span></li>
+                            <li class="main"><span>Sip Server</span></li>
+                            <li class="main"><span>Service ISDN (Patton)</span></li>
+                            <li class="main"><span>Numero ISDN (Patton)</span></li>
+                            <li class="main"><span>Numérotation téléphonique</span></li>
+                            <li class="main"><span>Statistiques telephonie</span></li>
+                            <li class="main"><span>Fax to Mail</span></li>
+                        </ul>
+                    </li>
+                    <li id="43" class="main"> <span>IPTV</span></li>
+                    <li id="9" class="main"><a href="#" class="parent"><span>Autres</span></a>
+                        <ul style="display: none;">
+                            <li class="main"><span>HelpDesk</span></li>
+                            <li class="main"><span>News</span></li>
+                            <li class="main"><span>Agenda</span></li>
+                            <li class="main"><span>Import DB (PT)</span></li>
+                            <li class="main"><span>Services manuels</span></li>
+                            <li class="main"><span>Materiel</span></li>
+                            <li class="main"><span>Ordonnance</span></li>
+                            <li class="main"><span>GIS</span></li>
+                            <li class="main"><span>CRM</span></li>
+                            <li class="main"><span>Traps SNMP</span></li>
+                            <li class="main"><span>Gestion des fichiers</span></li>
+                            <li class="main"><span>Documentation</span></li>
+                            <li class="main"><span>Alarmes</span></li>
+                            <li class="main"><span>Documents</span></li>
+                            <li class="main"><span>HRM</span></li>
+                            <li class="main"><span>Task list</span></li>
+                            <li class="main"><span>EPT Command</span></li>
+                            <li id="48" class="main"><span>Call center</span></li>
+                            <li class="main"><span>Property</span></li>
+                            <li class="main"><span>Résiliation</span></li>
+                            <li class="main"><span>Echéancements</span></li>
+                            <li class="main"><span>Amortization</span></li>
+                            <li class="main"><span>Mur</span></li>
+                            <li class="main"><span>StreetMap</span></li>
+                            <li class="main"><span>ServiceMap</span></li>
+                            <li class="main"><span>Enquête</span></li>
+                            <li class="main"><span>Ordonnance</span></li>
+                            <li class="main"><span>Failures</span></li>
+                            <li class="main"><span>Annuaire</span></li>
+                            <li class="main"><span>Intervention</span></li>
+                            <li class="main"><span>Aide</span></li>
+                            <li class="main"><span>Projets/Tâches</span></li>
+                            <li class="main"><span>HDA</span></li>
+                            <li class="main"><span>Contrat</span></li>
+                            <li class="main"><span>CheckLists</span></li>
+                            <li class="main"><span>Rapports</span></li>
+                            <li class="main"><span>Pointer</span></li>
+                            <li class="main"><span>GPS Tracker</span></li>
+                            <li class="main"><span>Evénements [Marketing]</span></li>
+                            <li class="main"><span>Evénements [Développement]</span></li>
+                            <li class="main"><span>RadiusInfo</span></li>
+                            <li class="main"><span>FacebookApp</span></li>
+                        </ul>
+                    </li>
+
+
+                    <li id="42" class="main"><a href="#" class="parent"><span>Statistiques</span></a></li>
+                    <li id="11" class="main"><a href="#" class="parent"><span>Option</span></a> </li>
+                    <li id="2" class="main"> <span>Déconnexion</span></li>
+                </ul>
+            </div>
+        </div>
         <H1>Gestion client</H1>
-        <TABLE border="0" cellspacing="0" cellpadding="0" width="100%">
+        <table border="0" cellspacing="0" cellpadding="0" width="100%">
             <COLGROUP>
                 <COL width="50%">
                 <COL width="5%">
                 <COL width="45%">
             </COLGROUP>
             <TR valign="top"><TD>
-                    <div id="ClientDetails"><script type="text/javascript">ViewClient(140840, 'ACCOUNT');</script></div>
-                </TD><TD>&nbsp;</TD><TD><TABLE>
-                        <TR><TD><B>Etat abonnements:&nbsp;</B></TD>
-                            <TD>
-                                <FONT color="#00FF00">activ&eacute;</FONT></TD></TR>
-                        <TR><TD><B>Abonnements actifs:&nbsp;</B></TD><TD>5</TD></TR>
-                        <TR><TD><B>Ordre(s) de domiciliation:</B>&nbsp;</TD>
-                            <TD><A href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewClientPayment.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&ContextUsage=0&ContextClient=140840&Param=11444">toutes commandes</A></TD></TR>
-                        <TR><TD colspan="2">
+                    <div id="ClientDetails">
+
+                    </div>
+                </TD><TD>&nbsp;</TD><TD>
+                    <table>
+                        <TR>
+                            <TD><B>Etat abonnements:&nbsp;</B></TD>
+                            <TD><FONT color="#00FF00">activ&eacute;</FONT></TD>
+                        </TR>
+                        <TR>
+                            <TD><B>Abonnements actifs:&nbsp;</B></TD><TD>5</TD>
+                        </TR>
+                        <TR>
+                            <TD><B>Ordre(s) de domiciliation:</B>&nbsp;</TD>
+                            <TD><A href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewClientPayment.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&ContextUsage=0&ContextClient=140840&Param=11444">toutes commandes</A></TD>
+                        </TR>
+                        <TR>
+                            <TD colspan="2">
                         <link href="BlueCameleon/css/property.css" rel="stylesheet" type="text/css" media="screen" />
                         <style type="text/css" media="screen">
                             .tooltip{width:400px;margin:0;padding:5px;color:black;background:#fff;border:2px solid #ccc;}
                             .tooltip p{margin:0;text-align:justify;}
                         </style>
                         <script type="text/javascript" src="BlueCameleon/js/jquery.simpletooltip-min.js"></script>
-                        <script type="text/javascript">
-                        $(function () {
-                            $("a.tooltiplink").simpletooltip();
-                        });
-                        </script>
+
                         <form name="PropertyObjectViewForm" method="post" action="http://shop.internet.lu/Scripts/sql.exe">
                             <input type="hidden" name="Sql" id="Sql" value="Property:PropertyObjectView.phs">
                             <input type="hidden" name="SqlDB" value="ossLOLShop">
@@ -72,9 +232,11 @@ function ViewClient(idClient, azShowAttributes)
                 .tabSurveyClientNoBorder {border:none!important;}
             </style>
             <p>Il n&apos;y a pas d&apos;enqu&ecirc;te</p>
-        </TD></TR></TABLE></TD></TR>
-</TABLE>
-<P></P>
+        </TD></TR>
+</table>
+</TD></TR>
+</table>
+
 <table width="100%"><tr><td><UL style="list-style: none; margin-left:0px; margin:0px; padding:0px;">
                 <LI style="float:left; margin-right:2px">
                     <FORM method="post" action="http://shop.internet.lu/Scripts/sql.exe" style="margin-bottom:0;">
