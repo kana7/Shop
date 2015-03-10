@@ -15,66 +15,87 @@ and open the template in the editor.
         <link id="style" href="css/style1.css" rel="stylesheet"/>
 
         <style>
-            section
-            {
-                margin-top: 20px;
-            }
+            
         </style>
     </head>
     <body>
         <div class="container-fluid">
             <div class="row">
-                <footer>
-                    <nav>
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active" id="nav1"><a href="#">Design 1</a></li>
-                            <li role="presentation" class="" id="nav2"><a href="#">Design 2</a></li>
-                            <li role="presentation" class="" id="nav3"><a href="#">Design 3</a></li>
-                        </ul>
-                    </nav>
-                </footer>
+                <nav>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active" id="nav1"><a href="#">Design 1</a></li>
+                        <li role="presentation" class="" id="nav2"><a href="#">Design 2</a></li>
+                        <li role="presentation" class="" id="nav3"><a href="#">Design 3</a></li>
+                    </ul>
+                </nav>
             </div>
             <section class="container">
+
                 <div class="row">
-                    <div class="col-lg-6 box"><h3>Logo</h3></div>
-                    <div class="col-lg-6 box">
+                    <div class="col-md-6 box">
+                        <h3>Logo</h3>
+                    </div>
+                    <div class="col-md-6 box">
                         <h3>Color</h3>
                     </div>
                 </div>
+
                 <div class="row">
-                    <div class="col-lg-5 box"><h3>Form</h3></div>
-                    <div class="col-lg-7 box"><h3>Nav Bar</h3></div>
+                    <div class="col-md-5 box">
+                        <h3>Form</h3>
+                    </div>
+                    <div class="col-md-7 box">
+                        <h3>Nav Bar</h3>
+                    </div>
                 </div>
+
                 <div class="row">
-                    <div class="col-lg-4 box"><h3>Icons</h3></div>
-                    <div class="col-lg-4 box">
+                    <div class="col-md-3 box">
+                        <h3>Icons</h3>
+                        <div class="row text-center">
+                            <div class="col-sm-6 col-md-4"><span class="glyphicon glyphicon-adjust"></div>
+                            <div class="col-sm-6 col-md-4"><span class="glyphicon glyphicon-alert"></div>
+                            <div class="col-sm-6 col-md-4"><span class="glyphicon glyphicon-apple"></div>
+                            <div class="col-sm-6 col-md-4"><span class="glyphicon glyphicon-asterisk"></div>
+                            <div class="col-sm-6 col-md-4"><span class="glyphicon glyphicon-bell"></div>
+                            <div class="col-sm-6 col-md-4"><span class="glyphicon glyphicon-camera"></div>
+                            <div class="col-sm-6 col-md-4"><span class="glyphicon glyphicon-education"></div>
+                            <div class="col-sm-6 col-md-4"><span class="glyphicon glyphicon-earphone"></div>
+                            <div class="col-sm-6 col-md-4"><span class="glyphicon glyphicon-euro"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 box">
                         <h3>Boutons</h3>
-                        <div class="row col-lg-12 text-center button-group">
+                        <div class="row col-md-12 text-center button-group">
                             <button>normal</button>
                             <button>hover</button>
                             <button>click</button>
                         </div>
-                        <div class="row col-lg-12 text-center button-group">
-                            <button>Select</button>
+                        <div class="row col-md-12 text-center button-group">
+                            <button id="select">Select</button>
                         </div>
                     </div>
-                    <div class="col-lg-4 box"><h3>Buffer</h3></div>
+                    <div class="col-md-4 box">
+                        <h3>Buffer</h3>
+                    </div>
                 </div>
+
                 <div class="row">
-                    <div style="padding-bottom: 30px" class="col-lg-7 box">
+                    <div class="col-md-7 box">
                         <h3>Text</h3>
+
                         <div class="row">
-                            <div class="col-lg-4 text-center">
+                            <div class="col-md-5 text-center">
                                 <h1 title="1">Titre 1</h1>
                                 <h2 title="2">Titre 2</h2>
                                 <h3 title="3">Titre 3</h3>
                             </div>
-                                <p class="col-lg-6">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </p>
+                            <p class="col-md-7">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
                         </div>
                     </div>
-                    <div class="col-lg-5 box">
+                    <div class="col-md-5 box">
                         <h3>Tab</h3>
                         <table class="table table-striped text-center" >
                             <tr><th>title1</th><th>title2</th><th>title3</th><th>title4</th></tr>
@@ -87,8 +108,8 @@ and open the template in the editor.
                 </div>
             </section>
         </div>
-        <script src="js/bootstrap.js"></script>
         <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
         <script>
             $(function () {
 
