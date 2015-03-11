@@ -11,6 +11,7 @@
         <link rel="stylesheet" type="text/css" href="css/ossbo_div.css">
         <link rel="stylesheet" type="text/css" href="css/ossbo_usermenu.css">
         <link rel="stylesheet" type="text/css" href="css/oga_popup.css">
+        <link rel="stylesheet" type="text/css" href="css/popup/popupMain.css">
         <link rel="stylesheet" href="css/popup/popupMain.css" type="text/css" media="screen">
         <script type="text/javascript" src="js/popup/popup.js"></script>
         <script type="text/javascript" src="js/ossbo_globalVariable.js"></script>
@@ -168,8 +169,6 @@
                             <li class="main"><span>FacebookApp</span></li>
                         </ul>
                     </li>
-
-
                     <li id="42" class="main"><a href="#" class="parent"><span>Statistiques</span></a></li>
                     <li id="11" class="main"><a href="#" class="parent"><span>Option</span></a> </li>
                     <li id="2" class="main"> <span>Déconnexion</span></li>
@@ -177,7 +176,7 @@
             </div>
         </div>
 
-        <div style="height:92%;margin:0px; display: inline-block" onclick="closeMenuPopup()">
+        <div style="height:92%; margin:0px; display: inline-block;" onclick="closeMenuPopup()">
             <!-- user menu definition -->
             <div id="usefullLinkDiv" onclick="onClickMenu('')" oncontextmenu="testOpenMenu(document.getElementById('usefullLink'),event,'');return false;" class="uLinkDiv">
                 <script>
@@ -471,6 +470,19 @@
     <INPUT type="hidden" name="ContextUsage" value="0" />
     <button type="submit" name="_ParentMenu">Chercher nouveau client</button>
 </FORM>
+</div>
+<div id="footerDiv" onclick="onClickMenu('')">
+    <p style="text-align:center;margin-top:4px;margin-bottom:0px">
+        <a style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="window.frames['site'].history.back();">Retour</a>
+        - <a style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="window.frames['site'].location.reload();">Actualiser</a>
+        - <a style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="if ('Microsoft Internet Explorer' == navigator.appName)
+            window.frames['site'].focus();
+        window.frames['site'].print();">Imprimer</a>
+        <!--	delete this at 2015 01 22 
+        not used
+        - <A style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="addUsefullLink()">Ajouter comme lien</A> 
+        -->
+    </p>
 </div>
 </body>
 </html>

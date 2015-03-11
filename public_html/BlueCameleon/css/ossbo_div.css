@@ -166,15 +166,13 @@ border-left : 2px solid #dfcfe2;
 	font-style: italic; 
 	text-decoration: underline;
 }
-* html .uLinkDiv {
-	height:100%;
-}
+
 .uLinkDiv {
 	height:90%;
 }
 #usefullLinkDiv.uLinkDiv {
 	background: #c6d1ec;
-        display: inline-block;
+        vertical-align: top;
         position: absolute; 
         width: 14%; 
         left: 9px; 
@@ -207,7 +205,14 @@ border-left : 2px solid #dfcfe2;
 
 #content{
     display: inline-block;
-    position: relative;
-    left: 260px;
-    
+    width: 75%;
+    margin-left: 270px;
+}
+
+#footerDiv{
+    display: inline-block;
+    width: 99%;  
+    border-width: 1px 0px 0px; 
+    border-style: solid; 
+    border-top-color: rgb(118, 130, 163); 
 }
