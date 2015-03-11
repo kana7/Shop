@@ -5,13 +5,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Luxembourg Online S.A. - Online Shopping System</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/property.css">
         <link rel="stylesheet" type="text/css" href="css/ossbo_menu.css">
         <link rel="stylesheet" type="text/css" href="css/ossbo_div.css">
         <link rel="stylesheet" type="text/css" href="css/ossbo_usermenu.css">
         <link rel="stylesheet" type="text/css" href="css/oga_popup.css">
-        <script type="text/javascript" src="js/popup/popup.js"></script>
         <link rel="stylesheet" href="css/popup/popupMain.css" type="text/css" media="screen">
+        <script type="text/javascript" src="js/popup/popup.js"></script>
         <script type="text/javascript" src="js/ossbo_globalVariable.js"></script>
         <script type="text/javascript" src="js/ossbo_usermenu.js"></script>
         <script>var _Lang = 2</script>
@@ -176,7 +177,7 @@
             </div>
         </div>
 
-        <div style="height:92%;margin:0px" onclick="closeMenuPopup()">
+        <div id="sideBar" style="height:92%;margin:0px" onclick="closeMenuPopup()">
             <!-- user menu definition -->
             <div id="usefullLinkDiv" onclick="onClickMenu('')" oncontextmenu="testOpenMenu(document.getElementById('usefullLink'),event,'');return false;" class="uLinkDiv">
                 <script>
@@ -230,91 +231,92 @@
             </div>
         </div>
 
-        <H1>Gestion client</H1>
-        <table border="0" cellspacing="0" cellpadding="0" width="100%">
-            <COLGROUP>
-                <COL width="50%">
-                <COL width="5%">
-                <COL width="45%">
-            </COLGROUP>
-            <TR valign="top"><TD>
-                    <div id="ClientDetails">
+        <div id="content">
+            <H1>Gestion client</H1>
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                <COLGROUP>
+                    <COL width="50%">
+                    <COL width="5%">
+                    <COL width="45%">
+                </COLGROUP>
+                <TR valign="top"><TD>
+                        <div id="ClientDetails">
+                            <table>
+                                <tbody><tr><td><b>Nom utilisateur:</b>&nbsp;</td><td>thomas.bigel</td></tr>
+                                    <tr><td><b>Titre:</b>&nbsp;</td><td>Monsieur</td></tr>
+                                    <tr><td><b>Nom:</b>&nbsp;</td><td>Bigel</td></tr>
+                                    <tr><td><b>Prénom:</b>&nbsp;</td><td>Thomas</td></tr>
+                                    <tr><td><b>Adresse:</b>&nbsp;</td><td>237 val des Bons Malades</td></tr>
+                                    <tr><td>&nbsp;</td><td>2121 Luxembourg</td></tr>
+                                    <tr><td>&nbsp;</td><td>Luxembourg</td></tr>
+                                    <tr><td><b>Tél:</b>&nbsp;</td><td>691592633</td></tr>
+                                    <tr><td><b>Tél mobile:</b>&nbsp;</td><td>691592633</td></tr>
+                                    <tr><td><b>E-mail:</b>&nbsp;</td><td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=SendClientEmail.phs&amp;xid=1426060229glikdemdmeeaeednihdobnhhkcjgkabmgcahhkcodekecanphbkogb&amp;ContextUsage=0&amp;ContextClient=177992&amp;Param=177992">thomas.bigel@gmail.com</a></td></tr>
+                                    <tr><td><b>Mode de paiement:</b>&nbsp;</td><td>Domiciliation bancaire</td></tr>
+                                    <tr><td><b>Mode de facturation:</b>&nbsp;</td><td>Facturation par e-mail</td></tr>
+                                    <tr><td><b>Enregistré depuis:</b>&nbsp;</td><td>06/02/2012 (Florent SCHILTZ)</td></tr>
+                                    <tr><td><b>Type de personne:</b>&nbsp;</td><td>
+                                            Personne physique
+                                        </td></tr>
+                                    <tr><td><b>Type de client:</b>&nbsp;</td><td>
+                                            Client privé
+                                        </td></tr>
+                                    <tr><td><b>Status:</b>&nbsp;</td><td>Ok</td></tr>
+                                    <tr><td><b>SLA:</b>&nbsp;</td><td>Normal</td></tr>
+                                    <tr><td colspan="2"><a href="#" onclick="ViewClient(177992, 'COMPLETE');">afficher tous les détails...</a></td></tr>
+                                </tbody></table>
+                        </div>
+                    </TD><TD>&nbsp;</TD><TD>
                         <table>
-                            <tbody><tr><td><b>Nom utilisateur:</b>&nbsp;</td><td>thomas.bigel</td></tr>
-                                <tr><td><b>Titre:</b>&nbsp;</td><td>Monsieur</td></tr>
-                                <tr><td><b>Nom:</b>&nbsp;</td><td>Bigel</td></tr>
-                                <tr><td><b>Prénom:</b>&nbsp;</td><td>Thomas</td></tr>
-                                <tr><td><b>Adresse:</b>&nbsp;</td><td>237 val des Bons Malades</td></tr>
-                                <tr><td>&nbsp;</td><td>2121 Luxembourg</td></tr>
-                                <tr><td>&nbsp;</td><td>Luxembourg</td></tr>
-                                <tr><td><b>Tél:</b>&nbsp;</td><td>691592633</td></tr>
-                                <tr><td><b>Tél mobile:</b>&nbsp;</td><td>691592633</td></tr>
-                                <tr><td><b>E-mail:</b>&nbsp;</td><td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=SendClientEmail.phs&amp;xid=1426060229glikdemdmeeaeednihdobnhhkcjgkabmgcahhkcodekecanphbkogb&amp;ContextUsage=0&amp;ContextClient=177992&amp;Param=177992">thomas.bigel@gmail.com</a></td></tr>
-                                <tr><td><b>Mode de paiement:</b>&nbsp;</td><td>Domiciliation bancaire</td></tr>
-                                <tr><td><b>Mode de facturation:</b>&nbsp;</td><td>Facturation par e-mail</td></tr>
-                                <tr><td><b>Enregistré depuis:</b>&nbsp;</td><td>06/02/2012 (Florent SCHILTZ)</td></tr>
-                                <tr><td><b>Type de personne:</b>&nbsp;</td><td>
-                                        Personne physique
-                                    </td></tr>
-                                <tr><td><b>Type de client:</b>&nbsp;</td><td>
-                                        Client privé
-                                    </td></tr>
-                                <tr><td><b>Status:</b>&nbsp;</td><td>Ok</td></tr>
-                                <tr><td><b>SLA:</b>&nbsp;</td><td>Normal</td></tr>
-                                <tr><td colspan="2"><a href="#" onclick="ViewClient(177992, 'COMPLETE');">afficher tous les détails...</a></td></tr>
-                            </tbody></table>
-                    </div>
-                </TD><TD>&nbsp;</TD><TD>
-                    <table>
-                        <TR>
-                            <TD><B>Etat abonnements:&nbsp;</B></TD>
-                            <TD><FONT color="#00FF00">activ&eacute;</FONT></TD>
-                        </TR>
-                        <TR>
-                            <TD><B>Abonnements actifs:&nbsp;</B></TD><TD>5</TD>
-                        </TR>
-                        <TR>
-                            <TD><B>Ordre(s) de domiciliation:</B>&nbsp;</TD>
-                            <TD><A href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewClientPayment.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&ContextUsage=0&ContextClient=140840&Param=11444">toutes commandes</A></TD>
-                        </TR>
-                        <TR>
-                            <TD colspan="2">
-                        <link href="BlueCameleon/css/property.css" rel="stylesheet" type="text/css" media="screen" />
-                        <style type="text/css" media="screen">
-                            .tooltip{width:400px;margin:0;padding:5px;color:black;background:#fff;border:2px solid #ccc;}
-                            .tooltip p{margin:0;text-align:justify;}
-                        </style>
-                        <script type="text/javascript" src="BlueCameleon/js/jquery.simpletooltip-min.js"></script>
+                            <TR>
+                                <TD><B>Etat abonnements:&nbsp;</B></TD>
+                                <TD><FONT color="#00FF00">activ&eacute;</FONT></TD>
+                            </TR>
+                            <TR>
+                                <TD><B>Abonnements actifs:&nbsp;</B></TD><TD>5</TD>
+                            </TR>
+                            <TR>
+                                <TD><B>Ordre(s) de domiciliation:</B>&nbsp;</TD>
+                                <TD><A href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewClientPayment.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&ContextUsage=0&ContextClient=140840&Param=11444">toutes commandes</A></TD>
+                            </TR>
+                            <TR>
+                                <TD colspan="2">
+                            <link href="BlueCameleon/css/property.css" rel="stylesheet" type="text/css" media="screen" />
+                            <style type="text/css" media="screen">
+                                .tooltip{width:400px;margin:0;padding:5px;color:black;background:#fff;border:2px solid #ccc;}
+                                .tooltip p{margin:0;text-align:justify;}
+                            </style>
+                            <script type="text/javascript" src="BlueCameleon/js/jquery.simpletooltip-min.js"></script>
 
-                        <form name="PropertyObjectViewForm" method="post" action="http://shop.internet.lu/Scripts/sql.exe">
-                            <input type="hidden" name="Sql" id="Sql" value="Property:PropertyObjectView.phs">
-                            <input type="hidden" name="SqlDB" value="ossLOLShop">
-                            <input type="hidden" name="xid" value="1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj">
-                            <input type="hidden" name="_CustomScriptId" value="186">
-                            <input type="hidden" name="_LibraryId" value="0">
-                            <input type="hidden" name="_ObjectType" value="1">
-                            <input type="hidden" name="_ObjectId" value="140840">
-                            <input type="hidden" name="_HRef" value="ViewClients_View.phs">
-                            <input type="hidden" name="_ParamList" value="Param=140840;ContextUsage=0">
-                            <table class="OssData" style="border:1px solid black;width:100%">
-                                <tr><td>
-                                        <table class="OssData" border="0" >
-                                            Il n&apos;y a aucune propri&eacute;t&eacute;
-                                        </table>
-                                    </td></tr>
-                            </table>
-                        </form>
+                            <form name="PropertyObjectViewForm" method="post" action="http://shop.internet.lu/Scripts/sql.exe">
+                                <input type="hidden" name="Sql" id="Sql" value="Property:PropertyObjectView.phs">
+                                <input type="hidden" name="SqlDB" value="ossLOLShop">
+                                <input type="hidden" name="xid" value="1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj">
+                                <input type="hidden" name="_CustomScriptId" value="186">
+                                <input type="hidden" name="_LibraryId" value="0">
+                                <input type="hidden" name="_ObjectType" value="1">
+                                <input type="hidden" name="_ObjectId" value="140840">
+                                <input type="hidden" name="_HRef" value="ViewClients_View.phs">
+                                <input type="hidden" name="_ParamList" value="Param=140840;ContextUsage=0">
+                                <table class="OssData" style="border:1px solid black;width:100%">
+                                    <tr><td>
+                                            <table class="OssData" border="0" >
+                                                Il n&apos;y a aucune propri&eacute;t&eacute;
+                                            </table>
+                                        </td></tr>
+                                </table>
+                            </form>
+                    </TD></TR>
+                <TR><TD colspan="2"><style>
+                    #tabSurveyClient {border-collapse: collapse;text-align:left;}
+                    #tabSurveyClient tr {height:30px;}
+                    #tabSurveyClient td, th {border: 1px solid #000;padding:2px 5px;}
+                    .tabSurveyClientNoBorder {border:none!important;}
+                </style>
+                <p>Il n&apos;y a pas d&apos;enqu&ecirc;te</p>
                 </TD></TR>
-            <TR><TD colspan="2"><style>
-                #tabSurveyClient {border-collapse: collapse;text-align:left;}
-                #tabSurveyClient tr {height:30px;}
-                #tabSurveyClient td, th {border: 1px solid #000;padding:2px 5px;}
-                .tabSurveyClientNoBorder {border:none!important;}
-            </style>
-            <p>Il n&apos;y a pas d&apos;enqu&ecirc;te</p>
+            </table>
         </TD></TR>
-</table>
-</TD></TR>
 </table>
 
 <table width="100%"><tr><td><UL style="list-style: none; margin-left:0px; margin:0px; padding:0px;">
@@ -469,5 +471,6 @@
     <INPUT type="hidden" name="ContextUsage" value="0" />
     <button type="submit" name="_ParentMenu">Chercher nouveau client</button>
 </FORM>
+</div>
 </body>
 </html>

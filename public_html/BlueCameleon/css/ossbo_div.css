@@ -204,3 +204,13 @@ border-left : 2px solid #dfcfe2;
 	height : 90%;
 	z-index:2;
 }
+
+#sideBar{
+    position: absolute;
+    display: inline-block;
+}
+
+#content{
+    position: relative;
+    display: inline-block;
+}
