@@ -1,4 +1,3 @@
-<!--Popup framework-->
 	var popupMode = 1; // 1 - PC; 2 - Mobile; 3 - Tablette
 	var actifPopup = new Array();
 	var iIndexActifPopup = -1;
