@@ -263,17 +263,13 @@
 
 
                 <div class="col-md-8" id="content">
-                    <div class="row">
-                        <div class="container">
+                    <div class="container">
+                        <div class="row row-centered">
+
                             <H1>Gestion client</H1>
-                            <table border="0" cellspacing="0" cellpadding="0" width="100%">
-                                <COLGROUP>
-                                    <COL width="50%">
-                                    <COL width="5%">
-                                    <COL width="45%">
-                                </COLGROUP>
+                            <table border="0" cellspacing="0" cellpadding="0">
                                 <TR valign="top">
-                                    <TD class="col-md-7 col-sm-12">
+                                    <TD class="col-md-7 col-xs-12 col-centered">
                                         <div id="ClientDetails">
                                             <table>
                                                 <tbody><tr><td><b>Nom utilisateur:</b>&nbsp;</td><td>thomas.bigel</td></tr>
@@ -302,7 +298,7 @@
                                             </table>
                                         </div>
                                     </TD>
-                                    <TD  class="col-md-5 col-sm-12 hidden-md hidden-xs">
+                                    <TD  class="col-md-5 hidden-xs">
                                         <table>
                                             <TR>
                                                 <TD><B>Etat abonnements:&nbsp;</B></TD>
@@ -354,9 +350,8 @@
                             </table>
                             </TD></TR>
                             </table>
-
-                            <div class="row">
-                                <UL style="list-style: none; margin-left:0px; margin:0px; padding:0px;">
+                            <div class="row row-centered" style="margin-top: 30px">
+                                <UL class="col-md-2 col-xs-12 col-sm-6 text-center" style="list-style: none;">
                                     <LI>
                                         <FORM method="post" action="http://shop.internet.lu/Scripts/sql.exe" style="margin-bottom:0;">
                                             <INPUT type="hidden" name="SqlDB" value="ossLOLShop" />
@@ -378,7 +373,7 @@
                                         </FORM>
                                     </LI>
                                 </UL>
-                                <UL style="list-style: none; margin-left:0px; margin:0px; padding:0px;">
+                                <UL class="col-md-2 col-xs-12 col-sm-6 text-center" style="list-style: none;">
                                     <LI>
                                         <FORM method="post" action="http://shop.internet.lu/Scripts/sql.exe" style="margin-bottom:0;">
                                             <INPUT type="hidden" name="SqlDB" value="ossLOLShop" />
@@ -430,7 +425,7 @@
                                         </FORM>
                                     </LI>
                                 </UL>
-                                <UL style="list-style: none; margin-left:0px; margin:0px; padding:0px;">
+                                <UL class="col-md-2 col-xs-12 col-sm-6 text-center" style="list-style: none;">
                                     <LI>
                                         <FORM method="post" action="http://shop.internet.lu/Scripts/sql.exe" style="margin-bottom:0;">
                                             <INPUT type="hidden" name="SqlDB" value="ossLOLShop" />
@@ -454,7 +449,7 @@
                                         </FORM>
                                     </LI>
                                 </UL>
-                                <UL style="list-style: none; margin:0px; padding:0px;">
+                                <UL class="col-md-2 col-xs-12 col-sm-6 text-center" style="list-style: none;">
                                     <LI >
                                         <INPUT type="button" value="Liste tickets" onclick="window.open('http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=PopupCustomScript.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_MerchantId=1&_CustomScriptId=20&_ReturnScriptLink=&_ObjectId=140840&_ObjectTypeId=1&_ObjectLibraryId=0', 'OssClient140840Popup20', 'width=800,height=600,menubar=no,scrollbars=no,toolbar=no,status=no,resizable=yes,scrollbars=yes');">
                                     </LI>
@@ -499,14 +494,17 @@
                                         </FORM>
                                     </LI>
                                 </UL>
-
-                                <FORM method="post" action="http://shop.internet.lu/Scripts/sql.exe" style="margin-bottom:0;">
-                                    <INPUT type="hidden" name="SqlDB" value="ossLOLShop" />
-                                    <INPUT type="hidden" name="Sql" value="ViewClients.phs" />
-                                    <INPUT type="hidden" name="xid" value="1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" />
-                                    <INPUT type="hidden" name="ContextUsage" value="0" />
-                                    <button type="submit" name="_ParentMenu">Chercher nouveau client</button>
-                                </FORM>
+                                <ul class="col-md-2 col-xs-12 col-sm-6 text-center" style="list-style: none;">
+                                    <li>
+                                        <FORM method="post" action="http://shop.internet.lu/Scripts/sql.exe" style="margin-bottom:0;">
+                                            <INPUT type="hidden" name="SqlDB" value="ossLOLShop" />
+                                            <INPUT type="hidden" name="Sql" value="ViewClients.phs" />
+                                            <INPUT type="hidden" name="xid" value="1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" />
+                                            <INPUT type="hidden" name="ContextUsage" value="0" />
+                                            <button type="submit" name="_ParentMenu">Chercher nouveau client</button>
+                                        </FORM>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>

@@ -168,8 +168,9 @@
 }
 
 #usefullLinkDiv {
-    background: #c6d1ec;
-    padding-bottom: 680px;  
+    background: #c6d1ec;  
+    padding-bottom: 100%;
+    height: 750px;
 }
 #aboutLinkDiv.uLinkDiv {
     background: #c6d1ec;
@@ -180,7 +181,7 @@
     position:absolute;
     /*border : 1px solid red;*/
     width : 98%;
-    height : 90%;
+    
     z-index:2;
 }
 .filterDiv2{
@@ -197,4 +198,14 @@
     border-width: 1px 0px 0px; 
     border-style: solid; 
     border-top-color: rgb(118, 130, 163); 
+}
+
+ul li{
+    margin-top: 5px;
+}
+
+ul{
+    vertical-align: top;
+    background-color: #c6d1ec;
+
 }

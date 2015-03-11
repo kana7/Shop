@@ -110,7 +110,7 @@ div#menu li li {
 div#menu li li a, div#menu li li span.separator {
     margin: 0px 1px;
     padding: 0px;
-    background: #black;
+    background: black;
     height: auto;
     float: none;
     display: block;
