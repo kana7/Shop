@@ -204,13 +204,10 @@ border-left : 2px solid #dfcfe2;
 }
 
 #content{
-    display: inline-block;
-    width: 75%;
     margin-left: 270px;
 }
 
 #footerDiv{
-    display: inline-block;
     width: 99%;  
     border-width: 1px 0px 0px; 
     border-style: solid; 
