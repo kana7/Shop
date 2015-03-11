@@ -1,34 +1,36 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-        <TITLE>Luxembourg Online S.A. - Online Shopping System</TITLE>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Luxembourg Online S.A. - Online Shopping System</title>
+        <link rel="stylesheet" type="text/css" href="css/property.css">
         <link rel="stylesheet" type="text/css" href="css/ossbo_menu.css">
-        <link rel="stylesheet" type="text/css" href="css/menu.css">
-        <link rel="stylesheet" type="text/css" href="css/menu_specific.css">
-        <link rel="stylesheet" type="text/css" href="css/popup/popupMain.css">
         <link rel="stylesheet" type="text/css" href="css/ossbo_div.css">
         <link rel="stylesheet" type="text/css" href="css/ossbo_usermenu.css">
-        <link rel="stylesheet" type="text/css" href="css/ossbo_services.css">
-        <link rel="stylesheet" type="text/css" href="css/ossbo.css">
         <link rel="stylesheet" type="text/css" href="css/oga_popup.css">
-        <link rel="stylesheet" type="text/css" href="css/property.css">
-        <link rel="stylesheet" type="text/css" href="css/ossprint.css">
-        <link href="http://jquery.bluechameleon.com/js/themes/redmond/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
-        <style>#ui-datepicker-div {display: none}</style>
-        <script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
-        <script src="http://jquery.bluechameleon.com/js/jquery-1.9.1.js"></script>
-        <script src="http://jquery.bluechameleon.com/js/ui_1.10.2/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/popup/popup.js"></script>
+        <link rel="stylesheet" href="css/popup/popupMain.css" type="text/css" media="screen">
+        <script type="text/javascript" src="js/ossbo_globalVariable.js"></script>
+        <script type="text/javascript" src="js/ossbo_usermenu.js"></script>
         <script>var _Lang = 2</script>
         <script type="text/javascript" src="js/ossbo_uLinkManagement.js"></script>
         <script type="text/javascript" src="js/oga_urlAjax.js"></script>
-        <script type="text/javascript" src="js/ossbo.js"></script>
-        <script type="text/javascript" src="js/ossbo_globalVariable.js"></script>
-        <script type="text/javascript" src="js/ossbo_uLinkManagement.js"></script>
-        <script type="text/javascript" src="js/menu.js"></script>
+        <script src="http://jquery.bluechameleon.com/js/jquery-1.9.1.js"></script>
+        <script src="http://jquery.bluechameleon.com/js/ui_1.10.2/jquery-ui.js"></script>
+        <script src="js/jquery.simpletooltip-min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/menu.css">
+        <link rel="stylesheet" type="text/css" href="css/menu_specific.css">
+        <script src="js/menu.js"></script>
+        <script>
+            $(function () {
+                $("#footerDiv").css("top", $("#site").height() + $("#menu").height() + 10 + 'px');
+                $(window).resize(function () {
+                    $("#footerDiv").css("top", $("#site").height() + $("#menu").height() + 10 + 'px');
+                });
+            });
+        </script>
     </head>
     <body bgcolor="#FFFFFF">
         <div id="menu">
@@ -237,7 +239,30 @@
             </COLGROUP>
             <TR valign="top"><TD>
                     <div id="ClientDetails">
-
+                        <table>
+                            <tbody><tr><td><b>Nom utilisateur:</b>&nbsp;</td><td>thomas.bigel</td></tr>
+                                <tr><td><b>Titre:</b>&nbsp;</td><td>Monsieur</td></tr>
+                                <tr><td><b>Nom:</b>&nbsp;</td><td>Bigel</td></tr>
+                                <tr><td><b>Prénom:</b>&nbsp;</td><td>Thomas</td></tr>
+                                <tr><td><b>Adresse:</b>&nbsp;</td><td>237 val des Bons Malades</td></tr>
+                                <tr><td>&nbsp;</td><td>2121 Luxembourg</td></tr>
+                                <tr><td>&nbsp;</td><td>Luxembourg</td></tr>
+                                <tr><td><b>Tél:</b>&nbsp;</td><td>691592633</td></tr>
+                                <tr><td><b>Tél mobile:</b>&nbsp;</td><td>691592633</td></tr>
+                                <tr><td><b>E-mail:</b>&nbsp;</td><td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=SendClientEmail.phs&amp;xid=1426060229glikdemdmeeaeednihdobnhhkcjgkabmgcahhkcodekecanphbkogb&amp;ContextUsage=0&amp;ContextClient=177992&amp;Param=177992">thomas.bigel@gmail.com</a></td></tr>
+                                <tr><td><b>Mode de paiement:</b>&nbsp;</td><td>Domiciliation bancaire</td></tr>
+                                <tr><td><b>Mode de facturation:</b>&nbsp;</td><td>Facturation par e-mail</td></tr>
+                                <tr><td><b>Enregistré depuis:</b>&nbsp;</td><td>06/02/2012 (Florent SCHILTZ)</td></tr>
+                                <tr><td><b>Type de personne:</b>&nbsp;</td><td>
+                                        Personne physique
+                                    </td></tr>
+                                <tr><td><b>Type de client:</b>&nbsp;</td><td>
+                                        Client privé
+                                    </td></tr>
+                                <tr><td><b>Status:</b>&nbsp;</td><td>Ok</td></tr>
+                                <tr><td><b>SLA:</b>&nbsp;</td><td>Normal</td></tr>
+                                <tr><td colspan="2"><a href="#" onclick="ViewClient(177992, 'COMPLETE');">afficher tous les détails...</a></td></tr>
+                            </tbody></table>
                     </div>
                 </TD><TD>&nbsp;</TD><TD>
                     <table>
