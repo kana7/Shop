@@ -5,8 +5,6 @@
 }
 #recherche .submit {
   margin-top: 20px;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 #recherche .submit input {
   margin-right: 5px;
@@ -15,38 +13,58 @@
   margin: 0 auto;
   width: 100%;
 }
-#resultat table {
+.select-column {
+  margin-bottom: 10px;
+  text-align: right;
+}
+@media only screen and (max-width: 768px) {
+  .select-column {
+    text-align: left;
+  }
+}
+.label-tab {
+  top: 10px;
+}
+@media only screen and (max-width: 768px) {
+  .label-tab {
+    top: 0px;
+  }
+}
+table:not(#footer) {
   width: 100%;
   border-collapse: collapse;
 }
-#resultat table tr:nth-of-type(odd) {
+table:not(#footer) tr:nth-of-type(odd) {
   background: #eee;
 }
-#resultat table tbody,
-#resultat table thead,
-#resultat table tfoot,
-#resultat table th,
-#resultat table td {
+table:not(#footer) tbody,
+table:not(#footer) thead,
+table:not(#footer) tfoot,
+table:not(#footer) th,
+table:not(#footer) td {
   margin: 0;
   padding: 0;
 }
-#resultat table td {
+table:not(#footer) td {
   word-wrap: break-word;
 }
-#resultat table th,
-#resultat table td {
+table:not(#footer) th,
+table:not(#footer) td {
   padding: 6px;
   border: 1px solid #ccc;
   text-align: left;
   display: table-cell;
   vertical-align: inherit;
 }
-#resultat table th {
+table:not(#footer) th {
   background: #333;
   color: white;
   font-weight: bold;
 }
-#resultat table tfoot td {
+table:not(#footer) tfoot td {
   text-align: center;
+}
+.footer {
+  margin-bottom: 20px;
 }
 /*# sourceMappingURL=main.css.map */
