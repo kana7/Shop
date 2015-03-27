@@ -18,10 +18,14 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="/css/oga_popup.css"/>
         <link rel="stylesheet" href="/css/popup/popupMain.css" type="text/css" media="screen"/>
         <link rel="stylesheet" href="css/main.css" type="text/css"/>
+        <link rel="stylesheet" href="css/selectColumn.css" type="text/css"/>
         <!--
         <link rel="stylesheet" href="css/responsive-table.css" type="text/css"/>
         -->
-        
+        <!--
+        <link rel="stylesheet" href="css/responsive-table.css" type="text/css"/>
+        -->
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -116,711 +120,713 @@ and open the template in the editor.
                     select * from LOL_LOL_PHONE where (iSubscriptionId in (select idSubscription from OSSORDERSUBSCRIPTION,OSSORDER,OSSCLIENT,OSSARTICLE where OSSORDERSUBSCRIPTION.idMerchant=1 and OSSORDER.idMerchant=1 and OSSCLIENT.idMerchant=1 and OSSARTICLE.idMerchant=1 and OSSORDER.iClientUsage=0 and OSSORDERSUBSCRIPTION.idOrder=OSSORDER.idOrder and azUsage like '1_______' and OSSORDERSUBSCRIPTION.idClient=OSSCLIENT.idClient and OSSORDERSUBSCRIPTION.idArticle=OSSARTICLE.idArticle and azOrderNumber like '201503%' and OSSORDERSUBSCRIPTION.iStatus<=99 order by idSubscription desc))order by iSubscriptionID desc
                     <p>
                     -->
-                    <table id="table-degroupage" class="table fixed-header" border=1 cellpadding=2 cellspacing=0>
-                        <thead>
-                            <tr>
-                                <th bgcolor="#CCCCCC">Nom Client</th>
-                                <th bgcolor="#CCCCCC">Abonnement</th>
-                                <th bgcolor="#CCCCCC">ID Dégrou</th>
-                                <th bgcolor="#CCCCCC">Numéro</th>
-                                <th bgcolor="#CCCCCC">Etat Abonnement</th>
-                                <th bgcolor="#CCCCCC">Début</th>
-                                <th bgcolor="#CCCCCC">Fin</th>
-                                <th bgcolor="#CCCCCC"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr bgcolor="#FFFFFF">
-                                <td data-label="Nom Client"><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296929">BTO SRL </A><br></td>
-                                <td data-label="Abonnement">LOL Komplett Phone<br></td>
-                                <td data-label="id Dégrou"><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td data-label="numero">
-                                    <BR>
-                                </td>
-                                <td data-label="Etat Abonnement"><i>command&eacute; d&apos;avance</i><br></td>
-                                <td data-label="debut" align="right">
-                                    --
-                                </td>
-                                <td data-label="fin">
-                                    --
-                                </td>
-                                <td data-label="">
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=215007&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=176231">Fernandes Tommy </A><br></td>
-                                <td>LOL Komplett Phone VDSL<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=215003&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296918">IMMOMOD S.A, KRIVKOV Sergei </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214996&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296921">Ntibakunze Jean-Pierre </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214990&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=22957">Radrizzi Gilles </A><br></td>
-                                <td>LOL Komplett Phone Fiber 2013<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214978&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296905">Schmitz Natacha </A><br></td>
-                                <td>LOL Komplett Phone VDSL<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214970&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=241637">Sobhani Sheida </A><br></td>
-                                <td>LOL Komplett Phone VDSL<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214965&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296883">ISEKI Takeru </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214961&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296896">Evers Vincent </A><br></td>
-                                <td>LOL Phone 1<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214956&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296895">Butaud Stephane </A><br></td>
-                                <td>LOL Komplett Phone Fiber 2013<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214952&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296889">CUESTA Cynthia </A><br></td>
-                                <td>Orange Téléphonie dégroupée ADSL (PSTN)<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214944&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296888">Giusy Totaro </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214941&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296887">CZAPOR Arkadiusz </A><br></td>
-                                <td>Orange Téléphonie VDSL (VOIP)<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214936&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296884">DEZSO Marianna </A><br></td>
-                                <td>Orange Téléphonie dégroupée ADSL (PSTN)<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214932&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=267452">Alessandro DALLA TORRE </A><br></td>
-                                <td>Orange Téléphonie dégroupée ADSL (PSTN)<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214926&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296877">Da Piedade Francisco Antonio Jorge </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">214915</FONT><br></td>
-                                <td>
-                                    27918636<BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214914&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=145054">Klein Mireille </A><br></td>
-                                <td>LOL Komplett Phone Fiber 2013<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214910&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296878">Golay Prem </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214908&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296875">Augusto FINDA FUDICIAIRE FINDA </A><br></td>
-                                <td>Orange Téléphonie dégroupée ADSL (PSTN)<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214904&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296142">Fregonese Chiara </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214901&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296872">NOVALIC Suad </A><br></td>
-                                <td>LOL Komplett Phone Fiber 2013<br></td>
-                                <td><FONT COLOR="#888888">214897</FONT><br></td>
-                                <td>
-                                    27918643<BR>
-                                </td>
-                                <td><FONT COLOR="#006600">pr&ecirc;t &agrave; activer</FONT><br></td>
-                                <td align="right">
-                                    2/4/2015
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214896&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=204501">Lima De Sa Vasco Andre </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214892&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296864">Quiaios Gabriel </A><br></td>
-                                <td>LOL Komplett Phone Fiber 2013<br></td>
-                                <td><FONT COLOR="#888888">214888</FONT><br></td>
-                                <td>
-                                    27918635<BR>
-                                </td>
-                                <td><FONT COLOR="#006600">pr&ecirc;t &agrave; activer</FONT><br></td>
-                                <td align="right">
-                                    7/4/2015
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214887&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Rouffart Isabelle </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296809">Queiroz Carvalho Carlos Eduardo </A><br></td>
-                                <td>LOL Komplett Phone Fiber 2013<br></td>
-                                <td><FONT COLOR="#888888">214879</FONT><br></td>
-                                <td>
-                                    429708<BR>
-                                </td>
-                                <td><FONT COLOR="#006600">pr&ecirc;t &agrave; activer</FONT><br></td>
-                                <td align="right">
-                                    1/4/2015
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214878&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                            <tr bgcolor="#FFFFFF">
-                                <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
-                                <td>LOL Komplett Phone<br></td>
-                                <td><FONT COLOR="#888888">n.a.</FONT><br></td>
-                                <td>
-                                    <BR>
-                                </td>
-                                <td><i>command&eacute; d&apos;avance</i><br></td>
-                                <td align="right">
-                                    --
-                                </td>
-                                <td>
-                                    --
-                                </td>
-                                <td>
-                                    <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td class="text-center" colspan=11>Nb d'inscriptions trouvées : <b>260</b></td>
-                            </tr>
-                        </tfoot>
-                    </table>
+                    <div class="table-wrapper">
+                        <table id="table-degroupage" class="table fixed-header display" border=1 cellpadding=2 cellspacing=0>
+                            <thead>
+                                <tr>
+                                    <th bgcolor="#CCCCCC">Nom Client</th>
+                                    <th bgcolor="#CCCCCC">Abonnement</th>
+                                    <th bgcolor="#CCCCCC">ID Dégrou</th>
+                                    <th bgcolor="#CCCCCC">Numéro</th>
+                                    <th bgcolor="#CCCCCC">Etat Abonnement</th>
+                                    <th bgcolor="#CCCCCC">Début</th>
+                                    <th bgcolor="#CCCCCC">Fin</th>
+                                    <th bgcolor="#CCCCCC">Option</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr bgcolor="#FFFFFF">
+                                    <td data-label="Nom Client"><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296929">BTO SRL </A><br></td>
+                                    <td data-label="Abonnement">LOL Komplett Phone<br></td>
+                                    <td data-label="id Dégrou"><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td data-label="numero">
+                                        <BR>
+                                    </td>
+                                    <td data-label="Etat Abonnement"><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td data-label="debut" align="right">
+                                        --
+                                    </td>
+                                    <td data-label="fin">
+                                        --
+                                    </td>
+                                    <td data-label="">
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=215007&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=176231">Fernandes Tommy </A><br></td>
+                                    <td>LOL Komplett Phone VDSL<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=215003&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296918">IMMOMOD S.A, KRIVKOV Sergei </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214996&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296921">Ntibakunze Jean-Pierre </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214990&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=22957">Radrizzi Gilles </A><br></td>
+                                    <td>LOL Komplett Phone Fiber 2013<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214978&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296905">Schmitz Natacha </A><br></td>
+                                    <td>LOL Komplett Phone VDSL<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214970&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=241637">Sobhani Sheida </A><br></td>
+                                    <td>LOL Komplett Phone VDSL<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214965&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296883">ISEKI Takeru </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214961&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296896">Evers Vincent </A><br></td>
+                                    <td>LOL Phone 1<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214956&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296895">Butaud Stephane </A><br></td>
+                                    <td>LOL Komplett Phone Fiber 2013<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214952&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296889">CUESTA Cynthia </A><br></td>
+                                    <td>Orange Téléphonie dégroupée ADSL (PSTN)<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214944&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296888">Giusy Totaro </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214941&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296887">CZAPOR Arkadiusz </A><br></td>
+                                    <td>Orange Téléphonie VDSL (VOIP)<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214936&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296884">DEZSO Marianna </A><br></td>
+                                    <td>Orange Téléphonie dégroupée ADSL (PSTN)<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214932&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=267452">Alessandro DALLA TORRE </A><br></td>
+                                    <td>Orange Téléphonie dégroupée ADSL (PSTN)<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214926&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296877">Da Piedade Francisco Antonio Jorge </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">214915</FONT><br></td>
+                                    <td>
+                                        27918636<BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214914&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=145054">Klein Mireille </A><br></td>
+                                    <td>LOL Komplett Phone Fiber 2013<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214910&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296878">Golay Prem </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214908&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296875">Augusto FINDA FUDICIAIRE FINDA </A><br></td>
+                                    <td>Orange Téléphonie dégroupée ADSL (PSTN)<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214904&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296142">Fregonese Chiara </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214901&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296872">NOVALIC Suad </A><br></td>
+                                    <td>LOL Komplett Phone Fiber 2013<br></td>
+                                    <td><FONT COLOR="#888888">214897</FONT><br></td>
+                                    <td>
+                                        27918643<BR>
+                                    </td>
+                                    <td><FONT COLOR="#006600">pr&ecirc;t &agrave; activer</FONT><br></td>
+                                    <td align="right">
+                                        2/4/2015
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214896&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=204501">Lima De Sa Vasco Andre </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214892&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296864">Quiaios Gabriel </A><br></td>
+                                    <td>LOL Komplett Phone Fiber 2013<br></td>
+                                    <td><FONT COLOR="#888888">214888</FONT><br></td>
+                                    <td>
+                                        27918635<BR>
+                                    </td>
+                                    <td><FONT COLOR="#006600">pr&ecirc;t &agrave; activer</FONT><br></td>
+                                    <td align="right">
+                                        7/4/2015
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214887&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Rouffart Isabelle </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=296809">Queiroz Carvalho Carlos Eduardo </A><br></td>
+                                    <td>LOL Komplett Phone Fiber 2013<br></td>
+                                    <td><FONT COLOR="#888888">214879</FONT><br></td>
+                                    <td>
+                                        429708<BR>
+                                    </td>
+                                    <td><FONT COLOR="#006600">pr&ecirc;t &agrave; activer</FONT><br></td>
+                                    <td align="right">
+                                        1/4/2015
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214878&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><A href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&Param=117868">Mr Test </A><br></td>
+                                    <td>LOL Komplett Phone<br></td>
+                                    <td><FONT COLOR="#888888">n.a.</FONT><br></td>
+                                    <td>
+                                        <BR>
+                                    </td>
+                                    <td><i>command&eacute; d&apos;avance</i><br></td>
+                                    <td align="right">
+                                        --
+                                    </td>
+                                    <td>
+                                        --
+                                    </td>
+                                    <td>
+                                        <A href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&SqlDB=ossLOLShop&xid=1427300745jmmekilhjinjgimdfhefibgagmodjlhibdgemjicbkcfbmlkbknoap&_SubscriptionID=214884&_MerchantId=1&_CustomScriptId=84">View</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td class="text-center" colspan="8">Nb d'inscriptions trouvées : <b>260</b></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
                     <input type="hidden" name="_Where" value="where (iSubscriptionId in (select idSubscription from OSSORDERSUBSCRIPTION,OSSORDER,OSSCLIENT,OSSARTICLE where OSSORDERSUBSCRIPTION.idMerchant=1 and OSSORDER.idMerchant=1 and OSSCLIENT.idMerchant=1 and OSSARTICLE.idMerchant=1 and OSSORDER.iClientUsage=0 and OSSORDERSUBSCRIPTION.idOrder=OSSORDER.idOrder and azUsage like '1_______' and OSSORDERSUBSCRIPTION.idClient=OSSCLIENT.idClient and OSSORDERSUBSCRIPTION.idArticle=OSSARTICLE.idArticle and azOrderNumber like '201503%' and OSSORDERSUBSCRIPTION.iStatus<=99 order by idSubscription desc))">
                     <input type="hidden" name="_Order" value="order by iSubscriptionID desc">
                 </div>
@@ -838,6 +844,7 @@ and open the template in the editor.
         </div>
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.js"></script>
+        <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.js"></script>
         <script src="js/jquery.floatThead.js"></script>
         <script src="js/columnSelection.js"></script>
         <script type="text/javascript" src="/js/popup/popup.js"></script>
@@ -851,10 +858,15 @@ and open the template in the editor.
         <script src="/js/menu.js"></script>
         <script>
                 $(function () {
-                    $('table.fixed-header').floatThead({
-                        useAbsolutePositioning: true //the default value
+                    $('table').DataTable({
+                        searching: false,
+                        paging: false,
+                        sorting:false
                     });
-                    
+                     $('table.fixed-header').floatThead({
+                     useAbsolutePositioning: true //the default value
+                     });
+                     
                     $("#footerDiv").css("top", $("#site").height() + $("#menu").height() + 10 + 'px');
                     $(window).resize(function () {
                         $("#footerDiv").css("top", $("#site").height() + $("#menu").height() + 10 + 'px');

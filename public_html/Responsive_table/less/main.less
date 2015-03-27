@@ -10,6 +10,7 @@
         }
     }
 }
+
 #resultat{
     margin: 0 auto;
     width: 100%;
@@ -29,20 +30,37 @@
     }
 }
 
+.table-wrapper{
+    overflow-x: scroll;
+    display: block;
+}
+table{
+    table-layout: auto;
+}
+
 table:not(#footer){
     width: 100%;
     border-collapse: collapse;
+    display:table;
     tr:nth-of-type(odd){ 
         background: #eee; 
+    }
+    tr:hover{
+        background: #CCE2FF; 
     }
     tbody,thead, tfoot,th,td{
         margin: 0;
         padding: 0;
     }
+
     td{
-        word-wrap: break-word;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
+
     th,td{
+        white-space: normal;
         padding: 6px;
         border: 1px solid #ccc; 
         text-align: left; 

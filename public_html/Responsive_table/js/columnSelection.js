@@ -6,11 +6,11 @@ $(function () {
 //Create column selection buttons
     var numberCol;
     var nameCol = [];
-    
+
     $('table thead tr th').each(function () {
         if ((isEmpty($(this)))) {
-            nameCol[$(this).index()] = "col "+($(this).index()+1);
-        }else{
+            nameCol[$(this).index()] = "col " + ($(this).index() + 1);
+        } else {
             nameCol[$(this).index()] = $(this).text();
         }
     });
@@ -23,16 +23,18 @@ $(function () {
 
     $('div.select-column label input').click(function () {
         $(this).parent().toggleClass('active');
-        numberCol=$(this).attr('id');
-        console.log(numberCol);
-        $('table.fixed-header thead tr th').eq(numberCol).toggle(500);
+        numberCol = $(this).attr('id');
         $('table.fixed-header tbody tr').each(function () {
-            $(this).children().eq(numberCol).toggle(500);
+            $(this).children().eq(numberCol).toggle();
         });
+        $('table.fixed-header thead tr th').eq(numberCol).toggle(function() {
+            $('tfoot tr td').attr("colspan", $("table.fixed-header thead tr th:visible").size());
+            if (($("table.fixed-header thead tr th:visible").size()) === 0) {
+                $('tfoot tr td').hide();
+            } else {
+                $('tfoot tr td').show();
+            }
+        });
+        console.log($("table.fixed-header thead tr th:visible").length);
     });
 });
-/*
- < label class = "btn btn-primary" >
- < input type = "checkbox" > Option 1
- < /label>
- */

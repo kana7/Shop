@@ -63,7 +63,7 @@
     content: "Début";
   }
   #resultat table tbody td:nth-of-type(8):before {
-    content: "";
+    content: "Option";
   }
 }
 /*# sourceMappingURL=responsive-table.css.map */

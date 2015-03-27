@@ -30,12 +30,23 @@
     top: 0px;
   }
 }
+.table-wrapper {
+  overflow-x: scroll;
+  display: block;
+}
+table {
+  table-layout: auto;
+}
 table:not(#footer) {
   width: 100%;
   border-collapse: collapse;
+  display: table;
 }
 table:not(#footer) tr:nth-of-type(odd) {
   background: #eee;
+}
+table:not(#footer) tr:hover {
+  background: #CCE2FF;
 }
 table:not(#footer) tbody,
 table:not(#footer) thead,
@@ -46,10 +57,13 @@ table:not(#footer) td {
   padding: 0;
 }
 table:not(#footer) td {
-  word-wrap: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 table:not(#footer) th,
 table:not(#footer) td {
+  white-space: normal;
   padding: 6px;
   border: 1px solid #ccc;
   text-align: left;
