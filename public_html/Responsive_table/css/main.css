@@ -34,13 +34,8 @@
   overflow-x: scroll;
   display: block;
 }
-table {
-  table-layout: auto;
-}
 table:not(#footer) {
-  width: 100%;
   border-collapse: collapse;
-  display: table;
 }
 table:not(#footer) tr:nth-of-type(odd) {
   background: #eee;
@@ -74,6 +69,7 @@ table:not(#footer) th {
   background: #333;
   color: white;
   font-weight: bold;
+  white-space: nowrap;
 }
 table:not(#footer) tfoot td {
   text-align: center;

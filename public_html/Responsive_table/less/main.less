@@ -35,13 +35,12 @@
     display: block;
 }
 table{
-    table-layout: auto;
+    //table-layout: auto;
 }
 
 table:not(#footer){
-    width: 100%;
     border-collapse: collapse;
-    display:table;
+    //display:table;
     tr:nth-of-type(odd){ 
         background: #eee; 
     }
@@ -70,7 +69,8 @@ table:not(#footer){
     th { 
         background: #333; 
         color: white; 
-        font-weight: bold; 
+        font-weight: bold;
+        white-space: nowrap;
     }
     tfoot{
         td{
