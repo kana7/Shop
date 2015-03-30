@@ -2,6 +2,7 @@ table {
     width: 100%;
     font-size: 1.2em;
 }
+
 thead th {
     white-space: nowrap;
     border-bottom: 1px solid #ccc;
@@ -16,7 +17,7 @@ td:first-child {
     text-align: left;
 }
 tbody th, td {
-    border-bottom: 1px solid #e6e6e6;
+    border-top: 1px solid #e6e6e6;
 }
 
 .enhanced th,
@@ -28,37 +29,60 @@ tbody th, td {
     display: table-cell;
 }
 
-@media screen and (min-width: 500px) {
-   .enhanced th.optional,
-   .enhanced td.optional {
-      display: table-cell;
-   }
+@media screen and (min-width: 762px) {
+    .enhanced th.optional,
+    .enhanced td.optional {
+        display: table-cell;
+    }
 }
 
-@media screen and (min-width: 800px) {
-   .enhanced th,
-   .enhanced td {
-      display: table-cell;
-   }
+@media screen and (min-width: 992px) {
+    .enhanced th,
+    .enhanced td {
+        display: table-cell;
+    }
 }
 
 .table-menu-wrapper {
-   position: absolute;
-   top: 5em;
-   right: 13px;
+    /* position: absolute; */
+    /* top: 5em; */
+    /* right: 13px; */
+}
+
+div.table-menu ul{
+    list-style: none;
+    width: 100%;    
+    padding: 15px;
+    /* height: 100%; */
+    /* margin-bottom: 45px; */
+}
+div.table-menu li{
+    width: 100%;    
+    margin-bottom: 10px;
+    height: 20px;
+    /* padding: 5px; */
+}
+div.table-menu li label{
+    float: left;
+    display: inline-block;
+    /* width: 150px; */
+}
+div.table-menu li input{
+    float: right;
+    display: inline-block;
 }
 
 .table-menu {
-   position: absolute;
-   right: 0;
-   left: auto;
-   background-color: #fff;
-   padding: 10px;
-   border: 1px solid #ccc;
-   font-size: 1.2em;
-   width: 14em;
+    position: absolute;
+    /* right: 0; */
+    left: auto;
+    background-color: #fff;
+    padding: 0;
+    border: 1px solid #ccc;
+    font-size: 1.2em;
+    width: 14em;
 }
 .table-menu-hidden {
-   left: -999em;
-   right: auto;
+    left: -999em;
+    right: auto;
 }
