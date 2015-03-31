@@ -20,25 +20,25 @@ tbody th, td {
     border-top: 1px solid #e6e6e6;
 }
 
-.enhanced th,
-.enhanced td {
+.hideShow th,
+.hideShow td {
     display: none;
 }
-.enhanced th.essential,
-.enhanced td.essential {
+.hideShow th.essential,
+.hideShow td.essential {
     display: table-cell;
 }
 
 @media screen and (min-width: 762px) {
-    .enhanced th.optional,
-    .enhanced td.optional {
+    .hideShow th.optional,
+    .hideShow td.optional {
         display: table-cell;
     }
 }
 
 @media screen and (min-width: 992px) {
-    .enhanced th,
-    .enhanced td {
+    .hideShow th,
+    .hideShow td {
         display: table-cell;
     }
 }
