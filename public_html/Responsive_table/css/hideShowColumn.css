@@ -1,17 +1,17 @@
 /*
 
 Pour la fonction hide/show column, ajouter les classes "persist", "essential", "optional" pour modifier
-les prioritÃ©s d'affichage en fonction du mÃ©dia au chargement de la page.
+les priorites d'affichage en fonction du mÃ©dia au chargement de la page.
 
 Ajouter ces classes dans les les balises <th> dans le <thead> de votre <table>
 
 persist: n'ajoute pas de checkbox dans le menu pour cette colonne. Il ne sera donc pas possible de cacher la colonne possÃ©dant cette classe.
 
-essential: une colonne de classe "essential" restera toujours affichÃ©e peut importe le mÃ©dia (il est possible de la masquÃ©e via le menu).
+essential: une colonne de classe "essential" restera toujours affichÃ©e peut importe le media (il est possible de la masquÃ©e via le menu).
 
-optional: une colonne de classe "optional" sera affichÃ© en mode tablette(<992px) mais masquÃ©e dans les plus petits formats (<762px) (il est possible de la masquÃ©e via le menu).
+optional: une colonne de classe "optional" sera affichee en mode tablette(<992px) mais masquee dans les plus petits formats (<762px) (il est possible de la masquee via le menu).
 
-une colonne ne possÃ©dant pas ni optional, ni essential sera masquÃ©e si l'affichage n'est pas sur desktop.
+une colonne ne possedant pas ni optional, ni essential sera masquée si l'affichage n'est pas sur desktop.
 */
 
 
@@ -20,15 +20,31 @@ une colonne ne possÃ©dant pas ni optional, ni essential sera masquÃ©e si l'a
 .hideShow td {
     display: none;
 }
+
 .hideShow th.essential,
 .hideShow td.essential {
     display: table-cell;
+}
+
+@media screen and (max-width: 762px) {
+    .hideShow th.optional,
+    .hideShow td.optional {
+        display: none;
+    }
+    .hideShow th,
+    .hideShow td {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 762px) {
     .hideShow th.optional,
     .hideShow td.optional {
         display: table-cell;
+    }
+    .hideShow th,
+    .hideShow td {
+        display: none;
     }
 }
 
@@ -72,7 +88,7 @@ div.table-menu li input{
     font-size: 1.2em;
     width: 14em;
     z-index: 30;
-    
+
 }
 .table-menu-hidden {
     left: -999em;
