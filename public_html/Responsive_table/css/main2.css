@@ -43,29 +43,24 @@ tbody th, td {
     }
 }
 
-.table-menu-wrapper {
-    /* position: absolute; */
-    /* top: 5em; */
-    /* right: 13px; */
+div.submit input{
+    margin-right: 5px;
+    margin-bottom: 10px;
 }
 
 div.table-menu ul{
     list-style: none;
     width: 100%;    
     padding: 15px;
-    /* height: 100%; */
-    /* margin-bottom: 45px; */
 }
 div.table-menu li{
     width: 100%;    
     margin-bottom: 10px;
     height: 20px;
-    /* padding: 5px; */
 }
 div.table-menu li label{
     float: left;
     display: inline-block;
-    /* width: 150px; */
 }
 div.table-menu li input{
     float: right;
@@ -74,7 +69,6 @@ div.table-menu li input{
 
 .table-menu {
     position: absolute;
-    /* right: 0; */
     left: auto;
     background-color: #fff;
     padding: 0;
@@ -85,4 +79,20 @@ div.table-menu li input{
 .table-menu-hidden {
     left: -999em;
     right: auto;
+}
+
+.wrapper{
+    overflow-x: scroll;
+}
+
+#footer{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-top: 1px solid #E6E6E6;
+     padding-top: 7px;
+}
+
+.margin{
+    margin-top: 15px;
 }

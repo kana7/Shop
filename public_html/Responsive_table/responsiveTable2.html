@@ -89,599 +89,597 @@
                             </SELECT>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row margin">
                         <div class="col-md-6 submit">
                             <input class="btn btn-default" type="button" value="Vue simple" onClick="SearchGo(0)"> 
-                            <input class="btn btn-default" type="button" value="Vue detaillee" onClick="SearchGo(1)">
+                            <input class="btn btn-default" type="button" value="Vue detaillée" onClick="SearchGo(1)">
                         </div>
                     </div>
                 </div>
-            </p><p>
-            Affichage réduit : <b>25</b> plus récentes inscriptions
-        </p><p>
-            <!--
-            select * from LOL_LOL_PHONE where (iSubscriptionId in (select idSubscription from OSSORDERSUBSCRIPTION,OSSORDER,OSSCLIENT,OSSARTICLE where OSSORDERSUBSCRIPTION.idMerchant=1 and OSSORDER.idMerchant=1 and OSSCLIENT.idMerchant=1 and OSSARTICLE.idMerchant=1 and OSSORDER.iClientUsage=0 and OSSORDERSUBSCRIPTION.idOrder=OSSORDER.idOrder and azUsage like '1_______' and OSSORDERSUBSCRIPTION.idClient=OSSCLIENT.idClient and OSSORDERSUBSCRIPTION.idArticle=OSSARTICLE.idArticle and azOrderNumber like '201503%' and OSSORDERSUBSCRIPTION.iStatus<=99 order by idSubscription desc))order by iSubscriptionID desc
-            <p>
-            -->
-        </p>
-        <div class="table-wrapper">
-            <table cellspacing="0" class="tableau">
-                <thead>
-                    <tr>
-                        <th bgcolor="#CCCCCC" class="essential" >Nom Client</th>
-                        <th bgcolor="#CCCCCC" class="essential" >Abonnement</th>
-                        <th bgcolor="#CCCCCC" class="optional" >ID Dégrou</th>
-                        <th bgcolor="#CCCCCC" class="optional" >Numéro</th>
-                        <th bgcolor="#CCCCCC" >Etat Abonnement</th>
-                        <th bgcolor="#CCCCCC" >Début</th>
-                        <th bgcolor="#CCCCCC" >Fin</th>
-                        <th bgcolor="#CCCCCC">Option</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=115262">Sat TV S.à r. l. </a><br></td>
-                        <td >LOL Komplett Phone Fiber 2013<br></td>
-                        <td ><font color="#888888">n.a.</font><br></td>
-                        <td >
-                            <br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218216&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=298704">Aigars Akmentins </a><br></td>
-                        <td >LOL Phone 1<br></td>
-                        <td ><font color="#888888">n.a.</font><br></td>
-                        <td >
-                            <br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218206&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=298697">Muhic Esad </a><br></td>
-                        <td >LOL Komplett Phone<br></td>
-                        <td ><font color="#888888">n.a.</font><br></td>
-                        <td >
-                            <br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218197&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=298688">Fretz Jean </a><br></td>
-                        <td >Orange Téléphonie dégroupée VDSL (VOIP)<br></td>
-                        <td ><font color="#888888">n.a.</font><br></td>
-                        <td >
-                            <br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218188&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=298682">LDHOME, Delmer Lauriane </a><br></td>
-                        <td >LOL Komplett Phone Fiber 2013<br></td>
-                        <td ><font color="#888888">n.a.</font><br></td>
-                        <td >
-                            <br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218185&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=298681">Peiro Sebastien </a><br></td>
-                        <td >Orange Téléphonie dégroupée ADSL (PSTN)<br></td>
-                        <td ><font color="#888888">n.a.</font><br></td>
-                        <td >
-                            <br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218182&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=298680">HEIN Etienne </a><br></td>
-                        <td >LOL Komplett Phone VDSL<br></td>
-                        <td ><font color="#888888">n.a.</font><br></td>
-                        <td >
-                            <br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218174&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=298677">POTENZANO Giuseppe </a><br></td>
-                        <td >LOL Komplett Phone<br></td>
-                        <td ><font color="#888888">n.a.</font><br></td>
-                        <td >
-                            <br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218169&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=298671">Ciszewicz Sacha </a><br></td>
-                        <td >Orange Téléphonie VDSL (VOIP)<br></td>
-                        <td ><font color="#888888">n.a.</font><br></td>
-                        <td >
-                            <br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218163&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=298666">Niemi Juha </a><br></td>
-                        <td >Orange Téléphonie VDSL (VOIP)<br></td>
-                        <td ><font color="#888888">n.a.</font><br></td>
-                        <td >
-                            <br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218161&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=298664">Gerges Jean </a><br></td>
-                        <td >Orange Téléphonie dégroupée ADSL (PSTN)<br></td>
-                        <td ><font color="#888888">n.a.</font><br></td>
-                        <td >
-                            <br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218157&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=60005">Keiser Sonja </a><br></td>
-                        <td >LOL Komplett Phone Fiber 2013<br></td>
-                        <td ><font color="#888888">n.a.</font><br></td>
-                        <td >
-                            <br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218153&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=208386">Fondation Pro Familia </a><br></td>
-                        <td >LOL Komplett Phone<br></td>
-                        <td ><font color="#888888">n.a.</font><br></td>
-                        <td >
-                            <br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=216837&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=158759">Back Steve </a><br></td>
-                        <td >LOL Komplett Phone Fiber 2013<br></td>
-                        <td ><font color="#888888">216833</font><br></td>
-                        <td >
-                            27995407<br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=216832&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=297917">Ferreira Maria de Fatima </a><br></td>
-                        <td >LOL Komplett Phone<br></td>
-                        <td ><font color="#888888">n.a.</font><br></td>
-                        <td >
-                            <br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=216830&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=60005">Keiser Sonja </a><br></td>
-                        <td >LOL Komplett Phone VDSL<br></td>
-                        <td ><font color="#888888">n.a.</font><br></td>
-                        <td >
-                            <br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=216826&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=297869">KLOSKOWICZ Anna </a><br></td>
-                        <td >LOL Komplett Phone Fiber 2013<br></td>
-                        <td ><font color="#888888">n.a.</font><br></td>
-                        <td >
-                            <br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=216819&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=297870">Lange François </a><br></td>
-                        <td >LOL Komplett Phone Fiber 2013<br></td>
-                        <td ><font color="#888888">216817</font><br></td>
-                        <td >
-                            26621536<br>
-                        </td>
-                        <td ><font color="#006600">prêt à activer</font><br></td>
-                        <td  align="right">
-                            13/4/2015
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=216816&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=297867">Shop Orange Wemperhardt, Borges Sergio </a><br></td>
-                        <td >Orange Téléphonie VDSL (VOIP)<br></td>
-                        <td ><font color="#888888">216808</font><br></td>
-                        <td >
-                            27918661<br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=216809&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=280071">BRITTON Wiley Jeffrey </a><br></td>
-                        <td >Orange Téléphonie VDSL (VOIP)<br></td>
-                        <td ><font color="#888888">n.a.</font><br></td>
-                        <td >
-                            <br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=216792&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=297835">Kraus Peter </a><br></td>
-                        <td >Orange Téléphonie dégroupée ADSL (ISDN)<br></td>
-                        <td ><font color="#888888">n.a.</font><br></td>
-                        <td >
-                            <br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=216780&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=297097">Baruch Vulfs </a><br></td>
-                        <td >Orange Téléphonie dégroupée ADSL (PSTN)<br></td>
-                        <td ><font color="#888888">n.a.</font><br></td>
-                        <td >
-                            <br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=215121&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#FFFFFF">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=287486">Marie HELIOT - Savrimootoo </a><br></td>
-                        <td >Orange Téléphonie dégroupée ADSL (PSTN)<br></td>
-                        <td ><font color="#888888">n.a.</font><br></td>
-                        <td >
-                            <br>
-                        </td>
-                        <td ><i>commandé d'avance</i><br></td>
-                        <td  align="right">
-                            --
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=215095&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#d8d8ff">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=297019">MARY Vincent </a><br></td>
-                        <td >LOL Komplett Phone<br></td>
-                        <td ><font color="#888888">215088</font><br></td>
-                        <td >
-                            24527188<br>
-                        </td>
-                        <td ><font color="#006600">prêt à activer</font><br></td>
-                        <td  align="right">
-                            9/4/2015
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=215087&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr bgcolor="#ffd8d8">
-                        <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=297018">MARY Vincent </a><br></td>
-                        <td >LOL Komplett Phone<br></td>
-                        <td ><font color="#888888">215084</font><br></td>
-                        <td >
-                            27918658<br>
-                        </td>
-                        <td ><font color="#006600">prêt à activer</font><br></td>
-                        <td  align="right">
-                            13/4/2015
-                        </td>
-                        <td >
-                            --
-                        </td>
-                        <td >
-                            <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=215083&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="11">Nb d'inscriptions trouvées : <b>296</b></td>
-                    </tr>
-                </tbody></table>
+                <p>
+                    Affichage réduit : <b>25</b> plus récentes inscriptions
+                </p>
+                <!--
+                select * from LOL_LOL_PHONE where (iSubscriptionId in (select idSubscription from OSSORDERSUBSCRIPTION,OSSORDER,OSSCLIENT,OSSARTICLE where OSSORDERSUBSCRIPTION.idMerchant=1 and OSSORDER.idMerchant=1 and OSSCLIENT.idMerchant=1 and OSSARTICLE.idMerchant=1 and OSSORDER.iClientUsage=0 and OSSORDERSUBSCRIPTION.idOrder=OSSORDER.idOrder and azUsage like '1_______' and OSSORDERSUBSCRIPTION.idClient=OSSCLIENT.idClient and OSSORDERSUBSCRIPTION.idArticle=OSSARTICLE.idArticle and azOrderNumber like '201503%' and OSSORDERSUBSCRIPTION.iStatus<=99 order by idSubscription desc))order by iSubscriptionID desc
+                <p>
+                -->
+
+                <div class="table-wrapper">
+                    <table cellspacing="0" class="tableau margin">
+                        <thead>
+                            <tr>
+                                <th bgcolor="#CCCCCC" class="essential" >Nom Client</th>
+                                <th bgcolor="#CCCCCC" class="essential" >Abonnement</th>
+                                <th bgcolor="#CCCCCC" class="optional" >ID Dégrou</th>
+                                <th bgcolor="#CCCCCC" class="optional" >Numéro</th>
+                                <th bgcolor="#CCCCCC" >Etat Abonnement</th>
+                                <th bgcolor="#CCCCCC" >Début</th>
+                                <th bgcolor="#CCCCCC" >Fin</th>
+                                <th bgcolor="#CCCCCC">Option</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=115262">Sat TV S.à r. l. </a><br></td>
+                                <td >LOL Komplett Phone Fiber 2013<br></td>
+                                <td ><font color="#888888">n.a.</font><br></td>
+                                <td >
+                                    <br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218216&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=298704">Aigars Akmentins </a><br></td>
+                                <td >LOL Phone 1<br></td>
+                                <td ><font color="#888888">n.a.</font><br></td>
+                                <td >
+                                    <br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218206&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=298697">Muhic Esad </a><br></td>
+                                <td >LOL Komplett Phone<br></td>
+                                <td ><font color="#888888">n.a.</font><br></td>
+                                <td >
+                                    <br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218197&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=298688">Fretz Jean </a><br></td>
+                                <td >Orange Téléphonie dégroupée VDSL (VOIP)<br></td>
+                                <td ><font color="#888888">n.a.</font><br></td>
+                                <td >
+                                    <br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218188&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=298682">LDHOME, Delmer Lauriane </a><br></td>
+                                <td >LOL Komplett Phone Fiber 2013<br></td>
+                                <td ><font color="#888888">n.a.</font><br></td>
+                                <td >
+                                    <br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218185&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=298681">Peiro Sebastien </a><br></td>
+                                <td >Orange Téléphonie dégroupée ADSL (PSTN)<br></td>
+                                <td ><font color="#888888">n.a.</font><br></td>
+                                <td >
+                                    <br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218182&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=298680">HEIN Etienne </a><br></td>
+                                <td >LOL Komplett Phone VDSL<br></td>
+                                <td ><font color="#888888">n.a.</font><br></td>
+                                <td >
+                                    <br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218174&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=298677">POTENZANO Giuseppe </a><br></td>
+                                <td >LOL Komplett Phone<br></td>
+                                <td ><font color="#888888">n.a.</font><br></td>
+                                <td >
+                                    <br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218169&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=298671">Ciszewicz Sacha </a><br></td>
+                                <td >Orange Téléphonie VDSL (VOIP)<br></td>
+                                <td ><font color="#888888">n.a.</font><br></td>
+                                <td >
+                                    <br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218163&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=298666">Niemi Juha </a><br></td>
+                                <td >Orange Téléphonie VDSL (VOIP)<br></td>
+                                <td ><font color="#888888">n.a.</font><br></td>
+                                <td >
+                                    <br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218161&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=298664">Gerges Jean </a><br></td>
+                                <td >Orange Téléphonie dégroupée ADSL (PSTN)<br></td>
+                                <td ><font color="#888888">n.a.</font><br></td>
+                                <td >
+                                    <br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218157&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=60005">Keiser Sonja </a><br></td>
+                                <td >LOL Komplett Phone Fiber 2013<br></td>
+                                <td ><font color="#888888">n.a.</font><br></td>
+                                <td >
+                                    <br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=218153&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=208386">Fondation Pro Familia </a><br></td>
+                                <td >LOL Komplett Phone<br></td>
+                                <td ><font color="#888888">n.a.</font><br></td>
+                                <td >
+                                    <br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=216837&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=158759">Back Steve </a><br></td>
+                                <td >LOL Komplett Phone Fiber 2013<br></td>
+                                <td ><font color="#888888">216833</font><br></td>
+                                <td >
+                                    27995407<br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=216832&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=297917">Ferreira Maria de Fatima </a><br></td>
+                                <td >LOL Komplett Phone<br></td>
+                                <td ><font color="#888888">n.a.</font><br></td>
+                                <td >
+                                    <br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=216830&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=60005">Keiser Sonja </a><br></td>
+                                <td >LOL Komplett Phone VDSL<br></td>
+                                <td ><font color="#888888">n.a.</font><br></td>
+                                <td >
+                                    <br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=216826&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=297869">KLOSKOWICZ Anna </a><br></td>
+                                <td >LOL Komplett Phone Fiber 2013<br></td>
+                                <td ><font color="#888888">n.a.</font><br></td>
+                                <td >
+                                    <br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=216819&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=297870">Lange François </a><br></td>
+                                <td >LOL Komplett Phone Fiber 2013<br></td>
+                                <td ><font color="#888888">216817</font><br></td>
+                                <td >
+                                    26621536<br>
+                                </td>
+                                <td ><font color="#006600">prêt à activer</font><br></td>
+                                <td  align="right">
+                                    13/4/2015
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=216816&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=297867">Shop Orange Wemperhardt, Borges Sergio </a><br></td>
+                                <td >Orange Téléphonie VDSL (VOIP)<br></td>
+                                <td ><font color="#888888">216808</font><br></td>
+                                <td >
+                                    27918661<br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=216809&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=280071">BRITTON Wiley Jeffrey </a><br></td>
+                                <td >Orange Téléphonie VDSL (VOIP)<br></td>
+                                <td ><font color="#888888">n.a.</font><br></td>
+                                <td >
+                                    <br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=216792&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=297835">Kraus Peter </a><br></td>
+                                <td >Orange Téléphonie dégroupée ADSL (ISDN)<br></td>
+                                <td ><font color="#888888">n.a.</font><br></td>
+                                <td >
+                                    <br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=216780&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=297097">Baruch Vulfs </a><br></td>
+                                <td >Orange Téléphonie dégroupée ADSL (PSTN)<br></td>
+                                <td ><font color="#888888">n.a.</font><br></td>
+                                <td >
+                                    <br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=215121&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=287486">Marie HELIOT - Savrimootoo </a><br></td>
+                                <td >Orange Téléphonie dégroupée ADSL (PSTN)<br></td>
+                                <td ><font color="#888888">n.a.</font><br></td>
+                                <td >
+                                    <br>
+                                </td>
+                                <td ><i>commandé d'avance</i><br></td>
+                                <td  align="right">
+                                    --
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=215095&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#d8d8ff">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=297019">MARY Vincent </a><br></td>
+                                <td >LOL Komplett Phone<br></td>
+                                <td ><font color="#888888">215088</font><br></td>
+                                <td >
+                                    24527188<br>
+                                </td>
+                                <td ><font color="#006600">prêt à activer</font><br></td>
+                                <td  align="right">
+                                    9/4/2015
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=215087&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#ffd8d8">
+                                <td ><a href="/Scripts/sql.exe?Sql=ossbo:ClientManage.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;Param=297018">MARY Vincent </a><br></td>
+                                <td >LOL Komplett Phone<br></td>
+                                <td ><font color="#888888">215084</font><br></td>
+                                <td >
+                                    27918658<br>
+                                </td>
+                                <td ><font color="#006600">prêt à activer</font><br></td>
+                                <td  align="right">
+                                    13/4/2015
+                                </td>
+                                <td >
+                                    --
+                                </td>
+                                <td >
+                                    <a href="/Scripts/sql.exe?Sql=UnbundPhone:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh&amp;_SubscriptionID=215083&amp;_MerchantId=1&amp;_CustomScriptId=84">View</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="11">Nb d'inscriptions trouvées : <b>296</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
         </div>
         <input type="hidden" name="_Where" value="where (iSubscriptionId in (select idSubscription from OSSORDERSUBSCRIPTION,OSSORDER,OSSCLIENT,OSSARTICLE where OSSORDERSUBSCRIPTION.idMerchant=1 and OSSORDER.idMerchant=1 and OSSCLIENT.idMerchant=1 and OSSARTICLE.idMerchant=1 and OSSORDER.iClientUsage=0 and OSSORDERSUBSCRIPTION.idOrder=OSSORDER.idOrder and azUsage like '1_______' and OSSORDERSUBSCRIPTION.idClient=OSSCLIENT.idClient and OSSORDERSUBSCRIPTION.idArticle=OSSARTICLE.idArticle and azOrderNumber like '201503%' and OSSORDERSUBSCRIPTION.iStatus<=99 order by idSubscription desc))">
         <input type="hidden" name="_Order" value="order by iSubscriptionID desc">
     </form>
-    <table width="100%">
-        <tbody>
-            <tr>
-                <td width="100%" align="center"><font size="-1"><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=MainMenu.phs&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh">Menu principal</a> - <a href="javascript:history.back()">Retour</a></font>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </div>
+<div width="100%" id="footer">
+    <a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=MainMenu.phs&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh">Menu principal</a> - <a href="javascript:history.back()">Retour</a>
+</div>
+
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/ossbo.js"></script>
 <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
 <script type="text/javascript">
-                        $(function () {
-                            var table = $('table.tableau');
-                            var container = $('<div class="table-menu table-menu-hidden"><ul /></div>');
-                            // add class for scoping styles - cells should be hidden only when JS is on
-                            table.addClass("enhanced");
+                                $(function () {
+                                    var table = $('table.tableau');
+                                    var container = $('<div class="table-menu table-menu-hidden"><ul /></div>');
+                                    // add class for scoping styles - cells should be hidden only when JS is on
+                                    table.addClass("enhanced");
 
-                            $("thead th").each(function (i) {
-                                var th = $(this),
-                                        id = th.attr("id"),
-                                        classes = th.attr("class"); // essential, optional (or other content identifiers)
+                                    $("thead th").each(function (i) {
+                                        var th = $(this),
+                                                id = th.attr("id"),
+                                                classes = th.attr("class"); // essential, optional (or other content identifiers)
 
-                                // assign an ID to each header, if none is in the markup
-                                if (!id) {
-                                    id = ("col-") + i;
-                                    th.attr("id", id);
-                                }
-                                ;
-                                // loop through each row to assign a "headers" attribute and any classes (essential, optional) to the matching cell
-                                // the "headers" attribute value = the header's ID
-                                $("tbody tr").each(function () {
-                                    var cell = $(this).find("th, td").eq(i);
-                                    cell.attr("headers", id);
-                                    if (classes) {
-                                        cell.addClass(classes);
-                                    }
-                                    ;
+                                        // assign an ID to each header, if none is in the markup
+                                        if (!id) {
+                                            id = ("col-") + i;
+                                            th.attr("id", id);
+                                        }
+                                        ;
+                                        // loop through each row to assign a "headers" attribute and any classes (essential, optional) to the matching cell
+                                        // the "headers" attribute value = the header's ID
+                                        $("tbody tr").each(function () {
+                                            var cell = $(this).find("th, td").eq(i);
+                                            cell.attr("headers", id);
+                                            if (classes) {
+                                                cell.addClass(classes);
+                                            }
+                                            ;
+                                        });
+                                        // create the menu hide/show toggles
+                                        if (!th.is(".persist")) {
+
+                                            // note that each input's value matches the header's ID;
+                                            // later we'll use this value to control the visibility of that header and it's associated cells
+                                            var toggle = $('<li><input type="checkbox" name="toggle-cols" id="toggle-col-' + i + '" value="' + id + '" /> <label for="toggle-col-' + i + '">' + th.text() + '</label></li>');
+                                            // append each toggle to the container
+                                            container.find("ul").append(toggle);
+                                            // assign behavior
+                                            toggle.find("input")
+
+                                                    // when the checkbox is toggled
+                                                    .change(function () {
+                                                        var input = $(this),
+                                                                val = input.val(), // this equals the header's ID, i.e. "company"
+                                                                cols = $("#" + val + ", [headers=" + val + "]"); // so we can easily find the matching header (id="company") and cells (headers="company")
+
+                                                        if (input.is(":checked")) {
+                                                            cols.show();
+                                                        }
+                                                        else {
+                                                            cols.hide();
+                                                        }
+                                                        ;
+                                                    })
+
+                                                    // custom event that sets the checked state for each toggle based on column visibility, which is controlled by @media rules in the CSS
+                                                    // called whenever the window is resized or reoriented (mobile)
+                                                    .bind("updateCheck", function () {
+                                                        if (th.css("display") == "table-cell") {
+                                                            $(this).attr("checked", true);
+                                                        }
+                                                        else {
+                                                            $(this).attr("checked", false);
+                                                        }
+                                                        ;
+                                                    })
+
+                                                    // call the custom event on load
+                                                    .trigger("updateCheck");
+                                        }
+                                        ; // end conditional statement ( !th.is(".persist") )
+                                    }); // end headers loop
+
+                                    // update the inputs' checked status
+                                    $(window).bind("orientationchange resize", function () {
+                                        container.find("input").trigger("updateCheck");
+                                    });
+                                    var menuWrapper = $('<div class="table-menu-wrapper" />'),
+                                            menuBtn = $('<a href="#" class="table-menu-btn">Affichage</a>');
+
+                                    menuBtn.click(function () {
+                                        container.toggleClass("table-menu-hidden");
+                                        return false;
+                                    });
+
+                                    menuWrapper.append(menuBtn).append(container);
+                                    table.before(menuWrapper);  // append the menu immediately before the table
+                                    // assign click-away-to-close event
+                                    table.wrap('<div class="wrapper"></div>');
+                                    $(document).click(function (e) {
+                                        if (!$(e.target).is(container) && !$(e.target).is(container.find("*"))) {
+                                            container.addClass("table-menu-hidden");
+                                        }
+                                    });
                                 });
-                                // create the menu hide/show toggles
-                                if (!th.is(".persist")) {
-
-                                    // note that each input's value matches the header's ID;
-                                    // later we'll use this value to control the visibility of that header and it's associated cells
-                                    var toggle = $('<li><input type="checkbox" name="toggle-cols" id="toggle-col-' + i + '" value="' + id + '" /> <label for="toggle-col-' + i + '">' + th.text() + '</label></li>');
-                                    // append each toggle to the container
-                                    container.find("ul").append(toggle);
-                                    // assign behavior
-                                    toggle.find("input")
-
-                                            // when the checkbox is toggled
-                                            .change(function () {
-                                                var input = $(this),
-                                                        val = input.val(), // this equals the header's ID, i.e. "company"
-                                                        cols = $("#" + val + ", [headers=" + val + "]"); // so we can easily find the matching header (id="company") and cells (headers="company")
-
-                                                if (input.is(":checked")) {
-                                                    cols.show();
-                                                }
-                                                else {
-                                                    cols.hide();
-                                                }
-                                                ;
-                                            })
-
-                                            // custom event that sets the checked state for each toggle based on column visibility, which is controlled by @media rules in the CSS
-                                            // called whenever the window is resized or reoriented (mobile)
-                                            .bind("updateCheck", function () {
-                                                if (th.css("display") == "table-cell") {
-                                                    $(this).attr("checked", true);
-                                                }
-                                                else {
-                                                    $(this).attr("checked", false);
-                                                }
-                                                ;
-                                            })
-
-                                            // call the custom event on load
-                                            .trigger("updateCheck");
-                                }
-                                ; // end conditional statement ( !th.is(".persist") )
-                            }); // end headers loop
-
-                            // update the inputs' checked status
-                            $(window).bind("orientationchange resize", function () {
-                                container.find("input").trigger("updateCheck");
-                            });
-                            var menuWrapper = $('<div class="table-menu-wrapper" />'),
-                                    menuBtn = $('<a href="#" class="table-menu-btn">Affichage</a>');
-
-                            menuBtn.click(function () {
-                                container.toggleClass("table-menu-hidden");
-                                return false;
-                            });
-
-                            menuWrapper.append(menuBtn).append(container);
-                            table.before(menuWrapper);  // append the menu immediately before the table
-
-// assign click-away-to-close event
-                            $(document).click(function (e) {
-                                if (!$(e.target).is(container) && !$(e.target).is(container.find("*"))) {
-                                    container.addClass("table-menu-hidden");
-                                }
-                            });
-                        });
 </script>
 </body></html>
