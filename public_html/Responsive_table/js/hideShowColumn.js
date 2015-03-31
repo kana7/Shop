@@ -1,3 +1,15 @@
+/*
+ * Permet de générer un menu composé de checkBoxes pour afficher et cacher les colonnes d'un tableau.
+ * 
+ * Dans votre HTML, veillé à ce que votre tableau soit composé des balises: <thead>, <tbody>, <tfoot>.
+ * assigner la classe "tableau" à votre <table>
+ * Englober votre <table class="tableau"> dans un <div> de classe "table-wrapper"
+ * Intégrer ce script ainsi que le css hideShowColumn.css pour rendre le script fonctionnel.
+ * 
+ * Plus de détails sur l'affichage en responsive dans hideShowColumn.css
+ */
+
+
 $(function () {
     var table = $('table.tableau');
     var container = $('<div class="table-menu table-menu-hidden"><ul /></div>');

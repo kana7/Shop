@@ -1,6 +1,7 @@
 table {
     width: 100%;
     font-size: 1.2em;
+    border-collapse: collapse; 
 }
 
 thead th {
@@ -20,69 +21,9 @@ tbody th, td {
     border-top: 1px solid #e6e6e6;
 }
 
-.hideShow th,
-.hideShow td {
-    display: none;
-}
-.hideShow th.essential,
-.hideShow td.essential {
-    display: table-cell;
-}
-
-@media screen and (min-width: 762px) {
-    .hideShow th.optional,
-    .hideShow td.optional {
-        display: table-cell;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .hideShow th,
-    .hideShow td {
-        display: table-cell;
-    }
-}
-
 div.submit input{
     margin-right: 5px;
     margin-bottom: 10px;
-}
-
-div.table-menu ul{
-    list-style: none;
-    width: 100%;    
-    padding: 15px;
-}
-div.table-menu li{
-    width: 100%;    
-    margin-bottom: 10px;
-    height: 20px;
-}
-div.table-menu li label{
-    float: left;
-    display: inline-block;
-}
-div.table-menu li input{
-    float: right;
-    display: inline-block;
-}
-
-.table-menu {
-    position: absolute;
-    left: auto;
-    background-color: #fff;
-    padding: 0;
-    border: 1px solid #ccc;
-    font-size: 1.2em;
-    width: 14em;
-}
-.table-menu-hidden {
-    left: -999em;
-    right: auto;
-}
-
-.wrapper{
-    overflow-x: scroll;
 }
 
 #footer{
