@@ -78,7 +78,7 @@ $(function () {
                     // event appellé quand la taille de fenêtre change ou quand elle est réorientée (mobile)
                     .on("updateCheck", function () {
                         //check si l'attibut table cell est appliqué
-                        if ($('#mainTab thead th[id=' + $(this).attr('value') + ']').css("display") == 'none') {
+                        if ($('table.tableau thead th[id=' + $(this).attr('value') + ']').css("display") == 'none') {
                             $(this).attr('checked', false);
                         }
                         else {
@@ -96,7 +96,7 @@ $(function () {
     $(window).resize(function () {
         $('.table-menu input').each(function () {
             console.log($(this).attr('value')+":"+$('#mainTab thead th[id=' + $(this).attr('value') + ']').css("display"));
-            if ($('#mainTab thead th[id=' + $(this).attr('value') + ']').css("display") == 'none') {
+            if ($('table.tableau thead th[id=' + $(this).attr('value') + ']').css("display") == 'none') {
                 $(this).prop('checked', false);
             }
             else {

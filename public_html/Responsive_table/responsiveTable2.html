@@ -591,58 +591,6 @@
 <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
 <script type="text/javascript" src="js/ossbo.js"></script>
 <script type="text/javascript" src="js/hideShowColumn.js"></script>
-<script>
-                                (function ($) {
-                                    $.each(['show', 'hide'], function (i, ev) {
-                                        var el = $.fn[ev];
-                                        $.fn[ev] = function () {
-                                            this.trigger(ev);
-                                            return el.apply(this, arguments);
-                                        };
-                                    });
-                                })(jQuery);
-                                
-                                $(function () {
-                                    var tableOffset = $("table.sticky").offset().top;
-                                    var $header = $("table.tableau > thead").clone();
-                                    $("table.tableau").append('<table id="header-fixed"></table');
-                                    var $fixedHeader = $("#header-fixed").append($header);
-                                    $($fixedHeader).css('width', $("table.tableau").width());
-                                    $($fixedHeader).find('thead th').each(function () {
-                                        $(this).width($('table.tableau thead th[id=' + $(this).attr('id') + ']').width());
-                                    });
-
-                                    $($fixedHeader).on('refreshHead', function () {
-                                        $($fixedHeader).css('width', $("table.tableau").width());
-                                        $($fixedHeader).find('thead th').each(function () {
-                                            $(this).width($('table.tableau thead th[id=' + $(this).attr('id') + ']').width());
-                                        });
-                                    });
-
-                                    $(window).on("scroll", function () {
-                                        var offset = $(this).scrollTop();
-                                        if (offset >= tableOffset && $fixedHeader.is(":hidden")) {
-                                            $fixedHeader.show();
-                                        }
-                                        else if (offset < tableOffset) {
-                                            $fixedHeader.hide();
-                                        }
-                                    });
-                                    $(window).on("resize", function () {
-                                        $($fixedHeader).trigger('refreshHead');
-                                        tableOffset = $("table.tableau").offset().top;
-                                    });
-                                    $('#mainTab thead th').on("show", function () {
-                                        $($fixedHeader).trigger('refreshHead');
-                                    });
-                                    $('#mainTab thead th').on("hide", function () {
-                                        $($fixedHeader).trigger('refreshHead');
-                                    });
-                                    $('.table-menu input').on("change", function () {
-                                        $($fixedHeader).trigger('refreshHead');
-                                    });
-                                });
-
-</script>
+<script type="text/javascript" src="js/table-stickyHeader.js"></script>
 </body>
 </html>

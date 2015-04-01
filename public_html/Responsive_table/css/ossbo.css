@@ -32,9 +32,9 @@ fieldset {
 }
 
 label {
-	/* float: left; */
+	float: left;
 	/* width: 118%; */
-	/* margin-right: 1em; */
+	margin-right: 1em;
 }
 
 .FormPanel {

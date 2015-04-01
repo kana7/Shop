@@ -41,8 +41,3 @@ div.submit input{
     position: relative;
     z-index: 200;
 }
-
-#header-fixed {
-    position: fixed;
-    top: 0px; display:none;
-}
