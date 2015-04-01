@@ -13,6 +13,7 @@
         <link href="http://jquery.bluechameleon.com/js/themes/redmond/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
         <link href="css/main2.css" rel="stylesheet" type="text/css"/>
         <link href="css/hideShowColumn.css" rel="stylesheet" type="text/css"/>
+        <link href="css/table-stickyHeader.css" rel="stylesheet" type="text/css"/>
 
     </head>
     <body bgcolor="#FFFFFF">
@@ -112,15 +113,15 @@
                 <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=Z')">Z</a>
             </p>
             <div class="table-wrapper">
-                <table class="tableau" border="1">
+                <table class="tableau stickyHead" border="1">
                     <thead>
                         <tr>
-                            <th bgcolor="#CCCCCC">Nom Prénom</th>
-                            <th bgcolor="#CCCCCC">Login LOL</th>
-                            <th bgcolor="#CCCCCC">Abonnement</th>
+                            <th bgcolor="#CCCCCC" class="essential">Nom Prénom</th>
+                            <th bgcolor="#CCCCCC" class="optional">Login LOL</th>
+                            <th bgcolor="#CCCCCC" class="essential">Abonnement</th>
                             <th bgcolor="#CCCCCC">Numéro</th>
                             <th bgcolor="#CCCCCC">Etat</th>
-                            <th bgcolor="#CCCCCC">Status</th>
+                            <th bgcolor="#CCCCCC" class="optional">Status</th>
                             <th bgcolor="#CCCCCC">Dernière Modif</th>
                             <th bgcolor="#CCCCCC">Option</th>
                         </tr>
@@ -704,10 +705,12 @@
         <script type="text/javascript" src="js/jquery.dataTables.js"></script>
         <script>
                     $(document).ready(function () {
-                        var table = $('table.tableau').DataTable({
+                        $('table.tableau').DataTable({
                             paging: false
                         });
                     });
         </script>
+        <script type="text/javascript" src="js/jquery.ba-throttle-debounce.min.js"></script>
+        <script type="text/javascript" src="js/table-stickyHeader.js"></script>
     </body>
 </html>

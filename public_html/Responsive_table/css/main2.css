@@ -30,9 +30,19 @@ div.submit input{
     margin-top: 15px;
     margin-bottom: 15px;
     border-top: 1px solid #E6E6E6;
-     padding-top: 7px;
+    padding-top: 7px;
 }
 
 .margin{
     margin-top: 15px;
+}
+
+.dataTables_filter{
+    position: relative;
+    z-index: 200;
+}
+
+#header-fixed {
+    position: fixed;
+    top: 0px; display:none;
 }

@@ -9,12 +9,22 @@
  * Plus de détails sur l'affichage en responsive dans hideShowColumn.css
  */
 
+(function ($) {
+    $.each(['show', 'hide'], function (i, ev) {
+        var el = $.fn[ev];
+        $.fn[ev] = function () {
+            this.trigger(ev);
+            return el.apply(this, arguments);
+        };
+    });
+})(jQuery);
 
 $(function () {
     var table = $('table.tableau');
     var container = $('<div class="table-menu table-menu-hidden"><ul /></div>');
 
     table.addClass("hideShow");
+    table.attr('id', 'mainTab');
 
     $("thead th").each(function (i) {
         var th = $(this),
@@ -59,21 +69,20 @@ $(function () {
                                 cols = $("#" + val + ", [headers=" + val + "]"); //selecteur de la colonne
 
                         if (input.is(":checked")) {
-                            cols.show('fast');
+                            cols.show();
                         }
                         else {
-                            cols.hide('fast');
-                        }
-                        ;
+                            cols.hide();
+                        };
                     })
                     // event appellé quand la taille de fenêtre change ou quand elle est réorientée (mobile)
-                    .bind("updateCheck", function () {
+                    .on("updateCheck", function () {
                         //check si l'attibut table cell est appliqué
-                        if (th.css("display") == "table-cell") {
-                            $(this).attr("checked", true);
+                        if ($('#mainTab thead th[id=' + $(this).attr('value') + ']').css("display") == 'none') {
+                            $(this).attr('checked', false);
                         }
                         else {
-                            $(this).attr("checked", false);
+                            $(this).attr('checked', true);
                         }
                         ;
                     })
@@ -83,12 +92,18 @@ $(function () {
         }
         ; // fin de la condition if(!th.is(.persist))
     }); // fin du loop
-
     // update l'input au resize
     $(window).resize(function () {
-        container.find("input").trigger("updateCheck");
+        $('.table-menu input').each(function () {
+            console.log($(this).attr('value')+":"+$('#mainTab thead th[id=' + $(this).attr('value') + ']').css("display"));
+            if ($('#mainTab thead th[id=' + $(this).attr('value') + ']').css("display") == 'none') {
+                $(this).prop('checked', false);
+            }
+            else {
+                $(this).prop('checked', true);
+            };
+        });
     });
-
 
     var menuWrapper = $('<div class="table-menu-wrapper" />'),
             menuBtn = $('<a href="#" class="table-menu-btn">Affichage</a>');

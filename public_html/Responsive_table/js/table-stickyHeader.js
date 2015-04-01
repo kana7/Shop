@@ -1,5 +1,5 @@
 $(function () {
-    $('table').each(function () {
+    $('table.tableau').each(function () {
         if ($(this).find('thead').length > 0 && $(this).find('th').length > 0) {
             // Clone <thead>
             var $w = $(window),
@@ -13,8 +13,8 @@ $(function () {
                     .css({
                         margin: 0,
                         width: '100%'
-                    }).wrap('<div class="sticky-wrap" />');
-
+                    });
+            $('table.tableau').wrap('<div class="sticky-wrap"></div>');
             if ($t.hasClass('overflow-y'))
                 $t.removeClass('overflow-y').parent().addClass('overflow-y');
 
@@ -54,10 +54,11 @@ $(function () {
                 });
 
                 // Set width of sticky table head
-                $stickyHead.width($t.width());
+                $stickyHead.width($('table.tableau thead').outerWidth());
+                console.log($('table.tableau thead').outerWidth());
 
                 // Set width of sticky table col
-                $stickyCol.find('th').add($stickyInsct.find('th')).width($t.find('thead th').width())
+                $stickyCol.find('th').add($stickyInsct.find('th')).width($t.find('thead th').width());
             },
                     repositionStickyHead = function () {
                         // Return value of calculated allowance

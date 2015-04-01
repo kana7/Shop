@@ -1,17 +1,17 @@
 /*
 
 Pour la fonction hide/show column, ajouter les classes "persist", "essential", "optional" pour modifier
-les priorites d'affichage en fonction du mÃ©dia au chargement de la page.
+les priorites d'affichage en fonction du média au chargement de la page.
 
 Ajouter ces classes dans les les balises <th> dans le <thead> de votre <table>
 
-persist: n'ajoute pas de checkbox dans le menu pour cette colonne. Il ne sera donc pas possible de cacher la colonne possÃ©dant cette classe.
+persist: n'ajoute pas de checkbox dans le menu pour cette colonne. Il ne sera donc pas possible de cacher la colonne possédant cette classe.
 
-essential: une colonne de classe "essential" restera toujours affichÃ©e peut importe le media (il est possible de la masquÃ©e via le menu).
+essential: une colonne de classe "essential" restera toujours affichée peut importe le media (il est possible de la masquée via le menu).
 
 optional: une colonne de classe "optional" sera affichee en mode tablette(<992px) mais masquee dans les plus petits formats (<762px) (il est possible de la masquee via le menu).
 
-une colonne ne possedant pas ni optional, ni essential sera masquée si l'affichage n'est pas sur desktop.
+une colonne ne possedant pas ni optional, ni essential sera masqu�e si l'affichage n'est pas sur desktop.
 */
 
 
@@ -87,7 +87,7 @@ div.table-menu li input{
     border: 1px solid #ccc;
     font-size: 1.2em;
     width: 14em;
-    z-index: 30;
+    z-index: 210;
 
 }
 .table-menu-hidden {
