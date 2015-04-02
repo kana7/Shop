@@ -1,6 +1,7 @@
 table {
     width: 100%;
     font-size: 1.2em;
+    clear:both;
 }
 
 thead th {
@@ -40,4 +41,18 @@ div.submit input{
 .dataTables_filter{
     position: relative;
     z-index: 200;
+    width: 50%;
+    /* margin-top: 10px; */
+    float: right;
+    /* clear: both; */
+}
+
+.dataTables_filter label{
+    margin-right: 0px;
+    margin-top: 10px;
+    float: right;
+}
+
+.dataTables_filter label input{
+    width: 100%;
 }

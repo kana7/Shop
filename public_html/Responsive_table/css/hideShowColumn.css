@@ -1,9 +1,10 @@
 /*
+Voir le fichier hideShowColumn.js pour les details sur la mise en place du script.
 
 Pour la fonction hide/show column, ajouter les classes "persist", "essential", "optional" pour modifier
 les priorites d'affichage en fonction du média au chargement de la page.
 
-Ajouter ces classes dans les les balises <th> dans le <thead> de votre <table>
+Ajouter ces classes dans les balises <th> dans le <thead> de votre <table>
 
 persist: n'ajoute pas de checkbox dans le menu pour cette colonne. Il ne sera donc pas possible de cacher la colonne possédant cette classe.
 
@@ -11,56 +12,66 @@ essential: une colonne de classe "essential" restera toujours affichée peut imp
 
 optional: une colonne de classe "optional" sera affichee en mode tablette(<992px) mais masquee dans les plus petits formats (<762px) (il est possible de la masquee via le menu).
 
-une colonne ne possedant pas ni optional, ni essential sera masqu�e si l'affichage n'est pas sur desktop.
+une colonne ne possedant ni optional, ni essential sera masquee si l'affichage n'est pas sur desktop.
 */
 
 
-//Display behavior
-.hideShow th,
-.hideShow td {
-    display: none;
+/*Display behavior*/
+table.hideShow{
+    clear:both;
 }
 
-.hideShow th.essential,
-.hideShow td.essential {
+/*le tfoot reste toujours affiche*/
+table.hideShow tfoot th,
+table.hideShow tfoot td {
     display: table-cell;
 }
 
+/*essential toujours affiche*/
+table.hideShow th.essential,
+table.hideShow td.essential {
+    display: table-cell !important;
+    word-wrap: break-word !important;
+}
+
+/* téléphone: on cache optional et le reste */
 @media screen and (max-width: 762px) {
-    .hideShow th.optional,
-    .hideShow td.optional {
+    table.hideShow th.optional,
+    table.hideShow td.optional {
         display: none;
     }
-    .hideShow th,
-    .hideShow td {
+    table.hideShow th,
+    table.hideShow td {
         display: none;
     }
 }
-
+/*tablette: On cache le reste*/
 @media screen and (min-width: 762px) {
-    .hideShow th.optional,
-    .hideShow td.optional {
+    table.hideShow th.optional,
+    table.hideShow td.optional {
         display: table-cell;
+        word-wrap: break-word !important;
     }
-    .hideShow th,
-    .hideShow td {
+    table.hideShow th,
+    table.hideShow td {
         display: none;
     }
 }
-
+/*desktop: On affiche tout*/
 @media screen and (min-width: 992px) {
-    .hideShow th,
-    .hideShow td {
+    table.hideShow th,
+    table.hideShow td {
         display: table-cell;
+        word-wrap: break-word !important;
     }
 }
 
-//menu layout
+/*Mise en page du menu qui cache et affiche les colonnes*/
 div.table-menu ul{
     list-style: none;
     width: 100%;    
-    padding: 15px;
 }
+
 div.table-menu li{
     list-style: none;
     width: 100%;    
@@ -70,6 +81,15 @@ div.table-menu li{
 div.table-menu li label:hover, div.table-menu li input:hover{
     cursor: pointer;
 }
+
+.table-menu-wrapper{
+    width: 50%;
+    position: relative;
+    top: 45px;
+    clear: both;
+    margin-top: 15px;
+}
+
 div.table-menu li label{
     float: left;
     display: inline-block;
@@ -93,10 +113,4 @@ div.table-menu li input{
 .table-menu-hidden {
     left: -999em;
     right: auto;
-}
-
-
-//scroll table
-.wrapper{
-    overflow-x: scroll;
 }

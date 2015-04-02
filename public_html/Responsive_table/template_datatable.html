@@ -15,7 +15,7 @@
         <link href="css/oga_context_menu.css" rel="stylesheet" type="text/css">
         <link href="css/jquery.dataTables.css" rel="stylesheet" type="text/css">
         <link href="css/hideShowColumn.css" rel="stylesheet" type="text/css">
-        <style>#ui-datepicker-div {display: none}</style>
+        <style>#ui-datepicker-div {display: none;}</style>
     </head>
     <body bgcolor="#FFFFFF" class="ogaBody">
         <script>
@@ -27,65 +27,66 @@
             <input type="hidden" id="open_file_by_name" value="/Scripts/sql.exe?SqlDB=stage_001&amp;Sql=oga:oga_open_file.phs&amp;xid=1427879504igffgoigimiefgkhohechmoaeijjhiiekcjbplojdgojjnahodbclb&amp;file_name=">	
             <input type="hidden" id="get_new_row_value" value="/Scripts/sql.exe?SqlDB=stage_001&amp;Sql=oga:oga_table_get_mouvement.phs&amp;xid=1427879504igffgoigimiefgkhohechmoaeijjhiiekcjbplojdgojjnahodbclb&amp;_JSON=1&amp;_MerchantId=1">
             <input type="hidden" id="Print_Title" value="Liste des écritures">
-            <table id="postings_list_table" class="silis_data_table tableau"width="100%">
+
+            <table id="postings_list_table" class="silis_data_table tableau sticky"width="100%">
                 <thead>
                     <tr>
-                        <th class=""><div class="silis_data_table_left">Account</div></th>
-                <th class=""><div class="silis_data_table_left">Valeur</div></th>
-                <th class=""><div class="silis_data_table_left">Saisie</div></th>
-                <th class=""><div class="silis_data_table_left">TVA</div></th>
-                <th class=""><div class="silis_data_table_left">Journal</div></th>
-                <th class=""><div class="silis_data_table_left">Reference</div></th>
-                <th class=""><div class="silis_data_table_left">Label</div></th>
-                <th class=""><div class="silis_data_table_right">Debit</div></th>
-                <th class=""><div class="silis_data_table_right">Credit</div></th>
-                </tr>
-                <thead>
+                        <th class="silis_data_table_left">Account</th>
+                        <th class="silis_data_table_left">Valeur</th>
+                        <th class="silis_data_table_left">Saisie</th>
+                        <th class="silis_data_table_left">TVA</th>
+                        <th class="silis_data_table_left">Journal</th>
+                        <th class="silis_data_table_left">Reference</th>
+                        <th class="silis_data_table_left">Label</th>
+                        <th class="silis_data_table_right">Debit</th>
+                        <th class="silis_data_table_right">Credit</th>
+                    </tr>
+                </thead>
 
                 <tbody>				
-                    <tr id="id_tr_ICI_ID_UNIQUE_LIGNE" data-id_trans="" data-id_rec="" data-i_mouvement="" data-ana_exists="" data-ana_exists_ventil="" data-ana_exists_postings="" data-ana_exists_postings=""  data-ana_exists_postings_tmp=""  >
-                        <td ><div class="silis_data_table_left">account number</div></td>
-                        <td ><div class="silis_data_table_left">date value</div></td>
-                        <td ><div class="silis_data_table_left">date posting</div></td>
-                        <td ><div class="silis_data_table_left">tva</div></td>
-                        <td ><div class="silis_data_table_left">Journal</div></td>
-                        <td ><div class="silis_data_table_left">reference</div></td>
-                        <td ><div class="silis_data_table_left">label</div></td>
-                        <td ><div class="silis_data_table_right">0</div></td>
-                        <td ><div class="silis_data_table_right">100.22</div></td>
+                    <tr>
+                        <td class="silis_data_table_left">account number</td>
+                        <td class="silis_data_table_left">date value</td>
+                        <td class="silis_data_table_left">date posting</td>
+                        <td class="silis_data_table_left">tva</td>
+                        <td class="silis_data_table_left">Journal</td>
+                        <td class="silis_data_table_left">reference</td>
+                        <td class="silis_data_table_left">label</td>
+                        <td class="silis_data_table_right">0</td>
+                        <td class="silis_data_table_right">100.22</td>
                     </tr>
                 </tbody>
 
                 <tfoot>
                     <tr class="footer_print">
-                        <th colspan="8"><div id="local_balance" class="silis_data_table_left"></div></th>
-                <th ><div class="silis_data_table_left">Debit:</div></th>
-                <th ><div class="silis_data_table_right">total debit</div></th>
-                </tr>
-                <tr class="footer_print">
-                    <th class="silis_data_table_no_separator"></th>
-                    <th class="silis_data_table_no_separator"></th>
-                    <th class="silis_data_table_no_separator"></th>
-                    <th class="silis_data_table_no_separator"></th>
-                    <th class="silis_data_table_no_separator"></th>
-                    <th class="silis_data_table_no_separator"></th>
-                    <th class="silis_data_table_no_separator"></th>
-                    <th class="silis_data_table_no_separator"></th>
-                    <th class="silis_data_table_no_separator"><div class="silis_data_table_left">Credit:</div></th>
-                <th class="silis_data_table_no_separator"><div class="silis_data_table_right">total credit</div></th>
-                </tr>
-                <tr class="footer_print">
-                    <th class="silis_data_table_no_separator"></th>
-                    <th class="silis_data_table_no_separator"></th>
-                    <th class="silis_data_table_no_separator"></th>
-                    <th class="silis_data_table_no_separator"></th>
-                    <th class="silis_data_table_no_separator"></th>
-                    <th class="silis_data_table_no_separator"></th>
-                    <th class="silis_data_table_no_separator"></th>
-                    <th class="silis_data_table_no_separator"></th>
-                    <th class="silis_data_table_no_separator"><div class="silis_data_table_left">Balance:</div></th>
-                <th class="silis_data_table_no_separator"><div class="silis_data_table_right">total balance</div></th>
-                </tr>
+                        <th colspan="8" id="local_balance" class="silis_data_table_left"></th>
+                        <th class="silis_data_table_left">Debit:</th>
+                        <th class="silis_data_table_right">total debit</th>
+                    </tr>
+                    <tr class="footer_print">
+                        <th class="silis_data_table_no_separator"></th>
+                        <th class="silis_data_table_no_separator"></th>
+                        <th class="silis_data_table_no_separator"></th>
+                        <th class="silis_data_table_no_separator"></th>
+                        <th class="silis_data_table_no_separator"></th>
+                        <th class="silis_data_table_no_separator"></th>
+                        <th class="silis_data_table_no_separator"></th>
+                        <th class="silis_data_table_no_separator"></th>
+                        <th class="silis_data_table_no_separator silis_data_table_left">Credit:</th>
+                        <th class="silis_data_table_no_separator silis_data_table_right">total credit</th>
+                    </tr>
+                    <tr class="footer_print">
+                        <th class="silis_data_table_no_separator"></th>
+                        <th class="silis_data_table_no_separator"></th>
+                        <th class="silis_data_table_no_separator"></th>
+                        <th class="silis_data_table_no_separator"></th>
+                        <th class="silis_data_table_no_separator"></th>
+                        <th class="silis_data_table_no_separator"></th>
+                        <th class="silis_data_table_no_separator"></th>
+                        <th class="silis_data_table_no_separator"></th>
+                        <th class="silis_data_table_no_separator silis_data_table_left">Balance:</th>
+                        <th class="silis_data_table_no_separator silis_data_table_right">total balance</th>
+                    </tr>
                 </tfoot>
             </table>
         </div>
@@ -103,9 +104,11 @@
         <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
         <script type="text/javascript" src="js/ossbo.js"></script>
         <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" src="/stage_001/js/oga_context_menu.js"></script>
+        <script type="text/javascript" src="js/hideShowColumn.js"></script>
+        <script type="text/javascript" src="js/oga_context_menu.js"></script>
         <script type="text/javascript" src="/stage_001/OSL/js/oga/usefull_function.js"></script>
-        <script type="text/javascript">
+        
+       <script type="text/javascript">
             //reload_update_row
             var id_row_update = "";
             function update_row(_id_row_update, idTrans, iMouvement) {
@@ -508,5 +511,5 @@
                 });
             });
         </script>
-        <script type="text/javascript" src="js/hideShowColumn.js"></script>
+        <script type="text/javascript" src="js/table-stickyHeader.js"></script>
     </body></html>

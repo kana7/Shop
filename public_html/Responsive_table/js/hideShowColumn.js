@@ -1,12 +1,19 @@
 /*
+ * Plus de détails sur l'affichage en responsive dans hideShowColumn.css
+ * 
  * Permet de générer un menu composé de checkBoxes pour afficher et cacher les colonnes d'un tableau.
  * 
  * Dans votre HTML, veillé à ce que votre tableau soit composé des balises: <thead>, <tbody>, <tfoot>.
  * assigner la classe "tableau" à votre <table>
  * Englober votre <table class="tableau"> dans un <div> de classe "table-wrapper"
+ * 
+ *  Ne pas oublier de créer un wrapper: $('table.tableau').wrap('<div class="wrapper" style="overflow-x:scroll; width:100%;clear:both"/>');
+ * dans une balise script dans la page pour appliquer un scroll horizontal à la table quand le contenue prend trop de place.
+ * 
+ * 
  * Intégrer ce script ainsi que le css hideShowColumn.css pour rendre le script fonctionnel.
  * 
- * Plus de détails sur l'affichage en responsive dans hideShowColumn.css
+ * 
  */
 
 (function ($) {
@@ -55,7 +62,7 @@ $(function () {
             // cette input checkbox controlera la visiblité de la colonne
 
             //On créer l'input
-            var toggle = $('<li><input type="checkbox" name="toggle-cols" id="toggle-col-' + i + '" value="' + id + '" /> <label for="toggle-col-' + i + '">' + th.text() + '</label></li>');
+            var toggle = $('<li><input type="checkbox" name="toggle-cols" id="toggle-col-' + i + '" value="' + id + '"/> <label for="toggle-col-' + i + '">' + th.text() + '</label></li>');
 
             // On l'ajoute dans le menu
             container.find("ul").append(toggle);
@@ -73,7 +80,8 @@ $(function () {
                         }
                         else {
                             cols.hide();
-                        };
+                        }
+                        ;
                     })
                     // event appellé quand la taille de fenêtre change ou quand elle est réorientée (mobile)
                     .on("updateCheck", function () {
@@ -95,13 +103,13 @@ $(function () {
     // update l'input au resize
     $(window).resize(function () {
         $('.table-menu input').each(function () {
-            console.log($(this).attr('value')+":"+$('#mainTab thead th[id=' + $(this).attr('value') + ']').css("display"));
             if ($('table.tableau thead th[id=' + $(this).attr('value') + ']').css("display") == 'none') {
                 $(this).prop('checked', false);
             }
             else {
                 $(this).prop('checked', true);
-            };
+            }
+            ;
         });
     });
 
@@ -115,10 +123,6 @@ $(function () {
 
     menuWrapper.append(menuBtn).append(container);
     table.before(menuWrapper);  // on ajoute le menu avant la table
-    //
-    //ajout d'un wrapper pour assigner un scroll horizontal au tableau quand trop grand
-    table.wrap('<div class="wrapper"></div>');
-
     // click away pour fermer le popup menu
     $(document).click(function (e) {
         if (!$(e.target).is(container) && !$(e.target).is(container.find("*"))) {

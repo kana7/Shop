@@ -13,7 +13,8 @@
         <link href="http://jquery.bluechameleon.com/js/themes/redmond/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
         <link href="css/main2.css" rel="stylesheet" type="text/css"/>
         <link href="css/hideShowColumn.css" rel="stylesheet" type="text/css"/>
-        <link href="css/table-stickyHeader.css" rel="stylesheet" type="text/css"/>
+
+
 
     </head>
     <body bgcolor="#FFFFFF">
@@ -41,7 +42,7 @@
                 eval("location='" + address + "'");
             }
             // --> </script>
-        <div class="container">
+        <div class="container" style="padding-top: 15px;">
             <form action="/Scripts/sql.exe" method="post" name="_searchform">
                 <input type="hidden" name="Sql" value="PhoneBook:PhoneBookList.phs">
                 <input type="hidden" name="SqlDB" value="ossLOLShop">
@@ -50,41 +51,51 @@
                 <input type="hidden" name="_CustomScriptId" value="53">
                 <input type="hidden" name="_display" value="0">
                 <input type="hidden" name="_FirstTime" value="0">
-                Chercher 
-                <input type="text" name="_SearchText" value="">
-                dans 
-                <select name="_SearchWhere">
-                    <option value="1" selected="">Nom</option>
-                    <option value="2">Numéro</option>
-                </select>
-                trié par
-                <select name="_SearchOrder" id="_SearchOrder">
-                    <option value="0" selected="">Dernière Modif</option>
-                    <option value="1">Nom Prénom</option>
-                    <option value="2">ID Phone Book</option>
-                    <option value="3">Abonnement</option>
-                </select>
-                avec statut : 
-                <select name="_SearchStatus" id="_SearchStatus">
-                    <option value="-1">Tous les statuts</option>
-                    <option value="0">Non-Validés</option>
-                    <option value="4">En cours</option>
-                    <option value="1">Secret</option>
-                    <option value="2">Normal</option>
-                    <option value="3">Non-Actif</option>
-                </select>
-                <p>
+                <div class="row">
+                    <div class="control-group col-md-3 col-sm-6 col-xs-12">
+                        <label class="control-label" for="_SearchText">Chercher:</label>
+                        <input class="form-control" type="text" name="_SearchText" value="">
+                    </div>
+                    <div class="control-group col-md-3 col-sm-6 col-xs-12">
+                        <label class="control-label" for="_SearchWhere">dans:</label> 
+                        <select class="form-control" name="_SearchWhere">
+                            <option value="1" selected="">Nom</option>
+                            <option value="2">Numéro</option>
+                        </select>
+                    </div>
+                    <div class="control-group col-md-3 col-sm-6 col-xs-12">
+                        <label class="control-label" for="_SearchOrder">trié par:</label>
+                        <select class="form-control" name="_SearchOrder" id="_SearchOrder">
+                            <option value="0" selected="">Dernière Modif</option>
+                            <option value="1">Nom Prénom</option>
+                            <option value="2">ID Phone Book</option>
+                            <option value="3">Abonnement</option>
+                        </select>
+                    </div>
+                    <div class="control-group col-md-3 col-sm-6 col-xs-12">
+                        <label class="control-label" for="_SearchStatus">avec statut :</label> 
+                        <select  class="form-control" name="_SearchStatus" id="_SearchStatus">
+                            <option value="-1">Tous les statuts</option>
+                            <option value="0">Non-Validés</option>
+                            <option value="4">En cours</option>
+                            <option value="1">Secret</option>
+                            <option value="2">Normal</option>
+                            <option value="3">Non-Actif</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row col-xs-4" style="margin-top: 10px">
                     <input type="button" value="Vue Simple" onclick="SearchGo(0)"> 
                     <input type="button" value="Vue Detaillee" onclick="SearchGo(1)">
                     <input type="button" value="Gérer l'Annuaire" onclick="PhoneBookManagement()">
-                </p></form>
-            Affichage réduit : <b>25</b> plus récentes inscriptions
+                </div>
+            </form>
+            <p style="margin-top: 10px" class=" row col-xs-12">Affichage réduit : <b>25</b> plus récentes inscriptions</p>
+            <!--
+            select * from LOLTEL_PHONEBOOK where (azName like '%')order by iCTimeLastUpdate desc
             <p>
-                <!--
-                select * from LOLTEL_PHONEBOOK where (azName like '%')order by iCTimeLastUpdate desc
-                <p>
-                -->
-                <br>
+            -->
+            <div style="margin-top: 10px" class="row col-xs-12">
                 <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=A')">A</a> - 
                 <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=B')">B</a> - 
                 <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=C')">C</a> - 
@@ -111,7 +122,7 @@
                 <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=X')">X</a> - 
                 <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=Y')">Y</a> - 
                 <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=Z')">Z</a>
-            </p>
+            </div>
             <div class="table-wrapper">
                 <table class="tableau sticky" border="1">
                     <thead>
@@ -685,7 +696,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="11">Nb d'inscriptions trouvées avec status "<b><i>Tous les status</i></b>" : <b>19443</b></td>
+                            <td colspan="8">Nb d'inscriptions trouvées avec status "<b><i>Tous les status</i></b>" : <b>19443</b></td>
                         </tr>
                     </tfoot>
                 </table>
@@ -701,15 +712,16 @@
         <script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
         <script type="text/javascript" src="js/ossbo.js"></script>
-        <script type="text/javascript" src="js/hideShowColumn.js"></script>
-        <script type="text/javascript" src="js/table-stickyHeader.js"></script>
         <script type="text/javascript" src="js/jquery.dataTables.js"></script>
-        <script>
+        <script type="text/javascript" src="js/hideShowColumn.js"></script>
+        <script type="text/javascript">
                     $(document).ready(function () {
-                        $('table.tableau').DataTable({
-                            paging: false
-                        });
+                        $('table.tableau').DataTable();
+                        
+                        //Ajoute un wrap pour permettre le scroll horizontal(Utiliser par le sticky header)
+                        $('table.tableau').wrap('<div class="wrapper" style="overflow-x:scroll; width:100%;clear:both"/>');
                     });
         </script>
+        <script type="text/javascript" src="js/table-stickyHeader.js"></script>
     </body>
 </html>

@@ -12,8 +12,8 @@ table.silis_data_table tbody tr.even {
 }
 
 table.silis_data_table tbody tr td{
-	padding-left:18px;
-	padding-right:18px;
+	/* padding-left:18px; */
+	/* padding-right:18px; */
 }
 
 table.silis_data_table tbody tr:hover {
