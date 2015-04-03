@@ -2,17 +2,17 @@
 Voir le fichier hideShowColumn.js pour les details sur la mise en place du script.
 
 Pour la fonction hide/show column, ajouter les classes "persist", "essential", "optional" pour modifier
-les priorites d'affichage en fonction du média au chargement de la page.
+les priorites d'affichage en fonction du media au chargement de la page.
 
 Ajouter ces classes dans les balises <th> dans le <thead> de votre <table>
 
-persist: n'ajoute pas de checkbox dans le menu pour cette colonne. Il ne sera donc pas possible de cacher la colonne possédant cette classe.
+persist: n'ajoute pas de checkbox dans le menu pour cette colonne. Il ne sera donc pas possible de cacher la colonne possedant cette classe.
 
-essential: une colonne de classe "essential" restera toujours affichée peut importe le media (il est possible de la masquée via le menu).
+essential: une colonne de classe "essential" restera toujours affichee peut importe le media (editable via le menu).
 
-optional: une colonne de classe "optional" sera affichee en mode tablette(<992px) mais masquee dans les plus petits formats (<762px) (il est possible de la masquee via le menu).
+optional: une colonne de classe "optional" sera affichee en mode tablette(<992px) mais masquee dans les plus petits formats (<762px) (editable via le menu).
 
-une colonne ne possedant ni optional, ni essential sera masquee si l'affichage n'est pas sur desktop.
+une colonne ne possedant ni optional, ni essential sera masquee si l'affichage n'est pas sur desktop (editable via le menu).
 */
 
 
@@ -30,11 +30,11 @@ table.hideShow tfoot td {
 /*essential toujours affiche*/
 table.hideShow th.essential,
 table.hideShow td.essential {
-    display: table-cell !important;
-    word-wrap: break-word !important;
+    display: table-cell;
+    word-wrap: break-word;
 }
 
-/* téléphone: on cache optional et le reste */
+/* tÃ©lÃ©phone: on cache optional et le reste */
 @media screen and (max-width: 762px) {
     table.hideShow th.optional,
     table.hideShow td.optional {
@@ -50,7 +50,7 @@ table.hideShow td.essential {
     table.hideShow th.optional,
     table.hideShow td.optional {
         display: table-cell;
-        word-wrap: break-word !important;
+        word-wrap: break-word;
     }
     table.hideShow th,
     table.hideShow td {
@@ -62,7 +62,7 @@ table.hideShow td.essential {
     table.hideShow th,
     table.hideShow td {
         display: table-cell;
-        word-wrap: break-word !important;
+        word-wrap: break-word;
     }
 }
 

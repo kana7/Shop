@@ -719,6 +719,7 @@
                         $('table.tableau').DataTable();
                         
                         //Ajoute un wrap pour permettre le scroll horizontal(Utiliser par le sticky header)
+                        //Toujours le faire après la déclaration de la dataTable (Si il y en a une)
                         $('table.tableau').wrap('<div class="wrapper" style="overflow-x:scroll; width:100%;clear:both"/>');
                     });
         </script>
