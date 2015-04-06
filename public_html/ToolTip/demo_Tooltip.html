@@ -6,11 +6,97 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Tooltip Test</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            img{
+                max-width: 1920px;
+                width: 100%;
+                height: auto;
+            }
+
+            .container{
+                width: 70%;
+                margin: 0 auto;
+            }
+
+            .tooltip {
+                display:none;
+                position:absolute;
+                border:1px solid #333;
+                background-color:#161616;
+                border-radius:5px;
+                padding:10px;
+                color:#fff;
+                font-size:12px;
+                font-family: arial;
+            }
+
+            p{
+                margin-top: 20px;
+                margin-bottom: 20px;
+
+            }
+
+            form{
+                margin-top: 20px;
+            }
+            
+            .input-group{
+                width: 25%;
+                height: 25px;
+                display: block;
+                padding-bottom: 15px;
+            }
+            .input-group label{
+                display: inline-block;
+                float: left;
+            }
+            .input-group input{
+                display: inline-block;
+                float: right;
+            }
+        </style>
     </head>
     <body>
-        <div>TODO write content</div>
+        <div class="container">
+            <a href="#" title="Ceci est un lien important" class="targetTooltip">Your Text</a>
+            <p title="Ceci est un texte en lorem Ipsum." class="targetTooltip">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <img src="img/spirits_2560x1440.jpg" class="targetTooltip" title="Ceci est un beau fond écran." />
+            <form action="#" method="get">
+                <div class="input-group">
+                    <label for="name">Nom:</label>
+                    <input type="text" name="name" class="targetTooltip" title="taper votre login ou email"/>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" class="targetTooltip" title="taper votre mot de passe"/>
+                </div>
+            </form>
+        </div>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+// Tooltip only Text
+                $('.targetTooltip').hover(function () {
+
+                    var title = $(this).attr('title');
+                    $(this).data('tipText', title).removeAttr('title');
+                    $('<p class="tooltip"></p>').text(title).delay(1000).appendTo('body').fadeIn('slow');
+                }, function () {
+                    // Hover out code
+                    $(this).attr('title', $(this).data('tipText'));
+                    $('.tooltip').remove();
+                }).mousemove(function (e) {
+                    var mousex = e.pageX + 20; //Get X coordinates
+                    var mousey = e.pageY + 10; //Get Y coordinates
+                    $('.tooltip').css({top: mousey, left: mousex});
+                });
+            });
+        </script>
     </body>
 </html>
