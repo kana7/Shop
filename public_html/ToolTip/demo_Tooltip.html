@@ -19,6 +19,8 @@ and open the template in the editor.
             .container{
                 width: 70%;
                 margin: 0 auto;
+                padding-top: 30px;
+                padding-bottom: 30px;
             }
 
             .tooltip {
@@ -42,7 +44,11 @@ and open the template in the editor.
             form{
                 margin-top: 20px;
             }
-            
+
+            .justifier{
+                text-align: justify;
+            }
+
             .input-group{
                 width: 25%;
                 height: 25px;
@@ -56,6 +62,58 @@ and open the template in the editor.
             .input-group input{
                 display: inline-block;
                 float: right;
+            }
+
+            .cd-top {
+                display: inline-block;
+                height: 40px;
+                width: 40px;
+                position: fixed;
+                bottom: 40px;
+                right: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+                /* image replacement properties */
+                overflow: hidden;
+                text-indent: 100%;
+                white-space: nowrap;
+                background: rgba(232, 98, 86, 0.8) url(img/cd-top-arrow.svg) no-repeat center 50%;
+                visibility: hidden;
+                opacity: 0;
+                -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+                -moz-transition: opacity .3s 0s, visibility 0s .3s;
+                transition: opacity .3s 0s, visibility 0s .3s;
+            }
+            .cd-top.cd-is-visible, .cd-top.cd-fade-out, .cd-top:hover {
+                -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+                -moz-transition: opacity .3s 0s, visibility 0s 0s;
+                transition: opacity .3s 0s, visibility 0s 0s;
+            }
+            .cd-top.cd-is-visible {
+                /* the button becomes visible */
+                visibility: visible;
+                opacity: 1;
+            }
+            .cd-top.cd-fade-out {
+                /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+                opacity: .5;
+            }
+            .cd-top:hover {
+                background-color: #e86256;
+                opacity: 1;
+            }
+            @media only screen and (min-width: 768px) {
+                .cd-top {
+                    right: 20px;
+                    bottom: 20px;
+                }
+            }
+            @media only screen and (min-width: 1024px) {
+                .cd-top {
+                    height: 60px;
+                    width: 60px;
+                    right: 30px;
+                    bottom: 30px;
+                }
             }
         </style>
     </head>
@@ -71,17 +129,35 @@ and open the template in the editor.
                     <label for="name">Nom:</label>
                     <input type="text" name="name" class="targetTooltip" title="taper votre login ou email"/>
                 </div>
-                
+
                 <div class="input-group">
                     <label for="password">Password:</label>
                     <input type="password" name="password" class="targetTooltip" title="taper votre mot de passe"/>
                 </div>
             </form>
+            <p class="justifier">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p class="justifier">
+                Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.
+            </p>
+            <p class="justifier">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p class="justifier">
+                Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.
+            </p>
+            <p class="justifier">
+                Fusce convallis, mauris imperdiet gravida bibendum, nisl turpis suscipit mauris, sed placerat ipsum urna sed risus. In convallis tellus a mauris. Curabitur non elit ut libero tristique sodales. Mauris a lacus. Donec mattis semper leo. In hac habitasse platea dictumst. Vivamus facilisis diam at odio. Mauris dictum, nisi eget consequat elementum, lacus ligula molestie metus, non feugiat orci magna ac sem. Donec turpis. Donec vitae metus. Morbi tristique neque eu mauris. Quisque gravida ipsum non sapien. Proin turpis lacus, scelerisque vitae, elementum at, lobortis ac, quam. Aliquam dictum eleifend risus. In hac habitasse platea dictumst. Etiam sit amet diam. Suspendisse odio. Suspendisse nunc. In semper bibendum libero.
+            </p>
+            <p class="justifier">
+                Proin nonummy, lacus eget pulvinar lacinia, pede felis dignissim leo, vitae tristique magna lacus sit amet eros. Nullam ornare. Praesent odio ligula, dapibus sed, tincidunt eget, dictum ac, nibh. Nam quis lacus. Nunc eleifend molestie velit. Morbi lobortis quam eu velit. Donec euismod vestibulum massa. Donec non lectus. Aliquam commodo lacus sit amet nulla. Cras dignissim elit et augue. Nullam non diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In hac habitasse platea dictumst. Aenean vestibulum. Sed lobortis elit quis lectus. Nunc sed lacus at augue bibendum dapibus.
+            </p>
         </div>
+        <a href="#0" class="cd-top">Top</a>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
         <script type="text/javascript">
-            $(document).ready(function () {
-// Tooltip only Text
+            $(function () {
                 $('.targetTooltip').hover(function () {
 
                     var title = $(this).attr('title');
@@ -92,9 +168,29 @@ and open the template in the editor.
                     $(this).attr('title', $(this).data('tipText'));
                     $('.tooltip').remove();
                 }).mousemove(function (e) {
-                    var mousex = e.pageX + 20; //Get X coordinates
-                    var mousey = e.pageY + 10; //Get Y coordinates
+                    var mousex = e.pageX + 10; //Get X coordinates
+                    var mousey = e.pageY; //Get Y coordinates
                     $('.tooltip').css({top: mousey, left: mousex});
+                });
+
+                /*Back to the top function*/
+                var offset = 300,
+                        //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+                        offset_opacity = 600,
+                        //duration of the top scrolling animation (in ms)
+                        scroll_top_duration = 700;
+                //hide or show the "back to top" link
+                $(window).scroll(function () {
+                    ($(this).scrollTop() > offset) ? $('.cd-top').addClass('cd-is-visible') : $('.cd-top').removeClass('cd-is-visible cd-fade-out');
+                    if ($(this).scrollTop() > offset_opacity) {
+                        $('.cd-top').addClass('cd-fade-out');
+                    }
+                });
+
+                //smooth scroll to top
+                $('.cd-top').click(function(event){
+                    event.preventDefault();
+                    $('body,html').animate({scrollTop: 0}, scroll_top_duration);
                 });
             });
         </script>
