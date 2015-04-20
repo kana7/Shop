@@ -9,17 +9,81 @@
             html,body{
                 height: 100%;
             }
-            .container{
+            div{
+                transition: width linear 2s;
+            }
+            .container.resp{
                 background-color: gainsboro;
                 height: 100%;
+            }
+            .titre{
+                margin-bottom: 20px;
+            }
+            .colonne{
+                background-color: #23527c;
+                height: 100%;
+                padding-left: 10px;
+                padding-right: 10px;
+                background-clip:content-box;
+            }
+            .border{
+                border-right: #d58512 1px solid;
+            }
+            .elem{
+                height: 75px;
+                background-color: #449d44;
+            }
+            .elem.red{
+                background-color: #843534;
+            }
+            #show{
+                position: absolute;
+                top: 20%;
+            }
+            .espace{
+                margin-bottom: 20px;
             }
         </style>
     </head>
     <body>
-        <div class="container">
-            <h1>
-                Ceci est une étude sur le responsive 
+        <div class="container resp">
+            <h1 class="titre">
+                Grille responsive
             </h1>
+            <div class="row" style="height: 100%; border-left: #d58512 1px solid;">
+                <div class="col-xs-1 colonne border"></div>
+                <div class="col-xs-1 colonne border"></div>
+                <div class="col-xs-1 colonne border"></div>
+                <div class="col-xs-1 colonne border"></div>
+                <div class="col-xs-1 colonne border"></div>
+                <div class="col-xs-1 colonne border"></div>
+                <div class="col-xs-1 colonne border"></div>
+                <div class="col-xs-1 colonne border"></div>
+                <div class="col-xs-1 colonne border"></div>
+                <div class="col-xs-1 colonne border"></div>
+                <div class="col-xs-1 colonne border"></div>
+                <div class="col-xs-1 colonne border"></div>
+            </div>
+            <div class="row" id="show">
+                <div class="container">
+                    <div class="row espace">
+                        <div class="col-lg-6 elem"></div>
+                        <div class="col-lg-6 elem red"></div>
+                    </div>
+                    <div class="row espace">
+                        <div class="col-md-6 elem"></div>
+                        <div class="col-md-6 elem red"></div>
+                    </div>
+                    <div class="row espace">
+                        <div class="col-sm-6 elem"></div>
+                        <div class="col-sm-6 elem red"></div>
+                    </div>
+                    <div class="row espace">
+                        <div class="col-xs-6 elem"></div>
+                        <div class="col-xs-6 elem red"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
