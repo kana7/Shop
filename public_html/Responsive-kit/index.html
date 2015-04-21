@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Responsive TEST</title>
+        <title>Responsive DEMO</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/layout-grid.css" type="text/css" rel="stylesheet">
@@ -11,16 +11,30 @@
             }
             div{
                 transition: width linear 2s;
+                font-size: 16px;
             }
-            .container.resp{
-                background-color: gainsboro;
+            .container-fluid, .container{
+                background-color: rgba(235,249,255,0.9);
                 height: 100%;
             }
+            .opac{
+                opacity: 0.5;
+            }
             .titre{
-                margin-bottom: 20px;
+                margin-bottom: 10px;
+            }
+            
+            @media(max-width: 679px){
+                .titre{
+                    margin-top: 70px;
+                }
+            }
+            hr{
+                margin-top: 0;
+                margin-bottom: 30px;
             }
             .colonne{
-                background-color: #23527c;
+                background-color: #0D88BB;
                 height: 100%;
                 padding-left: 10px;
                 padding-right: 10px;
@@ -30,27 +44,43 @@
                 border-right: #d58512 1px solid;
             }
             .elem{
-                height: 75px;
+                height: 50px;
                 background-color: #449d44;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
             .elem.red{
-                background-color: #843534;
+                background-color: #d9534f;
             }
-            #show{
+            @media(max-width: 355px){
+                .content{
+                    width: 100%;                    
+                }
+            }
+            .content{
                 position: absolute;
-                top: 20%;
             }
             .espace{
-                margin-bottom: 20px;
+                margin-bottom: 25px;
+            }
+            h1,h2,h3{
+                color: #23527c;
             }
         </style>
     </head>
     <body>
-        <div class="container resp">
+        
+        <div id="page" class="container resp" style="position: relative;">
+            <div id="viewport" style="position: absolute; top: 20px; right: 20px"></div>
+            <div id="contain" style="position: absolute; top: 45px; right: 20px"></div>
             <h1 class="titre">
                 Grille responsive
             </h1>
-            <div class="row" style="height: 100%; border-left: #d58512 1px solid;">
+            <div class="row">
+                <hr style="border-top-color: #23527c;">
+            </div>
+            <div class="row opac" style="height: 100%; border-left: #d58512 1px solid;">
                 <div class="col-xs-1 colonne border"></div>
                 <div class="col-xs-1 colonne border"></div>
                 <div class="col-xs-1 colonne border"></div>
@@ -64,26 +94,63 @@
                 <div class="col-xs-1 colonne border"></div>
                 <div class="col-xs-1 colonne border"></div>
             </div>
-            <div class="row" id="show">
+            <div class="row content" style="top: 20%;">
                 <div class="container">
-                    <div class="row espace">
-                        <div class="col-lg-6 elem"></div>
-                        <div class="col-lg-6 elem red"></div>
+                    <div class="row">
+                        <h2 class="col-xs-12" style="text-align: center;">Comportement colonnes</h2>
                     </div>
                     <div class="row espace">
-                        <div class="col-md-6 elem"></div>
-                        <div class="col-md-6 elem red"></div>
+                        <div class="col-lg-6 elem">col-lg-6</div>
+                        <div class="col-lg-6 elem red">col-lg-6</div>
                     </div>
                     <div class="row espace">
-                        <div class="col-sm-6 elem"></div>
-                        <div class="col-sm-6 elem red"></div>
+                        <div class="col-md-6 elem">col-md-6</div>
+                        <div class="col-md-6 elem red">col-md-6</div>
                     </div>
                     <div class="row espace">
-                        <div class="col-xs-6 elem"></div>
-                        <div class="col-xs-6 elem red"></div>
+                        <div class="col-sm-6 elem">col-sm-6</div>
+                        <div class="col-sm-6 elem red">col-sm-6</div>
+                    </div>
+                    <div class="row espace">
+                        <div class="col-xs-6 elem">col-xs-6</div>
+                        <div class="col-xs-6 elem red">col-xs-6</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row content"  style="top: 80%;">
+                <div class="container">
+                    <div class="row">
+                        <h2 class="col-xs-12" style="text-align: center;">Comportement colonnes</h2>
+                    </div>
+                    <div class="row espace">
+                        <div class="col-xs-6 elem">col-xs-6</div>
+                        <div class="col-xs-6 elem red">col-xs-6</div>
                     </div>
                 </div>
             </div>
         </div>
+        <script src="js/jquery.js"></script>
+        <script>
+            //size of viewport
+            function viewport() {
+                var e = window, a = 'inner';
+                if (!('innerWidth' in window)) {
+                    a = 'client';
+                    e = document.documentElement || document.body;
+                }
+                return {width: e[ a + 'Width' ], height: e[ a + 'Height' ]};
+            }
+
+            $(function () {
+                $('#viewport').append('<strong>viewport : ' + viewport().width + 'px</strong>');
+                $('#contain').append('<strong>container : ' + $('#page').css('width') + '</strong>');
+                $(window).resize(function () {
+                    $('#viewport').empty().append('<strong>viewport : ' + viewport().width +'px</strong>');
+                });
+                $(window).resize(function () {
+                    $('#contain').empty().append('<strong>container : ' + $('#page').css('width') + '</strong>');
+                });
+            });
+        </script>
     </body>
 </html>
