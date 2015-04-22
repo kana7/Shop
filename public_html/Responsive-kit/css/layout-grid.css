@@ -1,9 +1,22 @@
 /*
-Fichier permettant de réaliser une mise en page Responsive sur base d'une grille de 12 colonnes.
-Adapté de Bootstrap.
+Fichier permettant de rÃ©aliser une mise en page Responsive sur base d'une grille de 12 colonnes.
+AdaptÃ© de Bootstrap.
+
+
+media queries Ã  utiliser pour chaques points de rupture (types de rÃ©solution):
+
+@media (max-width: 679px){} -----> TÃ©lÃ©phone
+
+@media (min-width: 680px){} -----> tablette et plus
+
+@media (min-width: 992px){} -----> desktop et plus
+
+@media (min-width: 1172px){} -----> large desktop et plus
 */
 
-/*Propriétés de base pour la plupart des balises - base propre*/
+
+
+/*PropriÃ©tÃ©s de base pour la plupart des balises - base propre*/
 html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
@@ -189,7 +202,7 @@ th {
     padding: 0;
 }
 
-/* Style appliqué aux feuilles imprimées*/
+/* Style appliquÃ© aux feuilles imprimÃ©es*/
 @media print {
     *,
     *:before,
@@ -265,7 +278,7 @@ th {
     }
 }
 
-/* La taille d'un élément (largeur et hauteur) est définie jusque à la bordure mais pas sans les marges*/
+/* La taille d'un Ã©lÃ©ment (largeur et hauteur) est dÃ©finie jusque Ã  la bordure mais pas sans les marges*/
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -326,7 +339,7 @@ img {
     max-width: 100%;
     height: auto;
 }
-/*Ligne de séparation*/
+/*Ligne de sÃ©paration*/
 hr {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -385,14 +398,14 @@ pre code {
     border-radius: 0;
 }
 
-/*Définition des tailles des conteneurs*/
+/*DÃ©finition des tailles des conteneurs*/
 .container {
     margin-right: auto;
     margin-left: auto;
     padding-left: 10px;
     padding-right: 10px;
 }
-/*Téléphones*/
+/*TÃ©lÃ©phones en trÃ¨s petite rÃ©solution: le conteneur se met en largeur auto*/
 @media (max-width: 355px) {
     .container {
         width: auto !important;
@@ -400,7 +413,8 @@ pre code {
         margin-left: 0px;
     }
 }
-/*Téléphones*/
+
+/*TÃ©lÃ©phones*/
 @media (min-width: 356px) {
     .container {
         width: 324px;
@@ -426,7 +440,7 @@ pre code {
     }
 }
 
-/*container prenant toute la largeur de l'écran*/
+/*container prenant toute la largeur de l'Ã©cran*/
 .container-fluid {
     margin-right: auto;
     margin-left: auto;
@@ -440,7 +454,7 @@ pre code {
     margin-right: -10px;
 }
 
-/*Définition des colonnes*/
+/*DÃ©finition des colonnes*/
 .phone-1, .tab-1, .desk-1, .lgdesk-1, .phone-2, .tab-2, .desk-2, .lgdesk-2, .phone-3, .tab-3, .desk-3, .lgdesk-3, .phone-4, .tab-4, .desk-4, .lgdesk-4, .phone-5, .tab-5, .desk-5, .lgdesk-5, .phone-6, .tab-6, .desk-6, .lgdesk-6, .phone-7, .tab-7, .desk-7, .lgdesk-7, .phone-8, .tab-8, .desk-8, .lgdesk-8, .phone-9, .tab-9, .desk-9, .lgdesk-9, .phone-10, .tab-10, .desk-10, .lgdesk-10, .phone-11, .tab-11, .desk-11, .lgdesk-11, .phone-12, .tab-12, .desk-12, .lgdesk-12 {
     position: relative;
     min-height: 1px;
@@ -449,7 +463,7 @@ pre code {
     float: left;
 }
 
-/* Colonnes pour téléphone*/
+/* Colonnes pour tÃ©lÃ©phone*/
 .phone-12 {
     width: 100%;
 }
@@ -487,7 +501,7 @@ pre code {
     width: 8.33333333%;
 }
 
-/*Déplacement vers la gauche téléphone*/
+/*DÃ©placement vers la gauche tÃ©lÃ©phone*/
 .phone-pull-12 {
     right: 100%;
 }
@@ -528,7 +542,7 @@ pre code {
     right: auto;
 }
 
-/*Déplacement vers la droite téléphone*/
+/*DÃ©placement vers la droite tÃ©lÃ©phone*/
 .phone-push-12 {
     left: 100%;
 }
@@ -569,7 +583,7 @@ pre code {
     left: auto;
 }
 
-/*marge vers la gauche téléphone*/
+/*marge vers la gauche tÃ©lÃ©phone*/
 .phone-offset-12 {
     margin-left: 100%;
 }
@@ -610,7 +624,7 @@ pre code {
     margin-left: 0%;
 }
 
-/*Marge vers la droite téléphone*/
+/*Marge vers la droite tÃ©lÃ©phone*/
 .phone-offset-right-12 {
     margin-right: 100%;
 }
@@ -693,7 +707,7 @@ pre code {
         width: 8.33333333%;
     }
     
-    /*Déplacement vers la gauche tablette*/
+    /*DÃ©placement vers la gauche tablette*/
     .tab-pull-12 {
         right: 100%;
     }
@@ -733,7 +747,7 @@ pre code {
     .tab-pull-0 {
         right: auto;
     }
-    /*Déplacement vers la droite tablette*/
+    /*DÃ©placement vers la droite tablette*/
     .tab-push-12 {
         left: 100%;
     }
@@ -898,7 +912,7 @@ pre code {
     .desk-1 {
         width: 8.33333333%;
     }
-    /*Déplacement vers la gauche desktop*/
+    /*DÃ©placement vers la gauche desktop*/
     .desk-pull-12 {
         right: 100%;
     }
@@ -938,7 +952,7 @@ pre code {
     .desk-pull-0 {
         right: auto;
     }
-    /*Déplacement vers la droite desktop*/
+    /*DÃ©placement vers la droite desktop*/
     .desk-push-12 {
         left: 100%;
     }
@@ -1059,7 +1073,7 @@ pre code {
         margin-right: 0%;
     }
 }
-/*Colonnes pour desktop large (écran haute définition et plus)*/
+/*Colonnes pour desktop large (Ã©cran haute dÃ©finition et plus)*/
 @media (min-width: 1172px) {
     .lgdesk-1, .lgdesk-2, .lgdesk-3, .lgdesk-4, .lgdesk-5, .lgdesk-6, .lgdesk-7, .lgdesk-8, .lgdesk-9, .lgdesk-10, .lgdesk-11, .lgdesk-12 {
         float: left;
@@ -1101,7 +1115,7 @@ pre code {
         width: 8.33333333%;
     }
     
-    /*Déplacement vers la gauche large desktop*/
+    /*DÃ©placement vers la gauche large desktop*/
     .lgdesk-pull-12 {
         right: 100%;
     }
@@ -1142,7 +1156,7 @@ pre code {
         right: auto;
     }
     
-    /*Déplacement vers la droite large desktop*/
+    /*DÃ©placement vers la droite large desktop*/
     .lgdesk-push-12 {
         left: 100%;
     }
@@ -1266,7 +1280,7 @@ pre code {
     }
 }
 
-/*Clearfix permet de régler les problèmes de mise en page pour des éléments réparatis sur plusieurs lignes et de hauteurs différentes*/
+/*Clearfix permet de rÃ©gler les problÃ¨mes de mise en page pour des Ã©lÃ©ments rÃ©partis sur plusieurs lignes et de hauteurs diffÃ©rentes*/
 .clearfix:before,
 .clearfix:after,
 .container:before,
@@ -1292,12 +1306,12 @@ pre code {
     margin-right: auto;
 }
 
-/*Place le bloc sur le coté droit du conteneur*/
+/*Place le bloc sur le cotÃ© droit du conteneur*/
 .pull-right {
     float: right !important;
 }
 
-/*Place le bloc sur le coté gauche du conteneur*/
+/*Place le bloc sur le cotÃ© gauche du conteneur*/
 .pull-left {
     float: left !important;
 }
@@ -1347,7 +1361,7 @@ pre code {
     display: none !important;
 }
 
-/*Classes permettant d'afficher un bloc uniquement en résolution téléphone*/
+/*Classes permettant d'afficher un bloc uniquement en rÃ©solution tÃ©lÃ©phone*/
 @media (max-width: 679px) {
     .display-phone {
         display: block !important;
@@ -1378,7 +1392,7 @@ pre code {
         display: inline-block !important;
     }
 }
-/*Classes permettant d'afficher un bloc uniquement en résolution tablette*/
+/*Classes permettant d'afficher un bloc uniquement en rÃ©solution tablette*/
 @media (min-width: 680px) and (max-width: 991px) {
     .display-tab {
         display: block !important;
@@ -1410,7 +1424,7 @@ pre code {
     }
 }
 
-/*Classes permettant d'afficher un bloc uniquement en résolution desktop*/
+/*Classes permettant d'afficher un bloc uniquement en rÃ©solution desktop*/
 @media (min-width: 992px) and (max-width: 1171px) {
     .display-desk {
         display: block !important;
@@ -1442,7 +1456,7 @@ pre code {
     }
 }
 
-/*Classes permettant d'afficher un bloc uniquement en haute résolution*/
+/*Classes permettant d'afficher un bloc uniquement en haute rÃ©solution*/
 @media (min-width: 1172px) {
     .display-lgdesk {
         display: block !important;
@@ -1474,26 +1488,26 @@ pre code {
     }
 }
 
-/*Cacher bloc en résolution téléphone*/
+/*Cacher bloc en rÃ©solution tÃ©lÃ©phone*/
 @media (min-width: 1172px) {
     .hidden-phone {
         display: none !important;
     }
 }
 
-/*Cacher bloc en résolution tablette*/
+/*Cacher bloc en rÃ©solution tablette*/
 @media (min-width: 680px) and (max-width: 991px) {
     .hidden-tab {
         display: none !important;
     }
 }
-/*Cacher bloc en résolution desktop*/
+/*Cacher bloc en rÃ©solution desktop*/
 @media (min-width: 992px) and (max-width: 1171px) {
     .hidden-desk {
         display: none !important;
     }
 }
-/*Cacher bloc en haute résolution*/
+/*Cacher bloc en haute rÃ©solution*/
 @media (min-width: 1172px) {
     .hidden-lgdesk {
         display: none !important;

@@ -5,70 +5,7 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link href="css/layout-grid.css" type="text/css" rel="stylesheet"/>
-        <style>
-            html,body{
-                height: 100%;
-            }
-            div{
-                transition: width linear 2s;
-                font-size: 16px;
-            }
-            .container-fluid, .container{
-                background-color: rgba(235,249,255,0.9);
-                height: 100%;
-            }
-            .opac{
-                opacity: 0.5;
-            }
-            .titre{
-                margin-bottom: 10px;
-            }
-            .titre{
-                margin-top: 70px;
-            }
-
-            hr{
-                margin-top: 0;
-                margin-bottom: 30px;
-            }
-            .colonne{
-                background-color: #0D88BB;
-                height: 100%;
-                padding-left: 10px;
-                padding-right: 10px;
-                background-clip:content-box;
-            }
-            .border{
-                border-right: #d58512 1px solid;
-            }
-            .elem{
-                height: 50px;
-                background-color: #449d44;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            .elem.espace{
-                margin-bottom: 10px;
-            }
-            .elem.red{
-                background-color: #d9534f;
-            }
-            @media(max-width: 355px){
-                .content{
-                    width: 100%;                    
-                }
-            }
-            .content{
-                position: absolute;
-            }
-            .espace{
-                margin-bottom: 25px;
-            }
-            h1,h2,h3{
-                color: #23527c;
-            }
-        </style>
+        <link href="css/main.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
 
@@ -97,7 +34,7 @@
                 <div class="phone-1 colonne border"></div>
             </div>
             <div class="row content" style="top: 20%;">
-                <div class="container">
+                <div class="container" style="background-color: rgba(235,249,255,0.6);">
                     <div class="row">
                         <h2 class="phone-12" style="text-align: center;">Comportement colonnes</h2>
                     </div>
@@ -117,15 +54,19 @@
                         <div class="phone-6 elem">phone-6</div>
                         <div class="phone-6 elem red">phone-6</div>
                     </div>
-                    <div class="row espace">
+                    <div class="row espace" style="margin-top: 50px;">
                         <div class="elem desk-8 tab-4 phone-5">desk-8 tab-4 phone-5</div>
                         <div class="elem red desk-4 tab-8 phone-7">desk-4 tab-8 phone-7</div>
                     </div>
-                </div>
-            </div>
-
-            <div class="row content"  style="top: 85%;">
-                <div class="container">
+                    <div class="row">
+                        <h2 class="phone-12" style="text-align: center;">Déplacement colonnes</h2>
+                    </div>
+                    <div class="row espace">
+                        <div class="elem red phone-6 desk-push-3 tab-push-6">phone-6 desk-push-3 tab-push-3</div>
+                    </div>
+                    <div class="row espace">
+                        <div class="elem red phone-6 pull-right desk-pull-3 tab-pull-6">phone-6 pull-right desk-pull-3 tab-pull-6</div>
+                    </div>
                     <div class="row">
                         <h2 class="phone-12" style="text-align: center;">Distribution</h2>
                     </div>
@@ -143,38 +84,17 @@
             </div>
         </div>
         <script src="js/jquery.js"></script>
+        <script src="js/viewport.js"></script>
         <script>
-            //size of viewport
-            function viewport() {
-                var e = window, a = 'inner';
-                if (!('innerWidth' in window)) {
-                    a = 'client';
-                    e = document.documentElement || document.body;
-                }
-                return {width: e[ a + 'Width' ], height: e[ a + 'Height' ]};
-            }
-
-            function getClass() {
-                if (viewport().width >= 1170) {
-                    return 'lg-desktop';
-                } else if (viewport().width < 1172 && viewport().width >= 992) {
-                    return 'desktop';
-                } else if (viewport().width < 992 && viewport().width >= 680) {
-                    return 'tablette';
-                } else if (viewport().width < 680) {
-                    return 'phone';
-                }
-            }
-
             $(function () {
                 $('#viewport').append('<strong>viewport : ' + viewport().width + 'px</strong>');
                 $('#contain').append('<strong>container : ' + $('#page').css('width') + '</strong>');
-                $('#class').append('<strong>' + getClass() + '</strong>');
+                $('#class').append('<strong>' + getViewportClass() + '</strong>');
 
                 $(window).resize(function () {
                     $('#viewport').empty().append('<strong>viewport : ' + viewport().width + 'px</strong>');
                     $('#contain').empty().append('<strong>container : ' + $('#page').css('width') + '</strong>');
-                    $('#class').empty().append('<strong>' + getClass() + '</strong>');
+                    $('#class').empty().append('<strong>' + getViewportClass() + '</strong>');
                 });
             });
         </script>
