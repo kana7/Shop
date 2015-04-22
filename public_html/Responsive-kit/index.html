@@ -2,9 +2,9 @@
 <html>
     <head>
         <title>Responsive DEMO</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/layout-grid.css" type="text/css" rel="stylesheet">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="css/layout-grid.css" type="text/css" rel="stylesheet"/>
         <style>
             html,body{
                 height: 100%;
@@ -23,12 +23,10 @@
             .titre{
                 margin-bottom: 10px;
             }
-            
-            @media(max-width: 679px){
-                .titre{
-                    margin-top: 70px;
-                }
+            .titre{
+                margin-top: 70px;
             }
+
             hr{
                 margin-top: 0;
                 margin-bottom: 30px;
@@ -50,6 +48,9 @@
                 justify-content: center;
                 align-items: center;
             }
+            .elem.espace{
+                margin-bottom: 10px;
+            }
             .elem.red{
                 background-color: #d9534f;
             }
@@ -70,9 +71,10 @@
         </style>
     </head>
     <body>
-        
+
         <div id="page" class="container resp" style="position: relative;">
             <div id="viewport" style="position: absolute; top: 20px; right: 20px"></div>
+            <div id="class" style="position: absolute; top: 20px; left: 20px"></div>
             <div id="contain" style="position: absolute; top: 45px; right: 20px"></div>
             <h1 class="titre">
                 Grille responsive
@@ -81,50 +83,61 @@
                 <hr style="border-top-color: #23527c;">
             </div>
             <div class="row opac" style="height: 100%; border-left: #d58512 1px solid;">
-                <div class="col-xs-1 colonne border"></div>
-                <div class="col-xs-1 colonne border"></div>
-                <div class="col-xs-1 colonne border"></div>
-                <div class="col-xs-1 colonne border"></div>
-                <div class="col-xs-1 colonne border"></div>
-                <div class="col-xs-1 colonne border"></div>
-                <div class="col-xs-1 colonne border"></div>
-                <div class="col-xs-1 colonne border"></div>
-                <div class="col-xs-1 colonne border"></div>
-                <div class="col-xs-1 colonne border"></div>
-                <div class="col-xs-1 colonne border"></div>
-                <div class="col-xs-1 colonne border"></div>
+                <div class="phone-1 colonne border"></div>
+                <div class="phone-1 colonne border"></div>
+                <div class="phone-1 colonne border"></div>
+                <div class="phone-1 colonne border"></div>
+                <div class="phone-1 colonne border"></div>
+                <div class="phone-1 colonne border"></div>
+                <div class="phone-1 colonne border"></div>
+                <div class="phone-1 colonne border"></div>
+                <div class="phone-1 colonne border"></div>
+                <div class="phone-1 colonne border"></div>
+                <div class="phone-1 colonne border"></div>
+                <div class="phone-1 colonne border"></div>
             </div>
             <div class="row content" style="top: 20%;">
                 <div class="container">
                     <div class="row">
-                        <h2 class="col-xs-12" style="text-align: center;">Comportement colonnes</h2>
+                        <h2 class="phone-12" style="text-align: center;">Comportement colonnes</h2>
                     </div>
                     <div class="row espace">
-                        <div class="col-lg-6 elem">col-lg-6</div>
-                        <div class="col-lg-6 elem red">col-lg-6</div>
+                        <div class="lgdesk-6 elem">lgdesk-6</div>
+                        <div class="lgdesk-6 elem red">lgdesk-6</div>
                     </div>
                     <div class="row espace">
-                        <div class="col-md-6 elem">col-md-6</div>
-                        <div class="col-md-6 elem red">col-md-6</div>
+                        <div class="desk-6 elem">desk-6</div>
+                        <div class="desk-6 elem red">desk-6</div>
                     </div>
                     <div class="row espace">
-                        <div class="col-sm-6 elem">col-sm-6</div>
-                        <div class="col-sm-6 elem red">col-sm-6</div>
+                        <div class="tab-6 elem">tab-6</div>
+                        <div class="tab-6 elem red">tab-6</div>
                     </div>
                     <div class="row espace">
-                        <div class="col-xs-6 elem">col-xs-6</div>
-                        <div class="col-xs-6 elem red">col-xs-6</div>
+                        <div class="phone-6 elem">phone-6</div>
+                        <div class="phone-6 elem red">phone-6</div>
+                    </div>
+                    <div class="row espace">
+                        <div class="elem desk-8 tab-4 phone-5">desk-8 tab-4 phone-5</div>
+                        <div class="elem red desk-4 tab-8 phone-7">desk-4 tab-8 phone-7</div>
                     </div>
                 </div>
             </div>
-            <div class="row content"  style="top: 80%;">
+
+            <div class="row content"  style="top: 85%;">
                 <div class="container">
                     <div class="row">
-                        <h2 class="col-xs-12" style="text-align: center;">Comportement colonnes</h2>
+                        <h2 class="phone-12" style="text-align: center;">Distribution</h2>
                     </div>
                     <div class="row espace">
-                        <div class="col-xs-6 elem">col-xs-6</div>
-                        <div class="col-xs-6 elem red">col-xs-6</div>
+                        <div class="desk-3 tab-6 phone-12 elem espace">desk-3 tab-6 phone-12</div>
+                        <div class="desk-3 tab-6 phone-12 elem red espace">desk-3 tab-6 phone-12</div>
+                        <div class="desk-3 tab-6 phone-12 elem espace">desk-3 tab-6 phone-12</div>
+                        <div class="desk-3 tab-6 phone-12 elem red espace">desk-3 tab-6 phone-12</div>
+                        <div class="desk-3 tab-6 phone-12 elem espace">desk-3 tab-6 phone-12</div>
+                        <div class="desk-3 tab-6 phone-12 elem red espace">desk-3 tab-6 phone-12</div>
+                        <div class="desk-3 tab-6 phone-12 elem espace">desk-3 tab-6 phone-12</div>
+                        <div class="desk-3 tab-6 phone-12 elem red espace">desk-3 tab-6 phone-12</div>
                     </div>
                 </div>
             </div>
@@ -141,14 +154,27 @@
                 return {width: e[ a + 'Width' ], height: e[ a + 'Height' ]};
             }
 
+            function getClass() {
+                if (viewport().width >= 1170) {
+                    return 'lg-desktop';
+                } else if (viewport().width < 1172 && viewport().width >= 992) {
+                    return 'desktop';
+                } else if (viewport().width < 992 && viewport().width >= 680) {
+                    return 'tablette';
+                } else if (viewport().width < 680) {
+                    return 'phone';
+                }
+            }
+
             $(function () {
                 $('#viewport').append('<strong>viewport : ' + viewport().width + 'px</strong>');
                 $('#contain').append('<strong>container : ' + $('#page').css('width') + '</strong>');
+                $('#class').append('<strong>' + getClass() + '</strong>');
+
                 $(window).resize(function () {
-                    $('#viewport').empty().append('<strong>viewport : ' + viewport().width +'px</strong>');
-                });
-                $(window).resize(function () {
+                    $('#viewport').empty().append('<strong>viewport : ' + viewport().width + 'px</strong>');
                     $('#contain').empty().append('<strong>container : ' + $('#page').css('width') + '</strong>');
+                    $('#class').empty().append('<strong>' + getClass() + '</strong>');
                 });
             });
         </script>
