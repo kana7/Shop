@@ -13,15 +13,6 @@
         <link rel="stylesheet" type="text/css" href="css/oga_popup.css">
         <link rel="stylesheet" type="text/css" href="css/popup/popupMain.css">
         <link rel="stylesheet" href="css/popup/popupMain.css" type="text/css" media="screen">
-        <script type="text/javascript" src="js/popup/popup.js"></script>
-        <script type="text/javascript" src="js/ossbo_globalVariable.js"></script>
-        <script type="text/javascript" src="js/ossbo_usermenu.js"></script>
-        <script>var _Lang = 2</script>
-        <script type="text/javascript" src="js/ossbo_uLinkManagement.js"></script>
-        <script type="text/javascript" src="js/oga_urlAjax.js"></script>
-        <script src="http://jquery.bluechameleon.com/js/jquery-1.9.1.js"></script>
-        <script src="http://jquery.bluechameleon.com/js/ui_1.10.2/jquery-ui.js"></script>
-        <script src="js/jquery.simpletooltip-min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/menu.css">
         <link rel="stylesheet" type="text/css" href="css/menu_specific.css">
         <script src="js/menu.js"></script>
@@ -38,6 +29,18 @@
                 .center-align{
                     text-align: center;
                 }
+                #etat{
+                    background-color: #C6D1EC;
+                    border-radius: 5px;
+                    margin-bottom:10px;
+                }
+            }
+            ul.group-button{
+                border-radius: 5px;
+                border: 15px solid #C6D1EC;
+            }
+            h1{
+                font-size: 25px;
             }
         </style>
     </head>
@@ -288,7 +291,7 @@
                                 <p><strong>SLA:</strong>&nbsp;Normal</p>
                                 <p><a href="#" onclick="ViewClient(177992, 'COMPLETE');">afficher tous les détails...</a></p>
                             </div>
-                            <div class="tab-4 phone-12 pull-right">
+                            <div id="etat" class="tab-4 phone-12 pull-right center-align">
                                 <p><strong>Etat abonnements:</strong>&nbsp;activ&eacute;</p>
                                 <p><strong>Abonnements actifs:</strong>&nbsp;5</p>
                                 <p><strong>Ordre(s) de domiciliation:</strong>&nbsp;
@@ -326,7 +329,7 @@
                     <hr>
                 </div>
                 <div class="row" style="margin-top: 8px">
-                    <UL class="desk-3 phone-12 tab-6 text-center" style="list-style: none; padding: 0px; text-align: center; ">
+                    <UL class="group-button desk-3 phone-12 tab-6 text-center" style="list-style: none; padding: 0px; text-align: center; ">
                         <LI class="text-center">
                             <FORM method="post" action="http://shop.internet.lu/Scripts/sql.exe" style="margin-bottom:0;">
                                 <INPUT type="hidden" name="SqlDB" value="ossLOLShop" />
@@ -348,7 +351,7 @@
                             </FORM>
                         </LI>
                     </UL>
-                    <UL class="desk-3 phone-12 tab-6 text-center" style="list-style: none; padding: 0; text-align: center; ">
+                    <UL class="group-button desk-3 phone-12 tab-6 text-center" style="list-style: none; padding: 0; text-align: center; ">
                         <LI>
                             <FORM method="post" action="http://shop.internet.lu/Scripts/sql.exe" style="margin-bottom:0;">
                                 <INPUT type="hidden" name="SqlDB" value="ossLOLShop" />
@@ -400,7 +403,7 @@
                             </FORM>
                         </LI>
                     </UL>
-                    <UL class="desk-3 phone-12 tab-6 text-center" style="list-style: none; padding: 0; text-align: center; ">
+                    <UL class=" group-button desk-3 phone-12 tab-6 text-center" style="list-style: none; padding: 0; text-align: center; ">
                         <LI>
                             <FORM method="post" action="http://shop.internet.lu/Scripts/sql.exe" style="margin-bottom:0;">
                                 <INPUT type="hidden" name="SqlDB" value="ossLOLShop" />
@@ -424,7 +427,7 @@
                             </FORM>
                         </LI>
                     </UL>
-                    <UL class="desk-3 phone-12 tab-6 text-center" style="list-style: none; padding: 0; text-align: center; ">
+                    <UL class="group-button desk-3 phone-12 tab-6 text-center" style="list-style: none; padding: 0; text-align: center; ">
                         <LI >
                             <INPUT type="button" value="Liste tickets" onclick="window.open('http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=PopupCustomScript.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_MerchantId=1&_CustomScriptId=20&_ReturnScriptLink=&_ObjectId=140840&_ObjectTypeId=1&_ObjectLibraryId=0', 'OssClient140840Popup20', 'width=800,height=600,menubar=no,scrollbars=no,toolbar=no,status=no,resizable=yes,scrollbars=yes');">
                         </LI>
@@ -489,6 +492,14 @@
         </p>
     </div>
 </div>
-</div>
+<script type="text/javascript" src="js/popup/popup.js"></script>
+<script type="text/javascript" src="js/ossbo_globalVariable.js"></script>
+<script type="text/javascript" src="js/ossbo_usermenu.js"></script>
+<script>var _Lang = 2</script>
+<script type="text/javascript" src="js/ossbo_uLinkManagement.js"></script>
+<script type="text/javascript" src="js/oga_urlAjax.js"></script>
+<script src="http://jquery.bluechameleon.com/js/jquery-1.9.1.js"></script>
+<script src="http://jquery.bluechameleon.com/js/ui_1.10.2/jquery-ui.js"></script>
+<script src="js/jquery.simpletooltip-min.js"></script>
 </body>
 </html>

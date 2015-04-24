@@ -1565,3 +1565,76 @@ pre code {
         display: none !important;
     }
 }
+
+/* 
+Les variantes de la classe align permettent d'aligner un ensemble d'éléments "enfant" verticalement ainsi que horizontalement
+
+Appliquer ces classes sur le container (parent) des éléments que vous voulez aligner.
+*/
+
+/* Active l'alignement: toujours commencer par cette classe si vous voulez aligner quelque chose*/
+div.align{
+    display: flex;
+}
+/*Dispose les éléments en ligne*/
+div.align.row{
+    flex-direction: row;
+}
+/*Dispose les éléments en ligne en inversant l'ordre'*/
+div.align.row-reverse{
+    flex-direction: row-reverse;
+}
+/*Dispose les éléments de haut en bas*/
+div.align.column{
+    flex-direction: column;
+}
+/*Dispose les éléments de bas en haut*/
+div.align.column-reverse{
+    flex-direction: row-reverse;
+}
+/*Permet de mettre les éléments à la ligne si il prennent trop de place*/
+div.align.wrap{
+    flex-wrap: wrap;
+}
+
+/*Aligne les éléments à gauche (horizontalement)*/
+div.align.left{
+    justify-content: flex-start;
+}
+/*Aligne les éléments au milieu (horizontalement)*/
+div.align.center{
+    justify-content: center;
+}
+
+/*Aligne les éléments à droite (horizontalement)*/
+div.align.right{
+    justify-content: flex-end;
+}
+
+/*Réparti les éléments avec un espace régulier entre eux*/
+div.align.spread{
+    justify-content: space-around;
+}
+
+/*Ecarte les éléments en prennant toute la place disponible*/
+div.align.split{
+    justify-content: space-between;
+}
+/*Aligne les éléments sur le haut du container(verticalement)*/
+div.align.top{
+    align-items: flex-start;
+}
+
+/*Aligne les éléments sur le milieu du container(verticalement)*/
+div.align.middle{
+    align-items: center;
+}
+
+/*Aligne les éléments sur le bas du container(verticalement)*/
+div.align.bottom{
+    align-items: flex-end;
+}
+/*Etire les éléments pour qu'ils prennent toute la hauteur du container*/
+div.align.stretch{
+    align-items: stretch;
+}

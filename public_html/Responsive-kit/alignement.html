@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="css/layout-grid.css" type="text/css" rel="stylesheet"/>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+            .elem{
+                height: auto;
+                background-color: #337ab7;
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+            .elem.white{
+                background-color: #c4e3f3;
+            }
+            .child{
+                height: 100px;
+                padding: 5px;
+                border: 1px solid white;
+            }
+            .child>div{
+                background-color: burlywood;
+                height: 50px;
+                width: 100%;
+
+            }
+            .child1{
+                background-color: sandybrown;
+                border: 2px solid #333;
+                height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="elem phone-6 tab-4 desk-3">
+                    <div class="child phone-12 tab-4 align top"><div></div></div>
+                    <div class="child phone-12 tab-4 align middle"><div></div></div>
+                    <div class="child phone-12 tab-4 align bottom"><div></div></div>
+                </div>
+                <div class="elem white phone-6 tab-4 desk-3">
+                    <div class="child phone-12 tab-4 align bottom"><div></div></div>
+                    <div class="child phone-12 tab-4 align middle"><div></div></div>
+                    <div class="child phone-12 tab-4 align top"><div></div></div>
+                </div>
+                <div class="elem phone-6 tab-4 desk-3">
+                    <div class="child phone-12 tab-4 align top"><div></div></div>
+                    <div class="child phone-12 tab-4 align middle"><div></div></div>
+                    <div class="child phone-12 tab-4 align bottom"><div></div></div>
+                </div>
+                <div class="elem white phone-6 tab-4 desk-3">
+                    <div class="child phone-12 tab-4 align bottom"><div></div></div>
+                    <div class="child phone-12 tab-4 align middle"><div></div></div>
+                    <div class="child phone-12 tab-4 align top"><div></div></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="elem phone-6 tab-4 desk-3">
+                    <div class="child phone-12 tab-4 align bottom"><div></div></div>
+                    <div class="child phone-12 tab-4 align bottom"><div></div></div>
+                    <div class="child phone-12 tab-4 align bottom"><div></div></div>
+                </div>
+                <div class="elem white phone-6 tab-4 desk-3">
+                    <div class="child phone-12 tab-4"><div></div></div>
+                    <div class="child phone-12 tab-4"><div></div></div>
+                    <div class="child phone-12 tab-4"><div></div></div>
+                </div>
+                <div class="elem phone-6 tab-4 desk-3">
+                    <div class="child phone-12 tab-4 align middle"><div></div></div>
+                    <div class="child phone-12 tab-4 align middle"><div></div></div>
+                    <div class="child phone-12 tab-4 align middle"><div></div></div>
+                </div>
+                <div class="elem white phone-6 tab-4 desk-3">
+                    <div class="child phone-12 tab-4"><div></div></div>
+                    <div class="child phone-12 tab-4"><div></div></div>
+                    <div class="child phone-12 tab-4"><div></div></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="phone-12 elem align middle split" style="height: 200px;">
+                    <div class="child1 phone-3"></div>
+                    <div class="child1 phone-1"></div>
+                    <div class="child1 phone-2"></div>
+                    <div class="child1 phone-1"></div>
+                    <div class="child1 phone-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

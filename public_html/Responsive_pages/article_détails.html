@@ -9,6 +9,8 @@
         <link href="css/ossbo_services.css" rel="stylesheet" type="text/css" media="screen">
         <link href="css/ossprint.css" rel="stylesheet" type="text/css" media="print">
         <link href="http://jquery.bluechameleon.com/js/themes/redmond/jquery.ui.all.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="css/menu.css">
+        <link rel="stylesheet" type="text/css" href="css/menu_specific.css">
         <style>
             #ui-datepicker-div{
                 display: none;
@@ -40,7 +42,154 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body bgcolor="#FFFFFF" marginwidth="0" marginheight="0">
+    <body bgcolor="#FFFFFF" marginwidth="0" marginheight="0"><div class="container-fluid">
+
+            <div id="menu" class="row center-block">
+                <ul class="menu phone-12">
+
+                    <li id="1" class="main desk-1 tab-2 phone-3"><span>Accueil</span></li>
+
+                    <li id="3" class="main desk-1 tab-2 phone-3"><a href="#" class="parent"><span>Général</span></a>
+                        <ul style="display: none;">	
+                            <li id="15" class="main desk-1 tab-2 phone-3"><a href="#" class="parent"><span>Commerçant</span></a></li>
+                            <li id="35" class="main desk-1 tab-2 phone-3"><a href="#" class="parent"><span>Utilisateurs</span></a></li>
+                            <li id="37" class="main desk-1 tab-2 phone-3"><a href="#" class="parent"><span>Personnalisation</span></a></li>
+                            <li id="38" class="main desk-1 tab-2 phone-3"><a href="#" class="parent"><span>Divers</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li id="36" class="main desk-1 tab-2 phone-3"><a href="#" class="parent"><span>Articles</span></a>
+                        <ul style="display: none;">	
+                            <li class="main desk-1 tab-2 phone-3"><span>Articles</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Catégories</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Stock</span></li>
+                            <li id="40" class="main desk-1 tab-2 phone-3"><a href="#" class="parent"><span>Configuration</span></a></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Types d'article</span></li>
+                        </ul>
+                    </li>
+
+                    <li id="5" class="main desk-1 tab-2 phone-3"><a href="#" class="parent"><span>Clients</span></a>
+                        <ul style="display: none;">	
+                            <li class="main desk-1 tab-2 phone-3"><span>Passer commande</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Vente en magasin</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Clients</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Abonnements</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Commandes</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Statistiques de commandes</span></li>
+                            <li id="39" class="main desk-1 tab-2 phone-3"><a href="#" class="parent"><span>Personnalisation</span></a></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>FreeManage</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Credit Control</span></li>
+                        </ul>
+                    </li>
+
+                    <li id="6" class="main desk-1 tab-2 phone-3"><a href="#" class="parent"><span>Vente</span></a>
+                        <ul style="display: none;">	
+                            <li class="main desk-1 tab-2 phone-3"><span>Facturation</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Paiements client</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Statistiques de facturation</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Domiciliations</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Paiements par carte de crédit</span></li>
+                            <li id="41" class="main desk-1 tab-2 phone-3"><a href="#" class="parent"><span>Comptes bancaires commerçant</span></a></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Système externe</span></li>
+                        </ul>
+                    </li>
+
+                    <li id="7" class="main desk-1 tab-2 phone-3"><a href="#" class="parent"><span>Accès Internet</span></a>
+                        <ul style="display: none;">	
+                            <li class="main desk-1 tab-2 phone-3"><span>ADSL</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>CATV</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Eltrona CATV</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Esch CATV</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Ettelbruck CATV</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>NSN CATV</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Walferdange CATV</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Mondercange CATV</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Dégroupage</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Dégroupage ADSL</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Dégroupage SDSL</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>HotspotEsch</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>HotspotLOL</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>LOL Fiber (POST)</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>LOL Fiber (FTTH/FTTO)</span></li>
+                        </ul>
+                    </li>
+
+                    <li id="8" class="main desk-1 tab-2 phone-3"><a href="#" class="parent"><span>Téléphonie</span></a>
+                        <ul style="display: none;">	
+                            <li class="main desk-1 tab-2 phone-3"><span>Line Rental Service</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Classic Phone</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Dégroupage Phone</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>CATVPhone</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>I-Phone</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>PABXPhone</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Portabilité</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>PhoneBook</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>CDR Tarification</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>LOL Mobile</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Vox Articles</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Sip Server</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Service ISDN (Patton)</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Numero ISDN (Patton)</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Numérotation téléphonique</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Statistiques telephonie</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Fax to Mail</span></li>
+                        </ul>
+                    </li>
+
+                    <li id="43" class="main desk-1 tab-2 phone-3"> <span>IPTV</span></li>
+
+                    <li id="9" class="main desk-1 tab-2 phone-3"><a href="#" class="parent"><span>Autres</span></a>
+                        <ul style="display: none;">
+                            <li class="main desk-1 tab-2 phone-3"><span>HelpDesk</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>News</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Agenda</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Import DB (PT)</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Services manuels</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Materiel</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Ordonnance</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>GIS</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>CRM</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Traps SNMP</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Gestion des fichiers</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Documentation</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Alarmes</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Documents</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>HRM</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Task list</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>EPT Command</span></li>
+                            <li id="48" class="main desk-1 tab-2 phone-3"><span>Call center</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Property</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Résiliation</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Echéancements</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Amortization</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Mur</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>StreetMap</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>ServiceMap</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Enquête</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Ordonnance</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Failures</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Annuaire</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Intervention</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Aide</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Projets/Tâches</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>HDA</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Contrat</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>CheckLists</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Rapports</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Pointer</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>GPS Tracker</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Evénements [Marketing]</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>Evénements [Développement]</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>RadiusInfo</span></li>
+                            <li class="main desk-1 tab-2 phone-3"><span>FacebookApp</span></li>
+                        </ul>
+                    </li>
+                    <li id="42" class="main desk-1 tab-2 phone-3"><a href="#" class="parent"><span>Statistiques</span></a></li>
+                    <li id="11" class="main desk-1 tab-2 phone-3"><a href="#" class="parent"><span>Option</span></a> </li>
+                    <li id="2" class="main desk-1 tab-2 phone-3"> <span>Déconnexion</span></li>
+                </ul>
+            </div>
+        </div>
         <div class="container">
             <div class="row">
                 <h1>Afficher article</h1>
@@ -174,5 +323,11 @@
         <script type="text/javascript" src="js/ossbo.js"></script>
         <script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/popup/popup.js"></script>
+        <script type="text/javascript" src="js/ossbo_globalVariable.js"></script>
+        <script>var _Lang = 2</script>
+        <script type="text/javascript" src="js/ossbo_uLinkManagement.js"></script>
+        <script type="text/javascript" src="js/oga_urlAjax.js"></script>
+        <script src="js/jquery.simpletooltip-min.js"></script>
     </body>
 </html>
