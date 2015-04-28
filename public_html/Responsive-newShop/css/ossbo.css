@@ -1,0 +1,148 @@
+BODY		{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;}
+
+P		{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;}
+
+TD		{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;}
+TH		{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;}
+
+H1		{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 16px;}
+H2		{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px;}
+H3		{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;}
+H4		{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;}
+
+fieldset ul {
+	padding: 1em 1em 0 1em;
+	list-style: none;
+}
+
+fieldset li {
+	float: left;
+	clear: left;
+	width: 100%;
+	padding-bottom: 0.25em;
+}
+
+fieldset {
+	float: left;
+	clear: left;
+	width: 100%;
+	margin: 0 0 1.5em 0;
+	padding: 0;
+	border: none;
+}
+
+label {
+	float: left;
+	width: 20%;
+	margin-right: 1em;
+}
+
+.FormPanel {
+	padding: 1em 1em 0 1em;
+	list-style: none;
+}
+
+.FormLine {
+	float: left;
+	clear: left;
+	width: 100%;
+	padding-bottom: 0.25em;
+}
+
+.FormLabel {
+	float: left;
+	width: 20%;
+	margin-right: 1em;
+}
+
+.ListPanel {
+	padding: 0 0 0 1em;
+	list-style: none;
+}
+
+.ListLine {
+	float: left;
+	clear: left;
+	width: 100%;
+	padding-bottom: 0.25em;
+}
+
+.SelectSeparator {
+	background-image:url(../images/pixel.gif);
+	background-repeat:repeat-x;
+	background-position:50% 50%;
+	background-attachment:scroll;
+}
+
+div#MultiColumn2 {
+	-moz-column-count: 2;
+	-moz-column-gap: 20px;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 20px;
+	column-count: 2;
+	column-gap: 20px;
+}
+
+.OssDataSortable {
+}
+
+.OssDataSortable tr:hover {
+	cursor: pointer;
+}
+
+.OssDataSortablePlaceholder {
+	border: 1px dotted black;
+	visibility: visible;
+}
+
+.OssPopupBtnLine div.OssPopupBtnButton {
+	float: left;
+	min-height: 16px;
+}
+
+.OssPopupBtnButton {
+	display: none;
+}
+
+.OssPopupBtnLine:hover .OssPopupBtnButton {
+	display:block;
+}
+
+.OssPopupBtnButton:hover {
+	//background-color: #ffffff;
+	cursor:pointer;
+}
+
+.OssPopupBtnButtonHide {
+	display: none !important;
+}
+
+.OssWindowBox {
+	position: relative;
+	display: block;
+	overflow: auto;
+	float: left;
+}
+
+.OssWindowCloseButton {
+	display: none;
+	position: absolute;
+	top: 3px;
+	right: 3px;
+}
+
+.OssWindowBox:hover .OssWindowCloseButton {
+	display: block;
+}
+
+//Add for bill and order viewer 
+
+.OssDataDroppable{min-width: 28px;}
+.OssDataHideChild{display: none;}
+.OssDataFontSize_0{	font-size: 12px!important;}
+.OssDataFontSize_1{ font-size:  8px!important;}
+.OssDataFontSize_2{ font-size: 16px!important;}
+.OssDataFontSize_3{ font-size: 32px!important;}
+.OssDataFontBold{   font-weight: bold!important;}
+.OssDataFontItalic{ font-style: italic!important;}
+.ombrein {background-color:#B3B3B3;}
