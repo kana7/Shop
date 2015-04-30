@@ -12,6 +12,7 @@ Quentin Fonck
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/viewport.js"></script>
         <link rel="stylesheet" type="text/css" href="css/layout-grid.css"/>
         <link href="css/ossbo.css" rel="stylesheet" type="text/css">
         <link href="css/ossbo_box.css" rel="stylesheet" type="text/css">
@@ -135,7 +136,7 @@ Quentin Fonck
             &nbsp;
         </div>
         <div style="width:100%;height:96%;Display:table;vertical-align:top;">
-            <div class="menu_user_zone" style="width:14%;height:99%;display:table-cell; overflow:hidden;">
+            <div class="menu_user_zone hidden-phone hidden-tab" style="width:14%;height:99%;display:table-cell; overflow:hidden;">
                 <div class=" div_menu_user" style="width:100%;">
                     <style>
                         .option_menu_user{
@@ -154,6 +155,7 @@ Quentin Fonck
                             margin-left:10px;
                         }
                         .div_ellipsis{
+                            overflow: hidden;
                         }
                     </style>
                     <script>
@@ -162,76 +164,76 @@ Quentin Fonck
                         }
                         function toggleMenuManage() {
                             var _toggle_new_value = ((parseInt($(".option_menu_user_img_toggle").attr("data-toggle_user_menu_value"), 10) - 48 + 1) % 2) + 48;
-                            
+
                             var time = 750;
-                                        $(".option_menu_user_img_toggle").attr("data-toggle_user_menu_value", _toggle_new_value);
-                                        if (_toggle_new_value == 49)
+                            $(".option_menu_user_img_toggle").attr("data-toggle_user_menu_value", _toggle_new_value);
+                            if (_toggle_new_value == 49)
+                            {
+                                $(".option_menu_user_img_toggle").attr("src", "images/arrow_left.png");
+                                $(".menu_user_zone").animate(
                                         {
-                                            $(".option_menu_user_img_toggle").attr("src", "images/arrow_left.png");
-                                            $(".menu_user_zone").animate(
-                                                    {
-                                                        width: "14%"
-                                                    },
-                                            {
-                                                duration: time,
-                                                start: function () {
-                                                    $(".RightArea").show();
-                                                },
-                                                complete: function () {
-                                                    $(".UserMenuArea").show();
-                                                }
-                                            });
-                                            $(".main_zone").animate({
-                                                width: "86%"
-                                            }, time);
-                                        }
-                                        else
+                                            width: "14%"
+                                        },
+                                {
+                                    duration: time,
+                                    start: function () {
+                                        $(".RightArea").show();
+                                    },
+                                    complete: function () {
+                                        $(".UserMenuArea").show();
+                                    }
+                                });
+                                $(".main_zone").animate({
+                                    width: "86%"
+                                }, time);
+                            }
+                            else
+                            {
+                                $(".option_menu_user_img_toggle").attr("src", "images/expand_more.png");
+                                $(".menu_user_zone").animate(
                                         {
-                                            $(".option_menu_user_img_toggle").attr("src", "images/expand_more.png");
-                                            $(".menu_user_zone").animate(
-                                                    {
-                                                        width: "0%"
-                                                    },
-                                            {
-                                                duration: time,
-                                                start: function () {
-                                                    $(".UserMenuArea").hide();
-                                                },
-                                                complete: function () {
-                                                    $(".RightArea").hide();
-                                                }
-                                            });
-                                            $(".main_zone").animate({
-                                                width: "100%"
-                                            }, time);
-                                        }
+                                            width: "0%"
+                                        },
+                                {
+                                    duration: time,
+                                    start: function () {
+                                        $(".UserMenuArea").hide();
+                                    },
+                                    complete: function () {
+                                        $(".RightArea").hide();
+                                    }
+                                });
+                                $(".main_zone").animate({
+                                    width: "100%"
+                                }, time);
+                            }
                             /*$.ajax({
-                                type: "POST",
-                                url: "http://shop100.online.lu/Scripts/sql.exe",
-                                async: false,
-                                dataType: "json",
-                                data: 'SqlDB=MasterTest'
-                                        + '&Sql=MenuUserManageQuery.phs'
-                                        + '&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn'
-                                        + '&_MerchantId=1'
-                                        + '&_JSON=1'
-                                        + '&_toggle_user_menu_value=' + _toggle_new_value
-                                        + '&_OpenCloseMenu=1',
-                                error: function (msg) {
-                                    console.log("Error: " + msg);
-                                },
-                                success: function (data) {
-                                    _ErrorCode = parseInt($.trim(data.iReturn));
-                                    if (_ErrorCode == 0)
-                                    {
-                                        alert(data.azMessage);
-                                    }
-                                    else
-                                    {
-                                        
-                                    }
-                                }
-                            });*/
+                             type: "POST",
+                             url: "http://shop100.online.lu/Scripts/sql.exe",
+                             async: false,
+                             dataType: "json",
+                             data: 'SqlDB=MasterTest'
+                             + '&Sql=MenuUserManageQuery.phs'
+                             + '&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn'
+                             + '&_MerchantId=1'
+                             + '&_JSON=1'
+                             + '&_toggle_user_menu_value=' + _toggle_new_value
+                             + '&_OpenCloseMenu=1',
+                             error: function (msg) {
+                             console.log("Error: " + msg);
+                             },
+                             success: function (data) {
+                             _ErrorCode = parseInt($.trim(data.iReturn));
+                             if (_ErrorCode == 0)
+                             {
+                             alert(data.azMessage);
+                             }
+                             else
+                             {
+                             
+                             }
+                             }
+                             });*/
                         }
                     </script>
                     <div class="option_menu_user" style="opacity: 1; margin-left: 1px; top: 921px;">
@@ -352,24 +354,43 @@ Quentin Fonck
                                 $(this).toggleClass("open");
                                 if ($(this).hasClass("open"))
                                 {
-                                    $(this).find(".dropdown_menu").position(
-                                            {
-                                                of: $(this),
-                                                my: "left top",
-                                                at: "left bottom"
+                                    if (viewport().width > 992) {
+                                        $(this).find(".dropdown_menu").position(
+                                                {
+                                                    of: $(this),
+                                                    my: "left top",
+                                                    at: "left bottom"
+                                                });
+                                    } else if (viewport().width <= 992) {
+                                        if (viewport().width <= 679) {
+                                            $('.dropdown-menu').each(function(){
+                                                $(this).css('position','initial');
                                             });
+                                        } else {
+                                            console.log($('nav.nav_container').height());
+                                            $(this).find(".dropdown_menu").css('top', $('nav.nav_container').height() + 'px');
+                                        }
+
+                                    }
                                 }
                             }
                             e.stopPropagation();
                             return false;
+                        });
+                        $('button.dl-trigger').click(function () {
+                            $(this).toggleClass('dl-active');
+                            $('.no_list_style.nav_main').toggleClass('hidden-phone');
                         });
                         remove_empty_menu(0);
                     });
                 </script>
                 <div class="main_menu">
                     <nav class="nav_container">
-                        <ul class="no_list_style nav_main ">
-                            <li class="dropdown home" data-href_int="WelcomeMain.phs" data-href_ext="MainMenuDefault.phs">
+                        <div class="dl-menuwrapper display-phone-block">
+                            <button class="dl-trigger"></button>
+                        </div>
+                        <ul class="no_list_style nav_main hidden-phone">
+                            <li class="dropdown icon home " data-href_int="WelcomeMain.phs" data-href_ext="MainMenuDefault.phs">
                                 <a class="dropdown_toggle" data-toggle="dropdown"> 
                                     <div>&nbsp;</div>
                                 </a>
@@ -436,7 +457,7 @@ Quentin Fonck
                                     </li>
                                 </ul>
                             </li>	
-                            <li class="dropdown menu_level_0 menu_36" data-menu_level="0" data-id_menu="36">
+                            <li class="dropdown menu_level_0 menu_36 " data-menu_level="0" data-id_menu="36">
                                 <a class="dropdown_toggle" data-toggle="dropdown" href="#">
                                     <div>
                                         Articles<span class="caret"></span>
@@ -465,13 +486,13 @@ Quentin Fonck
                                     </li>
                                 </ul>
                             </li>	
-                            <li class="dropdown menu_level_0 menu_5" data-menu_level="0" data-id_menu="5">
+                            <li class="dropdown menu_level_0 menu_5 " data-menu_level="0" data-id_menu="5">
                                 <a class="dropdown_toggle" data-toggle="dropdown" href="#">
                                     <div>
                                         Clients<span class="caret"></span>
                                     </div>
                                 </a>
-                                <ul class="dropdown_menu no_list_style dropdown_cols_1" style="top: 37px; left: 215px;">
+                                <ul class="dropdown_menu no_list_style dropdown_cols_1">
                                     <li>
                                         <div class="sub_menu_content">
                                             <div class="sub_menu_row">
@@ -519,7 +540,7 @@ Quentin Fonck
                                 </ul>
                             </li>	
 
-                            <li class="dropdown menu_level_0 menu_45" data-menu_level="0" data-id_menu="45">
+                            <li class="dropdown menu_level_0 menu_45 " data-menu_level="0" data-id_menu="45">
                                 <a class="dropdown_toggle" data-toggle="dropdown" href="#">
                                     <div>
                                         OGA<span class="caret"></span>
@@ -546,7 +567,7 @@ Quentin Fonck
                                     </li>
                                 </ul>
                             </li>	
-                            <li class="dropdown menu_level_0 menu_11" data-menu_level="0" data-id_menu="11">
+                            <li class="dropdown menu_level_0 menu_11 " data-menu_level="0" data-id_menu="11">
                                 <a class="dropdown_toggle" data-toggle="dropdown" href="#">
                                     <div>
                                         Options<span class="caret"></span>
@@ -566,7 +587,7 @@ Quentin Fonck
                                     </li>
                                 </ul>
                             </li>	
-                            <li class="dropdown logout" data-href="MainLogout.phs"> <a class="dropdown_toggle" data-toggle="dropdown"> <div>&nbsp;</div></a></li>
+                            <li class="dropdown icon logout " data-href="MainLogout.phs"> <a class="dropdown_toggle" data-toggle="dropdown"> <div>&nbsp;</div></a></li>
                         </ul>
                     </nav>
                 </div>

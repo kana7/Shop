@@ -1490,7 +1490,7 @@ pre code {
 }
 
 /*Cacher bloc en resolution telephone*/
-@media (min-width: 1172px) {
+@media (max-width: 680px) {
     .hidden-phone {
         display: none !important;
     }

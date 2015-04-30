@@ -460,7 +460,7 @@ pre code {
     min-height: 1px;
 }
 .phone-1, .phone-2, .phone-3, .phone-4, .phone-5, .phone-6, .phone-7, .phone-8, .phone-9, .phone-10, .phone-11, .phone-12 {
-    float: left;
+     float: left;
 }
 
 /* Colonnes pour telephone*/
@@ -1490,7 +1490,7 @@ pre code {
 }
 
 /*Cacher bloc en resolution telephone*/
-@media (min-width: 1172px) {
+@media (max-width: 679px) {
     .hidden-phone {
         display: none !important;
     }
@@ -1565,74 +1565,74 @@ pre code {
 }
 
 /* 
-Les variantes de la classe align permettent d'aligner un ensemble d'Ã©lÃ©ments "enfant" verticalement ainsi que horizontalement
+Les variantes de la classe align permettent d'aligner un ensemble d'elements "enfant" verticalement ainsi que horizontalement
 
-Appliquer ces classes sur le container (parent) des Ã©lÃ©ments que vous voulez aligner.
+Appliquez ces classes sur le conteneur (parent) des elements que vous voulez aligner.
 */
 
 /* Active l'alignement: toujours commencer par cette classe si vous voulez aligner quelque chose*/
 div.align{
     display: flex;
 }
-/*Dispose les Ã©lÃ©ments en ligne*/
+/*Dispose les elements en ligne*/
 div.align.row{
     flex-direction: row;
 }
-/*Dispose les Ã©lÃ©ments en ligne en inversant l'ordre'*/
+/*Dispose les elements en ligne en inversant l'ordre'*/
 div.align.row-reverse{
     flex-direction: row-reverse;
 }
-/*Dispose les Ã©lÃ©ments de haut en bas*/
+/*Dispose les elements de haut en bas*/
 div.align.column{
     flex-direction: column;
 }
-/*Dispose les Ã©lÃ©ments de bas en haut*/
+/*Dispose les elements de bas en haut*/
 div.align.column-reverse{
     flex-direction: row-reverse;
 }
-/*Permet de mettre les Ã©lÃ©ments Ã  la ligne si il prennent trop de place*/
+/*Permet de mettre les elements a la ligne si il prennent trop de place*/
 div.align.wrap{
     flex-wrap: wrap;
 }
 
-/*Aligne les Ã©lÃ©ments Ã  gauche (horizontalement)*/
+/*Aligne les elements a gauche (horizontalement)*/
 div.align.left{
     justify-content: flex-start;
 }
-/*Aligne les Ã©lÃ©ments au milieu (horizontalement)*/
+/*Aligne les elements au milieu (horizontalement)*/
 div.align.center{
     justify-content: center;
 }
 
-/*Aligne les Ã©lÃ©ments Ã  droite (horizontalement)*/
+/*Aligne les elements a droite (horizontalement)*/
 div.align.right{
     justify-content: flex-end;
 }
 
-/*RÃ©parti les Ã©lÃ©ments avec un espace rÃ©gulier entre eux*/
+/*Reparti les elements avec un espace regulier entre eux*/
 div.align.spread{
     justify-content: space-around;
 }
 
-/*Ecarte les Ã©lÃ©ments en prennant toute la place disponible*/
+/*Ecarte les elements en prennant toute la place disponible*/
 div.align.split{
     justify-content: space-between;
 }
-/*Aligne les Ã©lÃ©ments sur le haut du container(verticalement)*/
+/*Aligne les elements sur le haut du container(verticalement)*/
 div.align.top{
     align-items: flex-start;
 }
 
-/*Aligne les Ã©lÃ©ments sur le milieu du container(verticalement)*/
+/*Aligne les elements sur le milieu du container(verticalement)*/
 div.align.middle{
     align-items: center;
 }
 
-/*Aligne les Ã©lÃ©ments sur le bas du container(verticalement)*/
+/*Aligne les elements sur le bas du container(verticalement)*/
 div.align.bottom{
     align-items: flex-end;
 }
-/*Etire les Ã©lÃ©ments pour qu'ils prennent toute la hauteur du container*/
+/*Etire les elements pour qu'ils prennent toute la hauteur du container*/
 div.align.stretch{
     align-items: stretch;
 }
