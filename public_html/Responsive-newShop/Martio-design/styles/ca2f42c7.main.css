@@ -35,8 +35,7 @@ audio:not([controls]) {
 }
 
 a {
-    background: 0 0
-}
+    background: 0 0}
 
 a:active,a:hover {
     outline: 0
@@ -5010,8 +5009,7 @@ a.thumbnail.active,a.thumbnail:focus,a.thumbnail:hover {
     padding: 10px 15px;
     margin-bottom: -1px;
     background-color: #fff;
-    border: 1px solid #ddd
-}
+    border: 1px solid #ddd}
 
 .list-group-item:first-child {
     border-top-right-radius: 4px;
@@ -5033,8 +5031,7 @@ a.thumbnail.active,a.thumbnail:focus,a.thumbnail:hover {
 }
 
 a.list-group-item {
-    color: #555
-}
+    color: #555}
 
 a.list-group-item .list-group-item-heading {
     color: #333

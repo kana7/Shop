@@ -278,7 +278,7 @@ th {
     }
 }
 
-/* La taille d'un element (largeur et hauteur) est definie jusque aÂ  la bordure mais pas sans les marges*/
+/* La taille d'un element (largeur et hauteur) est definie jusque a  la bordure mais pas sans les marges*/
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
