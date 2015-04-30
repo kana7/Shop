@@ -36,8 +36,9 @@ body{
 .dl-menuwrapper button {
     background: #428BCA;
     border: none;
-    width: 46px;
-    height: 42px;
+    padding: 3px 0px;
+    width: 45px;
+    height: 46px;
     text-indent: -900em;
     overflow: hidden;
     position: relative;
@@ -57,13 +58,41 @@ body{
     width: 68%;
     height: 4px;
     background: #fff;
-    top: 10px;
-    left: 16%;
-    box-shadow: 
-        0 10px 0 #fff, 
-        0 20px 0 #fff;
+    top: 11px;
+    left: 14%;
+    box-shadow: 0 9px 0 #FFF, 0 18px 0 #FFF;
 }
 
+.nav-mobile{
+    padding-left:0px;
+    margin:0px;
+    border-bottom: 1px solid #2a6fab;
+}
+
+.nav-mobile > li{
+    margin-right: -3px;
+    margin-top: auto;
+    display: inline-block;
+    vertical-align:middle;
+    float: none !important; 
+    height: 45px;
+}
+
+.nav-mobile > li:hover{
+    background-color: #2a6fab;
+}
+
+.nav-mobile > li.home{
+    height: 45px;
+    border-right: 1px solid #fff;
+}
+
+.nav-mobile > li > a {
+    display: block;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+}
 
 .nav_main > li {
     margin-right: -1px;
@@ -73,11 +102,6 @@ body{
     vertical-align:middle;
     float: none !important;
 
-}
-@media (min-width: 680px){
-    .nav_main > li {
-        width: 24.6%;
-    }
 }
 
 @media (min-width: 992px){
@@ -89,9 +113,10 @@ body{
     }
 }
 
-@media (max-width: 560px){
+@media (max-width: 991px){
     .nav_main > li{
         width: 100%;
+        
     }
 }
 @media (max-width: 991px){
@@ -102,7 +127,6 @@ body{
 
 .nav_main > li > a {
     display: block;
-    padding: 0px 0px 2px 0px;
     color: #fff;
     font-size: 12px;
     text-decoration: none;
@@ -113,6 +137,12 @@ body{
 .nav_main > li > a > div {
     padding: 5px 15px !important;
     border-left: 1px solid #fff;
+}
+@media (max-width: 991px){
+    .nav_main > li > a > div, .dl-menuwrapper>button{
+        border-left: inherit;
+        border-bottom: 1px solid #2a6fab;
+    }
 }
 
 .home > a > div{
@@ -171,6 +201,14 @@ ol, ul {
         margin-right: auto !important;
     }
 }
+@media (max-width: 991px){
+    .dropdown_menu{
+        position: static;
+        box-shadow: none;
+    
+        z-index: 2000;
+}
+}
 
 .dropdown_cols_1 {
     width: 220px;
@@ -184,7 +222,7 @@ ol, ul {
 }
 
 .sub_menu_content{
-    padding: 20px 30px;
+    padding: 10px 30px;
 }
 
 .sub_menu_row {

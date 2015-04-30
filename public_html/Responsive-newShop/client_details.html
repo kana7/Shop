@@ -362,35 +362,42 @@ Quentin Fonck
                                                     at: "left bottom"
                                                 });
                                     } else if (viewport().width <= 992) {
-                                        if (viewport().width <= 679) {
-                                            $('.dropdown-menu').each(function(){
-                                                $(this).css('position','initial');
-                                            });
-                                        } else {
-                                            console.log($('nav.nav_container').height());
-                                            $(this).find(".dropdown_menu").css('top', $('nav.nav_container').height() + 'px');
-                                        }
-
+                                        $('.dropdown-menu').each(function () {
+                                            $(this).css('position', 'initial');
+                                        });
                                     }
                                 }
                             }
                             e.stopPropagation();
                             return false;
                         });
-                        $('button.dl-trigger').click(function () {
+                        $('button.dl-trigger').click(function (e) {
+                            e.stopPropagation();
                             $(this).toggleClass('dl-active');
                             $('.no_list_style.nav_main').toggleClass('hidden-phone');
+                            $('.no_list_style.nav_main').toggleClass('hidden-tab');
+                        });
+                        $(document).click(function(){
+                            $('button.dl-trigger').removeClass('dl-active');
+                            $('.no_list_style.nav_main').addClass('hidden-phone');
+                            $('.no_list_style.nav_main').addClass('hidden-tab');
                         });
                         remove_empty_menu(0);
                     });
                 </script>
                 <div class="main_menu">
                     <nav class="nav_container">
-                        <div class="dl-menuwrapper display-phone-block">
-                            <button class="dl-trigger"></button>
-                        </div>
-                        <ul class="no_list_style nav_main hidden-phone">
-                            <li class="dropdown icon home " data-href_int="WelcomeMain.phs" data-href_ext="MainMenuDefault.phs">
+                        <ul class="no_list_style nav-mobile display-phone-block display-tab-block">
+                            <li class="dropdown icon home phone-1" data-href_int="WelcomeMain.phs" data-href_ext="MainMenuDefault.phs">
+                                <a class="dropdown_toggle" data-toggle="dropdown"> 
+                                    <div>&nbsp;</div>
+                                </a>
+                            </li>
+                            <li class="dl-menuwrapper"><button class="dl-trigger"></button></li>
+                            <li class="dropdown icon logout phone-1" data-href="MainLogout.phs" style="border-left: 1px solid #fff;"> <a class="dropdown_toggle" data-toggle="dropdown"> <div>&nbsp;</div></a></li>
+                        </ul>
+                        <ul class="no_list_style nav_main hidden-phone hidden-tab" style="z-index: 100;">
+                            <li class="dropdown icon home hidden-phone hidden-tab" data-href_int="WelcomeMain.phs" data-href_ext="MainMenuDefault.phs">
                                 <a class="dropdown_toggle" data-toggle="dropdown"> 
                                     <div>&nbsp;</div>
                                 </a>
@@ -546,18 +553,10 @@ Quentin Fonck
                                         OGA<span class="caret"></span>
                                     </div>
                                 </a>
-                                <ul class="dropdown_menu no_list_style dropdown_cols_3">
+                                <ul class="dropdown_menu no_list_style dropdown_cols_1">
                                     <li>
                                         <div class="sub_menu_content">
                                             <div class="sub_menu_row">
-                                                <ul class="sub_menu_column no_list_style">
-
-
-                                                </ul>
-                                                <ul class="sub_menu_column no_list_style">
-
-
-                                                </ul>
                                                 <ul class="sub_menu_column no_list_style">
                                                     <li class="sub_menu_title menu_level_1 menu_49" data-menu_level="_menu_level" data-id_menu="49" title="Administration">Administration</li>	
                                                     <li class="sub_menu_link menu_click_link child_of_45 child_of_49" title="Ajouter code tva" data-href="AddTax.phs" data-itype="1"><span class="sub_menu_link_span"></span>Ajouter code tva </li>	
@@ -587,7 +586,7 @@ Quentin Fonck
                                     </li>
                                 </ul>
                             </li>	
-                            <li class="dropdown icon logout " data-href="MainLogout.phs"> <a class="dropdown_toggle" data-toggle="dropdown"> <div>&nbsp;</div></a></li>
+                            <li class="dropdown icon logout hidden-phone hidden-tab" data-href="MainLogout.phs"> <a class="dropdown_toggle" data-toggle="dropdown"> <div>&nbsp;</div></a></li>
                         </ul>
                     </nav>
                 </div>
