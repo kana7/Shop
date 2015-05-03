@@ -36,11 +36,10 @@ Quentin Fonck
     </head>
     <body>
         <script type="text/javascript">
-            if (parent.document.getElementsByTagName("IFRAME").length != 0)
-                parent.document.title = "Master Démo - Online Shopping System";
-            else
-                document.title = "Master Démo - Online Shopping System";
-        </script>	
+                    if (parent.document.getElementsByTagName("IFRAME").length != 0)
+                    parent.document.title = "Master Démo - Online Shopping System";
+                    else
+                    document.title = "Master Démo - Online Shopping System";</script>	
         <link rel="stylesheet" type="text/css" href="css/ossbo_menu.css">
         <link rel="stylesheet" type="text/css" href="css/ossbo_div.css">
         <link rel="stylesheet" type="text/css" href="css/ossbo_new_usermenu.css">
@@ -48,94 +47,93 @@ Quentin Fonck
         <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu.css">
         <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu_color.css">
         <script>
-            function toggleMenu(idObject) {
-                var img_element = $("#more_img_" + idObject);
-                if ($(img_element).attr("src") == "images/expand_more.png")
-                    $(img_element).attr("src", "images/expand_less.png");
-                else
-                    $(img_element).attr("src", "images/expand_more.png");
-                $("#SubMenu_" + idObject).slideToggle('fast');
-            }
+                    function toggleMenu(idObject) {
+                    var img_element = $("#more_img_" + idObject);
+                            if ($(img_element).attr("src") == "images/expand_more.png")
+                            $(img_element).attr("src", "images/expand_less.png");
+                            else
+                            $(img_element).attr("src", "images/expand_more.png");
+                            $("#SubMenu_" + idObject).slideToggle('fast');
+                    }
             function open_in_new_window(href) {
-                window.open(href);
-                return false;
+            window.open(href);
+                    return false;
             }
             function open_in_site_window(href) {
-                window.open(href, "site");
-                //eval("site.location='href'");
-                return false;
+            window.open(href, "site");
+                    //eval("site.location='href'");
+                    return false;
             }
             $(function () {
-                $(".sub_menu_hide").hide();
-                $(".div_menu_external_link").mouseup(function (e) {
-                    if (e.which != 3)
-                    {
-                        var href = $(this).attr("data-href");
-                        var _link = "";
-                        if (href.indexOf('http://') == -1 && href.indexOf('https://') == -1)
-                            _link = "http://" + href;
-                        else
-                            _link = href;
-                        open_in_new_window(_link);
-                    }
-                });
-                $(".div_menu_internal_link").mouseup(function (e) {
-                    var _url = $(this).attr("data-href");
+            $(".sub_menu_hide").hide();
+                    $(".div_menu_external_link").mouseup(function (e) {
+            if (e.which != 3)
+            {
+            var href = $(this).attr("data-href");
+                    var _link = "";
+                    if (href.indexOf('http://') == - 1 && href.indexOf('https://') == - 1)
+                    _link = "http://" + href;
+                    else
+                    _link = href;
+                    open_in_new_window(_link);
+            }
+            });
+                    $(".div_menu_internal_link").mouseup(function (e) {
+            var _url = $(this).attr("data-href");
                     var _type = parseInt($(this).attr("data-iType"), 10);
                     var _link = "";
                     if (_type == 1 || _type == 4)
-                    {
-                        _link = "http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + _url + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear"
-                        if (e.which == 2)
-                            open_in_new_window(_link);
-                        else if (e.which == 1)
-                            open_in_site_window(_link);
-                    }
-                    else if (_type == 2 && e.which != 3)
-                    {
-                        if (_url.indexOf('http://') == -1 && _url.indexOf('https://') == -1)
-                            _link = "http://" + _url;
-                        else
-                            _link = _url;
-                        open_in_new_window(_link);
-                    }
-                    else if (_type == 3 && e.which != 3)
-                        eval(_url);
-                });
+            {
+            _link = "http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + _url + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear"
+                    if (e.which == 2)
+                    open_in_new_window(_link);
+                    else if (e.which == 1)
+                    open_in_site_window(_link);
+            }
+            else if (_type == 2 && e.which != 3)
+            {
+            if (_url.indexOf('http://') == - 1 && _url.indexOf('https://') == - 1)
+                    _link = "http://" + _url;
+                    else
+                    _link = _url;
+                    open_in_new_window(_link);
+            }
+            else if (_type == 3 && e.which != 3)
+                    eval(_url);
             });
-        </script>
+            });</script>
         <input type="hidden" id="isAppletLoadedCRM" value="-2">
         <script>
-            $(function () {
-                // Ecoute blur
-                $(window).blur(function (e) {
+                    $(function () {
+                    // Ecoute blur
+                    $(window).blur(function (e) {
                     close_merchant_menu_option();
-                });
-                $(document).click(function () {
+                    });
+                            $(document).click(function () {
                     close_merchant_menu_option();
-                });
-            });
-            function open_merchant_menu_option(event)
-            {
-                $(".option_menu_user").css("top", event.pageY - 31 + "px")
-                        .animate({
+                    });
+                    });
+                    function open_merchant_menu_option(event)
+                    {
+                    $(".option_menu_user").css("top", event.pageY - 31 + "px")
+                            .animate({
                             opacity: 1,
-                            marginLeft: "1px",
-                        }, 150);
-            }
+                                    marginLeft: "1px",
+                            }, 150);
+                    }
             function close_merchant_menu_option()
             {
-                $(".option_menu_user")
-                        .animate({
-                            opacity: 0,
+            $(".option_menu_user")
+                    .animate({
+                    opacity: 0,
                             marginLeft: "-20px",
-                        }, 150);
+                    }, 150);
             }
         </script>
         <div style="position:absolute;width:3px;height:100%;border:0px solid red;z-index:50000;left:0;top:0;" onmouseover="open_merchant_menu_option(event)">
             &nbsp;
         </div>
-        <div class="option_menu_user" style="opacity: 1; margin-left: 1px; top: 921px;">
+        <div class="option_menu_user hidden-tab hidden-phone" style="opacity: 1; margin-left: 1px; top: 921px;">
             <img class="option_menu_user_img option_menu_user_img_toggle " src="images/arrow_left.png" data-toggle_user_menu_value="49" onclick="toggleMenuManage()">
             <br>
             <img class="option_menu_user_img option_menu_user_img_option" src="images/wheel.png" onclick="openMenuManage()">
@@ -165,102 +163,101 @@ Quentin Fonck
                             }
                         </style>
                         <script>
-                            function openMenuManage() {
-                                //window.open("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&_MerchantId=1&Sql=MenuUserManage.phs", "site");
-                            }
+                                    function openMenuManage() {
+                                    //window.open("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&_MerchantId=1&Sql=MenuUserManage.phs", "site");
+                                    }
                             function toggleMenuManage() {
-                                var _toggle_new_value = ((parseInt($(".option_menu_user_img_toggle").attr("data-toggle_user_menu_value"), 10) - 48 + 1) % 2) + 48;
-
-                                var time = 750;
-                                $(".option_menu_user_img_toggle").attr("data-toggle_user_menu_value", _toggle_new_value);
-                                if (_toggle_new_value == 49)
-                                {
-                                    $(".option_menu_user_img_toggle").attr("src", "images/arrow_left.png");
+                            var _toggle_new_value = ((parseInt($(".option_menu_user_img_toggle").attr("data-toggle_user_menu_value"), 10) - 48 + 1) % 2) + 48;
+                                    var time = 750;
+                                    $(".option_menu_user_img_toggle").attr("data-toggle_user_menu_value", _toggle_new_value);
+                                    if (_toggle_new_value == 49)
+                            {
+                            $(".option_menu_user_img_toggle").attr("src", "images/arrow_left.png");
                                     $(".menu_user_zone").animate(
-                                            {
-                                                width: "16.66666667%"
-                                            },
-                                    {
-                                        duration: time,
-                                        start: function () {
-                                            $(".RightArea").show();
-                                        },
-                                        complete: function () {
-                                            $(".UserMenuArea").show();
-                                        }
-                                    });
+                            {
+                            width: "16.66666667%"
+                            },
+                            {
+                            duration: time,
+                                    start: function () {
+                                    $(".RightArea").show();
+                                    },
+                                    complete: function () {
+                                    $(".UserMenuArea").show();
+                                    }
+                            });
                                     $(".main_zone").animate({
-                                        width: "83.33333333%"
-                                    }, time);
-                                }
-                                else
-                                {
-                                    $(".option_menu_user_img_toggle").attr("src", "images/expand_more.png");
+                            width: "83.33333333%"
+                            }, time);
+                            }
+                            else
+                            {
+                            $(".option_menu_user_img_toggle").attr("src", "images/expand_more.png");
                                     $(".menu_user_zone").animate(
-                                            {
-                                                width: "0%"
-                                            },
-                                    {
-                                        duration: time,
-                                        start: function () {
-                                            $(".UserMenuArea").hide();
-                                        },
-                                        complete: function () {
-                                            $(".RightArea").hide();
-                                        }
-                                    });
+                            {
+                            width: "0%"
+                            },
+                            {
+                            duration: time,
+                                    start: function () {
+                                    $(".UserMenuArea").hide();
+                                    },
+                                    complete: function () {
+                                    $(".RightArea").hide();
+                                    }
+                            });
                                     $(".main_zone").animate({
-                                        width: "100%"
-                                    }, time);
-                                }
-                                /*$.ajax({
-                                 type: "POST",
-                                 url: "http://shop100.online.lu/Scripts/sql.exe",
-                                 async: false,
-                                 dataType: "json",
-                                 data: 'SqlDB=MasterTest'
-                                 + '&Sql=MenuUserManageQuery.phs'
-                                 + '&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn'
-                                 + '&_MerchantId=1'
-                                 + '&_JSON=1'
-                                 + '&_toggle_user_menu_value=' + _toggle_new_value
-                                 + '&_OpenCloseMenu=1',
-                                 error: function (msg) {
-                                 console.log("Error: " + msg);
-                                 },
-                                 success: function (data) {
-                                 _ErrorCode = parseInt($.trim(data.iReturn));
-                                 if (_ErrorCode == 0)
-                                 {
-                                 alert(data.azMessage);
-                                 }
-                                 else
-                                 {
-                                 
-                                 }
-                                 }
-                                 });*/
+                            width: "100%"
+                            }, time);
+                            }
+                            /*$.ajax({
+                             type: "POST",
+                             url: "http://shop100.online.lu/Scripts/sql.exe",
+                             async: false,
+                             dataType: "json",
+                             data: 'SqlDB=MasterTest'
+                             + '&Sql=MenuUserManageQuery.phs'
+                             + '&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn'
+                             + '&_MerchantId=1'
+                             + '&_JSON=1'
+                             + '&_toggle_user_menu_value=' + _toggle_new_value
+                             + '&_OpenCloseMenu=1',
+                             error: function (msg) {
+                             console.log("Error: " + msg);
+                             },
+                             success: function (data) {
+                             _ErrorCode = parseInt($.trim(data.iReturn));
+                             if (_ErrorCode == 0)
+                             {
+                             alert(data.azMessage);
+                             }
+                             else
+                             {
+                             
+                             }
+                             }
+                             });*/
                             }
                         </script>
                         <div class="RightArea ">
                             <div class="LogoArea div_ellipsis">
-                                <img src="images/20140605103159_26038.jpg" width="100%" alt="logo" title="Master Démo" class="LogoImg">
+                                <img src="images/20140605103159_26038.jpg" style="width: 100%;" alt="logo" title="Master Démo" class="LogoImg">
                             </div>
                             <br>
                             <div class="UserMenuArea div_ellipsis">
-                                <div class="div_menu div_menu_internal_link div_menu_first div_ellipsis" data-href="ViewStatCategories.phs&amp;ContextObjectType=2" data-itype="1" width="100%"> 
+                                <div class="div_menu div_menu_internal_link div_menu_first div_ellipsis phone-12" data-href="ViewStatCategories.phs&amp;ContextObjectType=2" data-itype="1"> 
                                     Catégories de statistiques de facturation</div>	
-                                <div class="div_menu div_menu_internal_link div_ellipsis" data-href="CatManage.phs" data-itype="1" width="100%"> 
+                                <div class="div_menu div_menu_internal_link div_ellipsis phone-12" data-href="CatManage.phs" data-itype="1"> 
                                     Catégories</div>	
-                                <div class="div_menu div_menu_internal_link div_ellipsis" data-href="ViewReseller.phs" data-itype="1" width="100%"> 
+                                <div class="div_menu div_menu_internal_link div_ellipsis phone-12" data-href="ViewReseller.phs" data-itype="1"> 
                                     Revendeurs</div>	
-                                <div class="div_menu div_menu_internal_link div_ellipsis" data-href="ViewCustomText.phs" data-itype="1" width="100%"> 
+                                <div class="div_menu div_menu_internal_link div_ellipsis phone-12" data-href="ViewCustomText.phs" data-itype="1"> 
                                     Textes personnalisés</div>	
                             </div> 
                         </div>
                     </div>
                 </div>
-                <div class="main_zone desk-10 phone-12" style="height:100%; ">
+                <div class="main_zone desk-10 phone-12" style="height:100%;">
                     <div class="container-fluid">
                         <style>
                             .logout
@@ -280,113 +277,112 @@ Quentin Fonck
                         </style>
                         <script>
                             function open_in_new_window(href) {
-                                window.open(href);
-                                return false;
+                            window.open(href);
+                                    return false;
                             }
                             function open_in_site_window(href) {
-                                window.open(href, "site");
-                                return false;
+                            window.open(href, "site");
+                                    return false;
                             }
                             function logout(_link) {
-                                $(location).attr('href', _link);
+                            $(location).attr('href', _link);
                             }
                             function remove_empty_menu(i_level)
                             {
-                                if ($(".menu_level_" + i_level).length > 0)
-                                {
-                                    $(".menu_level_" + i_level).each(function () {
-                                        if ($(".child_of_" + $(this).attr("data-id_menu")).length == 0)
-                                            $(this).remove();
-                                    });
+                            if ($(".menu_level_" + i_level).length > 0)
+                            {
+                            $(".menu_level_" + i_level).each(function () {
+                            if ($(".child_of_" + $(this).attr("data-id_menu")).length == 0)
+                                    $(this).remove();
+                            });
                                     remove_empty_menu(i_level + 1);
-                                }
+                            }
                             }
                             $(function () {
-                                // Ecoute blur
-                                $(window).blur(function (e) {
-                                    $(".open").toggleClass("open");
-                                });
-                                $(document).click(function () {
-                                    $(".open").toggleClass("open");
-                                });
-                                $(".menu_click_link").mouseup(function (e) {
-                                    var _url = $(this).attr("data-href");
+                            // Ecoute blur
+                            $(window).blur(function (e) {
+                            $(".open").toggleClass("open");
+                            });
+                                    $(document).click(function () {
+                            $(".open").toggleClass("open");
+                            });
+                                    $(".menu_click_link").mouseup(function (e) {
+                            var _url = $(this).attr("data-href");
                                     var _type = parseInt($(this).attr("data-iType"), 10);
                                     var _link = "";
                                     if (_type == 1 || _type == 4)
-                                    {
-                                        _link = "http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + _url + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear"
-                                        if (e.which == 2)
-                                            open_in_new_window(_link);
-                                        else if (e.which == 1)
-                                            open_in_site_window(_link);
-                                    }
-                                    else if (_type == 2 && e.which != 3)
-                                    {
-                                        if (_url.indexOf('http://') == -1 && _url.indexOf('https://') == -1)
-                                            _link = "http://" + _url;
-                                        else
-                                            _link = _url;
-                                        open_in_new_window(_link);
-                                    }
-                                    else if (_type == 3 && e.which != 3)
-                                        eval(_url);
-                                });
-                                $(".home").mouseup(function (e) {
+                            {
+                            _link = "http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + _url + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear"
                                     if (e.which == 2)
-                                        open_in_new_window("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + $(this).attr("data-href_ext") + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear");
+                                    open_in_new_window(_link);
                                     else if (e.which == 1)
-                                        open_in_site_window("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + $(this).attr("data-href_int") + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear");
-                                });
-                                $(".logout").mouseup(function (e) {
-                                    if (e.which == 1)
-                                        logout("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + $(this).attr("data-href") + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear");
-                                });
-                                $(".dropdown").click(function (e) {
-                                    if ($(this).hasClass("home"))
-                                    {
-                                        $(".open").toggleClass("open");
-                                    }
+                                    open_in_site_window(_link);
+                            }
+                            else if (_type == 2 && e.which != 3)
+                            {
+                            if (_url.indexOf('http://') == - 1 && _url.indexOf('https://') == - 1)
+                                    _link = "http://" + _url;
                                     else
-                                    {
-                                        if ($(this).hasClass("open") == false)
-                                        {
-                                            $(".open").toggleClass("open");
-                                        }
-                                        $(this).toggleClass("open");
-                                        if ($(this).hasClass("open"))
-                                        {
-                                            if (viewport().width > 992) {
-                                                $(this).find(".dropdown_menu").position(
-                                                        {
-                                                            of: $(this),
-                                                            my: "left top",
-                                                            at: "left bottom"
-                                                        });
-                                            } else if (viewport().width <= 992) {
-                                                $('.dropdown-menu').each(function () {
-                                                    $(this).css('position', 'initial');
-                                                });
-                                            }
-                                        }
-                                    }
-                                    e.stopPropagation();
+                                    _link = _url;
+                                    open_in_new_window(_link);
+                            }
+                            else if (_type == 3 && e.which != 3)
+                                    eval(_url);
+                            });
+                                    $(".home").mouseup(function (e) {
+                            if (e.which == 2)
+                                    open_in_new_window("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + $(this).attr("data-href_ext") + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear");
+                                    else if (e.which == 1)
+                                    open_in_site_window("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + $(this).attr("data-href_int") + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear");
+                            });
+                                    $(".logout").mouseup(function (e) {
+                            if (e.which == 1)
+                                    logout("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + $(this).attr("data-href") + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear");
+                            });
+                                    $(".dropdown").click(function (e) {
+                            if ($(this).hasClass("home"))
+                            {
+                            $(".open").toggleClass("open");
+                            }
+                            else
+                            {
+                            if ($(this).hasClass("open") == false)
+                            {
+                            $(".open").toggleClass("open");
+                            }
+                            $(this).toggleClass("open");
+                                    if ($(this).hasClass("open"))
+                            {
+                            if (viewport().width > 992) {
+                            $(this).find(".dropdown_menu").position(
+                            {
+                            of: $(this),
+                                    my: "left top",
+                                    at: "left bottom"
+                            });
+                            } else if (viewport().width <= 992) {
+                            $('.dropdown-menu').each(function () {
+                            $(this).css('position', 'initial');
+                            });
+                            }
+                            }
+                            }
+                            e.stopPropagation();
                                     return false;
-                                });
-                                $('button.dl-trigger').click(function (e) {
-                                    e.stopPropagation();
+                            });
+                                    $('button.dl-trigger').click(function (e) {
+                            e.stopPropagation();
                                     $(this).toggleClass('dl-active');
                                     $('.no_list_style.nav_main').toggleClass('hidden-phone');
                                     $('.no_list_style.nav_main').toggleClass('hidden-tab');
-                                });
-                                $(document).click(function () {
-                                    $('button.dl-trigger').removeClass('dl-active');
+                            });
+                                    $(document).click(function () {
+                            $('button.dl-trigger').removeClass('dl-active');
                                     $('.no_list_style.nav_main').addClass('hidden-phone');
                                     $('.no_list_style.nav_main').addClass('hidden-tab');
-                                });
-                                remove_empty_menu(0);
                             });
-                        </script>
+                                    remove_empty_menu(0);
+                            });</script>
                         <div class="row">
                             <div class="main_menu">
                                 <nav class="nav_container">
@@ -594,122 +590,64 @@ Quentin Fonck
                                 </nav>
                             </div>
                         </div>
-                        <div class="row">
-                            <div style="height: 93%;margin-left:1%;margin-top: 0.5%; ">
-                                <h1>Gestion client
-                                    <div style="display:inline;float:right"><a href="http://shop100.online.lu/Scripts/sql.exe?ContextViewMode=1&amp;SqlDB=MasterTest&amp;Sql=ClientManage.phs&amp;xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&amp;ContextUsage=0&amp;Param=10" title="personnaliser"><img src="images/wheel.png" align="right"></a></div>
-                                </h1>
-                                <ul>
-                                <li>
-                                    <input type="button" value="Liste tickets" onclick="window.open('http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&amp;Sql=PopupCustomScript.phs&amp;xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&amp;_MerchantId=1&amp;_CustomScriptId=35&amp;_ReturnScriptLink=&amp;_ObjectId=10&amp;_ObjectTypeId=1&amp;_ObjectLibraryId=0', 'OssClient10Popup35', 'width=800,height=600,menubar=no,scrollbars=no,toolbar=no,status=no,resizable=yes,scrollbars=yes');">
-                                </li>
-                            </ul>
-                                <table border="0" cellspacing="0" cellpadding="0" width="100%">
-                                    <colgroup>
-                                        <col width="50%">
-                                        <col width="5%">
-                                        <col width="45%">
-                                    </colgroup>
-                                    <tbody><tr valign="top"><td>
-                                                <table>
-                                                    <tbody><tr id="PageZoneField19">
-                                                            <td style="white-space:nowrap;text-align:left;vertical-align:middle;"><b>
-                                                                    Langage préféré
-                                                                    :</b>&nbsp;</td>
-                                                            <td style="text-align:left;vertical-align:middle;">
-                                                                Français
-                                                            </td>
-                                                        </tr>
-                                                        <tr id="PageZoneField1">
-                                                            <td style="white-space:nowrap;text-align:left;vertical-align:middle;"><b>
-                                                                    Nom utilisateur
-                                                                    :</b>&nbsp;</td>
-                                                            <td style="text-align:left;vertical-align:middle;">
-                                                                Bati.sa</td>
-                                                        </tr>
-                                                        <tr id="PageZoneField4">
-                                                            <td style="white-space:nowrap;text-align:left;vertical-align:middle;"><b>
-                                                                    Société
-                                                                    :</b>&nbsp;</td>
-                                                            <td style="text-align:left;vertical-align:middle;">
-                                                                Batiment et Construction S.A</td>
-                                                        </tr>
-                                                        <tr id="PageZoneField6">
-                                                            <td style="white-space:nowrap;text-align:left;vertical-align:middle;"><b>
-                                                                    Nom
-                                                                    :</b>&nbsp;</td>
-                                                            <td style="text-align:left;vertical-align:middle;">
-                                                                William</td>
-                                                        </tr>
-                                                        <tr id="PageZoneField7">
-                                                            <td style="white-space:nowrap;text-align:left;vertical-align:middle;"><b>
-                                                                    Prénom
-                                                                    :</b>&nbsp;</td>
-                                                            <td style="text-align:left;vertical-align:middle;">
-                                                                Mickael</td>
-                                                        </tr>
-                                                        <tr id="PageZoneField9">
-                                                            <td style="white-space:nowrap;text-align:left;vertical-align:middle;"><b>
-                                                                    Adresse
-                                                                    :</b>&nbsp;</td>
-                                                            <td style="text-align:left;vertical-align:middle;">
-                                                                6 rue de Bastogne</td>
-                                                        </tr>
-                                                        <tr id="PageZoneField12">
-                                                            <td style="white-space:nowrap;text-align:left;vertical-align:middle;"><b>
-                                                                </b>&nbsp;</td>
-                                                            <td style="text-align:left;vertical-align:middle;">
-                                                                9010&nbsp;Ettelbruck
-                                                            </td>
-                                                        </tr>
-                                                        <tr id="PageZoneField13">
-                                                            <td style="white-space:nowrap;text-align:left;vertical-align:middle;"><b>
-                                                                </b>&nbsp;</td>
-                                                            <td style="text-align:left;vertical-align:middle;">
-                                                                Luxembourg</td>
-                                                        </tr>
-                                                        <tr id="PageZoneField16">
-                                                            <td style="white-space:nowrap;text-align:left;vertical-align:middle;"><b>
-                                                                    Tél mobile
-                                                                    :</b>&nbsp;</td>
-                                                            <td style="text-align:left;vertical-align:middle;">
-                                                                621 017 201</td>
-                                                        </tr>
-                                                        <tr id="PageZoneField18">
-                                                            <td style="white-space:nowrap;text-align:left;vertical-align:middle;"><b>
-                                                                    E-mail
-                                                                    :</b>&nbsp;</td>
-                                                            <td style="text-align:left;vertical-align:middle;">
-                                                                <a href="http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&amp;Sql=SendClientEmail.phs&amp;xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&amp;ContextUsage=0&amp;ContextClient=10&amp;Param=10">info@baticons.lu</a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr id="PageZoneField21">
-                                                            <td style="white-space:nowrap;text-align:left;vertical-align:middle;"><b>
-                                                                    Mode de paiement
-                                                                    :</b>&nbsp;</td>
-                                                            <td style="text-align:left;vertical-align:middle;">
-                                                                Comptant</td>
-                                                        </tr>
-                                                        <tr id="PageZoneField22">
-                                                            <td style="white-space:nowrap;text-align:left;vertical-align:middle;"><b>
-                                                                    Mode de facturation
-                                                                    :</b>&nbsp;</td>
-                                                            <td style="text-align:left;vertical-align:middle;">
-                                                                Facturation par courrier</td>
-                                                        </tr>
-                                                    </tbody></table>
-                                            </td><td>&nbsp;</td><td><table>
-                                                    <tbody><tr id="PageZoneField11">
-                                                            <td style="white-space:nowrap;text-align:left;vertical-align:middle;"><b>
-                                                                    Factures exclues pour ordres permanents
-                                                                    :</b>&nbsp;</td>
-                                                            <td style="text-align:left;vertical-align:middle;">
-                                                                1</td>
-                                                        </tr>
-                                                        <tr><td colspan="2">
-                                                            </td></tr>
-                                                    </tbody></table></td></tr>
-                                    </tbody></table>
+                        <div style="padding-left:30px; padding-right: 30px;">
+                            <div class="row" style="margin-left:-41px; margin-right: -41px;">
+                                <h4 class="mainTitle phone-10">Client management</h4>
+                                <div class="pull-right phone-2" style="text-align: right; padding: 10px 15px;"><a href="http://shop100.online.lu/Scripts/sql.exe?ContextViewMode=1&amp;SqlDB=MasterTest&amp;Sql=ClientManage.phs&amp;xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&amp;ContextUsage=0&amp;Param=10" title="personnaliser"><img src="images/wheel.png" align="right"></a></div>
+                            </div>
+                            <hr style="margin-left: -41px; margin-right: -41px;" />
+                            <div class="row">
+                                <div class="phone-6">
+                                    <div class="row">
+                                        <h3 class="phone-4">Information Client</h3>
+                                        <ul class="phone-3">
+                                            <li>
+                                                <input type="button" class="btn primary" value="Liste tickets" onclick="window.open('http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&amp;Sql=PopupCustomScript.phs&amp;xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&amp;_MerchantId=1&amp;_CustomScriptId=35&amp;_ReturnScriptLink=&amp;_ObjectId=10&amp;_ObjectTypeId=1&amp;_ObjectLibraryId=0', 'OssClient10Popup35', 'width=800,height=600,menubar=no,scrollbars=no,toolbar=no,status=no,resizable=yes,scrollbars=yes');">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <p id="PageZoneField19">
+                                        Langage préféré : <span>Français</span>
+                                    </p>
+                                    <p id="PageZoneField1">
+                                        Nom utilisateur : <span>Bati.sa</span>
+                                    </p>
+                                    <p id="PageZoneField4">
+                                        Société : <span>Batiment et Construction S.A</span>
+                                    </p>
+                                    <p id="PageZoneField6">
+                                        Nom : <span>William</span>
+                                    </p>
+                                    <p id="PageZoneField7">
+                                        Prénom : <span>Mickael</span>
+                                    </p>
+                                    <p id="PageZoneField9">
+                                        Adresse : <span>6 rue de Bastogne</span>
+                                    </p>
+                                    <p id="PageZoneField12">
+                                        <span>9010&nbsp;Ettelbruck</span>
+                                    </p>
+                                    <p id="PageZoneField13">
+                                        <span>Luxembourg</span>                                    
+                                    </p>
+                                    <p id="PageZoneField16">
+                                        Tél mobile : <span>621 017 201</span>
+                                    </p>
+                                    <p id="PageZoneField18">
+                                        E-mail : <span><a href="http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&amp;Sql=SendClientEmail.phs&amp;xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&amp;ContextUsage=0&amp;ContextClient=10&amp;Param=10">info@baticons.lu</a></span>
+                                    </p>
+                                    <p id="PageZoneField21">
+                                        Mode de paiement :<span>Comptant</span>
+                                    </p>
+                                    <p id="PageZoneField22">
+                                        Mode de facturation : <span>Facturation par courrier</span>
+                                    </p>
+                                </div>
+                                <div class="phone-6">
+                                    <p id="PageZoneField11">
+                                        Factures exclues pour ordres permanents: <span>1</span>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                         <div class="row align spread top">
@@ -822,29 +760,28 @@ Quentin Fonck
                                 <button type="submit" name="_ParentMenu">Chercher nouveau client</button>
                             </form>
                             <script>
-                                var iBlueChameleonModified = 0;
-                                function setBlueChameleonModification() {
-                                    iBlueChameleonModified = 1;
-                                    showBlueChameleonModification();
-                                }
+                                        var iBlueChameleonModified = 0;
+                                        function setBlueChameleonModification() {
+                                        iBlueChameleonModified = 1;
+                                                showBlueChameleonModification();
+                                        }
                                 function resetBlueChameleonModification() {
-                                    iBlueChameleonModified = 0;
-                                    showBlueChameleonModification();
+                                iBlueChameleonModified = 0;
+                                        showBlueChameleonModification();
                                 }
                                 function getBlueChameleonModification() {
-                                    return iBlueChameleonModified;
+                                return iBlueChameleonModified;
                                 }
                                 function showBlueChameleonModification() {
                                 }
-                                $(function () {
-                                    $(window).on('beforeunload', function (e) {
-                                        if (parseInt(getBlueChameleonModification(), 10) != 0)
-                                        {
-                                            return 'des données saisies pourraient ne pas \352tre enregistr\351es.';
-                                        }
-                                    });
+                                \$(function () {
+                                \$(window).on('beforeunload', function (e) {
+                                if (parseInt(getBlueChameleonModification(), 10) != 0)
+                                {
+                                return 'des données saisies pourraient ne pas \\352tre enregistr\\351es.';
+                                }
                                 });
-                            </script>
+                                });</script>
                         </div>
                     </div>
                 </div>
@@ -856,8 +793,8 @@ Quentin Fonck
                     <a style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="window.frames['site'].history.back();">Retour</a>
                     - <a style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="window.frames['site'].location.reload();">Actualiser</a>
                     - <a style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="if ('Microsoft Internet Explorer' == navigator.appName)
-                                window.frames['site'].focus();
-                            window.frames['site'].print();">Imprimer</a>
+                                            window.frames['site'].focus();
+                                            window.frames['site'].print();">Imprimer</a>
                 </p>
             </div>
         </div>
