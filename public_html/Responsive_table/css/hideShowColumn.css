@@ -35,7 +35,7 @@ table.hideShow td.essential {
 }
 
 /* tÃ©lÃ©phone: on cache optional et le reste */
-@media screen and (max-width: 762px) {
+@media screen and (max-width: 679px) {
     table.hideShow th.optional,
     table.hideShow td.optional {
         display: none;
@@ -46,7 +46,7 @@ table.hideShow td.essential {
     }
 }
 /*tablette: On cache le reste*/
-@media screen and (min-width: 762px) {
+@media screen and (min-width: 680px) {
     table.hideShow th.optional,
     table.hideShow td.optional {
         display: table-cell;
@@ -85,7 +85,7 @@ div.table-menu li label:hover, div.table-menu li input:hover{
 .table-menu-wrapper{
     width: 50%;
     position: relative;
-    top: 45px;
+    top: 0px;
     clear: both;
     margin-top: 15px;
 }

@@ -6,6 +6,7 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="css/layout-grid.css" rel="stylesheet"/>
         <link href="css/ossbo.css" rel="stylesheet" type="text/css"/>
         <link href="css/ossbo_box.css" rel="stylesheet" type="text/css"/>
         <link href="css/ossbo_services.css" rel="stylesheet" type="text/css" media="screen"/>
@@ -36,11 +37,11 @@
                         <input type="hidden" name="_CustomLibraryId" value="86">
                         <input type="hidden" name="_display" value="0">
                         <input type="hidden" name="_FirstTime" value="0">
-                        <div class="col-md-3 col-sm-6 col-xs-12 control-group">
+                        <div class="desk-3 tab-6 phone-12 control-group">
                             <label class="control-label" for="_SearchText">Chercher:</label> 
                             <input class="form-control" type="text" name="_SearchText" value="201503">
                         </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12 control-group">
+                        <div class="desk-3 tab-6 phone-12 control-group">
                             <label class="control-label" for="_SearchWhere">dans:</label> 
                             <SELECT class="form-control" name="_SearchWhere">
                                 <OPTION VALUE=1 >ID abonnement</OPTION>
@@ -52,7 +53,7 @@
                                 <OPTION VALUE=7 >Liste d'ID Abonnement (séparés par ,)</OPTION>
                             </SELECT>
                         </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12 control-group">
+                        <div class="desk-3 tab-6 phone-12 control-group">
                             <label class="control-label" for="_SearchOrder">trié par:</label>
                             <SELECT class="form-control" name="_SearchOrder">
                                 <OPTION VALUE=0 selected>ID abonnement</OPTION>
@@ -61,7 +62,7 @@
                                 <OPTION VALUE=5 >Username</OPTION>-->
                             </SELECT>
                         </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12 control-group">
+                        <div class="desk-3 tab-6 phone-12 control-group">
                             <label class="control-label" for="_SearchStatus">avec status:</label>
                             <SELECT class="form-control" name="_SearchStatus">
                                 <OPTION selected value="-99">&lt;Tous sauf annulés&gt;</OPTION>
@@ -91,7 +92,7 @@
                         </div>
                     </div>
                     <div class="row margin">
-                        <div class="col-md-6 submit">
+                        <div class="desk-6 submit">
                             <input class="btn btn-default" type="button" value="Vue simple" onClick="SearchGo(0)"> 
                             <input class="btn btn-default" type="button" value="Vue detaillée" onClick="SearchGo(1)">
                         </div>
@@ -578,19 +579,18 @@
                         </tfoot>
                     </table>
                 </div>
+            </form>
         </div>
         <input type="hidden" name="_Where" value="where (iSubscriptionId in (select idSubscription from OSSORDERSUBSCRIPTION,OSSORDER,OSSCLIENT,OSSARTICLE where OSSORDERSUBSCRIPTION.idMerchant=1 and OSSORDER.idMerchant=1 and OSSCLIENT.idMerchant=1 and OSSARTICLE.idMerchant=1 and OSSORDER.iClientUsage=0 and OSSORDERSUBSCRIPTION.idOrder=OSSORDER.idOrder and azUsage like '1_______' and OSSORDERSUBSCRIPTION.idClient=OSSCLIENT.idClient and OSSORDERSUBSCRIPTION.idArticle=OSSARTICLE.idArticle and azOrderNumber like '201503%' and OSSORDERSUBSCRIPTION.iStatus<=99 order by idSubscription desc))">
         <input type="hidden" name="_Order" value="order by iSubscriptionID desc">
-    </form>
-</div>
-<div width="100%" id="footer">
-    <a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=MainMenu.phs&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh">Menu principal</a> - <a href="javascript:history.back()">Retour</a>
-</div>
+        <div id="footer">
+            <a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=MainMenu.phs&amp;xid=1427717828ehcbcpdjlgofenihlcoinlndljeoahdkhmbpimahokedjpljgmmkoh">Menu principal</a> - <a href="javascript:history.back()">Retour</a>
+        </div>
 
-<script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
-<script type="text/javascript" src="js/ossbo.js"></script>
-<script type="text/javascript" src="js/hideShowColumn.js"></script>
-<script type="text/javascript" src="js/table-stickyHeader.js"></script>
-</body>
+        <script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/ossbo.js"></script>
+        <script type="text/javascript" src="js/hideShowColumn.js"></script>
+        <script type="text/javascript" src="js/table-stickyHeader.js"></script>
+    </body>
 </html>

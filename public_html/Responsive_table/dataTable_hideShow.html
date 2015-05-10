@@ -6,6 +6,7 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="css/layout-grid.css" rel="stylesheet"/>
         <link href="css/ossbo.css" rel="stylesheet" type="text/css"/>
         <link href="css/ossbo_box.css" rel="stylesheet" type="text/css"/>
         <link href="css/ossbo_services.css" rel="stylesheet" type="text/css" media="screen"/>
@@ -52,18 +53,18 @@
                 <input type="hidden" name="_display" value="0">
                 <input type="hidden" name="_FirstTime" value="0">
                 <div class="row">
-                    <div class="control-group col-md-3 col-sm-6 col-xs-12">
+                    <div class="control-group desk-3 tab-6 phone-12">
                         <label class="control-label" for="_SearchText">Chercher:</label>
                         <input class="form-control" type="text" name="_SearchText" value="">
                     </div>
-                    <div class="control-group col-md-3 col-sm-6 col-xs-12">
+                    <div class="control-group desk-3 tab-6 phone-12">
                         <label class="control-label" for="_SearchWhere">dans:</label> 
                         <select class="form-control" name="_SearchWhere">
                             <option value="1" selected="">Nom</option>
                             <option value="2">Numéro</option>
                         </select>
                     </div>
-                    <div class="control-group col-md-3 col-sm-6 col-xs-12">
+                    <div class="control-group desk-3 tab-6 phone-12">
                         <label class="control-label" for="_SearchOrder">trié par:</label>
                         <select class="form-control" name="_SearchOrder" id="_SearchOrder">
                             <option value="0" selected="">Dernière Modif</option>
@@ -72,7 +73,7 @@
                             <option value="3">Abonnement</option>
                         </select>
                     </div>
-                    <div class="control-group col-md-3 col-sm-6 col-xs-12">
+                    <div class="control-group desk-3 tab-6 phone-12">
                         <label class="control-label" for="_SearchStatus">avec statut :</label> 
                         <select  class="form-control" name="_SearchStatus" id="_SearchStatus">
                             <option value="-1">Tous les statuts</option>
@@ -84,18 +85,18 @@
                         </select>
                     </div>
                 </div>
-                <div class="row col-xs-4" style="margin-top: 10px">
+                <div class="row phone-4" style="margin-top: 10px">
                     <input type="button" value="Vue Simple" onclick="SearchGo(0)"> 
                     <input type="button" value="Vue Detaillee" onclick="SearchGo(1)">
                     <input type="button" value="Gérer l'Annuaire" onclick="PhoneBookManagement()">
                 </div>
             </form>
-            <p style="margin-top: 10px" class=" row col-xs-12">Affichage réduit : <b>25</b> plus récentes inscriptions</p>
+            <p style="margin-top: 10px" class=" row phone-12">Affichage réduit : <b>25</b> plus récentes inscriptions</p>
             <!--
             select * from LOLTEL_PHONEBOOK where (azName like '%')order by iCTimeLastUpdate desc
             <p>
             -->
-            <div style="margin-top: 10px" class="row col-xs-12">
+            <div style="margin-top: 10px" class="row phone-12">
                 <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=A')">A</a> - 
                 <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=B')">B</a> - 
                 <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=C')">C</a> - 

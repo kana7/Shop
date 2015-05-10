@@ -23,7 +23,7 @@ function showAllColumn() {
 }
 
 function renameInput(colName) {
-    if (viewport().width < 768) {
+    if (viewport().width <= 679) {
         $('div.btn-group label span').each(function (index) {
             $(this).text(index+1);
         });
@@ -43,7 +43,7 @@ $(function () {
         ColName[$(this).index()] = $(this).text();
     });
     $('table thead tr th').each(function () {
-        if (viewport().width < 768) {
+        if (viewport().width <= 679) {
             
             if ($(this).hasClass('prime')) {
                 $('div.select-column .btn-group').append("<label class=\"btn btn-primary prime\"><input id=\"" + $(this).index() + "\" type=\"checkbox\"><span>" + ($(this).index() + 1) + "</span></label>");
@@ -88,7 +88,7 @@ $(function () {
         });
     });
     $(window).load(function () {
-        if (viewport().width < 768) {
+        if (viewport().width <= 679) {
             flag = false;
             console.log('load');
             renameInput(null);
@@ -98,14 +98,14 @@ $(function () {
     
     $(window).resize(function () {
         if (flag) {
-            if (viewport().width < 768) {
+            if (viewport().width <= 679) {
                 console.log('resize to phone');
                 renameInput(null);
                 $('div.select-column label input:not(div.select-column label.prime input)').click();
                 flag = false;
             }
         }
-        if (viewport().width >= 768) {
+        if (viewport().width >= 680) {
             if (!flag) {
                 console.log('resize to other');
                 renameInput(ColName);
