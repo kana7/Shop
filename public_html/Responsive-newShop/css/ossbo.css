@@ -169,21 +169,89 @@ div#MultiColumn2 {
     background-color: #428bca;
     border-color: #357ebd;
 }
+.btn.primary:hover{
+    background-color: #2a6fab;
+}
+.btn.default{
+    color: #000;
+    background-color: #F0F0F0;
+    border-color: #B3B3B3;
+}
 
 .mainTitle {
-  color: #428bca;
-  margin-bottom: 0;
-  padding: 10px 15px;
-  margin-top: 0;
-  font-weight: 400;
+    color: #428bca;
+    margin-bottom: 0;
+    padding: 12px 0px 12px 0px;;
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: 400;
 }
-h4{
+
+.h1, .h2, .h3, h1, h2{
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+h3{
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-weight: 500;
     font-size: 18px;
 }
-h3{
-    font-size: 24px;
+@media (max-width: 678px){
+    .mainTitle{
+        font-size: 16px;
+    
+        white-space: nowrap;
 }
-.h1, .h2, .h3, h1, h2, h3 {
-  margin-top: 16px;
-  margin-bottom: 8px;
+    h3{
+        font-size: 18px;
+    }
+    p[id^="PageZoneField"]>span{
+        width: 100%;
+    }
+    .field{
+        margin-top: 5px;
+    }
+    p[id^="PageZoneField"]>.field.break{
+        float: left;
+        text-align: left !important;
+    }
+}
+
+@media (min-width:680px){
+    p[id^="PageZoneField"]{
+        border-bottom: 1px solid #e4e4e4;
+    }
+}
+
+.userinfo {
+    background: #F9F9F9;
+    border: 1px solid #F0F0F0;
+    border-radius: 5px;
+    padding: 0px 20px;
+    margin-bottom: 22px;
+}
+p[id^="PageZoneField"]{
+    width: 100%;
+    margin: 22px 0px; 
+    padding-bottom: 6px;
+}
+p[id^="PageZoneField"]>.label{
+    font-weight: bold;
+}
+p[id^="PageZoneField"]>.field{
+    float: right;
+}
+p[id^="PageZoneField"]>.field.break{
+    display: inline-block; 
+    width: 100%;
+    text-align: right; 
+    margin-top: 11px;
+}
+
+#footerDiv{
+    border-top:1px solid #ddd; 
+    margin-bottom: 10px;
+    clear: both;
 }

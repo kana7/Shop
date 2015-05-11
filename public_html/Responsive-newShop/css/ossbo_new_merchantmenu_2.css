@@ -39,7 +39,7 @@ body{
     border: none;
     padding: 3px 0px;
     width: 45px;
-    height: 46px;
+    height: 100%;
     text-indent: -900em;
     overflow: hidden;
     position: relative;
@@ -48,9 +48,12 @@ body{
 }
 
 .dl-menuwrapper button:hover,
-.dl-menuwrapper button.dl-active,
-.dl-menuwrapper ul {
+.dl-menuwrapper button.dl-active{
     background: #2a6fab;
+}
+
+.dl-menuwrapper ul {
+    background: #FFF;
 }
 
 .dl-menuwrapper button:after {
@@ -71,6 +74,7 @@ body{
 }
 
 .nav-mobile > li{
+    width: 12%;
     margin-right: -3px;
     margin-top: auto;
     display: inline-block;
@@ -78,6 +82,9 @@ body{
     float: none !important; 
     height: 45px;
     transition: all .4s ease-in-out;
+}
+.nav-mobile > li:not(.dl-menuwrapper){
+    width: 12%;
 }
 
 .nav-mobile > li:hover{
@@ -94,19 +101,43 @@ body{
     color: #fff;
     font-size: 12px;
     text-decoration: none;
+    height: 100%;
 }
 
 .nav_main > li {
     margin-right: -3px;
     margin-top: auto;
     display: inline-block;
+    height: 46px;
     line-height:25px;
     vertical-align:middle;
     float: none !important;
     transition: all .4s ease-in-out;
 
 }
-
+@media(max-width: 349px){
+    .nav_main>li.dl-menuwrapper{
+        position: absolute;
+        right: 70px;
+    }
+}
+@media(min-width: 350px){
+    .nav_main>li.dl-menuwrapper{
+        position: absolute;
+        right: 95px;
+    }
+}
+@media(max-width: 499px){
+    .nav_main > li:not(.dl-menuwrapper){
+        width: 17%;
+    }
+}
+@media(min-width: 500px){
+    .nav_main>li.dl-menuwrapper{
+        position: absolute;
+        right: 75px;
+    }
+}
 @media (max-width: 679px){
     .sub_menu_content>.sub_menu_row{
         display: block;
@@ -128,25 +159,20 @@ body{
 
 @media (min-width: 680px) and (max-width:992px){
     .sub_menu_content>.sub_menu_row>ul{
-        width: 33.33333333%;
+        /* width: 33.33333333%; */
+    }
+    .nav_main>li.dl-menuwrapper{
+        position: absolute;
+        right: 50px;
     }
 }
 
 @media (max-width: 991px){
-    .nav_main > li{
-        width: 100%;
-
-    }
     .sub_menu_content>.sub_menu_row>ul>li{
         height: 35px;
     }
     .sub_menu_content>.sub_menu_row>ul>li>span{
         margin-right: 10px;
-    }
-}
-@media (max-width: 991px){
-    .nav_main > li.icon.logout{
-        position: initial;
     }
 }
 
@@ -155,23 +181,21 @@ body{
     color: #fff;
     font-size: 12px;
     text-decoration: none;
+    height: 100%;
 }
-
-
 
 .nav_main > li > a > div {
     padding: 5px 15px !important;
     border-left: 1px solid #fff;
+    height: 100%;
 }
 .nav_main > li > a > div>span{
     margin-left: 10px;
 }
 @media (max-width: 991px){
     .nav_main > li > a > div, .dl-menuwrapper>button{
-        border-left: inherit;
-        border-bottom: 1px solid #2a6fab;
         font-size: 14px;
-        height: 46px;
+
     }
 }
 
@@ -211,7 +235,6 @@ ol, ul {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
     display: none;
     font-size: 14px;
-    left: 0;
     list-style: outside none none;
     min-width: 160px;
     padding: 5px 0;
@@ -221,7 +244,7 @@ ol, ul {
     margin: 0 0 0 -1px !important;
 }
 @media (max-width: 991px){
-    .dropdown_cols_1, .dropdown_cols_2, .dropdown_cols_3{
+    .nav_main>.dropdown>.dropdown_cols_1, .dropdown_cols_2, .dropdown_cols_3{
         width: 100% !important;
         left: 0;
         right: 0;
@@ -231,13 +254,10 @@ ol, ul {
         margin-right: auto !important;
     }
 }
-@media (max-width: 991px){
-    .dropdown_menu{
-        position: static;
-        box-shadow: none;
 
-        z-index: 2000;
-    }
+.dropdown_wrapper{
+    text-align: right;
+    right: 0px;
 }
 
 .dropdown_cols_1 {
@@ -272,7 +292,7 @@ ol, ul {
 }
 
 .sub_menu_column{
-    width: 200px;
+    width: 100%;
     padding:0;
     display: inline-block;
     vertical-align:top;
@@ -312,6 +332,36 @@ ol, ul {
     color: white!important;
 }
 
+.page-menu>ul{
+    margin-bottom: 0;
+}
+.page-menu>ul>li{
+    margin: auto;
+}
+.footer{
+    background-color: #428BCA;
+    color: #FFF;
+}
 
-
-
+.footer>ul{
+    display: table;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+.footer li{
+    transition: all linear .4s;
+    height: 100%;
+    cursor: pointer;
+    margin: 0;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;  
+}
+.footer li:hover{
+    background-color: #2a6fab;
+}
+.footer i{
+    margin-right: 10px;
+}

@@ -278,7 +278,7 @@ th {
     }
 }
 
-/* La taille d'un element (largeur et hauteur) est definie jusque a  la bordure mais pas sans les marges*/
+/* La taille d'un element (largeur et hauteur) est definie jusque a? la bordure mais pas sans les marges*/
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -446,6 +446,7 @@ pre code {
     margin-left: auto;
     padding-left: 10px;
     padding-right: 10px;
+    /* width: 100%; */
 }
 
 /*Container de rangee*/
@@ -455,12 +456,12 @@ pre code {
 }
 
 /*Definition des colonnes*/
-.phone-1, .tab-1, .desk-1, .lgdesk-1, .phone-2, .tab-2, .desk-2, .lgdesk-2, .phone-3, .tab-3, .desk-3, .lgdesk-3, .phone-4, .tab-4, .desk-4, .lgdesk-4, .phone-5, .tab-5, .desk-5, .lgdesk-5, .phone-6, .tab-6, .desk-6, .lgdesk-6, .phone-7, .tab-7, .desk-7, .lgdesk-7, .phone-8, .tab-8, .desk-8, .lgdesk-8, .phone-9, .tab-9, .desk-9, .lgdesk-9, .phone-10, .tab-10, .desk-10, .lgdesk-10, .phone-11, .tab-11, .desk-11, .lgdesk-11, .phone-12, .tab-12, .desk-12, .lgdesk-12 {
+.phone-auto, .tab-auto, .desk-auto, .lgdesk-auto, .phone-0, .tab-0, .desk-0, .lgdesk-0, .phone-1, .tab-1, .desk-1, .lgdesk-1, .phone-2, .tab-2, .desk-2, .lgdesk-2, .phone-3, .tab-3, .desk-3, .lgdesk-3, .phone-4, .tab-4, .desk-4, .lgdesk-4, .phone-5, .tab-5, .desk-5, .lgdesk-5, .phone-6, .tab-6, .desk-6, .lgdesk-6, .phone-7, .tab-7, .desk-7, .lgdesk-7, .phone-8, .tab-8, .desk-8, .lgdesk-8, .phone-9, .tab-9, .desk-9, .lgdesk-9, .phone-10, .tab-10, .desk-10, .lgdesk-10, .phone-11, .tab-11, .desk-11, .lgdesk-11, .phone-12, .tab-12, .desk-12, .lgdesk-12 {
     position: relative;
     min-height: 1px;
 }
-.phone-1, .phone-2, .phone-3, .phone-4, .phone-5, .phone-6, .phone-7, .phone-8, .phone-9, .phone-10, .phone-11, .phone-12 {
-     float: left;
+.phone-auto, .phone-0, .phone-1, .phone-2, .phone-3, .phone-4, .phone-5, .phone-6, .phone-7, .phone-8, .phone-9, .phone-10, .phone-11, .phone-12 {
+    float: left;
 }
 
 /* Colonnes pour telephone*/
@@ -499,6 +500,12 @@ pre code {
 }
 .phone-1 {
     width: 8.33333333%;
+}
+.phone-0 {
+    width: 0%;
+}
+.phone-auto{
+    width: auto;
 }
 
 /*Deplacement vers la gauche telephone*/
@@ -667,7 +674,7 @@ pre code {
 
 /*Colonnes pour tablettes*/
 @media (min-width: 680px) {
-    .tab-1, .tab-2, .tab-3, .tab-4, .tab-5, .tab-6, .tab-7, .tab-8, .tab-9, .tab-10, .tab-11, .tab-12 {
+    .tab-auto, .tab-0, .tab-1, .tab-2, .tab-3, .tab-4, .tab-5, .tab-6, .tab-7, .tab-8, .tab-9, .tab-10, .tab-11, .tab-12 {
         float: left;
     }
     .tab-12 {
@@ -705,6 +712,12 @@ pre code {
     }
     .tab-1 {
         width: 8.33333333%;
+    }
+    .tab-0 {
+        width: 0%;
+    }
+    .tab-auto{
+        width: auto;
     }
 
     /*Deplacement vers la gauche tablette*/
@@ -873,7 +886,7 @@ pre code {
 
 /*Colonnes pour desktop*/
 @media (min-width: 992px) {
-    .desk-1, .desk-2, .desk-3, .desk-4, .desk-5, .desk-6, .desk-7, .desk-8, .desk-9, .desk-10, .desk-11, .desk-12 {
+    .desk-auto, .desk-0, .desk-1, .desk-2, .desk-3, .desk-4, .desk-5, .desk-6, .desk-7, .desk-8, .desk-9, .desk-10, .desk-11, .desk-12 {
         float: left;
     }
     .desk-12 {
@@ -912,6 +925,13 @@ pre code {
     .desk-1 {
         width: 8.33333333%;
     }
+    .desk-0 {
+        width: 0%;
+    }
+    .desk-auto{
+        width: auto;
+    }
+    
     /*Deplacement vers la gauche desktop*/
     .desk-pull-12 {
         right: 100%;
@@ -1075,7 +1095,7 @@ pre code {
 }
 /*Colonnes pour desktop large (ecran haute definition et plus)*/
 @media (min-width: 1172px) {
-    .lgdesk-1, .lgdesk-2, .lgdesk-3, .lgdesk-4, .lgdesk-5, .lgdesk-6, .lgdesk-7, .lgdesk-8, .lgdesk-9, .lgdesk-10, .lgdesk-11, .lgdesk-12 {
+    .lgdesk-auto, .lgdesk-0, .lgdesk-1, .lgdesk-2, .lgdesk-3, .lgdesk-4, .lgdesk-5, .lgdesk-6, .lgdesk-7, .lgdesk-8, .lgdesk-9, .lgdesk-10, .lgdesk-11, .lgdesk-12 {
         float: left;
     }
     .lgdesk-12 {
@@ -1113,6 +1133,12 @@ pre code {
     }
     .lgdesk-1 {
         width: 8.33333333%;
+    }
+    .lgdesk-0 {
+        width: 0%;
+    }
+    .lgdesk-auto{
+        width: auto;
     }
 
     /*Deplacement vers la gauche large desktop*/
@@ -1571,68 +1597,68 @@ Appliquez ces classes sur le conteneur (parent) des elements que vous voulez ali
 */
 
 /* Active l'alignement: toujours commencer par cette classe si vous voulez aligner quelque chose*/
-div.align{
+.align{
     display: flex;
 }
 /*Dispose les elements en ligne*/
-div.align.row{
+.align.row{
     flex-direction: row;
 }
 /*Dispose les elements en ligne en inversant l'ordre'*/
-div.align.row-reverse{
+.align.row-reverse{
     flex-direction: row-reverse;
 }
 /*Dispose les elements de haut en bas*/
-div.align.column{
+.align.column{
     flex-direction: column;
 }
 /*Dispose les elements de bas en haut*/
-div.align.column-reverse{
+.align.column-reverse{
     flex-direction: row-reverse;
 }
 /*Permet de mettre les elements a la ligne si il prennent trop de place*/
-div.align.wrap{
+.align.wrap{
     flex-wrap: wrap;
 }
 
 /*Aligne les elements a gauche (horizontalement)*/
-div.align.left{
+.align.left{
     justify-content: flex-start;
 }
 /*Aligne les elements au milieu (horizontalement)*/
-div.align.center{
+.align.center{
     justify-content: center;
 }
 
 /*Aligne les elements a droite (horizontalement)*/
-div.align.right{
+.align.right{
     justify-content: flex-end;
 }
 
 /*Reparti les elements avec un espace regulier entre eux*/
-div.align.spread{
+.align.spread{
     justify-content: space-around;
 }
 
 /*Ecarte les elements en prennant toute la place disponible*/
-div.align.split{
+.align.split{
     justify-content: space-between;
 }
 /*Aligne les elements sur le haut du container(verticalement)*/
-div.align.top{
+.align.top{
     align-items: flex-start;
 }
 
 /*Aligne les elements sur le milieu du container(verticalement)*/
-div.align.middle{
+.align.middle{
     align-items: center;
 }
 
 /*Aligne les elements sur le bas du container(verticalement)*/
-div.align.bottom{
+.align.bottom{
     align-items: flex-end;
 }
 /*Etire les elements pour qu'ils prennent toute la hauteur du container*/
-div.align.stretch{
+.align.stretch{
     align-items: stretch;
 }

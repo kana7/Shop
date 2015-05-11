@@ -14,6 +14,7 @@ Quentin Fonck
         <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
         <script type="text/javascript" src="js/viewport.js"></script>
         <link rel="stylesheet" type="text/css" href="css/layout-grid.css"/>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link href="css/ossbo.css" rel="stylesheet" type="text/css">
         <link href="css/ossbo_box.css" rel="stylesheet" type="text/css">
         <link href="css/ossbo_services.css" rel="stylesheet" type="text/css" media="screen">
@@ -44,7 +45,7 @@ Quentin Fonck
         <link rel="stylesheet" type="text/css" href="css/ossbo_div.css">
         <link rel="stylesheet" type="text/css" href="css/ossbo_new_usermenu.css">
         <link rel="stylesheet" type="text/css" href="css/ossbo_new_usermenu_color.css">
-        <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu.css">
+        <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu_2.css">
         <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu_color.css">
         <script>
             function toggleMenu(idObject) {
@@ -372,31 +373,19 @@ Quentin Fonck
                                 });
                                 $('button.dl-trigger').click(function (e) {
                                     e.stopPropagation();
-                                    $(this).toggleClass('dl-active');
-                                    $('.no_list_style.nav_main').toggleClass('hidden-phone');
-                                    $('.no_list_style.nav_main').toggleClass('hidden-tab');
+                                    $('.dropdown').not($(this).parent().parent('li')).removeClass('open');
+                                    $(this).parent().parent('li').toggleClass('open');
                                 });
                                 $(document).click(function () {
-                                    $('button.dl-trigger').removeClass('dl-active');
-                                    $('.no_list_style.nav_main').addClass('hidden-phone');
-                                    $('.no_list_style.nav_main').addClass('hidden-tab');
+                                    $('button.dl-trigger').parent().parent().removeClass('open');
                                 });
                                 remove_empty_menu(0);
                             });</script>
                         <div class="row">
                             <div class="main_menu">
                                 <nav class="nav_container">
-                                    <ul class="no_list_style nav-mobile display-phone-block display-tab-block">
-                                        <li class="dropdown icon home phone-1" data-href_int="WelcomeMain.phs" data-href_ext="MainMenuDefault.phs">
-                                            <a class="dropdown_toggle" data-toggle="dropdown"> 
-                                                <div>&nbsp;</div>
-                                            </a>
-                                        </li>
-                                        <li class="dl-menuwrapper"><button class="dl-trigger"></button></li>
-                                        <li class="dropdown icon logout phone-1" data-href="MainLogout.phs" style="border-left: 1px solid #fff;"> <a class="dropdown_toggle" data-toggle="dropdown"> <div>&nbsp;</div></a></li>
-                                    </ul>
-                                    <ul class="no_list_style nav_main hidden-phone hidden-tab" style="z-index: 100;">
-                                        <li class="dropdown icon home hidden-phone hidden-tab" data-href_int="WelcomeMain.phs" data-href_ext="MainMenuDefault.phs">
+                                    <ul class="no_list_style nav_main" style="z-index: 100;">
+                                        <li class="dropdown icon home" data-href_int="WelcomeMain.phs" data-href_ext="MainMenuDefault.phs">
                                             <a class="dropdown_toggle" data-toggle="dropdown"> 
                                                 <div>&nbsp;</div>
                                             </a>
@@ -511,7 +500,7 @@ Quentin Fonck
                                                                 <li class="sub_menu_link menu_click_link child_of_5" title="Campagne de marketing" data-href="MarketingCampaign.phs" data-itype="1"><span class="sub_menu_link_span"></span>Campagne de marketing </li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_5" title="Statistiques de commandes" data-href="ViewStatistics.phs&amp;ContextObjectType=1" data-itype="1"><span class="sub_menu_link_span"></span>Statistiques de commandes </li>    
                                                                 <li class="sub_menu_title menu_level_1 menu_39" data-menu_level="_menu_level" data-id_menu="39" title="Personnalisation">Personnalisation</li>    
-                                                                <li class="sub_menu_link menu_click_link child_of_5 child_of_39" title="Attributs client" data-href="ViewClientAttr.phs" data-itype="1"><span class="sub_menu_link_span"></span>Attributs client </li>Client management
+                                                                <li class="sub_menu_link menu_click_link child_of_5 child_of_39" title="Attributs client" data-href="ViewClientAttr.phs" data-itype="1"><span class="sub_menu_link_span"></span>Attributs client </li>
                                                                 <li class="sub_menu_link menu_click_link child_of_5 child_of_39" title="Attributs commande" data-href="ViewOrderAttr.phs" data-itype="1"><span class="sub_menu_link_span"></span>Attributs commande </li>    
                                                             </ul>
                                                         </div>
@@ -576,7 +565,6 @@ Quentin Fonck
                                                     <div class="sub_menu_content">
                                                         <div class="sub_menu_row">
                                                             <ul class="sub_menu_column no_list_style">
-                                                                <li class="sub_menu_link menu_click_link child_of_11" title="Menu principal" data-href="MenuManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Menu principal </li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_11" title="Configurer le bureau" data-href="WelcomeGetProcList.phs" data-itype="1"><span class="sub_menu_link_span"></span>Configurer le bureau </li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_11" title="Unité de référence personnalisée" data-href="ViewArtQuantityUnit.phs" data-itype="1"><span class="sub_menu_link_span"></span>Unité de référence personnalisée </li>    
                                                             </ul>
@@ -584,16 +572,44 @@ Quentin Fonck
                                                     </div>
                                                 </li>
                                             </ul>
-                                        </li>    
-                                        <li class="dropdown icon logout hidden-phone hidden-tab" data-href="MainLogout.phs"> <a class="dropdown_toggle" data-toggle="dropdown"> <div>&nbsp;</div></a></li>
+                                        </li>
+                                        <li class="dl-menuwrapper dropdown menu_level_0 menu_7 hidden-desk hidden-lgdesk icon" data-menu_level="0" data-id_menu="7">
+                                            <a class="dropdown_toggle" data-toggle="dropdown" href="#">
+                                                <button class="dl-trigger"></button>
+                                            </a>
+                                            <ul class="dropdown_menu no_list_style dropdown_wrapper">
+                                                <li>
+                                                    <div class="sub_menu_content">
+                                                        <div class="sub_menu_row">
+                                                            <ul class="sub_menu_column no_list_style">
+                                                                <li class="sub_menu_link menu_click_link child_of_7" title="Menu principal" data-href="MenuManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Menu principal </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_7" title="Configurer le bureau" data-href="WelcomeGetProcList.phs" data-itype="1"><span class="sub_menu_link_span"></span>Configurer le bureau </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_7" title="Unité de référence personnalisée" data-href="ViewArtQuantityUnit.phs" data-itype="1"><span class="sub_menu_link_span"></span>Unité de référence personnalisée </li>
+                                                                <li class="sub_menu_link menu_click_link child_of_7" data-href="MainLogout.phs"> <a class="dropdown_toggle" data-toggle="dropdown"> <div><span class="sub_menu_link_span"></span>Logout</div></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown display-desk display-lgdesk icon logout" data-href="MainLogout.phs"> <a class="dropdown_toggle" data-toggle="dropdown"> <div>&nbsp;</div></a></li>
                                     </ul>
                                 </nav>
                             </div>
                         </div>
                         <div style="padding-left:30px; padding-right: 30px;">
-                            <div class="row align middle" style="height: 49px;">
-                                <h4 class="mainTitle phone-10"><span style="font-size: 16px;">Client > </span>Client management</h4>
-                                <div class="pull-right phone-2" style="text-align: right; padding: 10px 0px 10px 0px;"><a href="http://shop100.online.lu/Scripts/sql.exe?ContextViewMode=1&amp;SqlDB=MasterTest&amp;Sql=ClientManage.phs&amp;xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&amp;ContextUsage=0&amp;Param=10" title="personnaliser"><img src="images/wheel.png" align="right"></a></div>
+                            <div class="page-menu row">
+                                <h4 class="mainTitle phone-12 tab-6"><span style="font-size: 16px;">Client > </span>Client management</h4>
+                                <ul class="pull-right phone-12 tab-3 align" style="text-align: right; padding: 10px 0px 10px 0px;">
+                                    <li><a style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="window.frames['site'].history.back();"><i class="fa fa-reply fa-2x"></i></a></li>
+                                    <li><a style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="window.frames['site'].location.reload();"><i class="fa fa-refresh fa-2x"></i></a></li>
+                                    <li><a style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="if ('Microsoft Internet Explorer' == navigator.appName)
+                                                window.frames['site'].focus();
+                                            window.frames['site'].print();"><i class="fa fa-print fa-2x"></i></a></li>
+                                    <li>
+                                        <a href="http://shop100.online.lu/Scripts/sql.exe?ContextViewMode=1&amp;SqlDB=MasterTest&amp;Sql=ClientManage.phs&amp;xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&amp;ContextUsage=0&amp;Param=10" title="personnaliser"><i class="fa fa-cog fa-2x"></i></a>
+                                    </li>
+                                </ul>
                             </div>
                             <hr style="margin-left: -41px; margin-right: -41px; margin-top: 0px;" />
                             <div class="row">
@@ -764,7 +780,7 @@ Quentin Fonck
                                     <input type="hidden" name="Sql" value="ViewClients.phs">
                                     <input type="hidden" name="xid" value="1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn">
                                     <input type="hidden" name="ContextUsage" value="0">
-                                    <button class="btn default" type="submit" name="_ParentMenu">Chercher nouveau client</button>
+                                    <button class="btn default phone-12 tab-5 desk-3" type="submit" name="_ParentMenu">Chercher nouveau client</button>
                                 </form>
                                 <script>
                                     var iBlueChameleonModified = 0;
@@ -794,16 +810,13 @@ Quentin Fonck
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div id="footerDiv" class="phone-12">
-                    <p style="text-align:center;margin-top:4px;margin-bottom:0px">
-                        <a style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="window.frames['site'].history.back();">Retour</a>
-                        - <a style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="window.frames['site'].location.reload();">Actualiser</a>
-                        - <a style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="if ('Microsoft Internet Explorer' == navigator.appName)
-                                window.frames['site'].focus();
-                            window.frames['site'].print();">Imprimer</a>
-                    </p>
-                </div>
+            <div class="footer row">
+                <ul class="phone-12 tab-10 desk-5 pull-right">
+                        <li><i class="fa fa-caret-up"></i>Commercant</li>
+                        <li><i class="fa fa-caret-up"></i>Utilisateurs</li>
+                        <li><i class="fa fa-caret-up"></i>Divers</li>
+                        <li><i class="fa fa-caret-up"></i>Personnalisation</li>
+                </ul>
             </div>
         </div>
 
