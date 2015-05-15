@@ -298,7 +298,6 @@ ol, ul {
     vertical-align:top;
 }
 
-
 .sub_menu_link{
     padding: 5px 10px 5px 10px;
     line-height: 17px;
@@ -321,12 +320,10 @@ ol, ul {
     border-top: 0.35em solid transparent;
     display: inline-block;
     height: 0;
-    margin-right: 2px;
+    margin-right: 5px;
     vertical-align: middle;
     width: 0;
 }
-
-
 
 .main_menu_link{
     color: white!important;
@@ -350,7 +347,7 @@ ol, ul {
     margin: 0;
     text-align: right;
 }
-.footer li{
+.footer>ul>li{
     transition: all linear .4s;
     height: 100%;
     cursor: pointer;
@@ -359,9 +356,53 @@ ol, ul {
     vertical-align: middle;
     text-align: center;  
 }
-.footer li:hover{
+.footer>ul>li>a{
+    color: inherit;
+    text-decoration: none;
+}
+.footer>ul>li>a:hover{
+    color: inherit;
+}
+.footer>ul>li:hover{
     background-color: #2a6fab;
 }
-.footer i{
+.footer a>i{
     margin-right: 10px;
+}
+
+.dropdown.up .dropdown_menu{
+    color: #000000;
+}
+
+.dropdown.up .sub_menu_column{
+    width: 100%;
+    padding: 0;
+    display: inline-block;
+    vertical-align: top;
+}
+.dropdown.up .sub_menu_column>li{
+    margin-bottom: 5px;
+    height: 30px;
+}
+.dropdown.up .sub_menu_content{
+    padding: 5px 20px;
+}
+
+
+@media(max-width: 400px){
+    #info_client ul, #info_client h3{
+        display: block;
+        width: 100%;
+    }
+    #info_client>div{
+        width: 100%;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+    #info_client ul input{
+        width: 100%;
+    }
+    #info_client h3, h4.mainTitle{
+        text-align: center;
+    }
 }
