@@ -236,7 +236,7 @@ ol, ul {
     margin: 0 0 0 -1px !important;
 }
 @media (max-width: 991px){
-    .nav_main>.dropdown>.dropdown_cols_1, .dropdown_cols_2, .dropdown_cols_3{
+    .nav_main>.dropdown>.dropdown_menu{
         width: 100% !important;
         left: 0;
         right: 0;
@@ -304,6 +304,7 @@ li.dropdown:not(.dl-menuwrapper) .sub_menu_column{
     padding:0;
     display: inline-block;
     vertical-align:top;
+    width: 100%;
 }
 
 .sub_menu_link{
@@ -424,6 +425,18 @@ li.dropdown:not(.dl-menuwrapper) .sub_menu_column{
 
 
 /*Hide Show Menu*/
+.nav_main>li.essential{
+    display: inline-block !important;
+}
+.nav_main>li.important{
+    display: inline-block;
+}
+.nav_main>li.dl-menuwrapper{
+    display: inline-block;
+}
+.dl-menuwrapper .sub_menu_column.optional, .dl-menuwrapper .sub_menu_column.important, .dl-menuwrapper .sub_menu_column.essential{
+    display: none;
+}
 
 @media(max-width: 350px){
 
@@ -436,6 +449,12 @@ li.dropdown:not(.dl-menuwrapper) .sub_menu_column{
     .nav_main>li.optional{
         display: none;
     }
+    .dl-menuwrapper .sub_menu_column.optional{
+        display: inline-block;
+    }
+    .dl-menuwrapper .sub_menu_column.important{
+        display: inline-block;
+    }
 }
 @media(max-width: 529px){
     .nav_main>li:not(.dl-menuwrapper){
@@ -444,12 +463,21 @@ li.dropdown:not(.dl-menuwrapper) .sub_menu_column{
     .nav_main>li.optional{
         display: none;
     }
+    .nav_main>li.important{
+        display: inline-block;
+    }
+    .dl-menuwrapper .sub_menu_column.optional{
+        display: inline-block;
+    }
 }
 @media(min-width: 530px){
     .nav_main>li:not(.dl-menuwrapper){
         display: none;
     }
     .nav_main>li.optional{
+        display: inline-block;
+    }
+    .nav_main>li.important{
         display: inline-block;
     }
 }
@@ -460,13 +488,4 @@ li.dropdown:not(.dl-menuwrapper) .sub_menu_column{
     .nav_main>li.dl-menuwrapper{
         display: none !important;
     }
-}
-.nav_main>li.essential{
-    display: inline-block !important;
-}
-.nav_main>li.important{
-    display: inline-block;
-}
-.nav_main>li.dl-menuwrapper{
-    display: inline-block;
 }
