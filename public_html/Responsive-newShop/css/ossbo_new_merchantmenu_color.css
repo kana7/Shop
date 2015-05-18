@@ -2,7 +2,9 @@
 	
 	.main_menu{
 		background-color:#428BCA;
-	}
+	
+		/* border-bottom: 1px solid #FFF; */
+}
 	
 	.nav_main > li:hover{
 		background-color: #2D6CA2;

@@ -9,11 +9,6 @@
 html, body, .container, .scroller {
 	height: 100%;
 }
-
-.scroller {
-	/* overflow-y: scroll; */
-}
-
 .scroller,
 .scroller-inner {
 	position: relative;
@@ -45,7 +40,6 @@ html, body, .container, .scroller {
 .mp-pusher {
 	position: relative;
 	left: 0;
-	height: 100%;
 }
 
 .mp-menu {
@@ -247,7 +241,7 @@ html, body, .container, .scroller {
 } /* seems like Chrome 34.0.1847.131 needs the second shadow otherwise the transition breaks */
 
 .mp-back {
-	background: rgba(0,0,0,0.1);
+	background: #428BCA;
 	outline: none;
 	color: #fff;
 	text-transform: uppercase;
@@ -262,7 +256,7 @@ html, body, .container, .scroller {
 	-moz-transition: background 0.3s;
 	transition: background 0.3s;
 }
-
+/*
 .mp-back::after {
 	font-family: 'linecons';
 	position: absolute;
@@ -271,7 +265,7 @@ html, body, .container, .scroller {
 	font-size: 1.3em;
 	color: rgba(0,0,0,0.3);
 }
-
+*/
 .mp-menu .mp-level.mp-level-overlay > .mp-back,
 .mp-menu .mp-level.mp-level-overlay > .mp-back::after {
 	background: transparent;

@@ -236,10 +236,10 @@ ol, ul {
     margin: 0 0 0 -1px !important;
 }
 @media (max-width: 991px){
-    .nav_main>.dropdown>.dropdown_menu{
+    .nav_main>.dropdown>.dropdown_menu, .footer .dropdown_menu{
         width: 100% !important;
-        left: 0;
-        right: 0;
+        left: 0 !important;
+        right: 0 !important;
         padding-left: 15px;
         padding-right: 15px;
         margin-left: auto !important;
