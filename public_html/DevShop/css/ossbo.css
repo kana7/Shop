@@ -193,16 +193,18 @@ div#MultiColumn2 {
 
 h3{
     margin-top: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-weight: 500;
     font-size: 18px;
 }
 @media (max-width: 678px){
     .mainTitle{
-        font-size: 16px;
+        font-size: 18px;
 
         white-space: nowrap;
-    }
+    
+        text-align: center;
+}
     h3{
         font-size: 18px;
     }
@@ -229,6 +231,7 @@ h3{
     border: 1px solid #F0F0F0;
     border-radius: 5px;
     padding: 0px 20px;
+    padding-bottom: 15px;
     margin-bottom: 22px;
 }
 p[id^="PageZoneField"]{
@@ -329,7 +332,7 @@ p[id^="PageZoneField"]>.field.break{
     #info_client>div{
         width: 100%;
         display: inline-block;
-        margin-bottom: 10px;
+        /* margin-bottom: 10px; */
     }
     #info_client ul input{
         width: 100%;

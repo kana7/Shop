@@ -1,0 +1,190 @@
+.BoxMargin{
+	float: left;
+	border:0px solid blue;
+	margin-bottom:10px;
+}
+
+.BoxBorder{
+	border:2px outset #929EBD;
+	margin-bottom:5px;
+	margin-left:5px;
+	margin-top:0px;
+	margin-right:0px;
+	-moz-border-radius:10px;
+}
+
+.BoxList{
+	margin: 0em;
+	padding: 0em;
+	list-style-type: none;
+}
+
+.BoxListHeader{
+	padding: 0.5em;
+	background:#b5c2e4;
+	font-size:1em;
+	text-align: center;
+}
+
+.BoxListItem{
+	padding: 0.5em;
+}
+
+.noneBorder{
+	border-left : 0px solid;
+	width : 100%;
+}
+
+.englobantSpecialDiv{
+	height : 100px;
+	border:0px solid red;
+	width : 100%;
+}
+
+.englobantDiv{
+	border:0px solid blue;
+	width : 100%;
+}
+
+.englobantTable{
+	border:0px solid red;
+	width : 100%;
+	margin : 0px;
+}
+
+.leftBorder {
+height: auto;
+min-height: 92%;
+_height: 92%;
+border-left : 2px solid #dfcfe2;
+}
+
+.titleBox{
+	background:#b5c2e4;
+	font-size:1em;
+	text-indent:10px;
+}
+
+.buttonBox{
+	text-align: right;
+}
+
+.borderBox{
+	border:2px outset #929EBD;
+	margin-bottom:5px;
+	margin-left:5px;
+	margin-top:0px;
+	margin-right:0px;
+	-moz-border-radius:10px;
+
+}
+
+*html .borderBox{
+	border:2px outset #929EBD;
+	margin-bottom:5px;
+	margin-left:5px;
+	margin-top:0px;
+	margin-right:0px;
+	width:100%;
+	border-radius:10px;
+}
+
+.tableBox{
+	/*font:0.7em Arial;*/
+	 width:100%;
+}
+
+/*******************/
+/*****Menu**********/
+/*******************/
+
+.menuDiv{
+	border:1px solid #636f92;
+	z-index:3;
+	margin:0px;
+}
+
+
+
+.optionDiv{
+	border:4px outset #636f92;
+	margin:0px;
+	-moz-border-radius:10px;
+}
+
+.fieldsetOption{
+	border:1px solid #636f92;
+	margin:5px;
+	-moz-border-radius:10px;
+}
+
+.tdSpace{
+	width:10px;
+}
+
+.menuTrOn{
+	background:#b4bbcc;/*#7682a3;*/
+	border-left: 10px;
+	font-size:0.8em;
+	cursor: pointer;
+	/*color:#555555;*/
+}
+
+.menuTrOut{
+	background:#C6D1EC;/*#C6D1EC;*/
+	font-size:0.8em;
+/*color:#555555;*/
+}
+
+.menuTrOnOff{
+	background:#b4bbcc;/*#7682a3;*/
+	border-left: 10px;
+	font-size:0.8em;
+	cursor: pointer;
+	color:#555555;
+}
+
+.menuTrOutOff{
+	background:#C6D1EC;/*#C6D1EC;*/
+	font-size:0.8em;
+	color:#555555;
+}
+
+.menuTr{
+	background:#C6D1EC;/*#7682a3;*/
+	border-left: 10px;
+	font-size:0.8em;
+/*	color:#555555;*/
+	/*text-indent:50px;*/
+}
+
+.optionTitle{
+	background:#7682a3;
+	/*text-indent:50px;*/
+	text-align:center;
+}
+
+.optionButtonBox{
+	text-align: right;
+	width:20px;
+}
+.menuTrButton{
+	background:#7682a3;
+	text-align:right;
+}
+
+.menuInputButton{
+	background:#7682a3;
+	color:#FFFFFF;
+	margin:5px;
+}
+
+.menuInputText{
+	background:#b5c2e4;
+	size:6;
+}
+
+ .menuTable {
+	border-collapse: collapse;
+	/*border : 4px solid red;*/
+}

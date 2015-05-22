@@ -14,7 +14,7 @@ Quentin Fonck
         <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
         <script type="text/javascript" src="js/viewport.js"></script>
         <link rel="stylesheet" type="text/css" href="css/layout-grid.css"/>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">
         <link href="css/ossbo.css" rel="stylesheet" type="text/css">
         <link href="css/ossbo_box.css" rel="stylesheet" type="text/css">
         <link href="css/ossbo_services.css" rel="stylesheet" type="text/css" media="screen">
@@ -45,7 +45,7 @@ Quentin Fonck
         <link rel="stylesheet" type="text/css" href="css/ossbo_div.css">
         <link rel="stylesheet" type="text/css" href="css/ossbo_new_usermenu.css">
         <link rel="stylesheet" type="text/css" href="css/ossbo_new_usermenu_color.css">
-        <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu_4.css">
+        <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu_4_1.css">
         <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu_color.css">
         <script>
             function toggleMenu(idObject) {
@@ -278,6 +278,17 @@ Quentin Fonck
                             }*/
                         </style>
                         <script>
+                            function moveIcon() {
+                                var user = $('#user');
+                                user.detach();
+                                if (viewport().width >= 992) {
+                                    user.insertAfter($('#nav>li:last'));
+                                } else if (viewport().width < 992 && viewport().width >= 520) {
+                                    user.insertAfter($('#nav>li:eq(0)'));
+                                } else if (viewport().width < 519) {
+                                    user.insertAfter($('#nav>li:eq(0)'));
+                                }
+                            }
                             function open_in_new_window(href) {
                                 window.open(href);
                                 return false;
@@ -301,6 +312,10 @@ Quentin Fonck
                                 }
                             }
                             $(function () {
+                                moveIcon();
+                                $(window).resize(function(){
+                                    moveIcon();
+                                });
                                 // Ecoute blur
                                 $(window).blur(function (e) {
                                     $(".open").toggleClass("open");
@@ -384,60 +399,16 @@ Quentin Fonck
                                     e.stopPropagation();
                                     return false;
                                 });
-                                $('button.dl-trigger').click(function (e) {
-                                    e.stopPropagation();
-                                    $('.dropdown').not($(this).parent().parent('li')).removeClass('open');
-                                    $(this).parent().parent('li').toggleClass('open');
-                                });
-                                $(document).click(function () {
-                                    $('button.dl-trigger').parent().parent().removeClass('open');
-                                });
                                 //remove_empty_menu(0);
                             });</script>
                         <div class="row">
                             <div class="main_menu">
                                 <nav class="nav_container">
-                                    <ul class="no_list_style nav_main" style="z-index: 100;">
+                                    <ul id="nav" class="no_list_style nav_main" style="z-index: 100;">
                                         <li class="dropdown" data-href_int="WelcomeMain.phs" data-href_ext="MainMenuDefault.phs">
                                             <a class="dropdown_toggle" data-toggle="dropdown"> 
-                                                <div class="align middle center">
-                                                    <i class="fa fa-home fa-lg"></i>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="dropdown display-phone-inline-block hidden" data-menu_level="0" data-id_menu="7">
-                                            <a class="dropdown_toggle align center middle" data-toggle="dropdown" href="#">
-                                                <div class="align middle center">
-                                                    <i class="fa fa-user fa-lg"></i><span class="caret"></span>
-                                                </div>
-                                            </a>
-                                            <ul class="dropdown_menu no_list_style">
-                                                <li>
-                                                    <div class="sub_menu_content">
-                                                        <div class="sub_menu_row">
-                                                            <ul class="sub_menu_column no_list_style">
-                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="ViewStatCategories.phs&amp;ContextObjectType=2" data-itype="1">
-                                                                    <span class="sub_menu_link_span"></span>Catégories de statistiques de facturation
-                                                                </li>
-                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="CatManage.phs" data-itype="1">
-                                                                    <span class="sub_menu_link_span"></span>Catégories
-                                                                </li>	
-                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="ViewReseller.phs" data-itype="1">
-                                                                    <span class="sub_menu_link_span"></span>Revendeurs
-                                                                </li>	
-                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="ViewCustomText.phs" data-itype="1">
-                                                                    <span class="sub_menu_link_span"></span>Textes personnalisés
-                                                                </li>	
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown nextRow logout hidden display-phone-inline-block" data-href="MainLogout.phs">
-                                            <a class="dropdown_toggle" data-toggle="dropdown">
-                                                <div class="align middle center">
-                                                    <i class="fa fa-sign-out fa-lg"></i>
+                                                <div class="align middle left">
+                                                    Home
                                                 </div>
                                             </a>
                                         </li>
@@ -624,10 +595,10 @@ Quentin Fonck
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li class="dropdown display-tab-inline-block hidden-desk hidden-lgdesk" data-menu_level="0" data-id_menu="7">
+                                        <li id="user" class="dropdown hidden-desk hidden-lgdesk" data-menu_level="0" data-id_menu="7">
                                             <a class="dropdown_toggle align center middle" data-toggle="dropdown" href="#">
-                                                <div class="align middle center">
-                                                    <i class="fa fa-user fa-lg"></i><span class="caret"></span>
+                                                <div class="align middle left">
+                                                    Favoris<span class="caret"></span>
                                                 </div>
                                             </a>
                                             <ul class="dropdown_menu no_list_style">
@@ -653,14 +624,14 @@ Quentin Fonck
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li class="dropdown nextRow logout hidden-phone" data-href="MainLogout.phs">
+                                        <li id="logout" class="dropdown" data-href="MainLogout.phs">
                                             <a class="dropdown_toggle" data-toggle="dropdown">
-                                                <div class="align middle center">
-                                                    <i class="fa fa-sign-out fa-lg"></i>
+                                                <div class="align middle left">
+                                                    Logout
                                                 </div>
                                             </a>
                                         </li>
-                                        <li class="dropdown hidden display-tab-inline-block " data-href="MainLogout.phs"></li>
+                                        <li id="espace" class="dropdown" data-href="MainLogout.phs"></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -683,7 +654,7 @@ Quentin Fonck
                             <div class="row">
                                 <div id="info_client" class="phone-12 desk-push-1 desk-4">
                                     <div class="align middle">
-                                        <h3 class="phone-6">Information Client</h3>
+                                        <h3 class="phone-6">Informations Client</h3>
                                         <ul class="phone-6" style="padding-left: 0px;">
                                             <li style="text-align: right;">
                                                 <input type="button" class="btn primary" value="Liste tickets" onclick="window.open('http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&amp;Sql=PopupCustomScript.phs&amp;xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&amp;_MerchantId=1&amp;_CustomScriptId=35&amp;_ReturnScriptLink=&amp;_ObjectId=10&amp;_ObjectTypeId=1&amp;_ObjectLibraryId=0', 'OssClient10Popup35', 'width=800,height=600,menubar=no,scrollbars=no,toolbar=no,status=no,resizable=yes,scrollbars=yes');">

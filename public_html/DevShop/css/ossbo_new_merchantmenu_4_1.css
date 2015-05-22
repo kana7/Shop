@@ -4,14 +4,11 @@ Quentin Fonck
 18 mai 2015
 */
 .main_menu{
-    /* border-top: 1px solid transparent; */
-    /* border-bottom: 1px solid transparent; */
     width:100%;
 }
 .nav_container{
     margin: 0px;
     position : relative;
-    /* border-bottom: 1px solid #FFF; */
 }
 body{
     margin:0;
@@ -24,7 +21,6 @@ body{
 .nav_main{
     padding-left:0px;
     margin:0px;
-    /* border-bottom: 1px solid #FFF; */
 }
 .nav_main:before,
 .nav_main:after {
@@ -56,22 +52,22 @@ body{
         width: 100%;
     }
 }
-@media (min-width: 680px){
+@media (min-width: 520px){
     .nav_main > li{
         width: 20%;
     }
 }
-@media(min-width:680px) and (max-width: 991px){
-    .nav_main>li.logout{
-        /* border-right: 1px solid #fff; */
+#espace{
+        display: none;
     }
-    .nav_main>li.logout{
-        /* width: 20.2% !important; */
+@media(min-width:520px) and (max-width: 991px){
+    #espace{
+        display: inline-block;
     }
 }
-@media (max-width: 679px){
+@media (max-width: 519px){
     .nav_main > li{
-        width: 33.3333%;
+        width: 33.33333%;
     }
 }
 @media(min-width: 992px){
@@ -102,18 +98,18 @@ body{
 }
 .nav_main > li > a > div {
     padding: 5px 10px !important;
-    /* border-left: 1px solid #fff; */
-    /* border-bottom: 1px solid #FFF; */
     height: 100%;
     position: relative;
 }
 .nav_main > li > a > div>span{
-    /* margin-left: 10px; */
-    /* float: left; */
     position: absolute;
     right: 0px;
     top: 45%;
     margin-right: 10px;
+}
+.nav_main > li > a > div>span.fa{
+    top: 35%;
+    /* margin-right: 36px; */
 }
 @media (max-width: 991px){
     .nav_main > li > a > div{
@@ -135,11 +131,6 @@ ol, ul {
     border-left: 0.35em solid transparent;
     border-right: 0.35em solid transparent;
     border-top: 0.45em solid;
-    /* display: inline-block; */
-    /* height: 0; */
-    /* margin-left: 2px; */
-    /* vertical-align: middle; */
-    /* width: 0; */
 }
 .open > .dropdown_menu {
     display: block!important;
