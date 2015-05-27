@@ -2,18 +2,18 @@
 <!--
 Luxembourg Online S.A
 Quentin Fonck
-28 avr. 2015
+27 mai 2015
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script>
+        <title>Master Démo - Online Shopping System</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script><style type="text/css"></style><style type="text/css"></style>
         <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
         <script type="text/javascript" src="js/viewport.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/layout-grid.css"/>
+        <link rel="stylesheet" type="text/css" href="css/layout-grid.css">
         <link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">
         <link href="css/ossbo.css" rel="stylesheet" type="text/css">
         <link href="css/ossbo_box.css" rel="stylesheet" type="text/css">
@@ -134,14 +134,14 @@ Quentin Fonck
         <div style="position:absolute;width:3px;height:100%;border:0px solid red;z-index:50000;left:0;top:0;" onmouseover="open_merchant_menu_option(event)">
             &nbsp;
         </div>
-        <div class="option_menu_user hidden-tab hidden-phone" style="opacity: 1; margin-left: 1px; top: 500px;">
-            <img class="option_menu_user_img option_menu_user_img_toggle " src="images/arrow_left.png" data-toggle_user_menu_value="49" onclick="toggleMenuManage()">
+        <div class="option_menu_user hidden-tab hidden-phone" style="opacity: 0; margin-left: -20px; top: 225px;">
+            <img class="option_menu_user_img option_menu_user_img_toggle " src="images/expand_more.png" data-toggle_user_menu_value="48" onclick="toggleMenuManage()">
             <br>
             <img class="option_menu_user_img option_menu_user_img_option" src="images/wheel.png" onclick="openMenuManage()">
         </div>
         <div id="page" class="container-fluid">
             <div class="row" style="height: 100%;">
-                <div class="menu_user_zone desk-2 hidden-phone hidden-tab" style="overflow:hidden;">
+                <div class="menu_user_zone desk-2 hidden-phone hidden-tab" style="overflow: hidden; width: 0%;">
                     <div class=" div_menu_user" style="width:100%;">
                         <style>
                             .option_menu_user{
@@ -240,12 +240,12 @@ Quentin Fonck
                                  });*/
                             }
                         </script>
-                        <div class="RightArea desk-2 hidden-tab hidden-phone">
+                        <div class="RightArea desk-2 hidden-tab hidden-phone" style="display: none;">
                             <div class="LogoArea div_ellipsis">
                                 <img src="images/20140605103159_26038.jpg" style="width: 100%;" alt="logo" title="Master Démo" class="LogoImg">
                             </div>
                             <br>
-                            <div class="UserMenuArea div_ellipsis">
+                            <div class="UserMenuArea div_ellipsis" style="display: none;">
                                 <div class="div_menu div_menu_internal_link div_menu_first div_ellipsis phone-12" data-href="ViewStatCategories.phs&amp;ContextObjectType=2" data-itype="1"> 
                                     Catégories de statistiques de facturation</div>	
                                 <div class="div_menu div_menu_internal_link div_ellipsis phone-12" data-href="CatManage.phs" data-itype="1"> 
@@ -258,7 +258,7 @@ Quentin Fonck
                         </div>
                     </div>
                 </div>
-                <div class="main_zone desk-10 phone-12" style="border-left: 1px #D0D0D0 solid; height: 100%;">
+                <div class="main_zone desk-10 phone-12" style="border-left-width: 1px; border-left-color: rgb(208, 208, 208); border-left-style: solid; height: 100%; width: 100%;">
                     <div class="container-fluid">
                         <style>
                             /*
@@ -411,6 +411,34 @@ Quentin Fonck
                                                     Home
                                                 </div>
                                             </a>
+                                        </li><li id="user" class="dropdown hidden-desk hidden-lgdesk" data-menu_level="0" data-id_menu="7">
+                                            <a class="dropdown_toggle align center middle" data-toggle="dropdown" href="#">
+                                                <div class="align middle left">
+                                                    Favoris<span class="caret"></span>
+                                                </div>
+                                            </a>
+                                            <ul class="dropdown_menu no_list_style">
+                                                <li>
+                                                    <div class="sub_menu_content">
+                                                        <div class="sub_menu_row">
+                                                            <ul class="sub_menu_column no_list_style">
+                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="ViewStatCategories.phs&amp;ContextObjectType=2" data-itype="1">
+                                                                    <span class="sub_menu_link_span"></span>Catégories de statistiques de facturation
+                                                                </li>
+                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="CatManage.phs" data-itype="1">
+                                                                    <span class="sub_menu_link_span"></span>Catégories
+                                                                </li>	
+                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="ViewReseller.phs" data-itype="1">
+                                                                    <span class="sub_menu_link_span"></span>Revendeurs
+                                                                </li>	
+                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="ViewCustomText.phs" data-itype="1">
+                                                                    <span class="sub_menu_link_span"></span>Textes personnalisés
+                                                                </li>	
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
                                         </li>
                                         <li class="dropdown menu_level_0 menu_3" data-menu_level="0" data-id_menu="3">
                                             <a class="dropdown_toggle" data-toggle="dropdown" href="#">
@@ -595,35 +623,7 @@ Quentin Fonck
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li id="user" class="dropdown hidden-desk hidden-lgdesk" data-menu_level="0" data-id_menu="7">
-                                            <a class="dropdown_toggle align center middle" data-toggle="dropdown" href="#">
-                                                <div class="align middle left">
-                                                    Favoris<span class="caret"></span>
-                                                </div>
-                                            </a>
-                                            <ul class="dropdown_menu no_list_style">
-                                                <li>
-                                                    <div class="sub_menu_content">
-                                                        <div class="sub_menu_row">
-                                                            <ul class="sub_menu_column no_list_style">
-                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="ViewStatCategories.phs&amp;ContextObjectType=2" data-itype="1">
-                                                                    <span class="sub_menu_link_span"></span>Catégories de statistiques de facturation
-                                                                </li>
-                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="CatManage.phs" data-itype="1">
-                                                                    <span class="sub_menu_link_span"></span>Catégories
-                                                                </li>	
-                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="ViewReseller.phs" data-itype="1">
-                                                                    <span class="sub_menu_link_span"></span>Revendeurs
-                                                                </li>	
-                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="ViewCustomText.phs" data-itype="1">
-                                                                    <span class="sub_menu_link_span"></span>Textes personnalisés
-                                                                </li>	
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>
+
                                         <li id="logout" class="dropdown" data-href="MainLogout.phs">
                                             <a class="dropdown_toggle" data-toggle="dropdown">
                                                 <div class="align middle left">
@@ -1616,24 +1616,38 @@ Quentin Fonck
                                 .container{background-color:#FFFFFF}
                                 .container-fluid{background-color:#FFFFFF}
                                 .pad5 {padding-left:5px;padding-right:5px}
-                                #toggleradio>div{width: 20%; display: inline-block;}
+                                @media (min-width:680px){
+                                    #toggleradio>div{width: 20%; display: inline-block;}
+                                    #statut{display: flex; align-items: flex-end;}
+                                }
+                                @media (max-width: 991px){
+                                    #toggleradio{margin: 0 !important;}
+                                }
+                                /*@media(max-width: 748px) and (min-width: 600px){
+                                    #statut>div:nth-child(2)>select:first-child{left: 8.33333333% !important;}
+                                }*/
+                                @media (max-width:679px){
+                                    #toggleradio>div{width: 33.3333%; display: inline-block;height: 30px;}
+                                    #statut{display: inline-block;}
+                                    #statut>div:first-child{margin-bottom: 10px;}
+                                }
                                 #toggleradio>div>label>.ui-button-text{padding: 7px 0;}
                             </style>
                             <div class="clearfix">
-                                <div class="tab-7 phone-12">
+                                <div class="desk-7 phone-12">
                                     <div id="toggleradio" class="ui-buttonset">
                                         <div><input type="radio" id="cal" name="radio" checked="" onclick="onSwitchV('C', '')" class="ui-helper-hidden-accessible"><label for="cal" id="callabel" class="ui-state-active ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button" aria-pressed="true" style="width: 100%;">Calendrier</label>&nbsp;</div><!--
                                         --><div><input type="radio" id="pla" name="radio" onclick="onSwitchV('P', '')" class="ui-helper-hidden-accessible"><label for="pla" id="plalabel" style="width: 100%;" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button" aria-pressed="false">Planning</label>&nbsp;</div><!--
                                         --><div><input type="radio" id="event0" name="radio" onclick="onSwitchV('E0', '0')" class="ui-helper-hidden-accessible"><label for="event0" id="eventlabel" style="width: 100%;" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button" aria-pressed="false">Evènements&nbsp;(0)</label>&nbsp;</div><!--
                                         --><div><input type="radio" id="event1" name="radio" onclick="onSwitchV('E1', '1')" class="ui-helper-hidden-accessible"><label for="event1" id="eventlabel" style="width: 100%;" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button" aria-pressed="false">Internes&nbsp;(0)</label>&nbsp;</div><!--
-                                        --><div><input type="radio" id="list" name="radio" onclick="onSwitchV('L', '')" class="ui-helper-hidden-accessible"><label for="list" id="listlabel" style="width: 100%;" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button" aria-pressed="false">Tâches&nbsp;(0)</label>&nbsp;</div>
+                                        --><div><input type="radio" id="list" name="radio" onclick="onSwitchV('L', '')" class="ui-helper-hidden-accessible"><label for="list" id="listlabel" style="width: 100%;" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button" aria-pressed="false">Tâches&nbsp;(0</span></label>&nbsp;</div>
                                     </div>
                                 </div>
-                                <div class="phone-12 tab-5" style="position: relative; bottom: 3px;">
-                                    <div class="clearfix align bottom">
-                                        <div class="phone-6">
+                                <div class="phone-12 desk-5" style="position: relative; bottom: 3px;">
+                                    <div id="statut" style="width: 100%;" class="clearfix">
+                                        <div class="phone-12 tab-4">
                                             Statut:&nbsp;
-                                            <select id="_EvStaCal" name="_EvStaCal">
+                                            <select style="width:100%;" id="_EvStaCal" name="_EvStaCal">
                                                 <option value="-1">&lt;Tous&gt;</option>
                                                 <option value="-2" selected="">Nouveau/Planifié/Confirmé</option>
                                                 <option value="0">
@@ -1650,8 +1664,8 @@ Quentin Fonck
                                                     Annulé</option>
                                             </select>
                                         </div>
-                                        <div class="phone-6 align bottom">
-                                            <select name="_SelMonth" style="width: 50%;" id="_SelMonth" onchange="updateMonth(this.value)">
+                                        <div class="phone-9 tab-6">
+                                            <select class="tab-push-1 phone-6" name="_SelMonth" id="_SelMonth" onchange="updateMonth(this.value)">
                                                 <option value="1">
                                                     Janvier</option>
                                                 <option value="2">
@@ -1677,7 +1691,7 @@ Quentin Fonck
                                                 <option value="12">
                                                     Décembre</option>
                                             </select>
-                                            <select name="_SelYear" style="width: 50%;" id="_SelYear" onchange="updateYear(this.value)">
+                                            <select class="phone-push-1 tab-push-2 phone-4 desk-3" name="_SelYear" id="_SelYear" onchange="updateYear(this.value)">
                                                 <option value="2013">2013</option>
                                                 <option value="2014">2014</option>
                                                 <option value="2015" selected="">2015</option>
@@ -1685,15 +1699,16 @@ Quentin Fonck
                                                 <option value="2017">2017</option>
                                             </select>
                                         </div>
+                                        <div class="phone-3 tab-2">
+                                        <button type="button" onclick="onDisp(1)" class="ui-button ui-widget ui-state-default ui-corner-all phone-push-0 tab-push-1 phone-12 tab-11 desk-12 desk-push-0 ui-button-text-only" role="button">Afficher</button>
                                     </div>
-
+                                    </div>
                                     <input type="hidden" id="_TaskSta" name="_TaskSta" value="0">
                                     <input type="hidden" id="_User" name="_User" value="3">
                                     <input type="hidden" id="_EvSta0" name="_EvSta0" value="-2">
                                     <input type="hidden" id="_EvSta1" name="_EvSta1" value="-2">
                                     <input type="hidden" id="_EvStaP" name="_EvStaP" value="-2">
                                     <input type="hidden" id="_EvTypP" name="_EvTypP" value="-1">
-                                    <div class="pull-left"><button type="button" onclick="onDisp(1)" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">Afficher</button></div>
                                 </div>
                             </div>
                             <h2 class="Title" style="width:100%;padding:0px 3px 3px 0;"></h2>
@@ -2925,7 +2940,7 @@ Quentin Fonck
                                 </div>
                             </div>
                             <h2 class="Title" style="width:100%;padding:0px 3px 3px 0;"></h2>
-                            <button type="button" onclick="onNotifGen()" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Notifications</span></button>
+                            <button type="button" onclick="onNotifGen()" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">Notifications</button>
                             <style>
                                 .ui-button {position:inherit;}
                             </style>
@@ -3011,8 +3026,11 @@ Quentin Fonck
                 </p>
             </div>
         </div>
-    </div>
 
-    <script type="text/javascript" src="js/ossbo.js"></script>
+
+        <script type="text/javascript" src="js/ossbo.js"></script>
+
+
+    
 </body>
 </html>
