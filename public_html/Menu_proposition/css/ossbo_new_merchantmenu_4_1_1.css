@@ -57,12 +57,12 @@ body{
         width: 20%;
     }
     .nav_main > li.icon{
-        width: 6.66666%;
+        width: 9%;
     }
 }
 #espace{
-    display: none;
-}
+        display: none;
+    }
 @media(min-width:520px) and (max-width: 991px){
     #espace{
         display: inline-block;
@@ -73,15 +73,12 @@ body{
         width: 33.33333%;
     }
     .nav_main > li.icon{
-        width: 11.11111%;
-    }
-    .nav_main > li.espace.last{
-        display: none !important;
+        width: 11.111111%;
     }
 }
 @media(min-width: 992px){
     .nav_main > li{
-        width: 15.33%;
+        width: 12.5%;
     }
     .nav_main > li.icon{
         width: 4%;
@@ -102,12 +99,11 @@ body{
     }
 }
 .nav_main > li > a {
-    display: inline-block;
+    display: block;
     color: #fff;
     font-size: 12px;
     text-decoration: none;
     height: 100%;
-    width: 100%;
 }
 .nav_main > li > a > div {
     padding: 5px 10px !important;
@@ -119,6 +115,10 @@ body{
     right: 0px;
     top: 45%;
     margin-right: 10px;
+}
+.nav_main > li > a > div>span.fa{
+    top: 35%;
+    /* margin-right: 36px; */
 }
 @media (max-width: 991px){
     .nav_main > li > a > div{

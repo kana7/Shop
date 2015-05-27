@@ -6,7 +6,7 @@
 		/* border-bottom: 1px solid #FFF; */
 }
 	
-	.nav_main > li:hover{
+	.nav_main > li:hover:not(.espace){
 		background-color: #2D6CA2;
 	}
 	

@@ -19,6 +19,9 @@ Quentin Fonck
         <link href="css/ossbo_box.css" rel="stylesheet" type="text/css">
         <link href="css/ossbo_services.css" rel="stylesheet" type="text/css" media="screen">
         <link href="css/ossprint.css" rel="stylesheet" type="text/css" media="print">
+        <style type="text/css">
+
+        </style>
         <link href="http://jquery.bluechameleon.com/js/themes/redmond/jquery.ui.all.css" rel="stylesheet" type="text/css">
         <style>
             #ui-datepicker-div {
@@ -42,7 +45,7 @@ Quentin Fonck
         <link rel="stylesheet" type="text/css" href="css/ossbo_div.css">
         <link rel="stylesheet" type="text/css" href="css/ossbo_new_usermenu.css">
         <link rel="stylesheet" type="text/css" href="css/ossbo_new_usermenu_color.css">
-        <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu_4.css">
+        <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu_4_1.css">
         <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu_color.css">
         <script>
             function toggleMenu(idObject) {
@@ -276,17 +279,14 @@ Quentin Fonck
                         </style>
                         <script>
                             function moveIcon() {
-                                var user_old = $('#user').clone();
-                                var logout_old = $('#logout').clone();
+                                var user = $('#user');
+                                user.detach();
                                 if (viewport().width >= 992) {
-                                    $('#user').insertAfter($('#nav>li:last'));
-                                    $('#logout').insertAfter($('#nav>li:last'));
+                                    user.insertAfter($('#nav>li:last'));
                                 } else if (viewport().width < 992 && viewport().width >= 520) {
-                                    $('#user').insertAfter($('#nav>li:eq(2)'));
-                                    $('#logout').insertAfter($('#nav>li:eq(3)'));
+                                    user.insertAfter($('#nav>li:eq(0)'));
                                 } else if (viewport().width < 519) {
-                                    $('#user').insertAfter($('#nav>li:eq(0)'));
-                                    $('#logout').insertAfter($('#nav>li:eq(1)'));
+                                    user.insertAfter($('#nav>li:eq(0)'));
                                 }
                             }
                             function open_in_new_window(href) {
@@ -312,10 +312,10 @@ Quentin Fonck
                                 }
                             }
                             $(function () {
-                                /*moveIcon();
+                                moveIcon();
                                 $(window).resize(function(){
                                     moveIcon();
-                                });*/
+                                });
                                 // Ecoute blur
                                 $(window).blur(function (e) {
                                     $(".open").toggleClass("open");
@@ -356,7 +356,7 @@ Quentin Fonck
                                     if (e.which == 1)
                                         logout("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + $(this).attr("data-href") + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear");
                                 });
-                                $(".dropdown:not(.espace)").click(function (e) {
+                                $(".dropdown").click(function (e) {
                                     if ($(this).hasClass("home"))
                                     {
                                         $(".open").toggleClass("open");
@@ -405,46 +405,10 @@ Quentin Fonck
                             <div class="main_menu">
                                 <nav class="nav_container">
                                     <ul id="nav" class="no_list_style nav_main" style="z-index: 100;">
-                                        <li id="home" class="dropdown icon" data-href_int="WelcomeMain.phs" data-href_ext="MainMenuDefault.phs">
-                                            <a href="#"> 
+                                        <li class="dropdown icon" data-href_int="WelcomeMain.phs" data-href_ext="MainMenuDefault.phs">
+                                            <a class="dropdown_toggle" data-toggle="dropdown"> 
                                                 <div class="align middle center">
                                                     <i class="fa fa-home fa-lg"></i>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li id="user" class="dropdown icon hidden-desk hidden-lgdesk" data-menu_level="0" data-id_menu="7">
-                                            <a class="dropdown_toggle align center middle" data-toggle="dropdown" href="#">
-                                                <div class="align middle center">
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                            </a>
-                                            <ul class="dropdown_menu no_list_style">
-                                                <li>
-                                                    <div class="sub_menu_content">
-                                                        <div class="sub_menu_row">
-                                                            <ul class="sub_menu_column no_list_style">
-                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="ViewStatCategories.phs&amp;ContextObjectType=2" data-itype="1">
-                                                                    <span class="sub_menu_link_span"></span>Catégories de statistiques de facturation
-                                                                </li>
-                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="CatManage.phs" data-itype="1">
-                                                                    <span class="sub_menu_link_span"></span>Catégories
-                                                                </li>	
-                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="ViewReseller.phs" data-itype="1">
-                                                                    <span class="sub_menu_link_span"></span>Revendeurs
-                                                                </li>	
-                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="ViewCustomText.phs" data-itype="1">
-                                                                    <span class="sub_menu_link_span"></span>Textes personnalisés
-                                                                </li>	
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li id="logout" class="dropdown icon display-phone-inline-block display-tab-inline-block" data-href="MainLogout.phs">
-                                            <a href="#" data-toggle="dropdown">
-                                                <div class="align middle center">
-                                                    <i class="fa fa-sign-out fa-lg"></i>
                                                 </div>
                                             </a>
                                         </li>
@@ -631,16 +595,43 @@ Quentin Fonck
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li id="logout" class="dropdown icon hidden-phone hidden-tab" data-href="MainLogout.phs">
-                                            <a href="#" data-toggle="dropdown">
+                                        <li id="user" class="dropdown icon hidden-desk hidden-lgdesk" data-menu_level="0" data-id_menu="7">
+                                            <a class="dropdown_toggle align center middle" data-toggle="dropdown" href="#">
+                                                <div class="align middle center">
+                                                    <i class="fa fa-star fa-lg"></i><span class="caret"></span>
+                                                </div>
+                                            </a>
+                                            <ul class="dropdown_menu no_list_style">
+                                                <li>
+                                                    <div class="sub_menu_content">
+                                                        <div class="sub_menu_row">
+                                                            <ul class="sub_menu_column no_list_style">
+                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="ViewStatCategories.phs&amp;ContextObjectType=2" data-itype="1">
+                                                                    <span class="sub_menu_link_span"></span>Catégories de statistiques de facturation
+                                                                </li>
+                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="CatManage.phs" data-itype="1">
+                                                                    <span class="sub_menu_link_span"></span>Catégories
+                                                                </li>	
+                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="ViewReseller.phs" data-itype="1">
+                                                                    <span class="sub_menu_link_span"></span>Revendeurs
+                                                                </li>	
+                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="ViewCustomText.phs" data-itype="1">
+                                                                    <span class="sub_menu_link_span"></span>Textes personnalisés
+                                                                </li>	
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li id="logout" class="dropdown icon" data-href="MainLogout.phs">
+                                            <a class="dropdown_toggle" data-toggle="dropdown">
                                                 <div class="align middle center">
                                                     <i class="fa fa-sign-out fa-lg"></i>
                                                 </div>
                                             </a>
                                         </li>
-                                        <li class="dropdown espace hidden display-tab-inline-block display-phone-inline-block"></li>
-                                        <li class="dropdown espace hidden display-tab-inline-block display-phone-inline-block"></li>
-                                        <li class="dropdown espace last hidden display-tab-inline-block display-phone-inline-block"></li>
+                                        <li id="espace" class="dropdown" data-href="MainLogout.phs"></li>
                                     </ul>
                                 </nav>
                             </div>
