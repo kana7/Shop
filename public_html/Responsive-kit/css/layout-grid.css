@@ -1,7 +1,5 @@
 /*
 Fichier permettant de realiser une mise en page Responsive sur base d'une grille de 12 colonnes.
-Adapte de Bootstrap.
-
 
 media queries a utiliser pour chaques points de rupture (types de resolution):
 
@@ -13,8 +11,6 @@ media queries a utiliser pour chaques points de rupture (types de resolution):
 
 @media (min-width: 1172px){} -----> large desktop et plus
 */
-
-
 
 /*Proprietes de base pour la plupart des balises - base propre*/
 html {
@@ -703,6 +699,7 @@ pre code {
     .tab-2 {
         width: 16.66666667%;
     }
+    
     .tab-1 {
         width: 8.33333333%;
     }

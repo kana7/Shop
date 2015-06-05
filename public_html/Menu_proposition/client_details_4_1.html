@@ -13,6 +13,7 @@ Quentin Fonck
         <script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
         <script type="text/javascript" src="js/viewport.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="css/layout-grid.css"/>
         <link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">
         <link href="css/ossbo.css" rel="stylesheet" type="text/css">
@@ -276,6 +277,7 @@ Quentin Fonck
                                 background-position: 50% 50%;
                                 cursor: pointer;
                             }*/
+                            ul.dropdown-menu.active{display: block !important;}
                         </style>
                         <script>
                             function moveIcon() {
@@ -313,7 +315,7 @@ Quentin Fonck
                             }
                             $(function () {
                                 moveIcon();
-                                $(window).resize(function(){
+                                $(window).resize(function () {
                                     moveIcon();
                                 });
                                 // Ecoute blur
@@ -399,6 +401,10 @@ Quentin Fonck
                                     e.stopPropagation();
                                     return false;
                                 });
+                                $('button.dropdown-toggle').click(function () {
+                                    $(this).siblings('ul.dropdown-menu').toggleClass('active');
+                                });
+
                                 //remove_empty_menu(0);
                             });</script>
                         <div class="row">
@@ -638,8 +644,24 @@ Quentin Fonck
                         </div>
                         <div style="padding-left:30px; padding-right: 30px;">
                             <div class="page-menu row" style="margin: 10px 0px;">
-                                <h4 class="mainTitle phone-12 tab-6"><span style="font-size: 16px;">Client > </span>Client management</h4>
-                                <ul class="pull-right phone-12 tab-3 align" style="text-align: right; padding: 10px 0px 10px 0px;">
+                                <h4 class="mainTitle phone-12 tab-6" style="display: inline-block;"><span style="font-size: 16px;">Client > </span>Client management</h4>
+                                <div style="top: 5px;" class="pull-right phone-12 tab-3">
+                                    <div class="btn-group pull-right">
+                                        <button type="button" class="btn btn-primary"><i style="margin-right: 15px;" class="fa fa-print fa-lg"></i>Imprimer</button>
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                            <span class="caret"></span>
+                                            <span class="sr-only">Toggle Dropdown</span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a style="cursor:pointer" title="retour" onclick="window.frames['site'].history.back();"><i style="margin-right: 15px;" class="fa fa-reply fa-lg"></i>Retour</a></li>
+                                            <li><a style="cursor:pointer" title="rafraichîr" onclick="window.frames['site'].location.reload();"><i style="margin-right: 15px;" class="fa fa-refresh fa-lg"></i>Refresh</a></li>
+                                            <li>
+                                                <a href="http://shop100.online.lu/Scripts/sql.exe?ContextViewMode=1&amp;SqlDB=MasterTest&amp;Sql=ClientManage.phs&amp;xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&amp;ContextUsage=0&amp;Param=10" title="personnaliser"><i style="margin-right: 15px;" class="fa fa-cog fa-lg"></i>Personnaliser</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <ul class="pull-right phone-12 tab-3 align hidden" style="text-align: right; padding: 10px 0px 10px 0px;">
                                     <li><a style="font-size:0.8em;text-decoration:underline;cursor:pointer" title="retour" onclick="window.frames['site'].history.back();"><i class="fa fa-reply fa-2x"></i></a></li>
                                     <li><a style="font-size:0.8em;text-decoration:underline;cursor:pointer" title="rafraichîr" onclick="window.frames['site'].location.reload();"><i class="fa fa-refresh fa-2x"></i></a></li>
                                     <li><a style="font-size:0.8em;text-decoration:underline;cursor:pointer" title="imprimer" onclick="if ('Microsoft Internet Explorer' == navigator.appName)

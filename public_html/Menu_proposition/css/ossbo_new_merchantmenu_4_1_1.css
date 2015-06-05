@@ -117,7 +117,7 @@ body{
     margin-right: 10px;
 }
 .nav_main > li > a > div>span.fa{
-    top: 35%;
+    top: 40%;
     /* margin-right: 36px; */
 }
 @media (max-width: 991px){
