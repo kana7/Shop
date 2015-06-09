@@ -114,6 +114,25 @@ Quentin Fonck
                 $(document).click(function () {
                     close_merchant_menu_option();
                 });
+                $('#toggle-nav').click(function () {
+                    if($('#page').hasClass('open-usermenu')){
+                        $('.LogoArea').css({"width": $('.LogoArea').innerWidth()});
+                    }else{
+                        $('.LogoArea').css({"width": (viewport().width)*0.16666666666666667});
+                    }
+                    $('#page').toggleClass('open-usermenu');
+                });
+                $(window).resize(function () {
+                    $('.LogoArea').css({"width": "100%"});
+                    if (viewport().width < 992) {
+                        if ($('#page').hasClass('open-usermenu')) {
+                            $('#canvas>.main_zone').css({"transition": "none", "-webkit-transition": "none"});
+                            $('#page').removeClass('open-usermenu');
+                        }
+                    } else {
+                        $('#canvas>.main_zone').css({"transition": "500ms ease all", "-webkit-transition": "500ms ease all"});
+                    }
+                });
             });
             function open_merchant_menu_option(event)
             {
@@ -131,20 +150,46 @@ Quentin Fonck
                             marginLeft: "-20px"
                         }, 150);
             }
+            function openMenuManage() {
+                //window.open("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&_MerchantId=1&Sql=MenuUserManage.phs", "site");
+            }
         </script>
         <div style="position:absolute;width:3px;height:100%;border:0px solid red;z-index:50000;left:0;top:0;" onmouseover="open_merchant_menu_option(event)">
             &nbsp;
         </div>
         <div class="option_menu_user hidden-tab hidden-phone" style="opacity: 1; margin-left: 1px; top: 921px;">
-            <img class="option_menu_user_img option_menu_user_img_toggle " src="images/arrow_left.png" data-toggle_user_menu_value="49" onclick="toggleMenuManage()">
+            <a href="#" id="toggle-nav"><img class="option_menu_user_img option_menu_user_img_toggle" src="images/arrow_left.png" data-toggle_user_menu_value="49"></a>
             <br>
             <img class="option_menu_user_img option_menu_user_img_option" src="images/wheel.png" onclick="openMenuManage()">
         </div>
         <div id="page" class="container-fluid">
-            <div class="row">
+            <div id="canvas" class="row">
                 <div class="menu_user_zone desk-2 hidden-phone hidden-tab" style="overflow:hidden;">
                     <div class=" div_menu_user" style="width:100%;">
                         <style>
+                            #canvas>.menu_user_zone, #canvas>.main_zone{
+                                -webkit-transition: 500ms ease all;
+                                transition: 500ms ease all;
+                            }
+                            #page.open-usermenu>#canvas>.menu_user_zone{
+                                width: 16.66666667%;
+                            }
+                            #page.open-usermenu>#canvas>.main_zone{
+                                width: 83.33333333%;
+                            }
+                            #page>#canvas>.menu_user_zone{
+                                width: 0%;
+                            }
+                            #page>#canvas>.main_zone{
+                                width: 100%;
+                            }
+                            div_menu div_menu_internal_link{
+                                white-space: nowrap;
+                            }
+                            .LogoArea>img{
+                                width: 100%;
+                                
+                            }
                             .option_menu_user{
                                 width:40px;
                                 height:62px;
@@ -165,87 +210,39 @@ Quentin Fonck
                             }
                         </style>
                         <script>
-                            function openMenuManage() {
-                                //window.open("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&_MerchantId=1&Sql=MenuUserManage.phs", "site");
-                            }
-                            function toggleMenuManage() {
-                                var _toggle_new_value = ((parseInt($(".option_menu_user_img_toggle").attr("data-toggle_user_menu_value"), 10) - 48 + 1) % 2) + 48;
-                                var time = 750;
-                                $(".option_menu_user_img_toggle").attr("data-toggle_user_menu_value", _toggle_new_value);
-                                if (_toggle_new_value == 49)
-                                {
-                                    $(".option_menu_user_img_toggle").attr("src", "images/arrow_left.png");
-                                    $(".menu_user_zone").animate(
-                                            {
-                                                width: "16%"
-                                            },
-                                    {
-                                        duration: time,
-                                        start: function () {
-                                            $(".RightArea").show();
-                                        },
-                                        complete: function () {
-                                            $(".UserMenuArea").show();
-                                        }
-                                    });
-                                    $(".main_zone").animate({
-                                        width: "84%"
-                                    }, time);
-                                }
-                                else
-                                {
-                                    $(".option_menu_user_img_toggle").attr("src", "images/expand_more.png");
-                                    $(".menu_user_zone").animate(
-                                            {
-                                                width: "0%"
-                                            },
-                                    {
-                                        duration: time,
-                                        start: function () {
-                                            $(".UserMenuArea").hide();
-                                        },
-                                        complete: function () {
-                                            $(".RightArea").hide();
-                                        }
-                                    });
-                                    $(".main_zone").animate({
-                                        width: "100%"
-                                    }, time);
-                                }
-                                /*$.ajax({
-                                 type: "POST",
-                                 url: "http://shop100.online.lu/Scripts/sql.exe",
-                                 async: false,
-                                 dataType: "json",
-                                 data: 'SqlDB=MasterTest'
-                                 + '&Sql=MenuUserManageQuery.phs'
-                                 + '&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn'
-                                 + '&_MerchantId=1'
-                                 + '&_JSON=1'
-                                 + '&_toggle_user_menu_value=' + _toggle_new_value
-                                 + '&_OpenCloseMenu=1',
-                                 error: function (msg) {
-                                 console.log("Error: " + msg);
-                                 },
-                                 success: function (data) {
-                                 _ErrorCode = parseInt($.trim(data.iReturn));
-                                 if (_ErrorCode == 0)
-                                 {
-                                 alert(data.azMessage);
-                                 }
-                                 else
-                                 {
-                                 
-                                 }
-                                 }
-                                 });*/
-                            }
+                            /*$.ajax({
+                             type: "POST",
+                             url: "http://shop100.online.lu/Scripts/sql.exe",
+                             async: false,
+                             dataType: "json",
+                             data: 'SqlDB=MasterTest'
+                             + '&Sql=MenuUserManageQuery.phs'
+                             + '&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn'
+                             + '&_MerchantId=1'
+                             + '&_JSON=1'
+                             + '&_toggle_user_menu_value=' + _toggle_new_value
+                             + '&_OpenCloseMenu=1',
+                             error: function (msg) {
+                             console.log("Error: " + msg);
+                             },
+                             success: function (data) {
+                             _ErrorCode = parseInt($.trim(data.iReturn));
+                             if (_ErrorCode == 0)
+                             {
+                             alert(data.azMessage);
+                             }
+                             else
+                             {
+                             
+                             }
+                             }
+                             });*/
+                            
                         </script>
-                        <div class="RightArea desk-2 hidden-tab hidden-phone">
+                        <div class="RightArea hidden-tab hidden-phone">
                             <div class="LogoArea div_ellipsis">
-                                <img src="images/20140605103159_26038.jpg" style="width: 100%;" alt="logo" title="Master Démo" class="LogoImg">
+                                <img style="width:100%;" src="images/20140605103159_26038.png" alt="logo" title="Master Démo" class="LogoImg">
                             </div>
-                            <br>
                             <div class="UserMenuArea div_ellipsis">
                                 <div class="div_menu div_menu_internal_link div_menu_first div_ellipsis phone-12" data-href="ViewStatCategories.phs&amp;ContextObjectType=2" data-itype="1"> 
                                     Catégories de statistiques de facturation</div>	
@@ -404,7 +401,6 @@ Quentin Fonck
                                 $('button.dropdown-toggle').click(function () {
                                     $(this).siblings('ul.dropdown-menu').toggleClass('active');
                                 });
-
                                 //remove_empty_menu(0);
                             });</script>
                         <div class="row">
@@ -885,5 +881,6 @@ Quentin Fonck
         </div>
 
         <script type="text/javascript" src="js/ossbo.js"></script>
+        <script type="text/javascript" src="js/viewport.js"></script>
     </body>
 </html>

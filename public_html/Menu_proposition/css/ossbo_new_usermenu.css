@@ -18,15 +18,19 @@
 	
 	.LogoArea{
 		
-		padding: 5px;
+		padding: 5px 10px;
 
-	}
+	
+		margin-bottom: 5px;
+}
 	
 	.LogoImg{
 		-moz-border-radius:10px 10px 10px 10px;
 		-webkit-border-radius:10px 10px 10px 10px;
 		border-radius:10px 10px 10px 10px;
-	}
+	
+		/* width: 182px; */
+}
 	
 	
 	.div_menu_user{
@@ -44,15 +48,17 @@
 	}
 		
 	.div_menu{
-		height: 37px;
-		line-height:37px;
+		/* height: 37px; */
+		line-height: 20px;
 		
+		padding: 7px 0px;
 		padding-left: 10px;
 		vertical-align: middle;
 		
 		border-bottom:  1px solid #ddd;
 		font-weight: normal;
 
+		overflow: hidden;
 		-moz-border-radius:2px 2px 0px 0px;
 		-webkit-border-radius:2px 2px 0px 0px;
 		border-radius:2px 2px 0px 0px;

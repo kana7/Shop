@@ -8,6 +8,7 @@ function viewport() {
     return {width: e[ a + 'Width' ], height: e[ a + 'Height' ]};
 }
 
+// get the corresponding layout grid col class depending to the viewport size
 function getViewportClass() {
     if (viewport().width >= 1170){
         return 'lgdesk';
@@ -19,7 +20,6 @@ function getViewportClass() {
         return 'phone';
     }
 }
-
 
 var waitForFinalEvent = (function () {
   var timers = {};
