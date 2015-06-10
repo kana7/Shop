@@ -115,22 +115,24 @@ Quentin Fonck
                     close_merchant_menu_option();
                 });
                 $('#toggle-nav').click(function () {
-                    if($('#page').hasClass('open-usermenu')){
+                    if ($('#page').hasClass('open-usermenu')) {
                         $('.LogoArea').css({"width": $('.LogoArea').innerWidth()});
-                    }else{
-                        $('.LogoArea').css({"width": (viewport().width)*0.16666666666666667});
+                    } else {
+                        if (viewport().width <= 992) {
+                            $('.LogoArea').css({"width": "300px"});
+                        } else {
+                            $('.LogoArea').css({"width": (viewport().width) * 0.16666666666666667});
+                        }
                     }
                     $('#page').toggleClass('open-usermenu');
                 });
+
                 $(window).resize(function () {
                     $('.LogoArea').css({"width": "100%"});
-                    if (viewport().width < 992) {
+                    if (viewport().width <= 992) {
                         if ($('#page').hasClass('open-usermenu')) {
-                            $('#canvas>.main_zone').css({"transition": "none", "-webkit-transition": "none"});
                             $('#page').removeClass('open-usermenu');
                         }
-                    } else {
-                        $('#canvas>.main_zone').css({"transition": "500ms ease all", "-webkit-transition": "500ms ease all"});
                     }
                 });
             });
@@ -167,18 +169,44 @@ Quentin Fonck
                 <div class="menu_user_zone desk-2 hidden-phone hidden-tab" style="overflow:hidden;">
                     <div class=" div_menu_user" style="width:100%;">
                         <style>
-                            #canvas>.menu_user_zone, #canvas>.main_zone{
-                                -webkit-transition: 500ms ease all;
-                                transition: 500ms ease all;
+                            #page{
+                                position: relative;
+                                overflow: hidden;
+                                width: 100%;
                             }
-                            #page.open-usermenu>#canvas>.menu_user_zone{
-                                width: 16.66666667%;
+                            @media (min-width: 992px){
+                                #canvas>.menu_user_zone, #canvas>.main_zone{
+                                    -webkit-transition: 500ms ease all;
+                                    transition: 500ms ease all;
+                                }
+                                #page.open-usermenu>#canvas>.menu_user_zone{
+                                    width: 16.66666667%;
+                                }
+                                #page.open-usermenu>#canvas>.main_zone{
+                                    width: 83.33333333%;
+                                }
+                                #page>#canvas>.menu_user_zone{
+                                    width: 0%;
+                                }
                             }
-                            #page.open-usermenu>#canvas>.main_zone{
-                                width: 83.33333333%;
-                            }
-                            #page>#canvas>.menu_user_zone{
-                                width: 0%;
+                            @media (max-width: 991px){
+                                #page>canvas{
+                                    width: 100%;
+                                    height: 100%;
+                                    position: relative;
+
+                                    -webkit-transform: translateX(0);
+                                    transform: translateX(0);
+
+                                    -webkit-transform: translate3d(0, 0, 0);
+                                    transform: translate3d(0, 0, 0);
+
+                                    -webkit-transition: 300ms ease all;
+                                    transition: 300ms ease all;
+
+                                    -webkit-backface-visibility: hidden;
+                                    backface-visibility: hidden;
+                                }
                             }
                             #page>#canvas>.main_zone{
                                 width: 100%;
@@ -188,7 +216,6 @@ Quentin Fonck
                             }
                             .LogoArea>img{
                                 width: 100%;
-                                
                             }
                             .option_menu_user{
                                 width:40px;
@@ -237,7 +264,7 @@ Quentin Fonck
                              }
                              }
                              });*/
-                            
+
                         </script>
                         <div class="RightArea hidden-tab hidden-phone">
                             <div class="LogoArea div_ellipsis">
