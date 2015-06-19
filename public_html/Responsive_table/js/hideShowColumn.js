@@ -36,7 +36,14 @@ $(function () {
     $("thead th").each(function (i) {
         var th = $(this),
                 id = th.attr("id"),
-                classes = th.attr("class"); // essential, optional (or other content identifiers)
+                classes = '';
+        if (th.hasClass('persist'))
+            classes = classes + ' persist';
+        if (th.hasClass('essential'))
+            classes = classes + ' essential';
+        if (th.hasClass('optional'))
+            classes = classes + ' optional';
+        //classes = th.attr("class"); // essential, optional (or other content identifiers)
 
         // On assigne un ID au colonne du header
         if (!id) {
@@ -97,8 +104,7 @@ $(function () {
                     // appel l'event au chargement
                     .trigger("updateCheck");
 
-        }
-        ; // fin de la condition if(!th.is(.persist))
+        }; // fin de la condition if(!th.is(.persist))
     }); // fin du loop
     // update l'input au resize
     $(window).resize(function () {

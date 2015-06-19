@@ -8,7 +8,7 @@ Ajouter ces classes dans les balises <th> dans le <thead> de votre <table>
 
 persist: n'ajoute pas de checkbox dans le menu pour cette colonne. Il ne sera donc pas possible de cacher la colonne possedant cette classe.
 
-essential: une colonne de classe "essential" restera toujours affichee peut importe le media (editable via le menu).
+essential: une colonne de classe "essential" restera toujours affichee peu importe le media (editable via le menu).
 
 optional: une colonne de classe "optional" sera affichee en mode tablette(<992px) mais masquee dans les plus petits formats (<762px) (editable via le menu).
 
@@ -31,7 +31,7 @@ table.hideShow tfoot td {
 table.hideShow th.essential,
 table.hideShow td.essential {
     display: table-cell;
-    word-wrap: break-word;
+    /* word-wrap: break-word; */
 }
 
 /* tÃ©lÃ©phone: on cache optional et le reste */
