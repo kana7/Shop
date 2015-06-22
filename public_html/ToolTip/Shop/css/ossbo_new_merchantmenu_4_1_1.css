@@ -3,6 +3,8 @@ Luxembourg Online S.A
 Quentin Fonck
 18 mai 2015
 */
+
+@import url(http://fonts.googleapis.com/css?family=Nunito:700);
 .main_menu{
     width:100%;
 }
@@ -61,8 +63,8 @@ body{
     }
 }
 #espace{
-        display: none;
-    }
+    display: none;
+}
 @media(min-width:520px) and (max-width: 991px){
     #espace{
         display: inline-block;
@@ -265,3 +267,89 @@ li.dropdown .sub_menu_column{
     text-decoration: none;
 }
 
+span.tooltip, span.tooltip1{
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    margin-left: 10px;
+}
+span.tooltip>button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "rockwell", sans-serif;
+    font-weight: 600;
+    background-image: linear-gradient(#FFF,#F4F4F4);
+    color: rgb(66, 139, 202);
+    border-radius: 4px;
+    border: 1px solid #C7C5C5;
+}
+
+span.tooltip>button:focus{
+    outline:0;
+    background-color: #FFFFFF !important; 
+    border: 1px solid rgb(66, 139, 202);
+}
+
+span.tooltip1{
+    height: 19px;
+    width: 19px;
+    position: relative;
+    bottom: 2px;
+    display: inline-block;
+    margin-left: 10px;
+}
+span.tooltip1>button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    padding-top: 1px;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Nunito',sans-serif;
+    font-size: 10pt;
+    font-weight: 600;
+    color: rgb(66, 139, 202);
+    background-image: linear-gradient(#FFF,#F7F7FF);
+    border-radius: 50%;
+    border: 1.5px solid rgb(66, 139, 202);     
+}
+
+span.tooltip1>button:focus{
+    outline:0;
+}
+
+span.tooltip2{
+    height: 19px;
+    width: 19px;
+    display: inline-block;
+    margin-left: 10px;
+}
+span.tooltip2>button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Helvetica, sans-serif;
+    font-weight: 600;
+    background-image: linear-gradient(#FFF,#F4F4F4);
+    color: #C2C2C2;
+    border-radius: 2px;
+    border: 1px solid #C7C5C5;
+}
+
+span.tooltip2>button:focus{
+    outline:0;
+    color: #428BCA;
+    background-color: #FFFFFF;
+    border: 1px solid #428BCA;
+}
