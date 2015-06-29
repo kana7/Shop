@@ -358,13 +358,20 @@ span.tooltip2>button:focus{
 
 .popupTips{
     position: absolute;
+    display: inline-block;
     z-index: 10;
     background-color: white;
-    width: 150px;
-    height: 100px;
+    width: 300px;
+    min-height: 50px;
     border: 1px solid #C7C5C5;
     border-radius: 5px;
     box-shadow: 0px 5px 10px 0px slategrey;
     padding: 15px;
     display: none;
+}
+.popupTips>*:first-child{
+    margin-top: 0px;
+}
+.popupTips>*:last-child{
+    margin-bottom: 0px;
 }

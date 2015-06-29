@@ -953,7 +953,10 @@ Quentin Fonck
                 /*$('p[id^=PageZoneField]').click(function(){
                     alert('coucou');
                 });*/
-                $('p[id^=PageZoneField]>.label').tooltip('1234');
+                $('p[id^=PageZoneField]>.label').tooltip({
+                    'id' : 567, 
+                    'position': 'bottom right'
+                });
             });</script>
     </body>
 </html>
