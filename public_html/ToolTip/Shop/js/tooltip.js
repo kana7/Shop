@@ -8,7 +8,8 @@
                 {
                     'url': 'http://shop.internet.lu/Scripts/sql.exe?id=',
                     'id': 0,
-                    'position': 'bottom right'
+                    'position': 'bottom right',
+                    'size': 300
                 };
 
         var parametres = $.extend(defauts, options);
@@ -19,24 +20,42 @@
         var htmlTip = '<span class="tooltip2" data-id="' + parametres.id + '"><button>i</button></span>';
         this.after(htmlTip);
         if (!($('#popup_tooltip').length)) {
-            var htmlPopup = '<div id="popup_tooltip" class="popupTips"></div>';
+            var htmlPopup = '<div id="popup_tooltip" class="popupTips text"></div>';
             $('body').before(htmlPopup);
+            $('#popup_tooltip').css({
+                width: parametres.size + 'px'
+            });
         }
 
-        
         $('.tooltip2').click(function () {
             event.stopPropagation();
             /*On recupere l'information à l'id correspondant*/
-            var content = '<p>Url est:<br><strong>'+parametres.url+$(this).attr('data-id')+'</strong><br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a consectetur dui. Praesent bibendum dolor ac ultricies commodo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce et augue auctor, imperdiet felis nec, gravida felis. </p>';
+            var content = '<p class="bold">Url est:<br>' + parametres.url + $(this).attr('data-id') + '</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a consectetur dui. Praesent bibendum dolor ac ultricies commodo. </p><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce et augue auctor, imperdiet felis nec, gravida felis. </p><p class="link right"><a href="#">Plus de détails</a></p>';
+            /*$.ajax({
+                type: 'GET',
+                url: parametres.url+$(this).attr('data-id'),
+                success: function (content) {
+                    $('#popup_tooltip').append(content.info);
+                },
+                error: function () {
+                    content='<p style="color:red; text-align: center;">Erreur lors de la récupération des données!</p><p>URL invalide ou pas de connexion</p>';
+                    $('#popup_tooltip').append(content);
+                }
+            });*/
+            /*$.get(parametres.url+$(this).attr('data-id'), function(data, status){
+                if (status==="success"){
+                    content=data;
+                }else{
+                    content='<p style="color:red; text-align: center;">Erreur lors de la récupération des données!</p><p>URL invalide ou pas de connexion</p>';
+                }
+            });*/
             $('#popup_tooltip').append(content);
-            
+
             /*Au clic sur l'icon tips, on affiche la fenetre popup à l'emplacement de celle-ci en fonction du parametre position*/
             var pos = $(this).offset();
             var tipWidth = $(this).outerWidth();
             var popHeight = $('#popup_tooltip').outerHeight();
             var popWidth = $('#popup_tooltip').outerWidth();
-
-            alert('data id: ' + $(this).attr('data-id'));
 
             if (parametres.position === 'bottom right') {
                 $('#popup_tooltip').css({

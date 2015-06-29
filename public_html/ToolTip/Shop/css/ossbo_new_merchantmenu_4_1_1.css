@@ -330,7 +330,7 @@ span.tooltip2{
     height: 15px;
     width: 15px;
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 5px;
     position: relative;
     top: 0px;
 }
@@ -366,7 +366,6 @@ span.tooltip2>button:focus{
     border: 1px solid #C7C5C5;
     border-radius: 5px;
     box-shadow: 0px 5px 10px 0px slategrey;
-    padding: 15px;
     display: none;
 }
 .popupTips>*:first-child{
@@ -375,3 +374,25 @@ span.tooltip2>button:focus{
 .popupTips>*:last-child{
     margin-bottom: 0px;
 }
+.popupTips.text{
+    padding: 15px 20px;
+    text-align: left;
+    line-height: 20px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 10pt;
+    font-weight: 300;
+}
+.popupTips.text>.bold{
+    font-weight: 600;
+}
+.popupTips.text>.link{
+    text-decoration: underline;
+    color: rgb(66, 139, 202);
+}
+.popupTips.text>.right{
+    text-align: right;
+}
+.popupTips.text>.center{
+    text-align: center;
+}
+
