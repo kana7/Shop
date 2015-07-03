@@ -180,10 +180,15 @@ div#MultiColumn2 {
 .mainTitle {
     color: #428bca;
     margin-bottom: 0;
-    padding: 12px 0px 12px 0px;;
+    padding: 12px 0px 12px 12px;;
     margin-top: 0;
     font-size: 16px;
     font-weight: 400;
+}
+@media(max-width:991px){
+    .mainTitle{
+        padding: 12px 0px 12px 0px;;
+    }
 }
 
 .h1, .h2, .h3, h1, h2{

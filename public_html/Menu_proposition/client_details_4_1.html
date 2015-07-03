@@ -106,85 +106,61 @@ Quentin Fonck
         <input type="hidden" id="isAppletLoadedCRM" value="-2">
         <script>
             $(function () {
-                // Ecoute blur
-                $(window).blur(function (e) {
-                    close_merchant_menu_option();
-                });
-                $(document).click(function () {
-                    close_merchant_menu_option();
-                });
-                $('#toggle-nav').click(function (event) {
+                $('button#toggle-nav').click(function () {
                     event.stopPropagation();
-                    if ($('#page').hasClass('open-usermenu')) {
-                        $('.LogoArea').css({"width": $('.LogoArea').innerWidth()});
-                        if (viewport().width < 992) {
-                            $('.overlay').fadeTo(200, 0);
-                            $('.overlay').hide();
-                        }
-                    } else {
-                        if (viewport().width <= 992) {
-                            $('.overlay').fadeTo(200, 0.7, function () {
-                                $(this).show();
-                            });
-                            $('.LogoArea').css({"width": "300px"});
+                    if (viewport().width > 992) {
+                        $(this).toggleClass('open');
+                        if ($('#page').hasClass('open-usermenu')) {
+                            $('.LogoArea').css({"width": $('.LogoArea').innerWidth()});
                         } else {
                             $('.LogoArea').css({"width": (viewport().width) * 0.16666666666666667});
                         }
+                        $('#page').toggleClass('open-usermenu');
+                        if (('#page').hasClass('open-usermenu')) {
+                            $('#overlay').addClass('open');
+                        } else {
+                            $('#overlay').removeClass('open');
+                        }
                     }
-                    $('#page').toggleClass('open-usermenu');
                 });
+
                 $('html').click(function (event) {
                     if (viewport().width <= 992) {
                         var element = $('.menu_user_zone');
                         if (!element.is(event.target) && element.has(event.target).length === 0) {
-                            if ($('#page').hasClass('open-usermenu')) {
-                                $('#page').removeClass('open-usermenu');
-                            }
+                            $('#page.open-usermenu').removeClass('open-usermenu');
+                            $('#overlay.open').removeClass('open');
                         }
                     }
                 });
 
-
+                var doit;
                 $(window).resize(function () {
+                    moveIcon();
+                    $('.main_zone, .menu_user_zone').addClass('notransition');
                     $('.LogoArea').css({"width": "100%"});
-                    if (viewport().width < 992) {
-                        if ($('#page').hasClass('open-usermenu')) {
-                            $('#page').removeClass('open-usermenu');
-                        }
-                    }
+                    $('#overlay.open').removeClass('open');
+                    $('#page.open-usermenu').removeClass('open-usermenu');
+                    clearTimeout(doit);
+                    
+                    doit = setTimeout(function(){
+                         $('.main_zone.notransition, .menu_user_zone.notransition').removeClass('notransition');
+                    }, 100);
                 });
             });
-            function open_merchant_menu_option(event)
-            {
-                $(".option_menu_user").css("top", event.pageY - 31 + "px")
-                        .animate({
-                            opacity: 1,
-                            marginLeft: "1px"
-                        }, 150);
-            }
-            function close_merchant_menu_option()
-            {
-                $(".option_menu_user")
-                        .animate({
-                            opacity: 0,
-                            marginLeft: "-20px"
-                        }, 150);
-            }
+
             function openMenuManage() {
                 //window.open("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&_MerchantId=1&Sql=MenuUserManage.phs", "site");
             }
         </script>
-        <div style="position:absolute;width:3px;height:100%;border:0px solid red;z-index:50000;left:0;top:0;" onmouseover="open_merchant_menu_option(event)">
-            &nbsp;
-        </div>
-        <div class="option_menu_user" style="opacity: 1; margin-left: 1px; top: 921px;">
+        <!--<div class="option_menu_user hidden" style="opacity: 1; margin-left: 1px; top: 921px;">
             <a href="#" id="toggle-nav"><img class="option_menu_user_img option_menu_user_img_toggle" src="images/arrow_left.png" data-toggle_user_menu_value="49"></a>
             <br>
             <img class="option_menu_user_img option_menu_user_img_option" src="images/wheel.png" onclick="openMenuManage()">
-        </div>
+        </div>-->
         <div id="page" class="container-fluid">
             <div id="canvas" class="row">
-                <div class="menu_user_zone desk-2" style="overflow:hidden;">
+                <div class="menu_user_zone desk-2">
                     <div class=" div_menu_user" style="width:100%;">
                         <style>
                             #page{
@@ -192,13 +168,18 @@ Quentin Fonck
                                 overflow: hidden;
                                 width: 100%;
                             }
-                            #page>#canvas>.main_zone>.overlay{
-                                display: none;
+                            .menu_user_zone{
+                                z-index: 10;
+                                overflow:hidden;
+                                background-color: #FFFFFF;
                             }
+
                             @media (min-width: 992px){
                                 #canvas>.menu_user_zone, #canvas>.main_zone{
-                                    -webkit-transition: 500ms ease all;
-                                    transition: 500ms ease all;
+                                    -moz-transition: 0.4s ease width;
+                                    -o-transition: 0.4s ease width;
+                                    -ms-transition: 0.4s ease width;
+                                    transition: 0.4s ease width;
                                 }
                                 #page.open-usermenu>#canvas>.menu_user_zone{
                                     width: 16.66666667%;
@@ -220,36 +201,15 @@ Quentin Fonck
 
                                     -webkit-transform: translate3d(0, 0, 0);
                                     transform: translate3d(0, 0, 0);
-
-                                    -webkit-transition:  all 500ms ease;
-                                    transition: all 500ms ease;
-
+                                    -webkit-transition:  transform 0.4s ease;
+                                    -moz-transition: transform 0.4s ease;
+                                    -o-transition: transform 0.4s ease;
+                                    -ms-transition: transform 0.4s ease;
+                                    transition: transform 0.4s ease;
                                     -webkit-backface-visibility: hidden;
                                     backface-visibility: hidden;
                                 }
-                                #page>#canvas>.main_zone>.overlay {
-                                    z-index: 10;
-                                    position: absolute;
-                                    height: 100%;
-                                    top: 0;
-                                    left: 0;
-                                    right: 0;
-                                    /*zoom: 1; 
-                                    filter: alpha(opacity=00); 
-                                    opacity: 0;*/
-                                    -webkit-transition: opacity 0.5s ease-in-out;
-                                    -moz-transition: opacity 0.5s ease-in-out;
-                                    -ms-transition: opacity 0.5s ease-in-out;
-                                    -o-transition: opacity 0.5s ease-in-out;
-                                    transition: opacity 0.5s ease-in-out;
-                                    background: rgb(0, 0, 0);
-                                }
-                                /*#page.open-usermenu>#canvas>.main_zone>.overlay{
-                                    display: block;
-                                    zoom: 1; 
-                                    filter: alpha(opacity=70); 
-                                    opacity: 0.7;
-                                }*/
+
                                 #page.open-usermenu>#canvas {
                                     -webkit-transform: translateX(300px);
                                     transform: translateX(300px);
@@ -293,36 +253,6 @@ Quentin Fonck
                                 overflow: hidden;
                             }
                         </style>
-                        <script>
-                            /*$.ajax({
-                             type: "POST",
-                             url: "http://shop100.online.lu/Scripts/sql.exe",
-                             async: false,
-                             dataType: "json",
-                             data: 'SqlDB=MasterTest'
-                             + '&Sql=MenuUserManageQuery.phs'
-                             + '&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn'
-                             + '&_MerchantId=1'
-                             + '&_JSON=1'
-                             + '&_toggle_user_menu_value=' + _toggle_new_value
-                             + '&_OpenCloseMenu=1',
-                             error: function (msg) {
-                             console.log("Error: " + msg);
-                             },
-                             success: function (data) {
-                             _ErrorCode = parseInt($.trim(data.iReturn));
-                             if (_ErrorCode == 0)
-                             {
-                             alert(data.azMessage);
-                             }
-                             else
-                             {
-                             
-                             }
-                             }
-                             });*/
-
-                        </script>
                         <div class="RightArea">
                             <div class="LogoArea div_ellipsis">
                                 <img style="width:100%;" src="images/20140605103159_26038.png" alt="logo" title="Master Démo" class="LogoImg">
@@ -341,35 +271,24 @@ Quentin Fonck
                     </div>
                 </div>
                 <div class="main_zone desk-10 phone-12" style="border-left: 1px #D0D0D0 solid; height: 100%;">
+                    <button id="toggle-nav" class="buttonUserMenu hidden-tab hidden-phone">
+                        <i class="fa fa-angle-left fa-2x" style="color: #337AB7; font-weight: bold;"></i>
+                    </button>
                     <div class="container-fluid">
-                        <style>
-                            /*
-                            .logout
-                            {
-                                position : absolute;
-                                right:0;
-                                background:url("images/logout_white.png") no-repeat;
-                                background-position: 50% 50%;
-                                cursor: pointer;
-                                margin-right:0px!important;
-                            }
-                            .home{
-                                background:url("images/home_white.png") no-repeat;
-                                background-position: 50% 50%;
-                                cursor: pointer;
-                            }*/
-                            ul.dropdown-menu.active{display: block !important;}
-                        </style>
                         <script>
                             function moveIcon() {
                                 var user = $('#user');
+                                var logout = $('#logout');
                                 user.detach();
                                 if (viewport().width >= 992) {
                                     user.insertAfter($('#nav>li:last'));
+                                    logout.insertAfter($('#nav>li:last'));
                                 } else if (viewport().width < 992 && viewport().width >= 520) {
-                                    user.insertAfter($('#nav>li:eq(0)'));
+                                    user.insertBefore($('#nav>li:eq(0)'));
+                                    logout.insertAfter($('#nav>li:eq(3)'));
                                 } else if (viewport().width < 519) {
                                     user.insertAfter($('#nav>li:eq(0)'));
+                                    logout.insertAfter($('#nav>li:eq(1)'));
                                 }
                             }
                             function open_in_new_window(href) {
@@ -396,15 +315,16 @@ Quentin Fonck
                             }
                             $(function () {
                                 moveIcon();
-                                $(window).resize(function () {
-                                    moveIcon();
-                                });
+                                var docHeight = $('.main_zone').height();
+
+                                $('#canvas').append("<div id='overlay' class='hidden display-tab display-phone'></div>");
+                                $("#overlay").height(docHeight);
                                 // Ecoute blur
                                 $(window).blur(function (e) {
-                                    $(".open").toggleClass("open");
+                                    $(".dropdown.open").toggleClass("open");
                                 });
                                 $(document).click(function () {
-                                    $(".open").toggleClass("open");
+                                    $(".dropdown.open").toggleClass("open");
                                 });
                                 $(".menu_click_link").mouseup(function (e) {
                                     var _url = $(this).attr("data-href");
@@ -439,12 +359,14 @@ Quentin Fonck
                                     if (e.which == 1)
                                         logout("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + $(this).attr("data-href") + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear");
                                 });
+
                                 $(".dropdown").click(function (e) {
                                     if ($(this).hasClass("home"))
                                     {
                                         $(".open").toggleClass("open");
-                                    } else if ($(this).hasClass("favoris") && viewport().width < 520) {
+                                    } else if ($(this).hasClass("favoris") && viewport().width < 991) {
                                         $(".open").toggleClass("open");
+                                        $('#overlay').addClass('open');
                                         $('#page').toggleClass('open-usermenu');
                                     } else {
                                         if ($(this).hasClass("open") == false)
@@ -495,7 +417,7 @@ Quentin Fonck
                                         <li class="dropdown" data-href_int="WelcomeMain.phs" data-href_ext="MainMenuDefault.phs">
                                             <a class="dropdown_toggle" data-toggle="dropdown"> 
                                                 <div class="align middle left">
-                                                    Home
+                                                    Home<span style="font-size: 1.1em !important;" class="fa fa-home fa-lg"></span>
                                                 </div>
                                             </a>
                                         </li>
@@ -685,7 +607,7 @@ Quentin Fonck
                                         <li id="user" class="dropdown favoris hidden-desk hidden-lgdesk" data-menu_level="0" data-id_menu="7">
                                             <a class="dropdown_toggle align center middle" data-toggle="dropdown" href="#">
                                                 <div class="align middle left">
-                                                    Favoris<span class="caret"></span>
+                                                    Favoris<span style="font-size: 1.1em !important;" class="fa fa-star fa-lg"></span>
                                                 </div>
                                             </a>
                                             <ul class="dropdown_menu no_list_style">
@@ -714,7 +636,7 @@ Quentin Fonck
                                         <li id="logout" class="dropdown" data-href="MainLogout.phs">
                                             <a class="dropdown_toggle" data-toggle="dropdown">
                                                 <div class="align middle left">
-                                                    Logout
+                                                    logout<span style="font-size: 1.1em !important;" class="fa fa-sign-out fa-lg"></span>
                                                 </div>
                                             </a>
                                         </li>
@@ -723,25 +645,19 @@ Quentin Fonck
                                 </nav>
                             </div>
                         </div>
-                        <div style="padding-left:30px; padding-right: 30px;">
+                        <div style="padding-left:30px; padding-right: 30px; position: relative;">
                             <div class="page-menu row" style="margin: 10px 0px;">
                                 <h4 class="mainTitle phone-12 tab-6" style="display: inline-block;"><span style="font-size: 16px;">Client > </span>Client management</h4>
-                                <div style="top: 5px;" class="pull-right phone-12 tab-3">
-                                    <div class="btn-group pull-right">
-                                        <button type="button" class="btn btn-primary"><i style="margin-right: 15px;" class="fa fa-print fa-lg"></i>Imprimer</button>
-                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                            <span class="caret"></span>
-                                            <span class="sr-only">Toggle Dropdown</span>
-                                        </button>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a style="cursor:pointer" title="retour" onclick="window.frames['site'].history.back();"><i style="margin-right: 15px;" class="fa fa-reply fa-lg"></i>Retour</a></li>
-                                            <li><a style="cursor:pointer" title="rafraichîr" onclick="window.frames['site'].location.reload();"><i style="margin-right: 15px;" class="fa fa-refresh fa-lg"></i>Refresh</a></li>
-                                            <li>
-                                                <a href="http://shop100.online.lu/Scripts/sql.exe?ContextViewMode=1&amp;SqlDB=MasterTest&amp;Sql=ClientManage.phs&amp;xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&amp;ContextUsage=0&amp;Param=10" title="personnaliser"><i style="margin-right: 15px;" class="fa fa-cog fa-lg"></i>Personnaliser</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                <ul class="pull-right phone-12 tab-3 align" style="text-align: right; padding: 10px 0px 10px 0px;">
+                                    <li><a style="font-size:0.8em;text-decoration:underline;cursor:pointer" title="retour" onclick="window.frames['site'].history.back();"><i class="fa fa-reply fa-2x"></i></a></li>
+                                    <li><a style="font-size:0.8em;text-decoration:underline;cursor:pointer" title="rafraichîr" onclick="window.frames['site'].location.reload();"><i class="fa fa-refresh fa-2x"></i></a></li>
+                                    <li><a style="font-size:0.8em;text-decoration:underline;cursor:pointer" title="imprimer" onclick="if ('Microsoft Internet Explorer' == navigator.appName)
+                                                window.frames['site'].focus();
+                                            window.frames['site'].print();"><i class="fa fa-print fa-2x"></i></a></li>
+                                    <li>
+                                        <a href="http://shop100.online.lu/Scripts/sql.exe?ContextViewMode=1&amp;SqlDB=MasterTest&amp;Sql=ClientManage.phs&amp;xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&amp;ContextUsage=0&amp;Param=10" title="personnaliser"><i class="fa fa-cog fa-2x"></i></a>
+                                    </li>
+                                </ul>
                                 <ul class="pull-right phone-12 tab-3 align hidden" style="text-align: right; padding: 10px 0px 10px 0px;">
                                     <li><a style="font-size:0.8em;text-decoration:underline;cursor:pointer" title="retour" onclick="window.frames['site'].history.back();"><i class="fa fa-reply fa-2x"></i></a></li>
                                     <li><a style="font-size:0.8em;text-decoration:underline;cursor:pointer" title="rafraichîr" onclick="window.frames['site'].location.reload();"><i class="fa fa-refresh fa-2x"></i></a></li>
@@ -950,7 +866,6 @@ Quentin Fonck
                             </div>
                         </div>
                     </div>
-                    <div class="overlay"></div>
                 </div>
             </div>
             <div class="row">

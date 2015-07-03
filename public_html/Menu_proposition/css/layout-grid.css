@@ -443,6 +443,7 @@ pre code {
 
 /*container prenant toute la largeur de l'ecran*/
 .container-fluid {
+    position: relative;
     margin-right: auto;
     margin-left: auto;
     padding-left: 10px;
