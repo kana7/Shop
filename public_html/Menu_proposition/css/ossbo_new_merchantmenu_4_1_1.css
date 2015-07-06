@@ -54,12 +54,12 @@ body{
         width: 9%;
     }
 }
-#espace{
-    display: none;
+.espace{
+    display: none !important;
 }
 @media(min-width:520px) and (max-width: 991px){
-    #espace{
-        display: inline-block;
+    .espace{
+        display: inline-block !important;
     }
 }
 @media (max-width: 519px){
@@ -136,7 +136,7 @@ ol, ul {
     border-top: 0.45em solid;
 }
 .open > .dropdown_menu {
-    display: block !important;
+    display: inline-block !important;
 }
 .dropdown_menu{
     left: auto;
@@ -174,7 +174,6 @@ ol, ul {
     font-weight: 700;
     margin-bottom: 7px;
     margin-left: 0 !important;
-    /* padding: 5px !important; */
     text-overflow: ellipsis;
     overflow: hidden;
 }
@@ -190,19 +189,11 @@ ol, ul {
     overflow: hidden;
 }
 li.dropdown .sub_menu_column{
-    width: 100%;
     padding:0;
     display: inline-block;
-    vertical-align:top;
 }
-@media(min-width:680px) and (max-width: 991px){
-    li.dropdown .sub_menu_column{
-        width: 49%;
-    }
-}
-
 .sub_menu_link{
-    padding: 5px 20px 5px 15px;
+    padding: 7px 20px 7px 15px;
     line-height: 17px;
     white-space: nowrap;
     overflow: hidden;
@@ -225,11 +216,8 @@ li.dropdown .sub_menu_column{
     display: inline-block;
     height: 0;
     margin-right: 5px;
-    vertical-align: middle;
     width: 0;
-    /* font-size: 10pt; */
 }
-
 .main_menu_link{
     color: white!important;
 }
@@ -279,7 +267,7 @@ li.dropdown .sub_menu_column{
 .buttonUserMenu>i{
     color: #337AB7;
     font-weight: bold;
-    padding-right: 1px;
+    padding-left: 1px;
     padding-bottom: 3px;
 
 }
@@ -289,7 +277,6 @@ li.dropdown .sub_menu_column{
 .buttonUserMenu:focus{
     outline: none;
 }
-
 .notransition {
     -webkit-transition: none !important;
     -moz-transition: none !important;
