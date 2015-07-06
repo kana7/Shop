@@ -18,10 +18,11 @@
 	}
 	.sub_menu_title{
 		border-bottom: 1px #428BCA;
-                border-bottom-style: solid;
+                
+		border-bottom-style: solid;
 		color: #428BCA !important;
 	
-		/* padding-left: 20px; */
+		padding-left: 20px;
 		padding: 5px 15px 5px 15px;
 }
         .sub_menu_main_title{

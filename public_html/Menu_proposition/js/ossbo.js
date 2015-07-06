@@ -401,5 +401,5 @@ function SecureCheckboxOnSubmit(f)
 			// add a hidden element with value 0
 			f.append('<input type="hidden" name="'+checkboxItem.attr('name')+'" value="0" />');
 		}
-	})
+	});
 }

@@ -1,3 +1,134 @@
+#page{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+.menu_user_zone{
+    z-index: 10;
+    overflow:hidden;
+    background-color: #FFFFFF;
+}
+
+@media (min-width: 992px){
+    #canvas>.menu_user_zone, #canvas>.main_zone{
+        -moz-transition: 0.4s ease width;
+        -o-transition: 0.4s ease width;
+        -ms-transition: 0.4s ease width;
+        transition: 0.4s ease width;
+    }
+    #page.open-usermenu>#canvas>.menu_user_zone{
+        width: 16.66666667%;
+    }
+    #page.open-usermenu>#canvas>.main_zone{
+        width: 83.33333333%;
+    }
+    #page>#canvas>.menu_user_zone{
+        width: 0%;
+    }
+}
+@media (max-width: 991px){
+    #page>#canvas{
+        height: 100%;
+        position: relative;
+
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        -webkit-transition:  transform 0.4s ease;
+        -moz-transition: transform 0.4s ease;
+        -o-transition: transform 0.4s ease;
+        -ms-transition: transform 0.4s ease;
+        transition: transform 0.4s ease;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    #page.open-usermenu>#canvas {
+        -webkit-transform: translateX(300px);
+        transform: translateX(300px);
+
+        -webkit-transform: translate3d(300px, 0, 0);
+        transform: translate3d(300px, 0, 0);
+    }
+    .menu_user_zone{
+        width: 300px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: -300px;
+    }
+}
+#page>#canvas>.main_zone{
+    width: 100%;
+}
+div_menu div_menu_internal_link{
+    white-space: nowrap;
+}
+.LogoArea>img{
+    width: 100%;
+    margin-top: 10px;
+}
+.option_menu_user{
+    width:40px;
+    height:62px;
+    position:absolute;
+    z-index:50001;
+    opacity: 0;
+    margin-left:-20px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+    background: white;
+}
+.option_menu_user_img{
+    margin-top:10px;
+    margin-left:10px;
+}
+.div_ellipsis{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+}
+#configLink{
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+    padding-right: 10px;
+    text-align: right;
+    display: inline-block;
+    font-size: 13px;
+}
+#configLink>a{
+    text-decoration: underline;
+}
+#userProfil{
+    min-height: 40px;
+    margin: 10px 0px;
+    padding: 8px 0px;
+    background-color: #428BCA;
+    border-bottom: 5px solid #337AB7;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+.profilContainer>p{
+
+    width: 100%;
+    text-align: center;
+    display: block;
+    font-family: 'Arial', sans-serif;
+    font-size: 12pt;
+    text-shadow: 0px 1px 0px #337AB7;
+}
+.profilContainer>p:first-child{
+    margin: 0px 0px 7px 0px;
+}
+.profilContainer>#userGroup{
+    font-size: 10pt;
+    font-weight: 400;
+    margin: 0px;
+}
 .main_menu{
     width:100%;
 }
@@ -72,10 +203,23 @@ body{
 }
 @media(min-width: 992px){
     .nav_main > li{
-        width: 12.5%;
+        width: auto;
+    }
+    #logout{
+        border-right: 1px solid #FFFFFF;
     }
     .nav_main > li.icon{
         width: 4%;
+    }
+    .nav_main > li > a > div{
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+    .nav_main > li > a > div>span{
+        position: relative !important;
+        top: 0px !important;
+        right: 0px !important;
+        left: 15px !important;
     }
 }
 @media (max-width: 991px){
@@ -101,7 +245,7 @@ body{
     width: 100%;
 }
 .nav_main > li > a > div {
-    padding: 5px 10px !important;
+    padding: 5px 10px;
     height: 100%;
     position: relative;
 }
@@ -147,7 +291,7 @@ ol, ul {
     display: none;
     font-size: 14px;
     list-style: outside none none;
-    min-width: 160px;
+    min-width: 100px;
     padding: 10px 0;
     position: absolute;
     text-align: left;
@@ -191,6 +335,7 @@ ol, ul {
 li.dropdown .sub_menu_column{
     padding:0;
     display: inline-block;
+    /* min-width: 100px; */
 }
 .sub_menu_link{
     padding: 7px 20px 7px 15px;

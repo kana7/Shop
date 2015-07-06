@@ -61,8 +61,8 @@ body{
     }
 }
 #espace{
-        display: none;
-    }
+    display: none;
+}
 @media(min-width:520px) and (max-width: 991px){
     #espace{
         display: inline-block;
