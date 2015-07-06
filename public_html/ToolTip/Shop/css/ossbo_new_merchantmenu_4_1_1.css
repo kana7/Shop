@@ -297,33 +297,30 @@ span.tooltip>button:focus{
 }
 
 span.tooltip1{
-    height: 17px;
-    width: 17px;
-    position: relative;
-    bottom: 2px;
+    height: 16px;
+    width: 16px;
     display: inline-block;
     margin-left: 10px;
 }
 span.tooltip1>button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 0;
-    padding-top: 1px;
     margin: 0;
     width: 100%;
     height: 100%;
-    font-family: 'Nunito',sans-serif;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 10pt;
     font-weight: 600;
-    color: rgb(66, 139, 202);
+    color: #C2C2C2;
     background-image: linear-gradient(#FFF,#F7F7FF);
     border-radius: 50%;
-    border: 1.5px solid rgb(66, 139, 202);     
+    border: 1px solid #C2C2C2;;     
 }
 
 span.tooltip1>button:focus{
     outline:0;
+    color: #428BCA;
+    background-color: #FFFFFF;
+    border: 1px solid #428BCA;
 }
 
 span.tooltip2{
@@ -354,6 +351,26 @@ span.tooltip2>button:focus{
     color: #428BCA;
     background-color: #FFFFFF;
     border: 1px solid #428BCA;
+}
+span.tooltip3{
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+    margin-left: 10px;
+    position: relative;
+    top: 0px;
+}
+span.tooltip3>a{
+    color: #C2C2C2;
+    font-size: 11pt;
+    text-align: center;
+}
+span.tooltip3>i{
+}
+
+span.tooltip3>a:focus{
+    outline:0;
+    color: #428BCA;
 }
 
 .popupTips{

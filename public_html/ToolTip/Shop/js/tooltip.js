@@ -17,7 +17,7 @@
         /*Insert icon tooltip à cote de l'element specifie dans le selecteur
          * Si la popup n'existe pas encore sur la page, elle est cree
          * */
-        var htmlTip = '<span class="tooltip2" data-id="' + parametres.id + '"><button>i</button></span>';
+        var htmlTip = '<span class="tooltip3" data-id="'+parametres.id+'"><a href="#" class="align center"><i class="fa fa-question"></i></a></span>';
         this.after(htmlTip);
         if (!($('#popup_tooltip').length)) {
             var htmlPopup = '<div id="popup_tooltip" class="popupTips text"></div>';
@@ -27,8 +27,9 @@
             });
         }
 
-        $('.tooltip2').click(function () {
+        $('.tooltip1').click(function () {
             event.stopPropagation();
+            $('#popup_tooltip').empty();
             /*On recupere l'information à l'id correspondant*/
             var content = '<p class="bold">Url est:<br>' + parametres.url + $(this).attr('data-id') + '</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a consectetur dui. Praesent bibendum dolor ac ultricies commodo. </p><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce et augue auctor, imperdiet felis nec, gravida felis. </p><p class="link right"><a href="#">Plus de détails</a></p>';
             /*$.ajax({
