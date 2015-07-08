@@ -456,7 +456,7 @@ pre code {
     min-height: 1px;
 }
 .phone-1, .phone-2, .phone-3, .phone-4, .phone-5, .phone-6, .phone-7, .phone-8, .phone-9, .phone-10, .phone-11, .phone-12 {
-     float: left;
+    float: left;
 }
 
 /* Colonnes pour telephone*/
@@ -699,7 +699,7 @@ pre code {
     .tab-2 {
         width: 16.66666667%;
     }
-    
+
     .tab-1 {
         width: 8.33333333%;
     }
@@ -1308,11 +1308,53 @@ pre code {
 .pull-right {
     float: right !important;
 }
+@media(max-width:679px){
+    .phone-pull-right {
+        float: right !important;
+    }
+}
+@media(min-width:680px)and(max-width: 991px){
+    .tab-pull-right {
+        float: right !important;
+    }
+}
+@media(min-width:992px)and(max-width: 1171px){
+    .desk-pull-right {
+        float: right !important;
+    }
+}
+@media(min-width:1172px){
+    .lgdesk-pull-right {
+        float: right !important;
+    }
+}
+
 
 /*Place le bloc sur le cote gauche du conteneur*/
 .pull-left {
     float: left !important;
 }
+@media(max-width:679px){
+    .phone-pull-left {
+        float: left !important;
+    }
+}
+@media(min-width:680px)and(max-width: 991px){
+    .tab-pull-left {
+        float: left !important;
+    }
+}
+@media(min-width:992px)and(max-width: 1171px){
+    .desk-pull-left {
+        float: left !important;
+    }
+}
+@media(min-width:1172px){
+    .lgdesk-pull-left {
+        float: left !important;
+    }
+}
+
 .hide {
     display: none !important;
 }
