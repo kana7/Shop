@@ -13,7 +13,7 @@
         <link href="css/ossprint.css" rel="stylesheet" type="text/css" media="print"/>
         <link href="http://jquery.bluechameleon.com/js/themes/redmond/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
         <link href="css/main2.css" rel="stylesheet" type="text/css"/>
-        <link href="css/hideShowColumn.css" rel="stylesheet" type="text/css"/>
+        <link href="pluginTable/hideShowColumn.css" rel="stylesheet" type="text/css"/>
 
 
 
@@ -124,8 +124,7 @@
                 <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=Y')">Y</a> - 
                 <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=Z')">Z</a>
             </div>
-            <div class="table-wrapper">
-                <table class="tableau sticky" border="1">
+                <table id="table1" border="1">
                     <thead>
                         <tr>
                             <th bgcolor="#CCCCCC" class="essential">Nom Prénom</th>
@@ -713,16 +712,13 @@
         <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
         <script type="text/javascript" src="js/ossbo.js"></script>
         <script type="text/javascript" src="js/jquery.dataTables.js"></script>
-        <script type="text/javascript" src="js/hideShowColumn.js"></script>
+        <script type="text/javascript" src="pluginTable/hideShowColumn.js"></script>
+        <script type="text/javascript" src="pluginTable/stickyTableHeader.js"></script>
         <script type="text/javascript">
                     $(document).ready(function () {
-                        $('table.tableau').DataTable();
-                        
-                        //Ajoute un wrap pour permettre le scroll horizontal(Utiliser par le sticky header)
-                        //Toujours le faire après la déclaration de la dataTable (Si il y en a une)
-                        $('table.tableau').wrap('<div class="wrapper" style="overflow-x:scroll; width:100%;clear:both"/>');
+                        $('#table1').DataTable();
+                        $('#table1').hideShowColumn().stickyTableHeader();
                     });
         </script>
-        <script type="text/javascript" src="js/table-stickyHeader.js"></script>
     </body>
 </html>

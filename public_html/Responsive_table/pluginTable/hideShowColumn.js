@@ -4,14 +4,11 @@
  * Permet de générer un menu composé de checkBoxes pour afficher et cacher les colonnes d'un tableau.
  * 
  * Dans votre HTML, veillé à ce que votre tableau soit composé des balises: <thead>, <tbody>, <tfoot>.
+ * Appliquer ensuite les différentes classes (persist, essential, optional) aux balises th, td de la balise thead
  * 
- *  Ne pas oublier de créer un wrapper: $('table.tableau').wrap('<div class="wrapper" style="overflow-x:scroll; width:100%;clear:both"/>');
- * dans une balise script dans la page pour appliquer un scroll horizontal à la table quand le contenue prend trop de place.
+ * Intégrer ce fichier ainsi que le css hideShowColumn.css à votre page pour rendre le plugin fonctionnel.
  * 
- * 
- * Intégrer ce script ainsi que le css hideShowColumn.css pour rendre le script fonctionnel.
- * 
- * 
+ * ex: $('table').hideShowColumn();
  */
 
 (function ($) {
@@ -53,8 +50,7 @@
                         th.attr("id", id);
                     }
 
-                    // On loop sur chaque ligne pour assigner à la colonne un attribut header
-//égal à l'id de la colonne header correspondante
+                    /* On loop sur chaque ligne pour assigner à la colonne un attribut header égal à l'id de la colonne header correspondante */
                     var cell;
                     var j;
                     if (isDataTable) {

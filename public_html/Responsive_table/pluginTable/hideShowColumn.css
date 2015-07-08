@@ -1,5 +1,5 @@
 /*
-Voir le fichier hideShowColumn.js pour les details sur la mise en place du script.
+A appliquer avec le plugin hideShowColumn
 
 Pour la fonction hide/show column, ajouter les classes "persist", "essential", "optional" pour modifier
 les priorites d'affichage en fonction du media au chargement de la page.
@@ -31,10 +31,10 @@ table.hideShow tfoot td {
 table.hideShow th.essential,
 table.hideShow td.essential {
     display: table-cell;
-    /* word-wrap: break-word; */
+    word-wrap: break-word;
 }
 
-/* téléphone: on cache optional et le reste */
+/* t�l�phone: on cache optional et le reste */
 @media screen and (max-width: 679px) {
     table.hideShow th.optional,
     table.hideShow td.optional {
