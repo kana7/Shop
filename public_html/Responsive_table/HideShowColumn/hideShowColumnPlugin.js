@@ -26,7 +26,6 @@
     });
 })(jQuery);
 
-
 function setHideShowColumn(idTable) {
     var isDataTable;
     if ($.fn.dataTable.isDataTable('#' + idTable)) {

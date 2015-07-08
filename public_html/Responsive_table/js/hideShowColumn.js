@@ -50,7 +50,6 @@ $(function () {
             id = ("col-") + i;
             th.attr("id", id);
         }
-        ;
         // On loop sur chaque ligne pour assigner à la colonne un attribut header 
         //égal à l'id de la colonne header correspondante
         $("table.hideShow>tbody tr").each(function () {

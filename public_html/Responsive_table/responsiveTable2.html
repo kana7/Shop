@@ -12,7 +12,7 @@
         <link href="css/ossprint.css" rel="stylesheet" type="text/css" media="print"/>
         <link href="http://jquery.bluechameleon.com/js/themes/redmond/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
         <link href="css/main2.css" rel="stylesheet" type="text/css"/>
-        <link href="css/hideShowColumn.css" rel="stylesheet" type="text/css"/>
+        <link href="HideShowColumn/hideShowColumn.css" rel="stylesheet" type="text/css"/>
         <style>#ui-datepicker-div {display: none}</style>
     </head>
     <body bgcolor="#FFFFFF">
@@ -106,7 +106,7 @@
                 -->
 
                 <div class="table-wrapper">
-                    <table cellspacing="0" class="tableau sticky margin">
+                    <table id="table1" cellspacing="0" class="tableau sticky margin">
                         <thead>
                             <tr>
                                 <th bgcolor="#CCCCCC" class="essential" >Nom Client</th>
@@ -588,8 +588,12 @@
 
         <script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/jquery.dataTables.js"></script>
         <script type="text/javascript" src="js/ossbo.js"></script>
-        <script type="text/javascript" src="js/hideShowColumn.js"></script>
+        <script type="text/javascript" src="HideShowColumn/hideShowColumn.js"></script>
         <script type="text/javascript" src="js/table-stickyHeader.js"></script>
+        <script>
+            setHideShowColumn('table1');
+        </script>
     </body>
 </html>

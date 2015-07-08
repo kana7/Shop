@@ -17,7 +17,7 @@
         /*Insert icon tooltip à cote de l'element specifie dans le selecteur
          * Si la popup n'existe pas encore sur la page, elle est cree
          * */
-        var htmlTip = '<span class="tooltip3" data-id="'+parametres.id+'"><a href="#" class="align center"><i class="fa fa-question"></i></a></span>';
+        var htmlTip = '<span class="tooltip2" data-size="'+parametres.size+'" data-position="'+parametres.position+'" data-id="'+parametres.id+'"><button>i</button></span>';
         this.after(htmlTip);
         if (!($('#popup_tooltip').length)) {
             var htmlPopup = '<div id="popup_tooltip" class="popupTips text"></div>';
@@ -27,7 +27,7 @@
             });
         }
 
-        $('.tooltip1').click(function () {
+        $('.tooltip2').click(function () {
             event.stopPropagation();
             $('#popup_tooltip').empty();
             /*On recupere l'information à l'id correspondant*/
@@ -58,49 +58,49 @@
             var popHeight = $('#popup_tooltip').outerHeight();
             var popWidth = $('#popup_tooltip').outerWidth();
 
-            if (parametres.position === 'bottom right') {
+            if ($(this).attr('data-position') === 'bottom right') {
                 $('#popup_tooltip').css({
                     top: (pos.top + tipWidth) + 'px',
                     left: (pos.left + tipWidth) + 'px'
                 });
 
-            } else if (parametres.position === 'right') {
+            } else if ($(this).attr('data-position') === 'right') {
                 $('#popup_tooltip').css({
                     top: (pos.top - ((popHeight - tipWidth) / 2)) + 'px',
                     left: (pos.left + tipWidth) + 'px'
                 });
 
-            } else if (parametres.position === 'top right') {
+            } else if ($(this).attr('data-position') === 'top right') {
                 $('#popup_tooltip').css({
                     top: (pos.top - popHeight) + 'px',
                     left: (pos.left + tipWidth) + 'px'
                 });
 
-            } else if (parametres.position === 'top') {
+            } else if ($(this).attr('data-position') === 'top') {
                 $('#popup_tooltip').css({
                     top: (pos.top - popHeight) + 'px',
                     left: (pos.left - ((popWidth - tipWidth) / 2)) + 'px'
                 });
 
-            } else if (parametres.position === 'top left') {
+            } else if ($(this).attr('data-position') === 'top left') {
                 $('#popup_tooltip').css({
                     top: (pos.top - popHeight) + 'px',
                     left: (pos.left - popWidth) + 'px'
                 });
 
-            } else if (parametres.position === 'left') {
+            } else if ($(this).attr('data-position') === 'left') {
                 $('#popup_tooltip').css({
                     top: (pos.top - ((popHeight - tipWidth) / 2)) + 'px',
                     left: (pos.left - popWidth) + 'px'
                 });
 
-            } else if (parametres.position === 'bottom left') {
+            } else if ($(this).attr('data-position') === 'bottom left') {
                 $('#popup_tooltip').css({
                     top: (pos.top + tipWidth) + 'px',
                     left: (pos.left - popWidth) + 'px'
                 });
 
-            } else if (parametres.position === 'bottom') {
+            } else if ($(this).attr('data-position') === 'bottom') {
                 $('#popup_tooltip').css({
                     top: (pos.top + tipWidth) + 'px',
                     left: (pos.left - ((popWidth - tipWidth) / 2)) + 'px'
@@ -112,6 +112,9 @@
                     left: 'auto'
                 });
             }
+            $('#popup_tooltip').css({
+                width: $(this).attr('data-size')
+            });
             $('#popup_tooltip').show();
         });
 
