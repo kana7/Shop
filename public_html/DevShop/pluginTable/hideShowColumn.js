@@ -88,7 +88,7 @@
                                 text = th.find(':hidden').text();
                         }
                         //On créer l'input
-                        var toggle = $('<li><input type="checkbox" name="toggle-cols" id="toggle-col-' + i + '" value="' + id + '"/> <label for="toggle-col-' + i + '">' + text + '</label></li>');
+                        var toggle = $('<li><input type="checkbox" name="toggle-cols" id="'+tableId+'-toggle-col-' + i + '" value="' + id + '"/><label for="'+tableId+'-toggle-col-' + i + '">' + text + '</label></li>');
 
                         // On l'ajoute dans le menu
                         container.find("ul").append(toggle);
@@ -102,9 +102,9 @@
                                             val = input.val();
                                     if (isDataTable) {
                                         if (input.is(':checked')) {
-                                            $('#' + val).show();
+                                            $('#'+tableId+' #'+val).show();
                                         } else {
-                                            $('#' + val).hide(); //Show/hidecolumn header
+                                            $('#'+tableId+' #'+val).hide(); //Show/hidecolumn header
                                         }
                                         cols = $('#' + tableId).DataTable().column('#' + val).nodes();
                                         for (j = 0; j < cols.length; j++) {//show/hide non-header column elements
@@ -115,7 +115,7 @@
                                             }
                                         }
                                     } else {
-                                        cols = $("#" + val + ", [headers=" + val + "]");
+                                        cols = $('#'+tableId+ ' #' +val+ ',#'+tableId+' [headers=' + val + ']');
                                         if (input.is(':checked')) {
                                             cols.show();
                                         } else {
