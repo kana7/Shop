@@ -1,0 +1,348 @@
+BODY		{ font-family: Helvetica, sans-serif; font-size: 12px;}
+
+P		{ font-family: Helvetica, sans-serif; font-size: 12px;}
+
+TD		{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;}
+TH		{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;}
+
+H1		{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 16px;}
+H2		{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px;}
+H3		{ font-family: Helvetica, sans-serif; font-size: 12px;}
+H4		{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;}
+
+fieldset ul {
+    padding: 1em 1em 0 1em;
+    list-style: none;
+}
+
+fieldset li {
+    float: left;
+    clear: left;
+    width: 100%;
+    padding-bottom: 0.25em;
+}
+
+fieldset {
+    float: left;
+    clear: left;
+    width: 100%;
+    margin: 0 0 1.5em 0;
+    padding: 0;
+    border: none;
+}
+
+label {
+    float: left;
+    width: 20%;
+    margin-right: 1em;
+}
+
+.FormPanel {
+    padding: 1em 1em 0 1em;
+    list-style: none;
+}
+
+.FormLine {
+    float: left;
+    clear: left;
+    width: 100%;
+    padding-bottom: 0.25em;
+}
+
+.FormLabel {
+    float: left;
+    width: 20%;
+    margin-right: 1em;
+}
+
+.ListPanel {
+    padding: 0 0 0 1em;
+    list-style: none;
+}
+
+.ListLine {
+    float: left;
+    clear: left;
+    width: 100%;
+    padding-bottom: 0.25em;
+}
+
+.SelectSeparator {
+    background-image:url(../images/pixel.gif);
+    background-repeat:repeat-x;
+    background-position:50% 50%;
+    background-attachment:scroll;
+}
+
+div#MultiColumn2 {
+    -moz-column-count: 2;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+    column-count: 2;
+    column-gap: 20px;
+}
+
+.OssDataSortable {
+}
+
+.OssDataSortable tr:hover {
+    cursor: pointer;
+}
+
+.OssDataSortablePlaceholder {
+    border: 1px dotted black;
+    visibility: visible;
+}
+
+.OssPopupBtnLine div.OssPopupBtnButton {
+    float: left;
+    min-height: 16px;
+}
+
+.OssPopupBtnButton {
+    display: none;
+}
+
+.OssPopupBtnLine:hover .OssPopupBtnButton {
+    display:block;
+}
+
+.OssPopupBtnButton:hover {
+    cursor:pointer;
+}
+
+.OssPopupBtnButtonHide {
+    display: none !important;
+}
+
+.OssWindowBox {
+    position: relative;
+    display: block;
+    overflow: auto;
+    float: left;
+}
+
+.OssWindowCloseButton {
+    display: none;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+}
+
+.OssWindowBox:hover .OssWindowCloseButton {
+    display: block;
+}
+
+//Add for bill and order viewer 
+
+.OssDataDroppable{min-width: 28px;}
+.OssDataHideChild{display: none;}
+.OssDataFontSize_0{	font-size: 12px!important;}
+.OssDataFontSize_1{ font-size:  8px!important;}
+.OssDataFontSize_2{ font-size: 16px!important;}
+.OssDataFontSize_3{ font-size: 32px!important;}
+.OssDataFontBold{   font-weight: bold!important;}
+.OssDataFontItalic{ font-style: italic!important;}
+.ombrein {background-color:#B3B3B3;}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.2;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    transition: all .4s ease-in-out;
+}
+.btn.primary{
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+.btn.primary:hover{
+    background-color: #2a6fab;
+}
+.btn.default{
+    color: #000;
+    background-color: #F0F0F0;
+    border-color: #B3B3B3;
+}
+
+.mainTitle {
+    color: #428bca;
+    margin-bottom: 0;
+    padding: 12px 0px 12px 12px;;
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: 400;
+}
+@media(max-width:991px){
+    .mainTitle{
+        padding: 12px 0px 12px 0px;;
+    }
+}
+
+.h1, .h2, .h3, h1, h2{
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+h3{
+    margin-top: 0px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 18px;
+}
+@media (max-width: 678px){
+    .mainTitle{
+        font-size: 16px;
+
+        white-space: nowrap;
+    
+        text-align: center;
+}
+    h3{
+        font-size: 18px;
+    }
+    p[id^="PageZoneField"]>span{
+        width: 100%;
+    }
+    .field{
+        margin-top: 5px;
+    }
+    p[id^="PageZoneField"]>.field.break{
+        float: left;
+        text-align: left !important;
+    }
+}
+
+@media (min-width:680px){
+    p[id^="PageZoneField"]{
+        border-bottom: 1px solid #e4e4e4;
+    }
+}
+
+.userinfo {
+    background: #F9F9F9;
+    border: 1px solid #F0F0F0;
+    border-radius: 5px;
+    padding: 0px 20px;
+    padding-bottom: 15px;
+    margin-bottom: 22px;
+}
+p[id^="PageZoneField"]{
+    width: 100%;
+    margin: 22px 0px; 
+    padding-bottom: 6px;
+}
+p[id^="PageZoneField"]>.label{
+    font-weight: bold;
+}
+p[id^="PageZoneField"]>.field{
+    float: right;
+}
+p[id^="PageZoneField"]>.field.break{
+    display: inline-block; 
+    width: 100%;
+    text-align: right; 
+    margin-top: 11px;
+}
+
+#footerDiv{
+    border-top:1px solid #ddd; 
+    margin-bottom: 10px;
+    clear: both;
+}
+
+
+/*added for proposition 2*/
+#page{
+    /* height: 100%; */
+}
+@media(max-width:991px){
+    #page{
+        height:auto;
+    }
+}
+.footer{
+    background-color: #428BCA;
+    color: #FFF;
+    z-index: 100; 
+    clear: both;
+}
+
+.footer>ul{
+    display: table;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+.footer>ul>li{
+    transition: all linear .4s;
+    height: 100%;
+    cursor: pointer;
+    margin: 0;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;  
+}
+.footer>ul>li>a{
+    color: inherit;
+    text-decoration: none;
+}
+.footer>ul>li>a:hover{
+    color: inherit;
+}
+.footer>ul>li:hover{
+    background-color: #2a6fab;
+}
+.footer a>i{
+    margin-right: 10px;
+}
+
+.dropdown.up .dropdown_menu{
+    color: #000000;
+}
+
+.dropdown.up .sub_menu_column{
+    width: 100%;
+    padding: 0;
+    display: inline-block;
+    vertical-align: top;
+}
+.dropdown.up .sub_menu_column>li{
+    margin-bottom: 5px;
+    height: 30px;
+}
+.dropdown.up .sub_menu_content{
+    padding: 5px 20px;
+}
+
+
+@media(max-width: 400px){
+    #info_client ul, #info_client h3{
+        display: block;
+        width: 100%;
+    }
+    #info_client>div{
+        width: 100%;
+        display: inline-block;
+        /* margin-bottom: 10px; */
+    }
+    #info_client ul input{
+        width: 100%;
+    }
+    #info_client h3, h4.mainTitle{
+        text-align: center;
+    }
+}

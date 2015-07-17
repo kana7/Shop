@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<!--
+Luxembourg Online S.A
+Quentin Fonck
+28 avr. 2015
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="css/layout-grid.css"/>
+        <link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">
+        <link href="css/ossbo.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="css/ossbo_menu.css">
+        <link rel="stylesheet" type="text/css" href="css/ossbo_new_usermenu.css">
+        <link rel="stylesheet" type="text/css" href="css/ossbo_new_usermenu_color.css">
+        <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu_4_1_1.css">
+        <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu_color.css">
+        <link href="css/main2.css" rel="stylesheet" type="text/css"/>
+        <link href="js/pluginTable/hideShowColumn.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
+        <style type="text/css">
+
+        </style>
+        <link href="http://jquery.bluechameleon.com/js/themes/redmond/jquery.ui.all.css" rel="stylesheet" type="text/css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <script type="text/javascript">
+            if (parent.document.getElementsByTagName("IFRAME").length != 0)
+                parent.document.title = "Master Démo - Online Shopping System";
+            else
+                document.title = "Master Démo - Online Shopping System";
+        </script>	
+        <script>
+            function toggleMenu(idObject) {
+                var img_element = $("#more_img_" + idObject);
+                if ($(img_element).attr("src") == "images/expand_more.png")
+                    $(img_element).attr("src", "images/expand_less.png");
+                else
+                    $(img_element).attr("src", "images/expand_more.png");
+                $("#SubMenu_" + idObject).slideToggle('fast');
+            }
+            function open_in_new_window(href) {
+                window.open(href);
+                return false;
+            }
+            function open_in_site_window(href) {
+                window.open(href, "site");
+                //eval("site.location='href'");
+                return false;
+            }
+            $(function () {
+                $(".sub_menu_hide").hide();
+                $(".div_menu_external_link").mouseup(function (e) {
+                    if (e.which != 3)
+                    {
+                        var href = $(this).attr("data-href");
+                        var _link = "";
+                        if (href.indexOf('http://') == -1 && href.indexOf('https://') == -1)
+                            _link = "http://" + href;
+                        else
+                            _link = href;
+                        open_in_new_window(_link);
+                    }
+                });
+                $(".div_menu_internal_link").mouseup(function (e) {
+                    var _url = $(this).attr("data-href");
+                    var _type = parseInt($(this).attr("data-iType"), 10);
+                    var _link = "";
+                    if (_type == 1 || _type == 4)
+                    {
+                        _link = "http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + _url + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear"
+                        if (e.which == 2)
+                            open_in_new_window(_link);
+                        else if (e.which == 1)
+                            open_in_site_window(_link);
+                    }
+                    else if (_type == 2 && e.which != 3)
+                    {
+                        if (_url.indexOf('http://') == -1 && _url.indexOf('https://') == -1)
+                            _link = "http://" + _url;
+                        else
+                            _link = _url;
+                        open_in_new_window(_link);
+                    }
+                    else if (_type == 3 && e.which != 3)
+                        eval(_url);
+                });
+            });</script>
+        <input type="hidden" id="isAppletLoadedCRM" value="-2">
+        <script>
+            $(function () {
+                $('button#toggle-nav').click(function () {
+                    event.stopPropagation();
+                    if (viewport().width > 992) {
+                        $(this).toggleClass('open');
+                        if ($('#page').hasClass('open-usermenu')) {
+                            $('.LogoArea').css({"width": $('.LogoArea').innerWidth()});
+                        } else {
+                            $('.LogoArea').css({"width": (viewport().width) * 0.16666666666666667});
+                        }
+                        $('#page').toggleClass('open-usermenu');
+                        if (('#page').hasClass('open-usermenu')) {
+                            $('#overlay').addClass('open');
+                        } else {
+                            $('#overlay').removeClass('open');
+                        }
+                    }
+                });
+
+                $('html').click(function (event) {
+                    if (viewport().width <= 992) {
+                        var element = $('.menu_user_zone');
+                        if (!element.is(event.target) && element.has(event.target).length === 0) {
+                            $('#page.open-usermenu').removeClass('open-usermenu');
+                            $('#overlay.open').removeClass('open');
+                        }
+                    }
+                });
+
+                var doit;
+                $(window).resize(function () {
+                    moveIcon();
+                    $('.main_zone, .menu_user_zone').addClass('notransition');
+                    $('.LogoArea').css({"width": "100%"});
+                    $('#overlay.open').removeClass('open');
+                    $('#page.open-usermenu').removeClass('open-usermenu');
+                    clearTimeout(doit);
+
+                    doit = setTimeout(function () {
+                        $('.main_zone.notransition, .menu_user_zone.notransition').removeClass('notransition');
+                    }, 100);
+                });
+            });
+
+            function openMenuManage() {
+                //window.open("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&_MerchantId=1&Sql=MenuUserManage.phs", "site");
+            }
+        </script>
+        <!--<div class="option_menu_user hidden" style="opacity: 1; margin-left: 1px; top: 921px;">
+            <a href="#" id="toggle-nav"><img class="option_menu_user_img option_menu_user_img_toggle" src="images/arrow_left.png" data-toggle_user_menu_value="49"></a>
+            <br>
+            <img class="option_menu_user_img option_menu_user_img_option" src="images/wheel.png" onclick="openMenuManage()">
+        </div>-->
+        <div id="page" class="container-fluid">
+            <div id="canvas" class="row">
+                <div class="menu_user_zone desk-2">
+                    <div class=" div_menu_user" style="width:100%;">
+                        <div class="RightArea">
+                            <div class="LogoArea div_ellipsis">
+                                <img style="width:100%;" src="images/20140605103159_26038.png" alt="logo" title="Master Démo" class="LogoImg">
+                            </div>
+                            <div id="userProfil">
+                                <div class="profilContainer div_ellipsis">
+                                    <p id="userName">Quentin Fonck</p>
+                                    <p id="userGroup">Shop Développement</p>
+                                </div>
+                            </div>
+                            <div class="UserMenuArea div_ellipsis">
+                                <div class="div_menu div_menu_internal_link div_menu_first div_ellipsis phone-12" data-href="ViewStatCategories.phs&amp;ContextObjectType=2" data-itype="1"> 
+                                    Catégories de statistiques de facturation</div>	
+                                <div class="div_menu div_menu_internal_link div_ellipsis phone-12" data-href="CatManage.phs" data-itype="1"> 
+                                    Catégories</div>	
+                                <div class="div_menu div_menu_internal_link div_ellipsis phone-12" data-href="ViewReseller.phs" data-itype="1"> 
+                                    Revendeurs</div>	
+                                <div class="div_menu div_menu_internal_link div_ellipsis phone-12" data-href="ViewCustomText.phs" data-itype="1"> 
+                                    Textes personnalisés</div>	
+                            </div>
+                            <div id="configLink" class="div_ellipsis">
+                                <a href="#">
+                                    <span style="margin-right: 5px;"><i class="fa fa-gear fa-lg"></i></span>configuration
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_zone desk-10 phone-12" style="border-left: 1px #D0D0D0 solid; height: 100%;">
+                    <button id="toggle-nav" class="buttonUserMenu hidden-tab hidden-phone">
+                        <i class="fa fa-angle-right fa-2x" style="color: #337AB7; font-weight: bold;"></i>
+                    </button>
+                    <div class="container-fluid">
+                        <script>
+                            function moveIcon() {
+                                var user = $('#user');
+                                var logout = $('#logout');
+                                user.detach();
+                                if (viewport().width >= 992) {
+                                    user.insertAfter($('#nav>li:last'));
+                                    logout.insertAfter($('#nav>li:last'));
+                                } else if (viewport().width < 992 && viewport().width >= 520) {
+                                    user.insertBefore($('#nav>li:eq(0)'));
+                                    logout.insertAfter($('#nav>li:eq(3)'));
+                                } else if (viewport().width < 519) {
+                                    user.insertAfter($('#nav>li:eq(0)'));
+                                    logout.insertAfter($('#nav>li:eq(1)'));
+                                }
+                            }
+                            function open_in_new_window(href) {
+                                window.open(href);
+                                return false;
+                            }
+                            function open_in_site_window(href) {
+                                window.open(href, "site");
+                                return false;
+                            }
+                            function logout(_link) {
+                                $(location).attr('href', _link);
+                            }
+                            function remove_empty_menu(i_level)
+                            {
+                                if ($(".menu_level_" + i_level).length > 0)
+                                {
+                                    $(".menu_level_" + i_level).each(function () {
+                                        if ($(".child_of_" + $(this).attr("data-id_menu")).length == 0)
+                                            $(this).remove();
+                                    });
+                                    remove_empty_menu(i_level + 1);
+                                }
+                            }
+                            $(function () {
+                                moveIcon();
+                                var docHeight = $('.main_zone').height();
+                                $('#canvas').append("<div id='overlay' class='hidden display-tab display-phone'></div>");
+                                $("#overlay").height(docHeight);
+                                // Ecoute blur
+                                $(window).blur(function (e) {
+                                    $(".dropdown.open").toggleClass("open");
+                                });
+                                $(document).click(function () {
+                                    $(".dropdown.open").toggleClass("open");
+                                });
+                                $(".menu_click_link").mouseup(function (e) {
+                                    var _url = $(this).attr("data-href");
+                                    var _type = parseInt($(this).attr("data-iType"), 10);
+                                    var _link = "";
+                                    if (_type == 1 || _type == 4)
+                                    {
+                                        _link = "http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + _url + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear"
+                                        if (e.which == 2)
+                                            open_in_new_window(_link);
+                                        else if (e.which == 1)
+                                            open_in_site_window(_link);
+                                    }
+                                    else if (_type == 2 && e.which != 3)
+                                    {
+                                        if (_url.indexOf('http://') == -1 && _url.indexOf('https://') == -1)
+                                            _link = "http://" + _url;
+                                        else
+                                            _link = _url;
+                                        open_in_new_window(_link);
+                                    }
+                                    else if (_type == 3 && e.which != 3)
+                                        eval(_url);
+                                });
+                                $(".home").mouseup(function (e) {
+                                    if (e.which == 2)
+                                        open_in_new_window("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + $(this).attr("data-href_ext") + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear");
+                                    else if (e.which == 1)
+                                        open_in_site_window("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + $(this).attr("data-href_int") + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear");
+                                });
+                                $(".logout").mouseup(function (e) {
+                                    if (e.which == 1)
+                                        logout("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + $(this).attr("data-href") + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear");
+                                });
+
+                                $(".dropdown").click(function (e) {
+                                    if ($(this).hasClass("home"))
+                                    {
+                                        $(".open").toggleClass("open");
+                                    } else if ($(this).hasClass("favoris") && viewport().width < 991) {
+                                        $(".open").toggleClass("open");
+                                        $('#overlay').addClass('open');
+                                        $('#page').toggleClass('open-usermenu');
+                                    } else {
+                                        if ($(this).hasClass("open") == false)
+                                        {
+                                            $(".open").toggleClass("open");
+                                        }
+                                        $(this).toggleClass("open");
+                                        if ($(this).hasClass("open"))
+                                        {
+                                            if (viewport().width > 992) {
+                                                $(this).find(".dropdown_menu").position(
+                                                        {
+                                                            of: $(this),
+                                                            my: "left top",
+                                                            at: "left bottom"
+                                                        });
+                                            } else if (viewport().width <= 992) {
+                                                $('.dropdown-menu').each(function () {
+                                                    $(this).css('position', 'initial');
+                                                });
+                                            }
+                                            if ($(this).hasClass('up')) {
+                                                $(this).find(".dropdown_menu").position(
+                                                        {
+                                                            of: $(this),
+                                                            my: "left top",
+                                                            at: "left bottom"
+                                                        });
+                                            } else if (viewport().width <= 992) {
+                                                $('.dropdown-menu').each(function () {
+                                                    $(this).css('position', 'initial');
+                                                });
+                                            }
+                                        }
+                                    }
+                                    e.stopPropagation();
+                                    return false;
+                                });
+                                $('button.dropdown-toggle').click(function () {
+                                    $(this).siblings('ul.dropdown-menu').toggleClass('active');
+                                });
+                                //remove_empty_menu(0);
+                            });</script>
+                        <div class="row">
+                            <div class="main_menu">
+                                <nav class="nav_container">
+                                    <ul id="nav" class="no_list_style nav_main" style="z-index: 100;">
+                                        <li class="dropdown" data-href_int="WelcomeMain.phs" data-href_ext="MainMenuDefault.phs">
+                                            <a class="dropdown_toggle" data-toggle="dropdown"> 
+                                                <div class="align middle left">
+                                                    Home<span style="font-size: 1.1em !important;" class="fa fa-home fa-lg"></span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown menu_level_0 menu_3" data-menu_level="0" data-id_menu="3">
+                                            <a class="dropdown_toggle" data-toggle="dropdown" href="#">
+                                                <div class="align middle left">
+                                                    Général<span class="caret"></span>
+                                                </div>
+                                            </a>
+                                            <ul class="dropdown_menu no_list_style">
+                                                <li>
+                                                    <div class="sub_menu_content">
+                                                        <div class="sub_menu_row align spread">
+                                                            <ul class="sub_menu_column no_list_style tab-4 phone-12">
+                                                                <li class="sub_menu_title menu_level_1 menu_15" data-menu_level="_menu_level" data-id_menu="15" title="Commerçant">Commerçant</li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Commerçant" data-href="ViewMerchant.phs" data-itype="1"><span class="sub_menu_link_span"></span>Commerçant </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Magasins" data-href="ViewShops.phs" data-itype="1"><span class="sub_menu_link_span"></span>Magasins </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Caisses enregistreuses" data-href="CashRegisterManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Caisses enregistreuses </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Fournisseurs" data-href="ViewClients.phs&amp;ContextUsage=1" data-itype="1"><span class="sub_menu_link_span"></span>Fournisseurs </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Correspondants" data-href="ViewClients.phs&amp;ContextUsage=2" data-itype="1"><span class="sub_menu_link_span"></span>Correspondants </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Revendeurs" data-href="ViewReseller.phs" data-itype="1"><span class="sub_menu_link_span"></span>Revendeurs </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Vendeurs" data-href="ViewSalesman.phs" data-itype="1"><span class="sub_menu_link_span"></span>Vendeurs </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Contrats de commissions" data-href="ViewCommissionSet.phs" data-itype="1"><span class="sub_menu_link_span"></span>Contrats de commissions </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Modifier commerçant" data-href="ModifyMerchant.phs&amp;Param=1" data-itype="1"><span class="sub_menu_link_span"></span>Modifier commerçant </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Service level agreements" data-href="ViewMerchantSLA.phs" data-itype="1"><span class="sub_menu_link_span"></span>Service level agreements </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Classes de contrôle de crédit" data-href="ViewCreditCtrlClass.phs" data-itype="1"><span class="sub_menu_link_span"></span>Classes de contrôle de crédit </li>    
+                                                            </ul>
+                                                            <ul class="sub_menu_column no_list_style tab-4 phone-12">
+                                                                <li class="sub_menu_title menu_level_1 menu_35" data-menu_level="_menu_level" data-id_menu="35" title="Utilisateurs">Utilisateurs</li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_35" title="Droits utilisateurs" data-href="ModifyUserRight.phs" data-itype="1"><span class="sub_menu_link_span"></span>Droits utilisateurs </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_35" title="Utilisateurs" data-href="ViewUsers.phs" data-itype="1"><span class="sub_menu_link_span"></span>Utilisateurs </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_35" title="Groupes utilisateurs" data-href="ViewUserGroups.phs" data-itype="1"><span class="sub_menu_link_span"></span>Groupes utilisateurs </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_35" title="Services utilisateurs" data-href="ViewUserDepartments.phs" data-itype="1"><span class="sub_menu_link_span"></span>Services utilisateurs </li>    
+                                                                <li class="sub_menu_title menu_level_1 menu_38" data-menu_level="_menu_level" data-id_menu="38" title="Divers">Divers</li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Modes de livraison" data-href="ViewDelivery.phs" data-itype="1"><span class="sub_menu_link_span"></span>Modes de livraison </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Sets de livraison" data-href="ViewDeliverySet.phs" data-itype="1"><span class="sub_menu_link_span"></span>Sets de livraison </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Modes de paiement" data-href="ViewPayment.phs" data-itype="1"><span class="sub_menu_link_span"></span>Modes de paiement </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Sets de paiement" data-href="ViewPaymentSet.phs" data-itype="1"><span class="sub_menu_link_span"></span>Sets de paiement </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Taxes" data-href="ViewTaxes.phs" data-itype="1"><span class="sub_menu_link_span"></span>Taxes </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Jetons" data-href="ViewToken.phs" data-itype="1"><span class="sub_menu_link_span"></span>Jetons </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Images" data-href="ViewImages.phs" data-itype="1"><span class="sub_menu_link_span"></span>Images </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Gestion profile commande/facture" data-href="OrderBillProfileManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Gestion profile commande/facture </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Gestion de texte marchand" data-href="ViewMerchantText.phs" data-itype="1"><span class="sub_menu_link_span"></span>Gestion de texte marchand </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Gestion des compteurs marchand" data-href="ViewMerchantCounter.phs" data-itype="1"><span class="sub_menu_link_span"></span>Gestion des compteurs marchand </li>    
+                                                            </ul>
+                                                            <ul class="sub_menu_column no_list_style tab-4 phone-12">
+                                                                <li class="sub_menu_title menu_level_1 menu_37" data-menu_level="_menu_level" data-id_menu="37" title="Personnalisation">Personnalisation</li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Etats personnalisés" data-href="ViewCustomStatus.phs" data-itype="1"><span class="sub_menu_link_span"></span>Etats personnalisés </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Configurer états personnalisés" data-href="ConfigCustomStatus.phs" data-itype="1"><span class="sub_menu_link_span"></span>Configurer états personnalisés </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Librairies personnalisées" data-href="ViewLibrary.phs" data-itype="1"><span class="sub_menu_link_span"></span>Librairies personnalisées </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Vérifier librairies personnalisées" data-href="CheckLibrary.phs" data-itype="1"><span class="sub_menu_link_span"></span>Vérifier librairies personnalisées </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Scripts menu" data-href="ViewScripts.phs&amp;Param=2000" data-itype="1"><span class="sub_menu_link_span"></span>Scripts menu </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Scripts personnalisés" data-href="ViewScripts.phs&amp;Param=1000" data-itype="1"><span class="sub_menu_link_span"></span>Scripts personnalisés </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Scripts système" data-href="ViewScripts.phs&amp;Param=0" data-itype="1"><span class="sub_menu_link_span"></span>Scripts système </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Textes personnalisés" data-href="ViewCustomText.phs" data-itype="1"><span class="sub_menu_link_span"></span>Textes personnalisés </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Scripts d'impression" data-href="ViewScripts.phs&amp;Param=3000" data-itype="1"><span class="sub_menu_link_span"></span>Scripts d'impression </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Scripts programmés" data-href="ViewScripts.phs&amp;Param=4000" data-itype="1"><span class="sub_menu_link_span"></span>Scripts programmés </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Gestion de tâches" data-href="TaskManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Gestion de tâches </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Modèles d'impression" data-href="ViewPrintTemplate.phs" data-itype="1"><span class="sub_menu_link_span"></span>Modèles d'impression </li>    
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown menu_level_0 menu_36" data-menu_level="0" data-id_menu="36">
+                                            <a class="dropdown_toggle" data-toggle="dropdown" href="#">
+                                                <div class="align middle left">
+                                                    Articles<span class="caret"></span>
+                                                </div>
+                                            </a>
+                                            <ul class="dropdown_menu no_list_style">
+                                                <li>
+                                                    <div class="sub_menu_content">
+                                                        <div class="sub_menu_row">
+                                                            <ul class="sub_menu_column no_list_style desk-12 tab-6 phone-12">
+                                                                <li class="sub_menu_link menu_click_link child_of_36" title="Articles" data-href="ArtManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Articles </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_36" title="Catégories" data-href="CatManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Catégories </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_36" title="Stock" data-href="StockManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Stock </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_36" title="Types d'article" data-href="ViewArtTypes.phs" data-itype="1"><span class="sub_menu_link_span"></span>Types d'article </li>
+                                                            </ul>
+                                                            <ul class="sub_menu_column no_list_style desk-12 tab-6 phone-12">
+                                                                <li class="sub_menu_title menu_level_1 menu_40" data-menu_level="_menu_level" data-id_menu="40" title="Configuration">Configuration</li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_36 child_of_40" title="Index" data-href="IndexManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Index </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_36 child_of_40" title="Clés de recherche" data-href="ViewKeys.phs&amp;Param=0" data-itype="1"><span class="sub_menu_link_span"></span>Clés de recherche </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_36 child_of_40" title="Clés de détail" data-href="ViewKeys.phs&amp;Param=1" data-itype="1"><span class="sub_menu_link_span"></span>Clés de détail </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_36 child_of_40" title="Clés de détail variable" data-href="ViewKeys.phs&amp;Param=2" data-itype="1"><span class="sub_menu_link_span"></span>Clés de détail variable </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_36 child_of_40" title="Types de prix" data-href="ViewPriceType.phs" data-itype="1"><span class="sub_menu_link_span"></span>Types de prix </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_36 child_of_40" title="Catégories de statistiques de commandes" data-href="ViewStatCategories.phs&amp;ContextObjectType=1" data-itype="1"><span class="sub_menu_link_span"></span>Catégories de statistiques de commandes </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_36 child_of_40" title="Catégories de statistiques de facturation" data-href="ViewStatCategories.phs&amp;ContextObjectType=2" data-itype="1"><span class="sub_menu_link_span"></span>Catégories de statistiques de facturation </li>    
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>    
+                                        <li class="dropdown menu_level_0 menu_5" data-menu_level="0" data-id_menu="5">
+                                            <a class="dropdown_toggle" data-toggle="dropdown" href="#">
+                                                <div class="align middle left">
+                                                    Clients<span class="caret"></span>
+                                                </div>
+                                            </a>
+                                            <ul class="dropdown_menu no_list_style">
+                                                <li>
+                                                    <div class="sub_menu_content">
+                                                        <div class="sub_menu_row">
+                                                            <ul class="sub_menu_column no_list_style desk-12 phone-12 tab-6">
+                                                                <li class="sub_menu_link menu_click_link child_of_5" title="Passer commande" data-href="ViewCatArts.phs&amp;_ClearCart=1" data-itype="1"><span class="sub_menu_link_span"></span>Passer commande </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_5" title="Vente en magasin" data-href="AddShopOrder.phs" data-itype="1"><span class="sub_menu_link_span"></span>Vente en magasin </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_5" title="Clients" data-href="ViewClients.phs" data-itype="1"><span class="sub_menu_link_span"></span>Clients </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_5" title="Abonnements" data-href="SubscriptionManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Abonnements </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_5" title="Commandes" data-href="ViewOrders.phs" data-itype="1"><span class="sub_menu_link_span"></span>Commandes </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_5" title="Campagne de marketing" data-href="MarketingCampaign.phs" data-itype="1"><span class="sub_menu_link_span"></span>Campagne de marketing </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_5" title="Statistiques de commandes" data-href="ViewStatistics.phs&amp;ContextObjectType=1" data-itype="1"><span class="sub_menu_link_span"></span>Statistiques de commandes </li>
+                                                            </ul>
+                                                            <ul class="sub_menu_column no_list_style desk-12 phone-12 tab-6">
+                                                                <li class="sub_menu_title menu_level_1 menu_39" data-menu_level="_menu_level" data-id_menu="39" title="Personnalisation">Personnalisation</li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_5 child_of_39" title="Attributs client" data-href="ViewClientAttr.phs" data-itype="1"><span class="sub_menu_link_span"></span>Attributs client </li>
+                                                                <li class="sub_menu_link menu_click_link child_of_5 child_of_39" title="Attributs commande" data-href="ViewOrderAttr.phs" data-itype="1"><span class="sub_menu_link_span"></span>Attributs commande </li>    
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>    
+                                        <li class="dropdown menu_level_0 menu_6" data-menu_level="0" data-id_menu="6">
+                                            <a class="dropdown_toggle" data-toggle="dropdown" href="#">
+                                                <div class="align middle left">
+                                                    Ventes<span class="caret"></span>
+                                                </div>
+                                            </a>
+                                            <ul class="dropdown_menu no_list_style">
+                                                <li>
+                                                    <div class="sub_menu_content">
+                                                        <div class="sub_menu_row">
+                                                            <ul class="sub_menu_column no_list_style desk-12 phone-12 tab-6">
+                                                                <li class="sub_menu_link menu_click_link child_of_6" title="Facturation" data-href="BillManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Facturation </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_6" title="Paiements client" data-href="AccountManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Paiements client </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_6" title="Statistiques de facturation" data-href="ViewStatistics.phs&amp;ContextObjectType=2" data-itype="1"><span class="sub_menu_link_span"></span>Statistiques de facturation </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_6" title="Domiciliations" data-href="DebtOrderManage.phs&amp;ContextObjectType=201" data-itype="1"><span class="sub_menu_link_span"></span>Domiciliations </li>
+                                                            </ul>
+                                                            <ul class="sub_menu_column no_list_style desk-12 phone-12 tab-6">
+                                                                <li class="sub_menu_title menu_level_1 menu_41" data-menu_level="_menu_level" data-id_menu="41" title="Comptes bancaires commerçant">Comptes bancaires commerçant</li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_6 child_of_41" title="Comptes bancaires" data-href="ViewBankAccount.phs&amp;Param2=1" data-itype="1"><span class="sub_menu_link_span"></span>Comptes bancaires </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_6 child_of_41" title="Comptes notes de crédit" data-href="ViewBankAccount.phs&amp;Param2=3" data-itype="1"><span class="sub_menu_link_span"></span>Comptes notes de crédit </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_6 child_of_41" title="Comptes caisse" data-href="ViewBankAccount.phs&amp;Param2=2" data-itype="1"><span class="sub_menu_link_span"></span>Comptes caisse </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_6" title="Système externe" data-href="ExternalManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Système externe </li>    
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>    
+
+                                        <li class="dropdown menu_level_0 menu_45" data-menu_level="0" data-id_menu="45">
+                                            <a class="dropdown_toggle" data-toggle="dropdown" href="#">
+                                                <div class="align middle left">
+                                                    OGA<span class="caret"></span>
+                                                </div>
+                                            </a>
+                                            <ul class="dropdown_menu no_list_style">
+                                                <li>
+                                                    <div class="sub_menu_content">
+                                                        <div class="sub_menu_row">
+                                                            <ul class="sub_menu_column no_list_style desk-auto phone-12">
+                                                                <li class="sub_menu_title menu_level_1 menu_49" data-menu_level="_menu_level" data-id_menu="49" title="Administration">Administration</li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_45 child_of_49" title="Ajouter code tva" data-href="AddTax.phs" data-itype="1"><span class="sub_menu_link_span"></span>Ajouter code tva </li>    
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>    
+                                        <li class="dropdown menu_level_0 menu_11" data-menu_level="0" data-id_menu="11">
+                                            <a class="dropdown_toggle" data-toggle="dropdown" href="#">
+                                                <div class="align middle left">
+                                                    Options<span class="caret"></span>
+                                                </div>
+                                            </a>
+                                            <ul class="dropdown_menu no_list_style">
+                                                <li>
+                                                    <div class="sub_menu_content">
+                                                        <div class="sub_menu_row">
+                                                            <ul class="sub_menu_column no_list_style">
+                                                                <li class="sub_menu_link menu_click_link child_of_11" title="Configurer le bureau" data-href="WelcomeGetProcList.phs" data-itype="1"><span class="sub_menu_link_span"></span>Configurer le bureau </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_11" title="Unité de référence personnalisée" data-href="ViewArtQuantityUnit.phs" data-itype="1"><span class="sub_menu_link_span"></span>Unité de référence personnalisée </li>    
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li id="user" class="dropdown favoris hidden-desk hidden-lgdesk" data-menu_level="0" data-id_menu="7">
+                                            <a class="dropdown_toggle align center middle" data-toggle="dropdown" href="#">
+                                                <div class="align middle left">
+                                                    Favoris<span style="font-size: 1.1em !important;" class="fa fa-star fa-lg"></span>
+                                                </div>
+                                            </a>
+                                            <ul class="dropdown_menu no_list_style">
+                                                <li>
+                                                    <div class="sub_menu_content">
+                                                        <div class="sub_menu_row">
+                                                            <ul class="sub_menu_column no_list_style">
+                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="ViewStatCategories.phs&amp;ContextObjectType=2" data-itype="1">
+                                                                    <span class="sub_menu_link_span"></span>Catégories de statistiques de facturation
+                                                                </li>
+                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="CatManage.phs" data-itype="1">
+                                                                    <span class="sub_menu_link_span"></span>Catégories
+                                                                </li>	
+                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="ViewReseller.phs" data-itype="1">
+                                                                    <span class="sub_menu_link_span"></span>Revendeurs
+                                                                </li>	
+                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="ViewCustomText.phs" data-itype="1">
+                                                                    <span class="sub_menu_link_span"></span>Textes personnalisés
+                                                                </li>	
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li id="logout" class="dropdown" data-href="MainLogout.phs">
+                                            <a class="dropdown_toggle" data-toggle="dropdown">
+                                                <div class="align middle left">
+                                                    logout<span style="font-size: 1.1em !important;" class="fa fa-sign-out fa-lg"></span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown espace" data-href="MainLogout.phs"></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div id="iframe" style="padding-left:30px; padding-right: 30px; position: relative; min-height: 875px;">
+                            <table id="table1">
+                                <thead>
+                                    <tr>
+                                        <th class="essential">Nom Prénom</th>
+                                        <th class="essential">Login LOL</th>
+                                        <th class="optional">Abonnement</th>
+                                        <th>Numéro</th>
+                                        <th>Etat</th>
+                                        <th class="optional">Status</th>
+                                        <th>Dernière Modif</th>
+                                        <th>Option</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=296884&amp;_MerchantId=1">DEZSO Marianna </a><br></td>
+                                        <td>1000033480<br></td>
+                                        <td>
+                                            Unbundling (prêt à activer)<!-- (<i>ID : 214932</i>)-->
+                                            <br></td>
+                                        <td>
+                                            27918682<br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            31/3/2015 14:01</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46388&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=296248&amp;_MerchantId=1">Schumperli Claude </a><br></td>
+                                        <td >Schumperli.claude</td>
+                                        <td>
+                                            Unbundling (<i>commandé d'avance</i>)<!-- (<i>ID : 219620</i>)-->
+                                            <br></td>
+                                        <td>
+                                            27918681<br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            31/3/2015 13:45</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46387&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=293998&amp;_MerchantId=1">Aires Da Veiga Gomes Monica Yara </a><br></td>
+                                        <td>monicayara.airesdaveigagomes<br></td>
+                                        <td>
+                                            Unbundling (<i>commandé d'avance</i>)<!-- (<i>ID : 213703</i>)-->
+                                            <br></td>
+                                        <td>
+                                            27918680<br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            31/3/2015 12:35</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46386&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=294240&amp;_MerchantId=1">Martin Joffrey </a><br></td>
+                                        <td>joffrey.martin<br></td>
+                                        <td>
+                                            Unbundling (<i>commandé d'avance</i>)<!-- (<i>ID : 213979</i>)-->
+                                            <br></td>
+                                        <td>
+                                            27918679<br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            31/3/2015 11:31</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46385&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=293569&amp;_MerchantId=1">SILJAMAKI Henri </a><br></td>
+                                        <td>HS1000732253<br></td>
+                                        <td>
+                                            Unbundling (<font color="#006600">prêt à activer)<!-- (<i>ID : 213156</i>)-->
+                                            <br></td>
+                                        <td>
+                                            27918678<br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            31/3/2015 11:14</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46384&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=296875&amp;_MerchantId=1">Augusto FINDA FUDICIAIRE FINDA </a><br></td>
+                                        <td>1000732413<br></td>
+                                        <td>
+                                            Unbundling (<i>commandé d'avance</i>)<!-- (<i>ID : 214904</i>)-->
+                                            <br></td>
+                                        <td>
+                                            27918677<br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            31/3/2015 11:08</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46383&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=294465&amp;_MerchantId=1">Branislav Magda </a><br></td>
+                                        <td>1000586422.mb<br></td>
+                                        <td>
+                                            Unbundling (prêt à activer)<!-- (<i>ID : 214039</i>)-->
+                                            <br></td>
+                                        <td>
+                                            27003254<br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            31/3/2015 11:07</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46382&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=68298&amp;_MerchantId=1">Lembella Menga Sosthene </a><br></td>
+                                        <td>lembella.ms<br></td>
+                                        <td>
+                                            Portabilite (activé)<!-- (<i>ID : 219591</i>)-->
+                                            <br></td>
+                                        <td>
+                                            <i>26502645</i>
+                                            <br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            31/3/2015 11:06</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46381&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=145789&amp;_MerchantId=1">Vinther Hans Jorn </a><br></td>
+                                        <td>hansjvinther<br></td>
+                                        <td>
+                                            Unbundling (<i>commandé d'avance</i>)<!-- (<i>ID : 214308</i>)-->
+                                            <br></td>
+                                        <td>
+                                            27918676<br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            31/3/2015 10:55</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46380&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=296895&amp;_MerchantId=1">Butaud Stephane </a><br></td>
+                                        <td>stephane.butaud<br></td>
+                                        <td>
+                                            Unbundling (prêt à activer)<!-- (<i>ID : 214952</i>)-->
+                                            <br></td>
+                                        <td>
+                                            26953093<br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            31/3/2015 10:50</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46379&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=184155&amp;_MerchantId=1">Dejoie Cyrille </a><br></td>
+                                        <td>cyrille.dejoie<br></td>
+                                        <td>
+                                            Unbundling (activé)<!-- (<i>ID : 213919</i>)-->
+                                            <br></td>
+                                        <td>
+                                            <i>27992985</i>
+                                            <br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            31/3/2015 9:56</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46378&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=192342&amp;_MerchantId=1">HOLBAUM  Gérard </a><br></td>
+                                        <td>im.grillo<br></td>
+                                        <td>
+                                            I-Phone (activé)<!-- (<i>ID : 187020</i>)-->
+                                            <br></td>
+                                        <td>
+                                            20992723<br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                        </td>
+                                        <td>
+                                            31/3/2015 9:03</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=41003&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=296883&amp;_MerchantId=1">ISEKI Takeru </a><br></td>
+                                        <td>takeru.iseki<br></td>
+                                        <td>
+                                            Unbundling (prêt à activer)<!-- (<i>ID : 214961</i>)-->
+                                            <br></td>
+                                        <td>
+                                            27918675<br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            31/3/2015 8:30</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46377&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=295372&amp;_MerchantId=1">TOUSSAINT Fernand </a><br></td>
+                                        <td>fernand.toussaint<br></td>
+                                        <td>
+                                            Portabilite (activé)<!-- (<i>ID : 214412</i>)-->
+                                            <br></td>
+                                        <td>
+                                            <i>27858814</i>
+                                            <br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            31/3/2015 7:00</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46376&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=294379&amp;_MerchantId=1">Morais-Alves Suzanna </a><br></td>
+                                        <td>suzanna.morais-alves<br></td>
+                                        <td>
+                                            L.R.S. (activé)<!-- (<i>ID : 214045</i>)-->
+                                            <br></td>
+                                        <td>
+                                            27849513<br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            31/3/2015 7:00</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46375&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=296975&amp;_MerchantId=1">BAUR Myriam </a><br></td>
+                                        <td>myri.baur<br></td>
+                                        <td>
+                                            Unbundling (<i>commandé d'avance</i>)<!-- (<i>ID : 215016</i>)-->
+                                            <br></td>
+                                        <td>
+                                            27918674<br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            30/3/2015 18:04</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46374&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=296975&amp;_MerchantId=1">BAUR Myriam </a><br></td>
+                                        <td>myri.baur<br></td>
+                                        <td>
+                                            Unbundling (<i>commandé d'avance</i>)<!-- (<i>ID : 215039</i>)-->
+                                            <br></td>
+                                        <td>
+                                            27918672<br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            30/3/2015 18:04</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46373&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=298697&amp;_MerchantId=1">Muhic Esad </a><br></td>
+                                        <td>esad.muhic<br></td>
+                                        <td>
+                                            Unbundling (prêt à activer)<!-- (<i>ID : 218197</i>)-->
+                                            <br></td>
+                                        <td>
+                                            27918673<br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            30/3/2015 17:19</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46372&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=296887&amp;_MerchantId=1">CZAPOR Arkadiusz </a><br></td>
+                                        <td>1000067801<br></td>
+                                        <td>
+                                            Unbundling (prêt à activer)<!-- (<i>ID : 214936</i>)-->
+                                            <br></td>
+                                        <td>
+                                            26258445<br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            30/3/2015 17:09</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46371&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=97362&amp;_MerchantId=1">Buck Caroline </a><br></td>
+                                        <td>olivier.buck<br></td>
+                                        <td>
+                                            LOLMobile (activé)
+                                            <br></td>
+                                        <td>
+                                            <i>661154550</i>
+                                            <br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            30/3/2015 16:54</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46370&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=295076&amp;_MerchantId=1">Sudlow Graham </a><br></td>
+                                        <td>1000529381.gs<br></td>
+                                        <td>
+                                            Unbundling (prêt à activer)<!-- (<i>ID : 214169</i>)-->
+                                            <br></td>
+                                        <td>
+                                            27126237<br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            30/3/2015 16:52</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46369&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=297869&amp;_MerchantId=1">KLOSKOWICZ Anna </a><br></td>
+                                        <td>anna.kloskowicz<br></td>
+                                        <td>
+                                            Unbundling (<i>commandé d'avance</i>)<!-- (<i>ID : 216819</i>)-->
+                                            <br></td>
+                                        <td>
+                                            27918671<br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            30/3/2015 16:38</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46368&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=189503&amp;_MerchantId=1">Larsson Lars Marcus </a><br></td>
+                                        <td>larsmarc<br></td>
+                                        <td>
+                                            LOLMobile (activé)
+                                            <br></td>
+                                        <td>
+                                            <i>621498889</i>
+                                            <br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            30/3/2015 16:08</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46367&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=295559&amp;_MerchantId=1">Costa Figueiredo Dany </a><br></td>
+                                        <td>costa.dany<br></td>
+                                        <td>
+                                            LOLMobile (activé)
+                                            <br></td>
+                                        <td>
+                                            <i>691585640</i>
+                                            <br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            30/3/2015 15:58</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46366&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=298682&amp;_MerchantId=1">LDHOME Delmer Lauriane </a><br></td>
+                                        <td>delmer.lauriane<br></td>
+                                        <td>
+                                            Unbundling (prêt à activer)<!-- (<i>ID : 218185</i>)-->
+                                            <br></td>
+                                        <td>
+                                            27918670<br>
+                                        </td>
+                                        <td>
+                                            Actif
+                                        </td>
+                                        <td>
+                                            Normal
+                                            (<i>Non-Validé</i>)
+                                        </td>
+                                        <td>
+                                            30/3/2015 15:24</td>
+                                        <td>
+                                            <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46365&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="8">Nb d'inscriptions trouvées avec status "<b><i>Tous les status</i></b>" : <b>19443</b></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="footerDiv" class="phone-12">
+                    <p style="text-align:center;margin-top:4px;margin-bottom:0px">
+                        <a style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="window.frames['site'].history.back();">Retour</a>
+                        - <a style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="window.frames['site'].location.reload();">Actualiser</a>
+                        - <a style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="if ('Microsoft Internet Explorer' == navigator.appName)
+                                    window.frames['site'].focus();
+                                window.frames['site'].print();">Imprimer</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/viewport.js"></script>
+        <script type="text/javascript" src="js/ossbo.js"></script>
+        <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="js/pluginTable/hideShowColumn.js"></script>
+        <script type="text/javascript" src="js/pluginTable/stickyTableHeader.js"></script>
+        <script type="text/javascript">
+                            $(document).ready(function () {
+                                $('#table1').hideShowColumn().stickyTableHeader();
+                                $('#table1').DataTable();
+                            });
+        </script>
+    </body>
+</html>

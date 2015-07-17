@@ -8,7 +8,6 @@
                 {
                     'url': 'http://shop.internet.lu/Scripts/sql.exe?id=',
                     'id': 0,
-                    'position': 'bottom right',
                     'size': 300
                 };
 
@@ -21,8 +20,8 @@
 
             var htmlTip = '<span class="tooltip2" data-size="' + parametres.size + '" data-position="' + parametres.position + '" data-id="' + parametres.id + '"><button>i</button></span>';
             $(this).after(htmlTip);
-            if (!($('#popup_tooltip').length)) {
-                var htmlPopup = '<div id="popup_tooltip" class="popupTips text"></div>';
+            if (!($('#popup_tooltip').length)) { //si la fenêtre popup n'a pas été créée 
+                var htmlPopup = '<div id="popup_tooltip" class="popupTips text"><div class="content"/><div class="arrow"/></div>';
                 $('body').before(htmlPopup);
                 $('#popup_tooltip').css({
                     width: parametres.size + 'px'
@@ -31,7 +30,7 @@
 
             $('.tooltip2').click(function () {
                 event.stopPropagation();
-                $('#popup_tooltip').empty();
+                $('#popup_tooltip>.content').empty();
                 /*On recupere l'information à l'id correspondant*/
                 var content = '<p class="bold">Url est:<br>' + parametres.url + $(this).attr('data-id') + '</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a consectetur dui. Praesent bibendum dolor ac ultricies commodo. </p><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce et augue auctor, imperdiet felis nec, gravida felis. </p><p class="link right"><a href="#">Plus de détails</a></p>';
                 /*$.ajax({
@@ -52,15 +51,26 @@
                  content='<p style="color:red; text-align: center;">Erreur lors de la récupération des données!</p><p>URL invalide ou pas de connexion</p>';
                  }
                  });*/
-                $('#popup_tooltip').append(content);
+                $('#popup_tooltip>.content').append(content);
 
                 /*Au clic sur l'icon tips, on affiche la fenetre popup à l'emplacement de celle-ci en fonction du parametre position*/
                 var pos = $(this).offset();
                 var tipWidth = $(this).outerWidth();
+                var middleWidthPage = (viewport().width)/2;
+                var middleHeightPage = (viewport().height)/2;
                 var popHeight = $('#popup_tooltip').outerHeight();
                 var popWidth = $('#popup_tooltip').outerWidth();
-
-                if ($(this).attr('data-position') === 'bottom right') {
+                
+                if((pos.left>=middleWidthPage)&&(pos.top>=middleHeightPage)){ //en haut à droite
+                    
+                }else if((pos.left>=middleWidthPage)&&(pos.top<middleHeightPage)){ //en bas à droite
+                    
+                }else if((pos.left<middleWidthPage)&&(pos.top<middleHeightPage)){ //en bas à gauche
+                    
+                }else if((pos.left<middleWidthPage)&&(pos.top>=middleHeightPage)){  //en haut à gauche
+                    
+                }
+                /*if ($(this).attr('data-position') === 'bottom right') {
                     $('#popup_tooltip').css({
                         top: (pos.top + tipWidth) + 'px',
                         left: (pos.left + tipWidth) + 'px'
@@ -113,7 +123,8 @@
                         top: 'auto',
                         left: 'auto'
                     });
-                }
+                }*/
+                
                 $('#popup_tooltip').css({
                     width: $(this).attr('data-size')
                 });
@@ -129,7 +140,7 @@
                             position: 'absolute',
                             top: 'auto',
                             left: 'auto'
-                        }).empty().hide();
+                        }).hide();
                     }
                 }
             });

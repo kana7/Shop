@@ -1,0 +1,67 @@
+table {
+    width: 100%;
+    font-size: 1.2em;
+    clear:both;
+    margin: 15px 0px;
+}
+
+thead th {
+    white-space: nowrap;
+    color: #FFFFFF;
+    font-size: 10pt;
+    font-weight: 400;
+    background-color: #428BCA;
+}
+thead{
+
+}
+/*
+thead th:first-child, thead td:first-child{
+    border-radius: 10px 0px 0px 0px;
+}
+thead th:last-child, thead td:last-child{
+    border-radius: 0px 10px 0px 0px;
+}
+*/
+th, td {
+    padding: 12px 15px;
+    vertical-align: middle;
+    text-align: left;
+    border-collapse: collapse;
+}
+tbody th, td {
+    border: 1px solid  #DFDFDF;
+}
+
+div.submit input{
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+#footer{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-top: 1px solid #E6E6E6;
+    padding-top: 7px;
+}
+
+.margin{
+    margin-top: 15px;
+}
+
+.dataTables_filter{
+    position: relative;
+    width: 50%;
+    float: right;
+}
+
+.dataTables_filter label{
+    margin-right: 0px;
+    margin-top: 10px;
+    float: right;
+}
+
+.dataTables_filter label input{
+    width: 100%;
+}
