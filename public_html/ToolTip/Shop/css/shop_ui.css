@@ -78,11 +78,14 @@ span.tooltip2>button{
     border: 1px solid #C7C5C5;
 }
 
-span.tooltip2>button:focus{
+span.tooltip2>button.active{
     outline:0;
     color: #428BCA;
     background-color: #FFFFFF;
     border: 1px solid #428BCA;
+}
+span.tooltip2>button:focus{
+    outline: 0;
 }
 span.tooltip3{
     height: 15px;
