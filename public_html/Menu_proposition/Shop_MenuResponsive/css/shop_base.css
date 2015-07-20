@@ -258,11 +258,12 @@ p[id^="PageZoneField"]>.field.break{
 #footerDiv{
     border-top:1px solid #ddd; 
     margin-bottom: 10px;
-    clear: both;
+    /* clear: both; */
+    z-index: -1 !important;
 }
 @media(max-width:991px){
     #page{
-        height:auto;
+        /* height:auto; */
     }
 }
 .footer{
