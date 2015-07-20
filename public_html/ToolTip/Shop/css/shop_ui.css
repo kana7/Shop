@@ -107,20 +107,23 @@ span.tooltip3>a:hover, span.tooltip3>a:focus{
 
 .popupTips{
     position: absolute;
-    display: inline-block;
     z-index: 10;
     background-color: white;
     min-height: 50px;
-    box-shadow: 0px 5px 10px 0px slategrey;
     display: none;
+}
+.popupTips.open{
+    display: inline-block !important;
 }
 .popupTips.up{
     border-top: 9px solid #428BCA;
     border-radius: 0px 0px 5px 5px;
+    box-shadow: 0px 1px 1px 1px #E4E4E4;
 }
 .popupTips.bottom{
     border-bottom: 9px solid #428BCA;
     border-radius: 5px 5px 0px 0px;
+    box-shadow: 0px -1px 1px 1px #E4E4E4;
 }
 .popupTips>.arrow{
     position:absolute;

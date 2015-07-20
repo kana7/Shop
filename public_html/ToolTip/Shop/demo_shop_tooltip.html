@@ -521,7 +521,7 @@ Quentin Fonck
                             <hr style="margin-left: -41px; margin-right: -41px; margin-top: 22px;"/>
                             <div class="row">
                                 <div class="align middle">
-                                    <h3 class="desk-push-1 phone-11">Options</h3>
+                                    <h3 id="option" class="phone-11">Options</h3>
                                 </div>
                                 <ul class="list-group phone-12 desk-push-1 desk-4">
                                     <li class="list-group-item active">Compte client</li>
@@ -629,7 +629,7 @@ Quentin Fonck
                                     <input type="hidden" name="Sql" value="ViewClients.phs">
                                     <input type="hidden" name="xid" value="1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn">
                                     <input type="hidden" name="ContextUsage" value="0">
-                                    <button class="btn default phone-12 tab-5 desk-3" type="submit" name="_ParentMenu">Chercher nouveau client</button>
+                                    <span id="bouton_bas"><button class="btn default phone-12 tab-5 desk-3">Chercher nouveau client</button></span>
                                 </form>
                             </div>
                         </div>
@@ -966,6 +966,12 @@ Quentin Fonck
 
                 $('p[id=PageZoneField19]>.label').tooltip({
                     'id': 478
+                });
+                $('#bouton_bas').tooltip({
+                    'id': 5
+                });
+                $('#option').tooltip({
+                    'id': 7
                 });
 
             });</script>
