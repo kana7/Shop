@@ -1,4 +1,4 @@
-function moveIcon() {
+function moveIcon(event) {
     var user = $('#user');
     var logout = $('#logout');
     user.detach();
@@ -42,7 +42,7 @@ $(function () {
     $('#canvas').append("<div id='overlay' class='hidden display-tab display-phone'></div>");
     $("#overlay").height(docHeight);
     // Ecoute blur
-    $(window).blur(function (e) {
+    $(window).blur(function () {
         $(".dropdown.open").toggleClass("open");
     });
     $(document).click(function () {
@@ -86,7 +86,7 @@ $(function () {
                             });
                 } else if (viewport().width <= 992) {
                     $('.dropdown-menu').each(function () {
-                        $(this).css('position', 'initial');
+                       $(this).css('position', 'initial');
                     });
                 }
             }
@@ -98,7 +98,7 @@ $(function () {
     $('button.dropdown-toggle').click(function () {
         $(this).siblings('ul.dropdown-menu').toggleClass('active');
     });
-    $('button#toggle-nav').click(function () {
+    $('button#toggle-nav').click(function (event) {
         event.stopPropagation();
         if (viewport().width > 992) {
             $(this).toggleClass('open');

@@ -1,9 +1,8 @@
 /*Page*/
 html {
-    /* height: 100%; */
+    -ms-overflow-style: scrollbar;
 }
 body {
-    /* height: 100%; */
     margin: 0;
     padding: 0;
 }
@@ -16,12 +15,9 @@ body {
     -webkit-border-radius:10px 10px 10px 10px;
     border-radius:10px 10px 10px 10px;
 }
-.div_menu_first{
-    /* border-top:  1px solid #ddd; */
-}
+
 .div_menu{
-    line-height: 20px;
-    padding: 7px 0px;
+    padding: 10px 0px;
     padding-left: 10px;
     border-bottom:  1px solid #ddd;
     font-weight: normal;
@@ -132,12 +128,9 @@ body {
 }
 @media (max-width: 991px){
     #page>#canvas{
-        /* height: 100%; */
         position: relative;
-
         -webkit-transform: translateX(0);
         transform: translateX(0);
-
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
         -webkit-transition:  transform 0.4s ease;
@@ -257,7 +250,6 @@ div_menu div_menu_internal_link{
 }
 body{
     margin:0;
-    line-height: 1.2;
     overflow-x: hidden;
 }
 .pull_left{
@@ -277,24 +269,45 @@ body{
     clear:both;
 }
 .nav_main{
-    /* zoom:1; */ /* For IE 6/7 (trigger hasLayout) */
+    zoom:1; /* For IE 6/7 (trigger hasLayout) */
 }
 .nav_main > li {
     margin-top: auto;
     float:left;
     display: inline-block;
     height: 35px;
-    line-height:25px;
     border-left: 1px solid #FFF;
 
+}
+/*Règle bug dropdown sur firefox*/
+@-moz-document url-prefix() {
+    .nav_main > li{
+        height: auto;
+        line-height: 17px;
+        padding-top: 5px;
+    }
+    @media(max-width: 991px){
+        .dropdown_menu{
+            margin: -2px 0px 0px -1px !important;
+        }
+        .nav_main > li{
+            line-height: 0px;
+            padding-top: 2px;
+        }
+    }
+}
+/*Règle bug dropdown sur IE*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .dropdown_menu{
+        margin: -6px 0px 0px -1px !important;
+    }
 }
 @media (max-width: 679px){
     .sub_menu_content>.sub_menu_row{
         display: block;
-    
         z-index: 1000;
-        z-index: 1000;    position: relative;
-}
+        position: relative;
+    }
     .sub_menu_content>.sub_menu_row>ul{
         display: block;
         width: 100%;
@@ -419,7 +432,6 @@ ol, ul {
     position: absolute;
     text-align: left;
     z-index: 500;
-    margin: 0 0 0 -1px !important;
 }
 @media (max-width: 991px){
     .nav_main>.dropdown>.dropdown_menu{
@@ -428,8 +440,8 @@ ol, ul {
         right: 0 !important;
         margin-left: auto !important;
         margin-right: auto !important;
-    
-}
+
+    }
 }
 .dropdown_wrapper{
     text-align: right;
@@ -459,13 +471,9 @@ ol, ul {
 li.dropdown .sub_menu_column{
     padding:0;
     display: inline-block;
-    /* z-index: 1000; */
-    /* z-index: 1000; */    
-    /* position: relative; */
 }
 .sub_menu_link{
     padding: 7px 20px 7px 15px;
-    line-height: 17px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
