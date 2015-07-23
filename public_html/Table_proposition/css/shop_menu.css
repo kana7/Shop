@@ -1,6 +1,106 @@
+/*Page*/
+html {
+    -ms-overflow-style: scrollbar;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+.LogoArea{
+    padding: 5px 10px;
+    margin-bottom: 11px;
+}
+.LogoImg{
+    -moz-border-radius:10px 10px 10px 10px;
+    -webkit-border-radius:10px 10px 10px 10px;
+    border-radius:10px 10px 10px 10px;
+}
+
+.div_menu{
+    padding: 10px 0px;
+    padding-left: 10px;
+    border-bottom:  1px solid #ddd;
+    font-weight: normal;
+    -moz-border-radius:2px 2px 0px 0px;
+    -webkit-border-radius:2px 2px 0px 0px;
+    border-radius:2px 2px 0px 0px;
+}
+.div_menu:hover{
+    color:#FFFFFF;
+    cursor:pointer;
+}
+.div_sub_menu:hover{
+    cursor:pointer;
+    color:#FFFFFF;
+}
+.div_sub_menu_container{
+    border-bottom:  1px solid #ddd;
+    font-weight: normal;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+/*Menu utilisateur*/
+.div_menu{
+    color: #428BCA;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.div_sub_menu_container{
+    color: #428BCA;
+}
+.div_sub_menu{
+    color: #428BCA;
+}
+.div_menu:hover{
+    background:#428BCA;
+}
+.div_sub_menu:hover{
+    background:#428BCA;
+}
+
+/*Couleur dropdown menu*/
+.main_menu{
+    background-color:#428BCA;
+}
+.nav_main > li:hover:not(.espace){
+    background-color: #2D6CA2;
+}
+.nav_main > li.open{
+    background-color: #2D6CA2;
+}
+.sub_menu_drop_title{
+    color: #000000 !important;
+}
+.sub_menu_title{
+    border-bottom: 1px #428BCA;
+
+    border-bottom-style: solid;
+    color: #428BCA !important;
+
+    padding-left: 20px;
+    padding: 5px 15px 5px 15px;
+}
+.sub_menu_main_title{
+    border-bottom: 1px #428BCA;
+
+    border-bottom-style: groove;
+    color: #428BCA !important;
+}
+
+.sub_menu_link:hover{
+    background:#428BCA;
+}
+
+.sub_menu_link_span{
+    color:#428BCA;
+}
+
+/*Mise en page menu de gauche + dropdown menu*/
+
 #page{
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 100%;
 }
 .menu_user_zone{
@@ -28,12 +128,9 @@
 }
 @media (max-width: 991px){
     #page>#canvas{
-        height: 100%;
         position: relative;
-
         -webkit-transform: translateX(0);
         transform: translateX(0);
-
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
         -webkit-transition:  transform 0.4s ease;
@@ -62,12 +159,15 @@
 }
 #page>#canvas>.main_zone{
     width: 100%;
+    border-left: 1px #DDD solid;
+    height: 100%;
 }
 div_menu div_menu_internal_link{
     white-space: nowrap;
 }
 .LogoArea>img{
     width: 100%;
+    height: auto;
     margin-top: 10px;
 }
 .option_menu_user{
@@ -92,45 +192,58 @@ div_menu div_menu_internal_link{
 
 }
 #configLink{
-    float: left;
-    width: 100%;
-    margin-top: 15px;
-    padding-right: 10px;
-    text-align: right;
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    width: 18px;
+    text-align: center;
+    margin-top: 0px;
     display: inline-block;
-    font-size: 13px;
 }
-#configLink>a{
-    text-decoration: underline;
+#configLink i{
+    font-size: 16pt;
+    color: #428BCA;
 }
 #userProfil{
     min-height: 40px;
-    margin: 10px 0px;
-    padding: 8px 0px;
-    background-color: #428BCA;
-    border-bottom: 5px solid #337AB7;
+    padding: 0 5px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border-bottom: 1px #DDD;
+    border-style: solid;
     font-weight: 600;
     color: #FFFFFF;
+    box-shadow: 0px 0px 0px 2px #428BCA;
+    z-index: 1;
+}
+.UserMenuArea{
+    margin-top: 3px;
+    font-size: 10pt;
+}
+.profilContainer{
+    position: relative;
 }
 .profilContainer>p{
-
     width: 100%;
     text-align: center;
     display: block;
     font-family: 'Arial', sans-serif;
-    font-size: 12pt;
-    text-shadow: 0px 1px 0px #337AB7;
+    font-size: 17px;
+    color: #428BCA;
+    margin: 0px;
 }
 .profilContainer>p:first-child{
     margin: 0px 0px 7px 0px;
 }
 .profilContainer>#userGroup{
-    font-size: 10pt;
-    font-weight: 400;
+    font-size: 14px;
+    font-weight: 500;
+    color: #8A8A8A;
     margin: 0px;
 }
 .main_menu{
     width:100%;
+    margin-bottom: 30px;
 }
 .nav_container{
     margin: 0px;
@@ -138,7 +251,6 @@ div_menu div_menu_internal_link{
 }
 body{
     margin:0;
-    line-height: 1.2;
     overflow-x: hidden;
 }
 .pull_left{
@@ -147,6 +259,7 @@ body{
 .nav_main{
     padding-left:0px;
     margin:0px;
+    z-index: 10;
 }
 .nav_main:before,
 .nav_main:after {
@@ -164,13 +277,37 @@ body{
     float:left;
     display: inline-block;
     height: 35px;
-    line-height:25px;
     border-left: 1px solid #FFF;
 
+}
+/*R?gle bug dropdown sur firefox*/
+@-moz-document url-prefix() {
+    .nav_main > li{
+        height: auto;
+        line-height: 17px;
+        padding-top: 5px;
+    }
+    @media(max-width: 991px){
+        .dropdown_menu{
+            margin: -2px 0px 0px -1px !important;
+        }
+        .nav_main > li{
+            line-height: 0px;
+            padding-top: 2px;
+        }
+    }
+}
+/*R?gle bug dropdown sur IE*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .dropdown_menu{
+        margin: -6px 0px 0px -1px !important;
+    }
 }
 @media (max-width: 679px){
     .sub_menu_content>.sub_menu_row{
         display: block;
+        z-index: 1000;
+        position: relative;
     }
     .sub_menu_content>.sub_menu_row>ul{
         display: block;
@@ -280,7 +417,7 @@ ol, ul {
     border-top: 0.45em solid;
 }
 .open > .dropdown_menu {
-    display: inline-block !important;
+    display: block !important;
 }
 .dropdown_menu{
     left: auto;
@@ -295,8 +432,7 @@ ol, ul {
     padding: 10px 0;
     position: absolute;
     text-align: left;
-    z-index: 1000;
-    margin: 0 0 0 -1px !important;
+    z-index: 500;
 }
 @media (max-width: 991px){
     .nav_main>.dropdown>.dropdown_menu{
@@ -305,6 +441,7 @@ ol, ul {
         right: 0 !important;
         margin-left: auto !important;
         margin-right: auto !important;
+
     }
 }
 .dropdown_wrapper{
@@ -335,11 +472,9 @@ ol, ul {
 li.dropdown .sub_menu_column{
     padding:0;
     display: inline-block;
-    /* min-width: 100px; */
 }
 .sub_menu_link{
     padding: 7px 20px 7px 15px;
-    line-height: 17px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -401,20 +536,21 @@ li.dropdown .sub_menu_column{
     position: fixed;
     z-index: 5;
     background-color: #FFFFFF;
-    border: 1px solid #D0D0D0;
+    border: 1px solid #DDDDDD;
     border-left: none;
     border-radius: 0px 5px 5px 0px;
-    width: 25px;
-    padding-right: 10px;
+    width: 21px;
+    padding: 0px 0px;
     height: 40px;
     transform: translateY(400px);
 }
 .buttonUserMenu>i{
-    color: #337AB7;
-    font-weight: bold;
-    padding-left: 1px;
+    padding-left: 2px;
     padding-bottom: 3px;
 
+    color: #337AB7; 
+    font-size: 18pt;
+    font-weight: bold;
 }
 .buttonUserMenu.open>i{
     transform: rotate(180deg);

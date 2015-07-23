@@ -59,6 +59,8 @@ template {
 }
 a {
     background-color: transparent;
+    color: #428BCA;
+    text-decoration: none;
 }
 a:active,
 a:hover {
@@ -315,8 +317,8 @@ textarea {
     font-size: inherit;
     line-height: inherit;
 }
-a {
-    color: #337ab7;
+.table-menu-wrapper {
+    color: #3C7EB8;
     text-decoration: none;
 }
 a:hover,

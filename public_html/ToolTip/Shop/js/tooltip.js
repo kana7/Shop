@@ -102,7 +102,8 @@ function resetPopup($popup) {
                     var middleHeightPage = ((viewport().height) / 2); //milieu de la page en y
                     var popHeight = $('#popup_tooltip').outerHeight(); //hauteur de la popup
                     var popWidth = $('#popup_tooltip').outerWidth();  //largeur de la popup
-                    var space = 13.75;
+                    var spaceL = 13.75;
+                    var spaceH = 15.75;
 
                     console.log('position en hauteur: ' + pos.top);
                     console.log('position à gauche hauteur: ' + pos.left);
@@ -113,30 +114,30 @@ function resetPopup($popup) {
                         $('#popup_tooltip').addClass('up');
                         $('#popup_tooltip>.arrow').addClass('right');
                         $('#popup_tooltip').css({
-                            top: (pos.top + tipWidth + space) + 'px',
-                            right: (viewport().width - (pos.left + (2 * tipWidth) + space)) + 'px'
+                            top: (pos.top + tipWidth + spaceH) + 'px',
+                            right: (viewport().width - (pos.left + (2 * tipWidth) + spaceL)) + 'px'
                         });
 
                     } else if ((pos.left >= middleWidthPage) && (pos.top >= middleHeightPage)) { //en bas à droite
                         $('#popup_tooltip').addClass('bottom');
                         $('#popup_tooltip>.arrow').addClass('right');
                         $('#popup_tooltip').css({
-                            top: (pos.top - (popHeight + (space + 9))) + 'px',
-                            right: (viewport().width - (pos.left + (2 * tipWidth) + space + 1.5)) + 'px'
+                            top: (pos.top - (popHeight + (spaceH + 9))) + 'px',
+                            right: (viewport().width - (pos.left + (2 * tipWidth) + spaceL + 1)) + 'px'
                         });
                     } else if ((pos.left < middleWidthPage) && (pos.top >= middleHeightPage)) { //en bas à gauche
                         $('#popup_tooltip').addClass('bottom');
                         $('#popup_tooltip>.arrow').addClass('left');
                         $('#popup_tooltip').css({
-                            top: (pos.top - (popHeight + (space + 9))) + 'px',
-                            left: (pos.left - (space - 1)) + 'px'
+                            top: (pos.top - (popHeight + (spaceH + 9))) + 'px',
+                            left: (pos.left - (spaceL - 1)) + 'px'
                         });
                     } else if ((pos.left < middleWidthPage) && (pos.top < middleHeightPage)) {  //en haut à gauche
                         $('#popup_tooltip').addClass('up');
                         $('#popup_tooltip>.arrow').addClass('left');
                         $('#popup_tooltip').css({
-                            top: (pos.top + tipWidth + space) + 'px',
-                            left: (pos.left - (space - 1)) + 'px'
+                            top: (pos.top + tipWidth + spaceH) + 'px',
+                            left: (pos.left - (spaceL - 1)) + 'px'
                         });
                     }
                     /*if ($(this).attr('data-position') === 'bottom right') {

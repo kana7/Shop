@@ -58,6 +58,7 @@ span.tooltip1>button:focus{
 span.tooltip2{
     height: 15px;
     width: 15px;
+    z-index: 2;
     display: inline-block;
     margin-left: 5px;
     position: relative;

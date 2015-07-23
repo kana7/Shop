@@ -523,7 +523,7 @@ Quentin Fonck
                                 <div class="align middle">
                                     <h3 id="option" class="phone-11">Options</h3>
                                 </div>
-                                <ul class="list-group phone-12 desk-push-1 desk-4">
+                                <ul id="list" class="list-group phone-12 desk-push-1 desk-4">
                                     <li class="list-group-item active">Compte client</li>
                                     <li class="list-group-item">
                                         <form method="post" action="http://shop100.online.lu/Scripts/sql.exe">
@@ -567,7 +567,7 @@ Quentin Fonck
                                     </li>
                                 </ul>
 
-                                <ul class="list-group phone-12 desk-push-2 desk-4">
+                                <ul id="list2" class="list-group phone-12 desk-push-2 desk-4">
                                     <li class="list-group-item active">Facturation</li>
                                     <li class="list-group-item">
                                         <form method="post" action="http://shop100.online.lu/Scripts/sql.exe">
@@ -970,8 +970,11 @@ Quentin Fonck
                 $('#bouton_bas').tooltip({
                     'id': 5
                 });
-                $('#option').tooltip({
+                $('#list').tooltip({
                     'id': 7
+                });
+                $('#list2').tooltip({
+                    'id': 1
                 });
 
             });</script>

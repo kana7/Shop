@@ -1,32 +1,15 @@
 <!DOCTYPE html>
-<!--
-Luxembourg Online S.A
-Quentin Fonck
-28 avr. 2015
--->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Design Tableau: Proposition 1</title>
         <meta charset="UTF-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" type="text/css" href="css/layout-grid.css"/>
-        <link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">
-        <link href="css/ossbo.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="css/ossbo_menu.css">
-        <link rel="stylesheet" type="text/css" href="css/ossbo_new_usermenu.css">
-        <link rel="stylesheet" type="text/css" href="css/ossbo_new_usermenu_color.css">
-        <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu_4_1_1.css">
-        <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu_color.css">
-        <link href="css/main2.css" rel="stylesheet" type="text/css"/>
+        <link href="css/layout-grid.css" rel="stylesheet" type="text/css" />
+        <link href="css/shop_base.css" rel="stylesheet" type="text/css"/>
+        <link href="css/shop_menu.css" rel="stylesheet" type="text/css"/>
         <link href="js/pluginTable/hideShowColumn.css" rel="stylesheet" type="text/css"/>
-        <script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
-        <style type="text/css">
-
-        </style>
-        <link href="http://jquery.bluechameleon.com/js/themes/redmond/jquery.ui.all.css" rel="stylesheet" type="text/css">
-
+        <link href="css/main2.css" rel="stylesheet" type="text/css"/>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -35,123 +18,6 @@ Quentin Fonck
         <![endif]-->
     </head>
     <body>
-        <script type="text/javascript">
-            if (parent.document.getElementsByTagName("IFRAME").length != 0)
-                parent.document.title = "Master Démo - Online Shopping System";
-            else
-                document.title = "Master Démo - Online Shopping System";
-        </script>	
-        <script>
-            function toggleMenu(idObject) {
-                var img_element = $("#more_img_" + idObject);
-                if ($(img_element).attr("src") == "images/expand_more.png")
-                    $(img_element).attr("src", "images/expand_less.png");
-                else
-                    $(img_element).attr("src", "images/expand_more.png");
-                $("#SubMenu_" + idObject).slideToggle('fast');
-            }
-            function open_in_new_window(href) {
-                window.open(href);
-                return false;
-            }
-            function open_in_site_window(href) {
-                window.open(href, "site");
-                //eval("site.location='href'");
-                return false;
-            }
-            $(function () {
-                $(".sub_menu_hide").hide();
-                $(".div_menu_external_link").mouseup(function (e) {
-                    if (e.which != 3)
-                    {
-                        var href = $(this).attr("data-href");
-                        var _link = "";
-                        if (href.indexOf('http://') == -1 && href.indexOf('https://') == -1)
-                            _link = "http://" + href;
-                        else
-                            _link = href;
-                        open_in_new_window(_link);
-                    }
-                });
-                $(".div_menu_internal_link").mouseup(function (e) {
-                    var _url = $(this).attr("data-href");
-                    var _type = parseInt($(this).attr("data-iType"), 10);
-                    var _link = "";
-                    if (_type == 1 || _type == 4)
-                    {
-                        _link = "http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + _url + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear"
-                        if (e.which == 2)
-                            open_in_new_window(_link);
-                        else if (e.which == 1)
-                            open_in_site_window(_link);
-                    }
-                    else if (_type == 2 && e.which != 3)
-                    {
-                        if (_url.indexOf('http://') == -1 && _url.indexOf('https://') == -1)
-                            _link = "http://" + _url;
-                        else
-                            _link = _url;
-                        open_in_new_window(_link);
-                    }
-                    else if (_type == 3 && e.which != 3)
-                        eval(_url);
-                });
-            });</script>
-        <input type="hidden" id="isAppletLoadedCRM" value="-2">
-        <script>
-            $(function () {
-                $('button#toggle-nav').click(function () {
-                    event.stopPropagation();
-                    if (viewport().width > 992) {
-                        $(this).toggleClass('open');
-                        if ($('#page').hasClass('open-usermenu')) {
-                            $('.LogoArea').css({"width": $('.LogoArea').innerWidth()});
-                        } else {
-                            $('.LogoArea').css({"width": (viewport().width) * 0.16666666666666667});
-                        }
-                        $('#page').toggleClass('open-usermenu');
-                        if (('#page').hasClass('open-usermenu')) {
-                            $('#overlay').addClass('open');
-                        } else {
-                            $('#overlay').removeClass('open');
-                        }
-                    }
-                });
-
-                $('html').click(function (event) {
-                    if (viewport().width <= 992) {
-                        var element = $('.menu_user_zone');
-                        if (!element.is(event.target) && element.has(event.target).length === 0) {
-                            $('#page.open-usermenu').removeClass('open-usermenu');
-                            $('#overlay.open').removeClass('open');
-                        }
-                    }
-                });
-
-                var doit;
-                $(window).resize(function () {
-                    moveIcon();
-                    $('.main_zone, .menu_user_zone').addClass('notransition');
-                    $('.LogoArea').css({"width": "100%"});
-                    $('#overlay.open').removeClass('open');
-                    $('#page.open-usermenu').removeClass('open-usermenu');
-                    clearTimeout(doit);
-
-                    doit = setTimeout(function () {
-                        $('.main_zone.notransition, .menu_user_zone.notransition').removeClass('notransition');
-                    }, 100);
-                });
-            });
-
-            function openMenuManage() {
-                //window.open("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&_MerchantId=1&Sql=MenuUserManage.phs", "site");
-            }
-        </script>
-        <!--<div class="option_menu_user hidden" style="opacity: 1; margin-left: 1px; top: 921px;">
-            <a href="#" id="toggle-nav"><img class="option_menu_user_img option_menu_user_img_toggle" src="images/arrow_left.png" data-toggle_user_menu_value="49"></a>
-            <br>
-            <img class="option_menu_user_img option_menu_user_img_option" src="images/wheel.png" onclick="openMenuManage()">
-        </div>-->
         <div id="page" class="container-fluid">
             <div id="canvas" class="row">
                 <div class="menu_user_zone desk-2">
@@ -162,12 +28,17 @@ Quentin Fonck
                             </div>
                             <div id="userProfil">
                                 <div class="profilContainer div_ellipsis">
-                                    <p id="userName">Quentin Fonck</p>
-                                    <p id="userGroup">Shop Développement</p>
+                                    <div id="configLink">
+                                        <a href="#">
+                                            <i class="fa fa-gear"></i>
+                                        </a>
+                                    </div>
+                                    <p id="userName" style="margin-bottom: 8px; margin-top: 10px;">Quentin Fonck</p>
+                                    <p id="userGroup" style="margin-bottom: 12px;">Shop Développement</p>
                                 </div>
                             </div>
                             <div class="UserMenuArea div_ellipsis">
-                                <div class="div_menu div_menu_internal_link div_menu_first div_ellipsis phone-12" data-href="ViewStatCategories.phs&amp;ContextObjectType=2" data-itype="1"> 
+                                <div class="div_menu div_menu_internal_link div_ellipsis phone-12" data-href="ViewStatCategories.phs&amp;ContextObjectType=2" data-itype="1"> 
                                     Catégories de statistiques de facturation</div>	
                                 <div class="div_menu div_menu_internal_link div_ellipsis phone-12" data-href="CatManage.phs" data-itype="1"> 
                                     Catégories</div>	
@@ -176,159 +47,20 @@ Quentin Fonck
                                 <div class="div_menu div_menu_internal_link div_ellipsis phone-12" data-href="ViewCustomText.phs" data-itype="1"> 
                                     Textes personnalisés</div>	
                             </div>
-                            <div id="configLink" class="div_ellipsis">
-                                <a href="#">
-                                    <span style="margin-right: 5px;"><i class="fa fa-gear fa-lg"></i></span>configuration
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="main_zone desk-10 phone-12" style="border-left: 1px #D0D0D0 solid; height: 100%;">
+                <div class="main_zone desk-10 phone-12">
                     <button id="toggle-nav" class="buttonUserMenu hidden-tab hidden-phone">
-                        <i class="fa fa-angle-right fa-2x" style="color: #337AB7; font-weight: bold;"></i>
+                        <i class="fa fa-angle-right"></i>
                     </button>
                     <div class="container-fluid">
-                        <script>
-                            function moveIcon() {
-                                var user = $('#user');
-                                var logout = $('#logout');
-                                user.detach();
-                                if (viewport().width >= 992) {
-                                    user.insertAfter($('#nav>li:last'));
-                                    logout.insertAfter($('#nav>li:last'));
-                                } else if (viewport().width < 992 && viewport().width >= 520) {
-                                    user.insertBefore($('#nav>li:eq(0)'));
-                                    logout.insertAfter($('#nav>li:eq(3)'));
-                                } else if (viewport().width < 519) {
-                                    user.insertAfter($('#nav>li:eq(0)'));
-                                    logout.insertAfter($('#nav>li:eq(1)'));
-                                }
-                            }
-                            function open_in_new_window(href) {
-                                window.open(href);
-                                return false;
-                            }
-                            function open_in_site_window(href) {
-                                window.open(href, "site");
-                                return false;
-                            }
-                            function logout(_link) {
-                                $(location).attr('href', _link);
-                            }
-                            function remove_empty_menu(i_level)
-                            {
-                                if ($(".menu_level_" + i_level).length > 0)
-                                {
-                                    $(".menu_level_" + i_level).each(function () {
-                                        if ($(".child_of_" + $(this).attr("data-id_menu")).length == 0)
-                                            $(this).remove();
-                                    });
-                                    remove_empty_menu(i_level + 1);
-                                }
-                            }
-                            $(function () {
-                                moveIcon();
-                                var docHeight = $('.main_zone').height();
-                                $('#canvas').append("<div id='overlay' class='hidden display-tab display-phone'></div>");
-                                $("#overlay").height(docHeight);
-                                // Ecoute blur
-                                $(window).blur(function (e) {
-                                    $(".dropdown.open").toggleClass("open");
-                                });
-                                $(document).click(function () {
-                                    $(".dropdown.open").toggleClass("open");
-                                });
-                                $(".menu_click_link").mouseup(function (e) {
-                                    var _url = $(this).attr("data-href");
-                                    var _type = parseInt($(this).attr("data-iType"), 10);
-                                    var _link = "";
-                                    if (_type == 1 || _type == 4)
-                                    {
-                                        _link = "http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + _url + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear"
-                                        if (e.which == 2)
-                                            open_in_new_window(_link);
-                                        else if (e.which == 1)
-                                            open_in_site_window(_link);
-                                    }
-                                    else if (_type == 2 && e.which != 3)
-                                    {
-                                        if (_url.indexOf('http://') == -1 && _url.indexOf('https://') == -1)
-                                            _link = "http://" + _url;
-                                        else
-                                            _link = _url;
-                                        open_in_new_window(_link);
-                                    }
-                                    else if (_type == 3 && e.which != 3)
-                                        eval(_url);
-                                });
-                                $(".home").mouseup(function (e) {
-                                    if (e.which == 2)
-                                        open_in_new_window("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + $(this).attr("data-href_ext") + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear");
-                                    else if (e.which == 1)
-                                        open_in_site_window("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + $(this).attr("data-href_int") + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear");
-                                });
-                                $(".logout").mouseup(function (e) {
-                                    if (e.which == 1)
-                                        logout("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + $(this).attr("data-href") + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear");
-                                });
-
-                                $(".dropdown").click(function (e) {
-                                    if ($(this).hasClass("home"))
-                                    {
-                                        $(".open").toggleClass("open");
-                                    } else if ($(this).hasClass("favoris") && viewport().width < 991) {
-                                        $(".open").toggleClass("open");
-                                        $('#overlay').addClass('open');
-                                        $('#page').toggleClass('open-usermenu');
-                                    } else {
-                                        if ($(this).hasClass("open") == false)
-                                        {
-                                            $(".open").toggleClass("open");
-                                        }
-                                        $(this).toggleClass("open");
-                                        if ($(this).hasClass("open"))
-                                        {
-                                            if (viewport().width > 992) {
-                                                $(this).find(".dropdown_menu").position(
-                                                        {
-                                                            of: $(this),
-                                                            my: "left top",
-                                                            at: "left bottom"
-                                                        });
-                                            } else if (viewport().width <= 992) {
-                                                $('.dropdown-menu').each(function () {
-                                                    $(this).css('position', 'initial');
-                                                });
-                                            }
-                                            if ($(this).hasClass('up')) {
-                                                $(this).find(".dropdown_menu").position(
-                                                        {
-                                                            of: $(this),
-                                                            my: "left top",
-                                                            at: "left bottom"
-                                                        });
-                                            } else if (viewport().width <= 992) {
-                                                $('.dropdown-menu').each(function () {
-                                                    $(this).css('position', 'initial');
-                                                });
-                                            }
-                                        }
-                                    }
-                                    e.stopPropagation();
-                                    return false;
-                                });
-                                $('button.dropdown-toggle').click(function () {
-                                    $(this).siblings('ul.dropdown-menu').toggleClass('active');
-                                });
-                                //remove_empty_menu(0);
-                            });</script>
                         <div class="row">
                             <div class="main_menu">
                                 <nav class="nav_container">
-                                    <ul id="nav" class="no_list_style nav_main" style="z-index: 100;">
+                                    <ul id="nav" class="no_list_style nav_main">
                                         <li class="dropdown" data-href_int="WelcomeMain.phs" data-href_ext="MainMenuDefault.phs">
-                                            <a class="dropdown_toggle" data-toggle="dropdown"> 
+                                            <a href="#" class="dropdown_toggle" data-toggle="dropdown"> 
                                                 <div class="align middle left">
                                                     Home<span style="font-size: 1.1em !important;" class="fa fa-home fa-lg"></span>
                                                 </div>
@@ -553,7 +285,7 @@ Quentin Fonck
                                             </ul>
                                         </li>
                                         <li id="logout" class="dropdown" data-href="MainLogout.phs">
-                                            <a class="dropdown_toggle" data-toggle="dropdown">
+                                            <a href="#" class="dropdown_toggle" data-toggle="dropdown">
                                                 <div class="align middle left">
                                                     logout<span style="font-size: 1.1em !important;" class="fa fa-sign-out fa-lg"></span>
                                                 </div>
@@ -564,7 +296,7 @@ Quentin Fonck
                                 </nav>
                             </div>
                         </div>
-                        <div id="iframe" style="padding-left:30px; padding-right: 30px; position: relative; min-height: 875px;">
+                        <div id="iframe" style="padding-left:30px; padding-right: 30px; position: relative; min-height: 890px;">
                             <table id="table1">
                                 <thead>
                                     <tr>
@@ -1157,16 +889,15 @@ Quentin Fonck
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="js/viewport.js"></script>
-        <script type="text/javascript" src="js/ossbo.js"></script>
-        <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/shop_menu.js"></script>
+        <script type="text/javascript" src="js/shop_mainFunction.js"></script>
         <script type="text/javascript" src="js/pluginTable/hideShowColumn.js"></script>
         <script type="text/javascript" src="js/pluginTable/stickyTableHeader.js"></script>
-        <script type="text/javascript">
-                            $(document).ready(function () {
-                                $('#table1').hideShowColumn().stickyTableHeader();
-                                $('#table1').DataTable();
-                            });
+        <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+        <script>
+            $('#table1').hideShowColumn();
+            $('#table1').DataTable();
         </script>
     </body>
 </html>

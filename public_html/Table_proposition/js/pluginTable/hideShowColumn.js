@@ -155,8 +155,8 @@
                         }
                     });
                 });
-                var menuWrapper = $('<div class="table-menu-wrapper" />'),
-                        menuBtn = $('<a href="#" class="table-menu-btn">Affichage</a>');
+                var menuWrapper = $('<div class="table-menu-wrapper no-select" />'),
+                        menuBtn = $('<a href="#" class="table-menu-btn">Cacher/Afficher</a>');
 
                 menuBtn.click(function () {
                     container.toggleClass("table-menu-hidden");
