@@ -122,12 +122,12 @@ span.tooltip3>a:hover, span.tooltip3>a:focus{
 .popupTips.up{
     border-top: 9px solid #428BCA;
     border-radius: 0px 0px 5px 5px;
-    box-shadow: 0px 1px 1px 1px #E4E4E4;
+    box-shadow: 0px 1px 1px 1px #DFDFDF;
 }
 .popupTips.bottom{
     border-bottom: 9px solid #428BCA;
     border-radius: 5px 5px 0px 0px;
-    box-shadow: 0px -1px 1px 1px #E4E4E4;
+    box-shadow: 0px -1px 1px 1px #DFDFDF;
 }
 .popupTips>.arrow{
     position:absolute;

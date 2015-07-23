@@ -11,6 +11,22 @@ Quentin Fonck
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link href="css/shop_ui.css" type="text/css" rel="stylesheet"/>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/layout-grid.css"/>
+        <link rel="stylesheet" href="../../Menu_proposition/font-awesome-4.3.0/css/font-awesome.min.css"/>
+        <link href="css/ossbo.css" rel="stylesheet" type="text/css"/>
+        <link href="css/ossbo_box.css" rel="stylesheet" type="text/css"/>
+        <link href="css/ossbo_services.css" rel="stylesheet" type="text/css" media="screen"/>
+        <link href="css/ossprint.css" rel="stylesheet" type="text/css" media="print"/>
+        <link href="http://jquery.bluechameleon.com/js/themes/redmond/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="css/ossbo_menu.css"/>
+        <link rel="stylesheet" type="text/css" href="css/ossbo_div.css"/>
+        <link rel="stylesheet" type="text/css" href="css/ossbo_new_usermenu.css"/>
+        <link rel="stylesheet" type="text/css" href="css/ossbo_new_usermenu_color.css"/>
+        <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu_4_1_1.css"/>
+        <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu_color.css"/>
+        <script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
         <style>
             #ui-datepicker-div {
                 display: none
@@ -624,13 +640,7 @@ Quentin Fonck
                             </div>
                             <hr style="margin-left: -41px; margin-right: -41px; margin-top: 0px;"/>
                             <div class="row" style="margin-bottom: 20px;">
-                                <form class="phone-12 pull-left" method="post" action="http://shop100.online.lu/Scripts/sql.exe">
-                                    <input type="hidden" name="SqlDB" value="MasterTest">
-                                    <input type="hidden" name="Sql" value="ViewClients.phs">
-                                    <input type="hidden" name="xid" value="1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn">
-                                    <input type="hidden" name="ContextUsage" value="0">
                                     <span id="bouton_bas"><button class="btn default phone-12 tab-5 desk-3">Chercher nouveau client</button></span>
-                                </form>
                             </div>
                         </div>
                     </div>
@@ -649,22 +659,6 @@ Quentin Fonck
                 </div>
             </div>
         </div>
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-        <link rel="stylesheet" type="text/css" href="css/layout-grid.css"/>
-        <link rel="stylesheet" href="../../Menu_proposition/font-awesome-4.3.0/css/font-awesome.min.css">
-        <link href="css/ossbo.css" rel="stylesheet" type="text/css">
-        <link href="css/ossbo_box.css" rel="stylesheet" type="text/css">
-        <link href="css/ossbo_services.css" rel="stylesheet" type="text/css" media="screen">
-        <link href="css/ossprint.css" rel="stylesheet" type="text/css" media="print">
-        <link href="http://jquery.bluechameleon.com/js/themes/redmond/jquery.ui.all.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="css/ossbo_menu.css">
-        <link rel="stylesheet" type="text/css" href="css/ossbo_div.css">
-        <link rel="stylesheet" type="text/css" href="css/ossbo_new_usermenu.css">
-        <link rel="stylesheet" type="text/css" href="css/ossbo_new_usermenu_color.css">
-        <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu_4_1_1.css">
-        <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu_color.css">
-        <script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
         <script type="text/javascript" src="js/ossbo.js"></script>
         <script type="text/javascript" src="js/viewport.js"></script>
         <script type="text/javascript" src="js/tooltip.js"></script>
@@ -952,16 +946,13 @@ Quentin Fonck
                     $(this).siblings('ul.dropdown-menu').toggleClass('active');
                 });
 
-
-
-
-
                 $('p[id=PageZoneField16]>.label').tooltip({
                     'id': 674
                 });
 
                 $('p[id=PageZoneField22]>.label').tooltip({
-                    'id': 2
+                    'id': 2, 
+                    'size': 500
                 });
 
                 $('p[id=PageZoneField19]>.label').tooltip({

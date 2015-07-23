@@ -1,5 +1,4 @@
-/*Plug in générant des aides contextuelles cliquables avec popups*/
-
+/*Plug in générant des aides contextuelles cliquables*/
 
 function resetPopup($popup) {
     $popup.css({
@@ -14,7 +13,7 @@ function resetPopup($popup) {
     $popup.children('.arrow').removeClass('right').removeClass('left');
 }
 
-
+/*Début du PlugIn*/
 (function ($) {
     $.fn.tooltip = function (options)
     {
@@ -27,7 +26,8 @@ function resetPopup($popup) {
                 };
 
         var parametres = $.extend(defauts, options);
-
+        
+        /*Quand on clic ailleurs dans la page, la fenetre popup actuellement ouverte est fermee*/
         $('html').unbind().on('click', function (event) {
             var element = $('#popup_tooltip, .tooltip2');
             console.log('click out event');
@@ -40,7 +40,7 @@ function resetPopup($popup) {
 
         this.each(function () {
 
-            /*Insert icon tooltip à cote de l'element specifie dans le selecteur
+            /*Insert icone tooltip à cote de l'element specifie dans le selecteur
              * Si la popup n'existe pas encore sur la page, elle est cree
              * */
             var htmlTip = '<span class="tooltip2" tip-size="' + parametres.size + '" tip-id="' + parametres.id + '"><button>i</button></span>';
@@ -57,11 +57,7 @@ function resetPopup($popup) {
                 event.stopPropagation();
                 $('.tooltip2>button.active').removeClass('active');
                 $(this).children('button').toggleClass('active');
-                /*if(!($(this).children('button').hasClass('active'))){
-                    $(this).children('button').addClass('active');
-                }else{
-                    $(this).children('button').removeClass('active');
-                }*/
+               
                 //Si on reclic sur la même icon tooltip quand popup est visible==> on clean la popup et on la cache
 
                 if (($('#popup_tooltip.open')) && ($(this).attr('tip-id') === $('#popup_tooltip').attr('tooltip-id'))) {
@@ -71,29 +67,31 @@ function resetPopup($popup) {
                 } else {
                     resetPopup($('#popup_tooltip'));
                     $('#popup_tooltip>.content').empty();
-                    /*On recupere l'information à l'id correspondant*/
                     $('#popup_tooltip').attr('tooltip-id', $(this).attr('tip-id')); //enregistrement du dernier id dans le l'attr de la popup
-                    var content = '<p class="bold">Url est:<br>' + parametres.url + $(this).attr('tip-id') + '</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a consectetur dui. Praesent bibendum dolor ac ultricies commodo. </p><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce et augue auctor, imperdiet felis nec, gravida felis. </p><p class="link right"><a href="#">Plus de détails</a></p>';
+                    /*On genere le contenu en récupérant l'information à l'id correspondante*/
+                    var content='';
+                    /*Contenu exemple*/
+                    content += '<p class="bold">Url est:<br>' + parametres.url + $(this).attr('tip-id') + '</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a consectetur dui. Praesent bibendum dolor ac ultricies commodo. </p><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce et augue auctor, imperdiet felis nec, gravida felis. </p><p class="link right"><a href="#">Plus de détails</a></p>';
+                    
+                    /*Requete Ajax*/
                     /*$.ajax({
                      type: 'GET',
                      url: parametres.url+$(this).attr('tip-id'),
                      success: function (content) {
-                     $('#popup_tooltip').append(content.info);
+                     $('#popup_tooltip>.content').append(content.info);
                      },
                      error: function () {
-                     content='<p style="color:red; text-align: center;">Erreur lors de la récupération des données!</p><p>URL invalide ou pas de connexion</p>';
-                     $('#popup_tooltip').append(content);
-                     }
-                     });*/
-                    /*$.get(parametres.url+$(this).attr('tip-id'), function(data, status){
-                     if (status==="success"){
-                     content=data;
-                     }else{
                      content='<p style="color:red; text-align: center;">Astuce non disponible actuellement</p>';
+                     $('#popup_tooltip>.content').append(content);
                      }
                      });*/
-
+                    
+                    /*Insert de l'exemple*/
                     $('#popup_tooltip>.content').append(content);
+                    
+                    $('#popup_tooltip').css({
+                        width: $(this).attr('tip-size')
+                    });
 
                     /*Au clic sur l'icon tips, on affiche la fenetre popup à l'emplacement de celle-ci en fonction du parametre position*/
                     var pos = $(this).offset(); //position du tooltip cliqué
@@ -140,68 +138,10 @@ function resetPopup($popup) {
                             left: (pos.left - (spaceL - 1)) + 'px'
                         });
                     }
-                    /*if ($(this).attr('data-position') === 'bottom right') {
-                     $('#popup_tooltip').css({
-                     top: (pos.top + tipWidth) + 'px',
-                     left: (pos.left + tipWidth) + 'px'
-                     });
-                     
-                     } else if ($(this).attr('data-position') === 'right') {
-                     $('#popup_tooltip').css({
-                     top: (pos.top - ((popHeight - tipWidth) / 2)) + 'px',
-                     left: (pos.left + tipWidth) + 'px'
-                     });
-                     
-                     } else if ($(this).attr('data-position') === 'top right') {
-                     $('#popup_tooltip').css({
-                     top: (pos.top - popHeight) + 'px',
-                     left: (pos.left + tipWidth) + 'px'
-                     });
-                     
-                     } else if ($(this).attr('data-position') === 'top') {
-                     $('#popup_tooltip').css({
-                     top: (pos.top - popHeight) + 'px',
-                     left: (pos.left - ((popWidth - tipWidth) / 2)) + 'px'
-                     });
-                     
-                     } else if ($(this).attr('data-position') === 'top left') {
-                     $('#popup_tooltip').css({
-                     top: (pos.top - popHeight) + 'px',
-                     left: (pos.left - popWidth) + 'px'
-                     });
-                     
-                     } else if ($(this).attr('data-position') === 'left') {
-                     $('#popup_tooltip').css({
-                     top: (pos.top - ((popHeight - tipWidth) / 2)) + 'px',
-                     left: (pos.left - popWidth) + 'px'
-                     });
-                     
-                     } else if ($(this).attr('data-position') === 'bottom left') {
-                     $('#popup_tooltip').css({
-                     top: (pos.top + tipWidth) + 'px',
-                     left: (pos.left - popWidth) + 'px'
-                     });
-                     
-                     } else if ($(this).attr('data-position') === 'bottom') {
-                     $('#popup_tooltip').css({
-                     top: (pos.top + tipWidth) + 'px',
-                     left: (pos.left - ((popWidth - tipWidth) / 2)) + 'px'
-                     });
-                     
-                     } else {
-                     $('#popup_tooltip').css({
-                     top: 'auto',
-                     left: 'auto'
-                     });
-                     }*/
-
-                    $('#popup_tooltip').css({
-                        width: $(this).attr('data-size')
-                    });
+                    /*Affichage de la fenetre popup*/
                     $('#popup_tooltip').addClass('open');
                 }
             });
-            /*Si on clic ailleurs que sur une icon tips ou la popup elle-même, la fenetre popup est cachée*/
         });
         return this;
     };

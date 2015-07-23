@@ -5,7 +5,6 @@ table {
     margin-top: 5px; 
     margin-bottom: 10px;
     border-bottom: 5px solid #428BCA;
-    /* box-shadow: 0px 2px 0px 1px #3C7EB8; */
 }
 
 thead th, thead td{
@@ -34,17 +33,20 @@ th, td {
     text-align: left;
     border-collapse: collapse;
 }
-tbody th, td {
-    border: 1px solid #DFDFDF;
-    background-color: #FFFFFF;
-}
 
 tbody tr>td:first-child,tbody tr>th:first-child {
-    background-color: rgba(66, 139, 202, 0.13);
+    background-color: #E2EDF6;
 }
-tbody tr:hover,tbody tr:hover{
-    background-color: #F1F1F1 !important;
-    border-color: #428BCA !important; 
+table.highlight tbody tr:hover, tbody tr:hover{
+    background-color: #F0F0F0 !important;
+}
+table.stripe tbody tr:nth-child(odd){
+    background-color: #F0F0F0 !important;
+}
+tbody th, td {
+    border: 1px solid #DFDFDF;
+    /*border-bottom: 1px solid #DFDFDF;
+    border-top: 1px solid #DFDFDF;*/
 }
 div.submit input{
     margin-right: 5px;
@@ -66,8 +68,8 @@ div.submit input{
 .dataTables_length{
   position: absolute;
   width: 100px;
-  top: 1px;
-  left: 219px;
+  top: 19px;
+  left: 249px;
 }
 .dataTables_length>label{
   width: 100%;  
