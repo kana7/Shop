@@ -88,7 +88,7 @@
                                 text = th.find(':hidden').text();
                         }
                         //On créer l'input
-                        var toggle = $('<li><input type="checkbox" name="toggle-cols" id="'+tableId+'-toggle-col-' + i + '" value="' + id + '"/><label for="'+tableId+'-toggle-col-' + i + '">' + text + '</label></li>');
+                        var toggle = $('<li class="noselect"><input type="checkbox" name="toggle-cols" id="'+tableId+'-toggle-col-' + i + '" value="' + id + '"/><label for="'+tableId+'-toggle-col-' + i + '">' + text + '</label></li>');
 
                         // On l'ajoute dans le menu
                         container.find("ul").append(toggle);
@@ -156,7 +156,7 @@
                     });
                 });
                 var menuWrapper = $('<div class="table-menu-wrapper" />'),
-                        menuBtn = $('<a href="#" class="table-menu-btn">Affichage</a>');
+                        menuBtn = $('<a href="#" class="table-menu-btn">Hide/Show</a>');
 
                 menuBtn.click(function () {
                     container.toggleClass("table-menu-hidden");

@@ -19,14 +19,7 @@ thead th, thead td{
 thead th:not(:last-child), thead td:not(:last-child){
     border-right: 1px solid #3C7EB8;
 }
-/*
-thead th:first-child, thead td:first-child{
-    border-radius: 10px 0px 0px 0px;
-}
-thead th:last-child, thead td:last-child{
-    border-radius: 0px 10px 0px 0px;
-}
-*/
+
 th, td {
     padding: 11px 13px;
     vertical-align: middle;
@@ -37,7 +30,7 @@ th, td {
 tbody tr>td:first-child,tbody tr>th:first-child {
     background-color: #E2EDF6;
 }
-table.highlight tbody tr:hover, tbody tr:hover{
+table.highlight tbody tr:hover, table.highlight tbody tr:hover{
     background-color: #F0F0F0 !important;
 }
 table.stripe tbody tr:nth-child(odd){
@@ -77,7 +70,7 @@ div.submit input{
 
 .dataTables_filter{
     position: absolute;
-    top: 6px;
+    top: 0px;
     left: 0;
     width: 200px;
     color: #686868;

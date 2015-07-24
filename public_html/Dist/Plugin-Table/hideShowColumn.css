@@ -102,20 +102,24 @@ div.table-menu li input[type=checkbox] {
     display: none;
 }
 div.table-menu li input[type=checkbox] + label:after{
-    display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
+    color: #428BCA;
+    float: right;
     width: 20px;
     height: 20px;
-    border: 1px solid #F5F5F5;
-    border-radius: 5px; 
+    border: 1px solid #DFDFDF;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 1px;
+    padding-right: 1px;
 }
 div.table-menu li input[type=checkbox]:checked + label:after {
     content: "\f00c";
     text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
-    font-size: 15px;
-    color: #f3f3f3;
-    text-align: center;
-    line-height: 15px;
+    border: 1px solid #DFDFDF;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px; 
 }
 
 .table-menu-wrapper{
@@ -128,17 +132,13 @@ div.table-menu li input[type=checkbox]:checked + label:after {
     top: 14px;
     clear: both;
     border-radius: 5px;
+    background-color: #F5F5F5;
     border: 1px solid #DFDFDF;
-    box-shadow: 0px 1px 0px 1px #B4B4B4;
+    /* box-shadow: 0px 1px 0px 1px #B4B4B4; */
     cursor: pointer;
 }
 .table-menu-wrapper:hover{
-    box-shadow: 0px 1px 0px 1px #B4B4B4;
-    background-color: #F5F5F5;
-}
-.table-menu-wrapper:active{
-    box-shadow: none;
-    top: 16px;
+    border-color: #B4B4B4;
 }
 .table-menu-wrapper>.table-menu-btn{
     color: #686868;
@@ -157,7 +157,7 @@ div.table-menu li label{
     float: left;
     display: inline-block;
     white-space: nowrap;    
-    width: 140px;
+    width: 100%;
     overflow: hidden;    
     text-overflow: ellipsis;
     text-align: left;
@@ -175,9 +175,7 @@ div.table-menu li label{
     z-index: 5;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.table-menu-wrapper:active>.table-menu{
-    top: 40px;
-}
+
 .table-menu-hidden {
     left: -999em;
     right: auto;

@@ -5,10 +5,11 @@
         <meta charset="UTF-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link href="css/layout-grid.css" rel="stylesheet" type="text/css" />
-        <link href="css/shop_base.css" rel="stylesheet" type="text/css"/>
-        <link href="css/shop_menu.css" rel="stylesheet" type="text/css"/>
-        <link href="js/pluginTable/hideShowColumn.css" rel="stylesheet" type="text/css"/>
+        <link href="../Dist/Responsive-Kit/css/layout-grid.css" rel="stylesheet" type="text/css" />
+        <link href="../Dist/Menu-Responsive/css/shop_base.css" rel="stylesheet" type="text/css"/>
+        <link href="../Dist/Menu-Responsive/css/shop_menu.css" rel="stylesheet" type="text/css"/>
+        <link href="../Dist/Tooltip/css/shop_ui.css" rel="stylesheet" type="text/css"/>
+        <link href="../Dist/Plugin-Table/hideShowColumn.css" rel="stylesheet" type="text/css"/>
         <link href="css/main2.css" rel="stylesheet" type="text/css"/>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -297,7 +298,7 @@
                             </div>
                         </div>
                         <div id="iframe" style="padding-left:30px; padding-right: 30px; position: relative; min-height: 890px;">
-                            <table id="table1">
+                            <table id="table1" class="highlight">
                                 <thead>
                                     <tr>
                                         <th class="essential">Nom Prénom</th>
@@ -889,12 +890,12 @@
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="js/shop_menu.js"></script>
-        <script type="text/javascript" src="js/shop_mainFunction.js"></script>
-        <script type="text/javascript" src="js/pluginTable/hideShowColumn.js"></script>
-        <script type="text/javascript" src="js/pluginTable/stickyTableHeader.js"></script>
-        <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="../Ressources/jquery.js"></script>
+        <script type="text/javascript" src="../Dist/Menu-Responsive/js/shop_mainFunction.js"></script>
+        <script type="text/javascript" src="../Dist/Menu-Responsive/js/shop_menu.js"></script>
+        <script type="text/javascript" src="../Dist/Plugin-Table/hideShowColumn.js"></script>
+        <script type="text/javascript" src="../Dist/Plugin-Table/stickyTableHeader.js"></script>
+        <script type="text/javascript" src="../Ressources/jquery.dataTables.min.js"></script>
         <script>
             $('#table1').hideShowColumn();
             $('#table1').DataTable();
