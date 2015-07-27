@@ -95,10 +95,24 @@ div.submit input{
     padding-left: 10px;
 }
 .table-wrapper{
-    border-top: 1px #DFDFDF;
-    border-bottom: 1px #DFDFDF;
+    border-top: 1px solid #DFDFDF;
+    border-bottom: 1px solid #DFDFDF;
     border-top-style: solid;
     border-bottom-style: solid;
     position: relative;
     padding-top: 60px; 
+    padding-bottom: 25px;
+}
+
+.dataTables_info, .dataTables_paginate{
+    position: absolute;
+    bottom: 8px;
+}
+.dataTables_paginate{
+    right: 0;
+    width: 15%;
+    text-align: right;
+}
+.dataTables_paginate>*{
+    margin-left: 10px;
 }
