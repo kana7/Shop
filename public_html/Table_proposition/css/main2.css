@@ -29,6 +29,9 @@ th, td {
 
 tbody tr>td:first-child,tbody tr>th:first-child {
     background-color: #E2EDF6;
+    background-color: rgba(60, 126, 184, 0.13);
+    border-left: 1px solid #B4B4B4;
+    border-right: 1px solid #B4B4B4;
 }
 table.highlight tbody tr:hover, table.highlight tbody tr:hover{
     background-color: #F0F0F0 !important;
@@ -60,17 +63,26 @@ div.submit input{
 
 .dataTables_length{
   position: absolute;
-  width: 100px;
-  top: 19px;
-  left: 249px;
+  width: 132px;
+  top: 25px;
+  left: 240px;
 }
 .dataTables_length>label{
   width: 100%;  
+  color: #686868;
+  height: 35px;
+}
+.dataTables_length>label>select{
+    border: 1px solid #B4B4B4;
+    border-radius: 4px;
+    height: 30px;
+    margin-left: 3px;
+    margin-right: 3px;
 }
 
 .dataTables_filter{
     position: absolute;
-    top: 0px;
+    top: -2px;
     left: 0;
     width: 200px;
     color: #686868;
@@ -87,7 +99,7 @@ div.submit input{
     width: 100%;
     height: 26px;
     border: 1px solid #B4B4B4;
-    border-radius: 5px;
+    border-radius: 4px;
     font-size: 10pt;
     color: #686868;
     -moz-box-shadow: inset 0 0 4px rgba(0,0,0,0.2);   
@@ -96,9 +108,9 @@ div.submit input{
 }
 .table-wrapper{
     border-top: 1px solid #DFDFDF;
-    border-bottom: 1px solid #DFDFDF;
+    /* border-bottom: 1px solid #DFDFDF; */
     border-top-style: solid;
-    border-bottom-style: solid;
+    /* border-bottom-style: solid; */
     position: relative;
     padding-top: 60px; 
     padding-bottom: 25px;
@@ -106,13 +118,18 @@ div.submit input{
 
 .dataTables_info, .dataTables_paginate{
     position: absolute;
-    bottom: 8px;
+    bottom: 7px;
 }
 .dataTables_paginate{
-    right: 0;
+    right: 13px;
     width: 15%;
     text-align: right;
+    font-size: 10pt;
 }
 .dataTables_paginate>*{
     margin-left: 10px;
+}
+.dataTables_info{
+  color: #686868;  
+  left: 13px;
 }

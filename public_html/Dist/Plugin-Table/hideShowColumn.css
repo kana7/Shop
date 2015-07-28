@@ -127,12 +127,11 @@ div.table-menu li input[type=checkbox]:checked + label:after {
     position: absolute;
     right: 0;
     display: inline-block;
-    top: 14px;
+    top: 15px;
     clear: both;
-    border-radius: 5px;
+    border-radius: 4px;
     background-color: #F5F5F5;
     border: 1px solid #DFDFDF;
-    /* box-shadow: 0px 1px 0px 1px #B4B4B4; */
     cursor: pointer;
 }
 .table-menu-wrapper:hover{
