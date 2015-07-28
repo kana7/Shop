@@ -70,6 +70,7 @@ table.hideShow td.essential {
 div.table-menu ul{
     list-style: none;
     width: 100%;    
+    display: inline-block;
     padding: 0;    
     margin: 0 auto;
 }
@@ -103,23 +104,20 @@ div.table-menu li input[type=checkbox] {
 }
 div.table-menu li input[type=checkbox] + label:after{
     font: normal normal normal 14px/1 FontAwesome;
+    content: "";
     color: #428BCA;
     float: right;
-    width: 20px;
-    height: 20px;
-    border: 1px solid #DFDFDF;
-    border-radius: 5px;
+    width: 19px;
+    height: 19px;
+    border: 1px solid #B4B4B4 !important;
+    box-shadow: inset 0px 1px 2px #DFDFDF;
+    border-radius: 2px;
     text-align: center;
     padding-top: 1px;
-    padding-right: 1px;
+    padding-right: 0px;
 }
 div.table-menu li input[type=checkbox]:checked + label:after {
     content: "\f00c";
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
-    border: 1px solid #DFDFDF;
-    width: 20px;
-    height: 20px;
-    border-radius: 5px; 
 }
 
 .table-menu-wrapper{
@@ -171,7 +169,7 @@ div.table-menu li label{
     border-radius: 5px;
     border: 1px solid #B4B4B4;
     font-size: 1.2em;
-    width: 14em;
+    width: 235px;
     z-index: 5;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
