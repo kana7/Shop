@@ -104,9 +104,11 @@ div.table-menu li input[type=checkbox] {
 }
 div.table-menu li input[type=checkbox] + label:after{
     font: normal normal normal 14px/1 FontAwesome;
+    position: absolute;
+    right: 15px;
+    display: inline-block;
     content: "";
     color: #428BCA;
-    float: right;
     width: 19px;
     height: 19px;
     border: 1px solid #B4B4B4 !important;
