@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<HTML>
+    <head>
+        <TITLE>Luxembourg Online S.A. - Online Shopping System</TITLE>
+        <link rel="stylesheet" type="text/css" href="css/ossbo_menu.css">
+        <link rel="stylesheet" type="text/css" href="css/ossbo_div.css">
+        <link rel="stylesheet" type="text/css" href="css/ossbo_usermenu.css">
+        <link rel="stylesheet" type="text/css" href="css/oga_popup.css">
+        <script type="text/javascript" src="js/popup/popup.js"></script> <link rel="stylesheet" href="css/popup/popupMain.css" type="text/css" media="screen" />
+        <script type="text/javascript" src="js/ossbo_globalVariable.js"></script>
+        <script type="text/javascript" src="js/ossbo_usermenu.js"></script>
+        <script>var _Lang = 2</script>
+        <script type="text/javascript" src="js/ossbo_uLinkManagement.js"></script>
+        <script type="text/javascript" src="js/oga_urlAjax.js"></script>
+        <script src="http://jquery.bluechameleon.com/js/jquery-1.9.1.js"></script>
+        <script src="http://jquery.bluechameleon.com/js/ui_1.10.2/jquery-ui.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/menu.css" >
+        <link rel="stylesheet" type="text/css" href="css/menu_specific.css" >
+        <script src="/js/menu.js"></script>
+        <script>
+            $(function () {
+                $("#footerDiv").css("top", $("#site").height() + $("#menu").height() + 10 + 'px');
+                $(window).resize(function () {
+                    $("#footerDiv").css("top", $("#site").height() + $("#menu").height() + 10 + 'px');
+                });
+            });
+        </script>
+    </head>
+    <body >
+        <input type="hidden" id="isAppletLoadedCRM" value="-2">
+        <div id="menu">
+            <ul class="menu">
+                <li id=1 class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=MainMenu.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj"><span >Accueil</span></a></li>
+                <li id=3 class="main"><a href="#" class="parent"><span >G&eacute;n&eacute;ral</span></a>
+                    <ul>	
+                        <li id=15 class="main"><a href="#" class="parent"><span >Commer&ccedil;ant</span></a>
+                            <ul>	
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMerchant.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Commer&ccedil;ant</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewShops.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Magasins</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=CashRegisterManage.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Caisses enregistreuses</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewClients.phs&ContextUsage=1&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Fournisseurs</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewReseller.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Revendeurs</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewSalesman.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Vendeurs</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewCommissionSet.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Contrats de commissions</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMerchantSLA.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Service level agreements</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewCreditCtrlClass.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Classes de contr&ocirc;le de cr&eacute;dit</span></a></li>
+                            </ul>
+                        </li>
+                        <li id=35 class="main"><a href="#" class="parent"><span >Utilisateurs</span></a>
+                            <ul>	
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewUsers.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Utilisateurs</span></a></li>
+                            </ul>
+                        </li>
+                        <li id=37 class="main"><a href="#" class="parent"><span >Personnalisation</span></a>
+                            <ul>	
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewCustomStatus.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Etats personnalis&eacute;s</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewLibrary.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Librairies personnalis&eacute;es</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewScripts.phs&Param=2000&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Scripts menu</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewScripts.phs&Param=1000&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Scripts personnalis&eacute;s</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewScripts.phs&Param=0&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Scripts syst&egrave;me</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewScripts.phs&Param=3000&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Scripts d&apos;impression</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewCustomText.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Textes personnalis&eacute;s</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewScripts.phs&Param=4000&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Scripts programm&eacute;s</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=TaskManage.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Gestion de t&acirc;ches</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewPrintTemplate.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Mod&egrave;les d&apos;impression</span></a></li>
+                            </ul>
+                        </li>
+                        <li id=38 class="main"><a href="#" class="parent"><span >Divers</span></a>
+                            <ul>	
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewDelivery.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Modes de livraison</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewDeliverySet.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Sets de livraison</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewPayment.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Modes de paiement</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewPaymentSet.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Sets de paiement</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewTaxes.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Taxes</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewToken.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Jetons</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewImages.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Images</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li id=36 class="main"><a href="#" class="parent"><span >Articles</span></a>
+                    <ul>	
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ArtManage.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Articles</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=CatManage.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Cat&eacute;gories</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=StockManage.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Stock</span></a></li>
+                        <li id=40 class="main"><a href="#" class="parent"><span >Configuration</span></a>
+                            <ul>	
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=IndexManage.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Index</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewKeys.phs&Param=0&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Cl&eacute;s de recherche</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewKeys.phs&Param=1&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Cl&eacute;s de d&eacute;tail</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewKeys.phs&Param=2&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Cl&eacute;s de d&eacute;tail variable</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewPriceType.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Types de prix</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewStatCategories.phs&ContextObjectType=1&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Cat&eacute;gories de statistiques de commandes</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewStatCategories.phs&ContextObjectType=2&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Cat&eacute;gories de statistiques de facturation</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewArtTypes.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Types d&apos;article</span></a></li>
+                    </ul>
+                </li>
+                <li id=5 class="main"><a href="#" class="parent"><span >Clients</span></a>
+                    <ul>	
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewCatArts.phs&_ClearCart=1&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Passer commande</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=AddShopOrder.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Vente en magasin</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewClients.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Clients</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=SubscriptionManage.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Abonnements</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewOrders.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Commandes</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewStatistics.phs&ContextObjectType=1&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Statistiques de commandes</span></a></li>
+                        <li id=39 class="main"><a href="#" class="parent"><span >Personnalisation</span></a>
+                            <ul>	
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewClientAttr.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Attributs client</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewOrderAttr.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Attributs commande</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=95&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=95" target="site" ><span >FreeManage</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=218&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=218" target="site" ><span >Credit Control</span></a></li>
+                    </ul>
+                </li>
+                <li id=6 class="main"><a href="#" class="parent"><span >Vente</span></a>
+                    <ul>	
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=BillManage.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Facturation</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=AccountManage.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Paiements client</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewStatistics.phs&ContextObjectType=2&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Statistiques de facturation</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=DebtOrderManage.phs&ContextObjectType=201&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Domiciliations</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=DebtOrderManage.phs&ContextObjectType=101&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Paiements par carte de cr&eacute;dit</span></a></li>
+                        <li id=41 class="main"><a href="#" class="parent"><span >Comptes bancaires commer&ccedil;ant</span></a>
+                            <ul>	
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewBankAccount.phs&Param2=1&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Comptes bancaires</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewBankAccount.phs&Param2=3&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Comptes notes de cr&eacute;dit</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewBankAccount.phs&Param2=2&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Comptes caisse</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ExternalManage.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Syst&egrave;me externe</span></a></li>
+                    </ul>
+                </li>
+                <li id=7 class="main"><a href="#" class="parent"><span >Acc&egrave;s Internet</span></a>
+                    <ul>	
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=7&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=7" target="site" ><span >ADSL</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=11&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=11" target="site" ><span >CATV</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=13&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=13" target="site" ><span >Eltrona CATV</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=21&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=21" target="site" ><span >Esch CATV</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=17&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=17" target="site" ><span >Ettelbruck CATV</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=101&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=101" target="site" ><span >NSN CATV</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=116&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=116" target="site" ><span >Walferdange CATV</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=145&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=145" target="site" ><span >Mondercange CATV</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=67&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=67" target="site" ><span >D&eacute;groupage</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=83&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=83" target="site" ><span >D&eacute;groupage ADSL</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=118&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=118" target="site" ><span >D&eacute;groupage SDSL</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=168&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=168" target="site" ><span >HotspotEsch</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=200&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=200" target="site" ><span >HotspotLOL</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=184&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=184" target="site" ><span >LOL Fiber (POST)</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=216&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=216" target="site" ><span >LOL Fiber (FTTH/FTTO)</span></a></li>
+                    </ul>
+                </li>
+                <li id=8 class="main"><a href="#" class="parent"><span >T&eacute;l&eacute;phonie</span></a>
+                    <ul>	
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=61&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=61" target="site" ><span >Line Rental Service</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=25&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=25" target="site" ><span >Classic Phone</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=84&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=84" target="site" ><span >D&eacute;groupage Phone</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=85&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=85" target="site" ><span >CATVPhone</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=34&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=34" target="site" ><span >I-Phone</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=138&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=138" target="site" ><span >PABXPhone</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=57&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=57" target="site" ><span >Portabilit&eacute;</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=53&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=53" target="site" ><span >PhoneBook</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=36&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=36" target="site" ><span >CDR Tarification</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=96&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=96" target="site" ><span >LOL Mobile</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=100&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=100" target="site" ><span >Vox Articles</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=153&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=153" target="site" ><span >Sip Server</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=161&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=161" target="site" ><span >Service ISDN (Patton)</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=162&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=162" target="site" ><span >Numero ISDN (Patton)</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=193&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=193" target="site" ><span >Num&eacute;rotation t&eacute;l&eacute;phonique</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=212&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=212" target="site" ><span >Statistiques telephonie</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=243&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=243" target="site" ><span >Fax to Mail</span></a></li>
+                    </ul>
+                </li>
+                <li id=43 class="main"><a href="#" class="parent"><span >IPTV</span></a>
+                    <ul>	
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=169&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=169" target="site" ><span >IPTV</span></a></li>
+                    </ul>
+                </li>
+                <li id=9 class="main"><a href="#" class="parent"><span >Autres</span></a>
+                    <ul>	
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=16&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=16" target="site" ><span >HelpDesk</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=51&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=51" target="site" ><span >News</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=43&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=43" target="site" ><span >Agenda</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=18&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=18" target="site" ><span >Import DB (PT)</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=93&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=93" target="site" ><span >Services manuels</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=105&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=105" target="site" ><span >Materiel</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=112&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=112" target="site" ><span >Ordonnance</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=103&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=103" target="site" ><span >GIS</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=135&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=135" target="site" ><span >CRM</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=148&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=148" target="site" ><span >Traps SNMP</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=133&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=133" target="site" ><span >Gestion des fichiers</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=174&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=174" target="site" ><span >Documentation</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=178&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=178" target="site" ><span >Alarmes</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=176&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=176" target="site" ><span >Documents</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=152&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=152" target="site" ><span >HRM</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=177&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=177" target="site" ><span >Task list</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=183&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=183" target="site" ><span >EPT Command</span></a></li>
+                        <li id=48 class="main"><a href="#" class="parent"><span >Call center</span></a>
+                            <ul>	
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=191&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=191" target="site" ><span >CallCenter</span></a></li>
+                                <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=192&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=192" target="site" ><span >In progress</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=186&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=186" target="site" ><span >Property</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=196&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=196" target="site" ><span >R&eacute;siliation</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=197&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=197" target="site" ><span >Ech&eacute;ancements</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=198&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=198" target="site" ><span >Amortization</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=199&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=199" target="site" ><span >Mur</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=204&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=204" target="site" ><span >StreetMap</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=205&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=205" target="site" ><span >ServiceMap</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=217&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=217" target="site" ><span >Enqu&ecirc;te</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=112&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=112" target="site" ><span >Ordonnance</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=224&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=224" target="site" ><span >Failures</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=225&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=225" target="site" ><span >Annuaire</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=226&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=226" target="site" ><span >Intervention</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=228&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=228" target="site" ><span >Aide</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=229&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=229" target="site" ><span >Projets/T&acirc;ches</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=231&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=231" target="site" ><span >HDA</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=244&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=244" target="site" ><span >Contrat</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=238&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=238" target="site" ><span >CheckLists</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=245&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=245" target="site" ><span >Rapports</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=247&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=247" target="site" ><span >Pointer</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=250&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=250" target="site" ><span >GPS Tracker</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=256&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=256" target="site" ><span >Ev&eacute;nements [Marketing]</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=261&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=261" target="site" ><span >Ev&eacute;nements [D&eacute;veloppement]</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=264&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=264" target="site" ><span >RadiusInfo</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=265&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=265" target="site" ><span >FacebookApp</span></a></li>
+                    </ul>
+                </li>
+                <li id=10 class="main"><a href="#" class="parent"><span >OGA</span></a>
+                    <ul>	
+                        <li id=12 class="main"><a href="#" class="parent"><span >Compte</span></a>
+                            <ul>	
+                                <li><a href="#"><span><hr></span></a></li>
+                            </ul>
+                        </li>
+                        <script>
+                            $("#12").addClass("_remove_no_right");
+                        </script>
+                        <li id=13 class="main"><a href="#" class="parent"><span >Ecriture</span></a>
+                            <ul>	
+                            </ul>
+                        </li>
+                        <script>
+                            $("#13").addClass("_remove_no_right");
+                        </script>
+                        <li id=14 class="main"><a href="#" class="parent"><span >Option</span></a>
+                            <ul>	
+                            </ul>
+                        </li>
+                        <script>
+                            $("#14").addClass("_remove_no_right");
+                        </script>
+                        <li id=33 class="main"><a href="#" class="parent"><span >Administration</span></a>
+                            <ul>	
+                            </ul>
+                        </li>
+                        <script>
+                            $("#33").addClass("_remove_no_right");
+                        </script>
+                    </ul>
+                </li>
+                <script>
+                    $("#10").addClass("_remove_no_right");
+                </script>
+                <li id=42 class="main"><a href="#" class="parent"><span >Statistiques</span></a>
+                    <ul>	
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=114&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=114" target="site" ><span >S&eacute;rie de valeurs</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=124&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=124" target="site" ><span >G&eacute;rer les graphes</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewMenuScript.phs&_MerchantId=1&_CustomScriptId=125&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&_CustomScriptId=125" target="site" ><span > Visualiser les graphes</span></a></li>
+                    </ul>
+                </li>
+                <li id=11 class="main"><a href="#" class="parent"><span >Option</span></a>
+                    <ul>	
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=MenuManage.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Menu principal</span></a></li>
+                        <li class="main"><a href="http://www.google.fr" target="blank" ><span >Google</span></a></li>
+                        <li class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=WelcomeGetProcList.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" target="site" ><span >Ajouter une box</span></a></li>
+                    </ul>
+                </li>
+                <li id=2 class="main"><a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=MainLogout.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" ><span >D&eacute;connexion</span></a></li>
+            </ul>
+        </div>	
+        <input type="hidden" value="" id="elementFocus" />
+        <!--Get user menu configuration -->
+        <input type="hidden" value="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ULinkManageUpdate.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" id="saveUsefullLink" />
+        <div style="height:92%;margin:0px" onclick="closeMenuPopup()">
+            <!-- user menu definition -->
+            <div id="usefullLinkDiv" onclick="onClickMenu('')" style="position:absolute;float:left;display:block;width:14%;left:9px;border:0px solid;margin-top:0px;" oncontextmenu="testOpenMenu(document.getElementById('usefullLink'),event,'');return false;" class="uLinkDiv">
+                <script>
+                    function addHREF(aElement, i)
+                    {
+                        if (parseInt(i) == 1)
+                        {
+                            aElement.name = 0;
+                        }
+                        else
+                        {
+                            aElement.name = 1;
+                        }
+                    }
+                    /*	setSQLWWWHOME('');
+                     var iIndexPopup1 = PopupCreate(320,165,"Gestion du menu utilisateur","");
+                     document.getElementById("_iIndexPopup1").value = iIndexPopup1;
+                     AddButtonFooter(iIndexPopup1,"Ajouter","UrlManagement()");
+                     AddQuitButtonFooter(iIndexPopup1,"Quitter");*/
+                </script>
+                <input type=hidden id=updatePosition value='http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ULinkManageUpdate.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj'>
+                <input type=hidden id=updateBody value='http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ULinkManagePopup.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj'>
+                <div id="usefullLink" width="189px" style="margin-top:0px;min-height: 96%;" >
+                    <DIV id=noMove><B>Luxembourg Online S.A.</B></DIV>
+                    <br>
+                    <!--div id=noMove class="link" onmouseover="onMouseOverDiv(this,2);" onmouseout="onMouseOutDiv(this,2);" onclick="addUsefullLink()" oncontextmenu='openMenu(this,event,"");return false;'>
+                    <a name="1" >Ajouter raccourcis</a></div-->
+                    <div >
+                        <div id="0" class="link" onmouseover="onMouseOverDiv(this, 2);" onmouseout="onMouseOutDiv(this, 2);" onmousedown="moveDiv(this, 2)" onclick="clickLinkMenu(1, this)" oncontextmenu='openMenu(this,event,"");return false;'>
+                            <a href="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewCatArts.phs&_ClearCart=1&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&idYear=idYear&idMenu=265.42.1.2" id="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=ViewCatArts.phs&_ClearCart=1&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj&idYear=idYear&idMenu=265.42.1.2" target="site" onmouseover="addHREF(this, 1);" onmouseout="addHREF(this, 2)" name="1">Passer commande</a></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Body for the Shop -->	
+            <iframe src="http://shop.internet.lu/Scripts/sql.exe?SqlDB=ossLOLShop&Sql=WelcomeMain.phs&xid=1425639658cfpjcaojejbhfpdkcojghhnacaiehihhfedpdgipenhbopbnbgamlj" name="site" id="site" onclick="onClickMenu('')" frameborder="0" style="position:absolute;width:84%;left:15%" class="uLinkDiv" MARGINHEIGHT="0px" MARGINWIDTH="0px" scrolling="auto">
+            </iframe>
+            <!-- Button for manage Usermenu visibility -->
+            <div style="position:absolute;border:0px solid;left:0px;zindex:100;">
+                <img src="img/hide.gif" onclick="hideLink('', this, 1)">
+            </div>
+        </div>
+        <div id="footerDiv" onclick="onClickMenu('')" style="display:block;width:99%;left:9px;border:0px solid;border-top:1px solid #7682A3;position:absolute;top:50px;">
+            <P style="text-align:center;margin-top:4px;margin-bottom:0px">
+                <A style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="window.frames['site'].history.back();">Retour</A>
+                - <A style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="window.frames['site'].location.reload();">Actualiser</A>
+                - <A style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="if ('Microsoft Internet Explorer' == navigator.appName)
+            window.frames['site'].focus();
+        window.frames['site'].print();">Imprimer</A>
+                <!--	delete this at 2015 01 22 
+                not used
+                - <A style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="addUsefullLink()">Ajouter comme lien</A> 
+                -->
+            </P>
+        </div>
+        <input type="hidden" id="_iIndexPopupURL" value="" />
+        <input type="hidden" id="_iIndexPopupLink" value="" />
+        <script>
+            setSQLWWWHOME('');
+            var iIndexPopup1 = PopupCreate(320, 165, "Gestion du menu utilisateur", "");
+            document.getElementById("_iIndexPopupURL").value = iIndexPopup1;
+            var _ButtonUrlAdd = "Ajouter";
+            var _ButtonUrlModify = "Modifier";
+            AddButtonFooter(iIndexPopup1, _ButtonUrlAdd, "addUrl()");
+            AddButtonFooter(iIndexPopup1, _ButtonUrlModify, "updateUrl()");
+            AddQuitButtonFooter(iIndexPopup1, "Quitter");
+            var iIndexPopup2 = PopupCreate(320, 300, "Gestion du menu utilisateur", "");
+            document.getElementById("_iIndexPopupLink").value = iIndexPopup2;
+            var _ButtonUrlAdd = "Ajouter";
+            var _ButtonUrlModify = "Modifier";
+            AddButtonFooter(iIndexPopup2, _ButtonUrlAdd, "addLink()");
+            AddButtonFooter(iIndexPopup2, _ButtonUrlModify, "modifyLink()");
+            AddQuitButtonFooter(iIndexPopup2, "Quitter");
+        </script>	
+        <script type="text/javascript">
+            if (parent.document.getElementsByTagName("IFRAME").length != 0)
+                parent.document.title = "Luxembourg Online S.A. - Online Shopping System";
+            else
+                document.title = "Luxembourg Online S.A. - Online Shopping System";
+        </script>
+    </body>
+</HTML>

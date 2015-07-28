@@ -1,0 +1,21 @@
+	.div_menu{
+		color: #428BCA;
+	
+		white-space: nowrap;
+		text-overflow: ellipsis;
+}
+	
+	.div_sub_menu_container{
+		color: #428BCA;
+	}
+	
+	.div_sub_menu{
+		color: #428BCA;
+	}
+	
+	.div_menu:hover{
+		background:#428BCA;
+	}
+	.div_sub_menu:hover{
+		background:#428BCA;
+	}

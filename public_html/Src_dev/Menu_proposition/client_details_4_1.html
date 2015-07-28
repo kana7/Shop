@@ -10,23 +10,18 @@ Quentin Fonck
         <meta charset="UTF-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link href="css/shop_ui.css" type="text/css" rel="stylesheet"/>
-        <link rel="stylesheet" type="text/css" href="../../Ressources/bootstrap.min.css"/>
-        <link rel="stylesheet" type="text/css" href="../../Dist/Responsive-Kit/css/layout-grid.css"/>
-        <link rel="stylesheet" href="../../Ressources/font-awesome-4.3.0/css/font-awesome.min.css"/>
-        <link href="css/ossbo.css" rel="stylesheet" type="text/css"/>
-        <link href="css/ossbo_box.css" rel="stylesheet" type="text/css"/>
-        <link href="css/ossbo_services.css" rel="stylesheet" type="text/css" media="screen"/>
-        <link href="css/ossprint.css" rel="stylesheet" type="text/css" media="print"/>
-        <link href="http://jquery.bluechameleon.com/js/themes/redmond/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" type="text/css" href="css/ossbo_menu.css"/>
-        <link rel="stylesheet" type="text/css" href="css/ossbo_div.css"/>
-        <link rel="stylesheet" type="text/css" href="css/ossbo_new_usermenu.css"/>
-        <link rel="stylesheet" type="text/css" href="css/ossbo_new_usermenu_color.css"/>
-        <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu_4_1_1.css"/>
-        <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu_color.css"/>
+        <link rel="stylesheet" type="text/css" href="css/layout-grid.css"/>
+        <link rel="stylesheet" href="../Menu_proposition/font-awesome-4.3.0/css/font-awesome.css">
+        <link href="css/ossbo.css" rel="stylesheet" type="text/css">
+        <link href="css/ossbo_box.css" rel="stylesheet" type="text/css">
+        <link href="css/ossbo_services.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="css/ossprint.css" rel="stylesheet" type="text/css" media="print">
         <script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
+        <style type="text/css">
+
+        </style>
+        <link href="http://jquery.bluechameleon.com/js/themes/redmond/jquery.ui.all.css" rel="stylesheet" type="text/css">
         <style>
             #ui-datepicker-div {
                 display: none
@@ -40,159 +35,141 @@ Quentin Fonck
         <![endif]-->
     </head>
     <body>
+        <script type="text/javascript">
+            if (parent.document.getElementsByTagName("IFRAME").length != 0)
+                parent.document.title = "Master Démo - Online Shopping System";
+            else
+                document.title = "Master Démo - Online Shopping System";</script>	
+        <link rel="stylesheet" type="text/css" href="css/ossbo_menu.css">
+        <link rel="stylesheet" type="text/css" href="css/ossbo_div.css">
+        <link rel="stylesheet" type="text/css" href="css/ossbo_new_usermenu.css">
+        <link rel="stylesheet" type="text/css" href="css/ossbo_new_usermenu_color.css">
+        <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu_4_1_1.css">
+        <link rel="stylesheet" type="text/css" href="css/ossbo_new_merchantmenu_color.css">
+        <script>
+            function toggleMenu(idObject) {
+                var img_element = $("#more_img_" + idObject);
+                if ($(img_element).attr("src") == "images/expand_more.png")
+                    $(img_element).attr("src", "images/expand_less.png");
+                else
+                    $(img_element).attr("src", "images/expand_more.png");
+                $("#SubMenu_" + idObject).slideToggle('fast');
+            }
+            function open_in_new_window(href) {
+                window.open(href);
+                return false;
+            }
+            function open_in_site_window(href) {
+                window.open(href, "site");
+                //eval("site.location='href'");
+                return false;
+            }
+            $(function () {
+                $(".sub_menu_hide").hide();
+                $(".div_menu_external_link").mouseup(function (e) {
+                    if (e.which != 3)
+                    {
+                        var href = $(this).attr("data-href");
+                        var _link = "";
+                        if (href.indexOf('http://') == -1 && href.indexOf('https://') == -1)
+                            _link = "http://" + href;
+                        else
+                            _link = href;
+                        open_in_new_window(_link);
+                    }
+                });
+                $(".div_menu_internal_link").mouseup(function (e) {
+                    var _url = $(this).attr("data-href");
+                    var _type = parseInt($(this).attr("data-iType"), 10);
+                    var _link = "";
+                    if (_type == 1 || _type == 4)
+                    {
+                        _link = "http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + _url + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear"
+                        if (e.which == 2)
+                            open_in_new_window(_link);
+                        else if (e.which == 1)
+                            open_in_site_window(_link);
+                    }
+                    else if (_type == 2 && e.which != 3)
+                    {
+                        if (_url.indexOf('http://') == -1 && _url.indexOf('https://') == -1)
+                            _link = "http://" + _url;
+                        else
+                            _link = _url;
+                        open_in_new_window(_link);
+                    }
+                    else if (_type == 3 && e.which != 3)
+                        eval(_url);
+                });
+            });</script>
         <input type="hidden" id="isAppletLoadedCRM" value="-2">
-        <div style="position:absolute;width:3px;height:100%;border:0px solid red;z-index:50000;left:0;top:0;" onmouseover="open_merchant_menu_option(event)">
-            &nbsp;
-        </div>
-        <div class="option_menu_user" style="opacity: 1; margin-left: 1px; top: 921px;">
+        <script>
+            $(function () {
+                $('button#toggle-nav').click(function () {
+                    event.stopPropagation();
+                    if (viewport().width > 992) {
+                        $(this).toggleClass('open');
+                        if ($('#page').hasClass('open-usermenu')) {
+                            $('.LogoArea').css({"width": $('.LogoArea').innerWidth()});
+                        } else {
+                            $('.LogoArea').css({"width": (viewport().width) * 0.16666666666666667});
+                        }
+                        $('#page').toggleClass('open-usermenu');
+                        if (('#page').hasClass('open-usermenu')) {
+                            $('#overlay').addClass('open');
+                        } else {
+                            $('#overlay').removeClass('open');
+                        }
+                    }
+                });
+
+                $('html').click(function (event) {
+                    if (viewport().width <= 992) {
+                        var element = $('.menu_user_zone');
+                        if (!element.is(event.target) && element.has(event.target).length === 0) {
+                            $('#page.open-usermenu').removeClass('open-usermenu');
+                            $('#overlay.open').removeClass('open');
+                        }
+                    }
+                });
+
+                var doit;
+                $(window).resize(function () {
+                    moveIcon();
+                    $('.main_zone, .menu_user_zone').addClass('notransition');
+                    $('.LogoArea').css({"width": "100%"});
+                    $('#overlay.open').removeClass('open');
+                    $('#page.open-usermenu').removeClass('open-usermenu');
+                    clearTimeout(doit);
+
+                    doit = setTimeout(function () {
+                        $('.main_zone.notransition, .menu_user_zone.notransition').removeClass('notransition');
+                    }, 100);
+                });
+            });
+
+            function openMenuManage() {
+                //window.open("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&_MerchantId=1&Sql=MenuUserManage.phs", "site");
+            }
+        </script>
+        <!--<div class="option_menu_user hidden" style="opacity: 1; margin-left: 1px; top: 921px;">
             <a href="#" id="toggle-nav"><img class="option_menu_user_img option_menu_user_img_toggle" src="images/arrow_left.png" data-toggle_user_menu_value="49"></a>
             <br>
             <img class="option_menu_user_img option_menu_user_img_option" src="images/wheel.png" onclick="openMenuManage()">
-        </div>
+        </div>-->
         <div id="page" class="container-fluid">
             <div id="canvas" class="row">
-                <div class="menu_user_zone desk-2" style="overflow:hidden;">
+                <div class="menu_user_zone desk-2">
                     <div class=" div_menu_user" style="width:100%;">
-                        <style>
-                            #page{
-                                position: relative;
-                                overflow: hidden;
-                                width: 100%;
-                            }
-                            #page>#canvas>.main_zone>.overlay{
-                                display: none;
-                            }
-                            @media (min-width: 992px){
-                                #canvas>.menu_user_zone, #canvas>.main_zone{
-                                    -webkit-transition: 500ms ease all;
-                                    transition: 500ms ease all;
-                                }
-                                #page.open-usermenu>#canvas>.menu_user_zone{
-                                    width: 16.66666667%;
-                                }
-                                #page.open-usermenu>#canvas>.main_zone{
-                                    width: 83.33333333%;
-                                }
-                                #page>#canvas>.menu_user_zone{
-                                    width: 0%;
-                                }
-                            }
-                            @media (max-width: 991px){
-                                #page>#canvas{
-                                    height: 100%;
-                                    position: relative;
-
-                                    -webkit-transform: translateX(0);
-                                    transform: translateX(0);
-
-                                    -webkit-transform: translate3d(0, 0, 0);
-                                    transform: translate3d(0, 0, 0);
-
-                                    -webkit-transition:  all 500ms ease;
-                                    transition: all 500ms ease;
-
-                                    -webkit-backface-visibility: hidden;
-                                    backface-visibility: hidden;
-                                }
-                                #page>#canvas>.main_zone>.overlay {
-                                    z-index: 10;
-                                    position: absolute;
-                                    height: 100%;
-                                    top: 0;
-                                    left: 0;
-                                    right: 0;
-                                    /*zoom: 1; 
-                                    filter: alpha(opacity=00); 
-                                    opacity: 0;*/
-                                    -webkit-transition: opacity 0.5s ease-in-out;
-                                    -moz-transition: opacity 0.5s ease-in-out;
-                                    -ms-transition: opacity 0.5s ease-in-out;
-                                    -o-transition: opacity 0.5s ease-in-out;
-                                    transition: opacity 0.5s ease-in-out;
-                                    background: rgb(0, 0, 0);
-                                }
-                                /*#page.open-usermenu>#canvas>.main_zone>.overlay{
-                                    display: block;
-                                    zoom: 1; 
-                                    filter: alpha(opacity=70); 
-                                    opacity: 0.7;
-                                }*/
-                                #page.open-usermenu>#canvas {
-                                    -webkit-transform: translateX(300px);
-                                    transform: translateX(300px);
-
-                                    -webkit-transform: translate3d(300px, 0, 0);
-                                    transform: translate3d(300px, 0, 0);
-                                }
-                                .menu_user_zone{
-                                    width: 300px;
-                                    height: 100%;
-                                    position: absolute;
-                                    top: 0;
-                                    left: -300px;
-                                }
-                            }
-                            #page>#canvas>.main_zone{
-                                width: 100%;
-                            }
-                            div_menu div_menu_internal_link{
-                                white-space: nowrap;
-                            }
-                            .LogoArea>img{
-                                width: 100%;
-                            }
-                            .option_menu_user{
-                                width:40px;
-                                height:62px;
-                                position:absolute;
-                                z-index:50001;
-                                opacity: 0;
-                                margin-left:-20px;
-                                border: 1px solid rgba(0, 0, 0, 0.15);
-                                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
-                                background: white;
-                            }
-                            .option_menu_user_img{
-                                margin-top:10px;
-                                margin-left:10px;
-                            }
-                            .div_ellipsis{
-                                overflow: hidden;
-                            }
-                        </style>
-                        <script>
-                            /*$.ajax({
-                             type: "POST",
-                             url: "http://shop100.online.lu/Scripts/sql.exe",
-                             async: false,
-                             dataType: "json",
-                             data: 'SqlDB=MasterTest'
-                             + '&Sql=MenuUserManageQuery.phs'
-                             + '&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn'
-                             + '&_MerchantId=1'
-                             + '&_JSON=1'
-                             + '&_toggle_user_menu_value=' + _toggle_new_value
-                             + '&_OpenCloseMenu=1',
-                             error: function (msg) {
-                             console.log("Error: " + msg);
-                             },
-                             success: function (data) {
-                             _ErrorCode = parseInt($.trim(data.iReturn));
-                             if (_ErrorCode == 0)
-                             {
-                             alert(data.azMessage);
-                             }
-                             else
-                             {
-                             
-                             }
-                             }
-                             });*/
-
-                        </script>
                         <div class="RightArea">
                             <div class="LogoArea div_ellipsis">
                                 <img style="width:100%;" src="images/20140605103159_26038.png" alt="logo" title="Master Démo" class="LogoImg">
+                            </div>
+                            <div id="userProfil">
+                                <div class="profilContainer div_ellipsis">
+                                    <p id="userName">Quentin Fonck</p>
+                                    <p id="userGroup">Shop Développement</p>
+                                </div>
                             </div>
                             <div class="UserMenuArea div_ellipsis">
                                 <div class="div_menu div_menu_internal_link div_menu_first div_ellipsis phone-12" data-href="ViewStatCategories.phs&amp;ContextObjectType=2" data-itype="1"> 
@@ -203,30 +180,155 @@ Quentin Fonck
                                     Revendeurs</div>	
                                 <div class="div_menu div_menu_internal_link div_ellipsis phone-12" data-href="ViewCustomText.phs" data-itype="1"> 
                                     Textes personnalisés</div>	
-                            </div> 
+                            </div>
+                            <div id="configLink" class="div_ellipsis">
+                                <a href="#">
+                                    <span style="margin-right: 5px;"><i class="fa fa-gear fa-lg"></i></span>configuration
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="main_zone desk-10 phone-12" style="border-left: 1px #D0D0D0 solid; height: 100%;">
+                    <button id="toggle-nav" class="buttonUserMenu hidden-tab hidden-phone">
+                        <i class="fa fa-angle-right fa-2x" style="color: #337AB7; font-weight: bold;"></i>
+                    </button>
                     <div class="container-fluid">
-                        <style>
-                            /*
-                            .logout
-                            {
-                                position : absolute;
-                                right:0;
-                                background:url("images/logout_white.png") no-repeat;
-                                background-position: 50% 50%;
-                                cursor: pointer;
-                                margin-right:0px!important;
+                        <script>
+                            function moveIcon() {
+                                var user = $('#user');
+                                var logout = $('#logout');
+                                user.detach();
+                                if (viewport().width >= 992) {
+                                    user.insertAfter($('#nav>li:last'));
+                                    logout.insertAfter($('#nav>li:last'));
+                                } else if (viewport().width < 992 && viewport().width >= 520) {
+                                    user.insertBefore($('#nav>li:eq(0)'));
+                                    logout.insertAfter($('#nav>li:eq(3)'));
+                                } else if (viewport().width < 519) {
+                                    user.insertAfter($('#nav>li:eq(0)'));
+                                    logout.insertAfter($('#nav>li:eq(1)'));
+                                }
                             }
-                            .home{
-                                background:url("images/home_white.png") no-repeat;
-                                background-position: 50% 50%;
-                                cursor: pointer;
-                            }*/
-                            ul.dropdown-menu.active{display: block !important;}
-                        </style>
+                            function open_in_new_window(href) {
+                                window.open(href);
+                                return false;
+                            }
+                            function open_in_site_window(href) {
+                                window.open(href, "site");
+                                return false;
+                            }
+                            function logout(_link) {
+                                $(location).attr('href', _link);
+                            }
+                            function remove_empty_menu(i_level)
+                            {
+                                if ($(".menu_level_" + i_level).length > 0)
+                                {
+                                    $(".menu_level_" + i_level).each(function () {
+                                        if ($(".child_of_" + $(this).attr("data-id_menu")).length == 0)
+                                            $(this).remove();
+                                    });
+                                    remove_empty_menu(i_level + 1);
+                                }
+                            }
+                            $(function () {
+                                moveIcon();
+                                var docHeight = $('.main_zone').height();
+
+                                $('#canvas').append("<div id='overlay' class='hidden display-tab display-phone'></div>");
+                                $("#overlay").height(docHeight);
+                                // Ecoute blur
+                                $(window).blur(function (e) {
+                                    $(".dropdown.open").toggleClass("open");
+                                });
+                                $(document).click(function () {
+                                    $(".dropdown.open").toggleClass("open");
+                                });
+                                $(".menu_click_link").mouseup(function (e) {
+                                    var _url = $(this).attr("data-href");
+                                    var _type = parseInt($(this).attr("data-iType"), 10);
+                                    var _link = "";
+                                    if (_type == 1 || _type == 4)
+                                    {
+                                        _link = "http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + _url + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear"
+                                        if (e.which == 2)
+                                            open_in_new_window(_link);
+                                        else if (e.which == 1)
+                                            open_in_site_window(_link);
+                                    }
+                                    else if (_type == 2 && e.which != 3)
+                                    {
+                                        if (_url.indexOf('http://') == -1 && _url.indexOf('https://') == -1)
+                                            _link = "http://" + _url;
+                                        else
+                                            _link = _url;
+                                        open_in_new_window(_link);
+                                    }
+                                    else if (_type == 3 && e.which != 3)
+                                        eval(_url);
+                                });
+                                $(".home").mouseup(function (e) {
+                                    if (e.which == 2)
+                                        open_in_new_window("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + $(this).attr("data-href_ext") + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear");
+                                    else if (e.which == 1)
+                                        open_in_site_window("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + $(this).attr("data-href_int") + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear");
+                                });
+                                $(".logout").mouseup(function (e) {
+                                    if (e.which == 1)
+                                        logout("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + $(this).attr("data-href") + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear");
+                                });
+
+                                $(".dropdown").click(function (e) {
+                                    if ($(this).hasClass("home"))
+                                    {
+                                        $(".open").toggleClass("open");
+                                    } else if ($(this).hasClass("favoris") && viewport().width < 991) {
+                                        $(".open").toggleClass("open");
+                                        $('#overlay').addClass('open');
+                                        $('#page').toggleClass('open-usermenu');
+                                    } else {
+                                        if ($(this).hasClass("open") == false)
+                                        {
+                                            $(".open").toggleClass("open");
+                                        }
+                                        $(this).toggleClass("open");
+                                        if ($(this).hasClass("open"))
+                                        {
+                                            if (viewport().width > 992) {
+                                                $(this).find(".dropdown_menu").position(
+                                                        {
+                                                            of: $(this),
+                                                            my: "left top",
+                                                            at: "left bottom"
+                                                        });
+                                            } else if (viewport().width <= 992) {
+                                                $('.dropdown-menu').each(function () {
+                                                    $(this).css('position', 'initial');
+                                                });
+                                            }
+                                            if ($(this).hasClass('up')) {
+                                                $(this).find(".dropdown_menu").position(
+                                                        {
+                                                            of: $(this),
+                                                            my: "left top",
+                                                            at: "left bottom"
+                                                        });
+                                            } else if (viewport().width <= 992) {
+                                                $('.dropdown-menu').each(function () {
+                                                    $(this).css('position', 'initial');
+                                                });
+                                            }
+                                        }
+                                    }
+                                    e.stopPropagation();
+                                    return false;
+                                });
+                                $('button.dropdown-toggle').click(function () {
+                                    $(this).siblings('ul.dropdown-menu').toggleClass('active');
+                                });
+                                //remove_empty_menu(0);
+                            });</script>
                         <div class="row">
                             <div class="main_menu">
                                 <nav class="nav_container">
@@ -234,7 +336,7 @@ Quentin Fonck
                                         <li class="dropdown" data-href_int="WelcomeMain.phs" data-href_ext="MainMenuDefault.phs">
                                             <a class="dropdown_toggle" data-toggle="dropdown"> 
                                                 <div class="align middle left">
-                                                    Home
+                                                    Home<span style="font-size: 1.1em !important;" class="fa fa-home fa-lg"></span>
                                                 </div>
                                             </a>
                                         </li>
@@ -244,11 +346,11 @@ Quentin Fonck
                                                     Général<span class="caret"></span>
                                                 </div>
                                             </a>
-                                            <ul class="dropdown_menu no_list_style dropdown_cols_3">
+                                            <ul class="dropdown_menu no_list_style">
                                                 <li>
                                                     <div class="sub_menu_content">
                                                         <div class="sub_menu_row align spread">
-                                                            <ul class="sub_menu_column no_list_style">
+                                                            <ul class="sub_menu_column no_list_style tab-4 phone-12">
                                                                 <li class="sub_menu_title menu_level_1 menu_15" data-menu_level="_menu_level" data-id_menu="15" title="Commerçant">Commerçant</li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Commerçant" data-href="ViewMerchant.phs" data-itype="1"><span class="sub_menu_link_span"></span>Commerçant </li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Magasins" data-href="ViewShops.phs" data-itype="1"><span class="sub_menu_link_span"></span>Magasins </li>    
@@ -262,7 +364,7 @@ Quentin Fonck
                                                                 <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Service level agreements" data-href="ViewMerchantSLA.phs" data-itype="1"><span class="sub_menu_link_span"></span>Service level agreements </li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Classes de contrôle de crédit" data-href="ViewCreditCtrlClass.phs" data-itype="1"><span class="sub_menu_link_span"></span>Classes de contrôle de crédit </li>    
                                                             </ul>
-                                                            <ul class="sub_menu_column no_list_style">
+                                                            <ul class="sub_menu_column no_list_style tab-4 phone-12">
                                                                 <li class="sub_menu_title menu_level_1 menu_35" data-menu_level="_menu_level" data-id_menu="35" title="Utilisateurs">Utilisateurs</li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_3 child_of_35" title="Droits utilisateurs" data-href="ModifyUserRight.phs" data-itype="1"><span class="sub_menu_link_span"></span>Droits utilisateurs </li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_3 child_of_35" title="Utilisateurs" data-href="ViewUsers.phs" data-itype="1"><span class="sub_menu_link_span"></span>Utilisateurs </li>    
@@ -280,7 +382,7 @@ Quentin Fonck
                                                                 <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Gestion de texte marchand" data-href="ViewMerchantText.phs" data-itype="1"><span class="sub_menu_link_span"></span>Gestion de texte marchand </li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Gestion des compteurs marchand" data-href="ViewMerchantCounter.phs" data-itype="1"><span class="sub_menu_link_span"></span>Gestion des compteurs marchand </li>    
                                                             </ul>
-                                                            <ul class="sub_menu_column no_list_style">
+                                                            <ul class="sub_menu_column no_list_style tab-4 phone-12">
                                                                 <li class="sub_menu_title menu_level_1 menu_37" data-menu_level="_menu_level" data-id_menu="37" title="Personnalisation">Personnalisation</li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Etats personnalisés" data-href="ViewCustomStatus.phs" data-itype="1"><span class="sub_menu_link_span"></span>Etats personnalisés </li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Configurer états personnalisés" data-href="ConfigCustomStatus.phs" data-itype="1"><span class="sub_menu_link_span"></span>Configurer états personnalisés </li>    
@@ -310,11 +412,13 @@ Quentin Fonck
                                                 <li>
                                                     <div class="sub_menu_content">
                                                         <div class="sub_menu_row">
-                                                            <ul class="sub_menu_column no_list_style">
+                                                            <ul class="sub_menu_column no_list_style desk-12 tab-6 phone-12">
                                                                 <li class="sub_menu_link menu_click_link child_of_36" title="Articles" data-href="ArtManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Articles </li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_36" title="Catégories" data-href="CatManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Catégories </li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_36" title="Stock" data-href="StockManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Stock </li>    
-                                                                <li class="sub_menu_link menu_click_link child_of_36" title="Types d'article" data-href="ViewArtTypes.phs" data-itype="1"><span class="sub_menu_link_span"></span>Types d'article </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_36" title="Types d'article" data-href="ViewArtTypes.phs" data-itype="1"><span class="sub_menu_link_span"></span>Types d'article </li>
+                                                            </ul>
+                                                            <ul class="sub_menu_column no_list_style desk-12 tab-6 phone-12">
                                                                 <li class="sub_menu_title menu_level_1 menu_40" data-menu_level="_menu_level" data-id_menu="40" title="Configuration">Configuration</li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_36 child_of_40" title="Index" data-href="IndexManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Index </li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_36 child_of_40" title="Clés de recherche" data-href="ViewKeys.phs&amp;Param=0" data-itype="1"><span class="sub_menu_link_span"></span>Clés de recherche </li>    
@@ -339,14 +443,16 @@ Quentin Fonck
                                                 <li>
                                                     <div class="sub_menu_content">
                                                         <div class="sub_menu_row">
-                                                            <ul class="sub_menu_column no_list_style">
+                                                            <ul class="sub_menu_column no_list_style desk-12 phone-12 tab-6">
                                                                 <li class="sub_menu_link menu_click_link child_of_5" title="Passer commande" data-href="ViewCatArts.phs&amp;_ClearCart=1" data-itype="1"><span class="sub_menu_link_span"></span>Passer commande </li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_5" title="Vente en magasin" data-href="AddShopOrder.phs" data-itype="1"><span class="sub_menu_link_span"></span>Vente en magasin </li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_5" title="Clients" data-href="ViewClients.phs" data-itype="1"><span class="sub_menu_link_span"></span>Clients </li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_5" title="Abonnements" data-href="SubscriptionManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Abonnements </li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_5" title="Commandes" data-href="ViewOrders.phs" data-itype="1"><span class="sub_menu_link_span"></span>Commandes </li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_5" title="Campagne de marketing" data-href="MarketingCampaign.phs" data-itype="1"><span class="sub_menu_link_span"></span>Campagne de marketing </li>    
-                                                                <li class="sub_menu_link menu_click_link child_of_5" title="Statistiques de commandes" data-href="ViewStatistics.phs&amp;ContextObjectType=1" data-itype="1"><span class="sub_menu_link_span"></span>Statistiques de commandes </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_5" title="Statistiques de commandes" data-href="ViewStatistics.phs&amp;ContextObjectType=1" data-itype="1"><span class="sub_menu_link_span"></span>Statistiques de commandes </li>
+                                                            </ul>
+                                                            <ul class="sub_menu_column no_list_style desk-12 phone-12 tab-6">
                                                                 <li class="sub_menu_title menu_level_1 menu_39" data-menu_level="_menu_level" data-id_menu="39" title="Personnalisation">Personnalisation</li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_5 child_of_39" title="Attributs client" data-href="ViewClientAttr.phs" data-itype="1"><span class="sub_menu_link_span"></span>Attributs client </li>
                                                                 <li class="sub_menu_link menu_click_link child_of_5 child_of_39" title="Attributs commande" data-href="ViewOrderAttr.phs" data-itype="1"><span class="sub_menu_link_span"></span>Attributs commande </li>    
@@ -366,11 +472,13 @@ Quentin Fonck
                                                 <li>
                                                     <div class="sub_menu_content">
                                                         <div class="sub_menu_row">
-                                                            <ul class="sub_menu_column no_list_style">
+                                                            <ul class="sub_menu_column no_list_style desk-12 phone-12 tab-6">
                                                                 <li class="sub_menu_link menu_click_link child_of_6" title="Facturation" data-href="BillManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Facturation </li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_6" title="Paiements client" data-href="AccountManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Paiements client </li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_6" title="Statistiques de facturation" data-href="ViewStatistics.phs&amp;ContextObjectType=2" data-itype="1"><span class="sub_menu_link_span"></span>Statistiques de facturation </li>    
-                                                                <li class="sub_menu_link menu_click_link child_of_6" title="Domiciliations" data-href="DebtOrderManage.phs&amp;ContextObjectType=201" data-itype="1"><span class="sub_menu_link_span"></span>Domiciliations </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_6" title="Domiciliations" data-href="DebtOrderManage.phs&amp;ContextObjectType=201" data-itype="1"><span class="sub_menu_link_span"></span>Domiciliations </li>
+                                                            </ul>
+                                                            <ul class="sub_menu_column no_list_style desk-12 phone-12 tab-6">
                                                                 <li class="sub_menu_title menu_level_1 menu_41" data-menu_level="_menu_level" data-id_menu="41" title="Comptes bancaires commerçant">Comptes bancaires commerçant</li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_6 child_of_41" title="Comptes bancaires" data-href="ViewBankAccount.phs&amp;Param2=1" data-itype="1"><span class="sub_menu_link_span"></span>Comptes bancaires </li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_6 child_of_41" title="Comptes notes de crédit" data-href="ViewBankAccount.phs&amp;Param2=3" data-itype="1"><span class="sub_menu_link_span"></span>Comptes notes de crédit </li>    
@@ -393,7 +501,7 @@ Quentin Fonck
                                                 <li>
                                                     <div class="sub_menu_content">
                                                         <div class="sub_menu_row">
-                                                            <ul class="sub_menu_column no_list_style">
+                                                            <ul class="sub_menu_column no_list_style desk-auto phone-12">
                                                                 <li class="sub_menu_title menu_level_1 menu_49" data-menu_level="_menu_level" data-id_menu="49" title="Administration">Administration</li>    
                                                                 <li class="sub_menu_link menu_click_link child_of_45 child_of_49" title="Ajouter code tva" data-href="AddTax.phs" data-itype="1"><span class="sub_menu_link_span"></span>Ajouter code tva </li>    
                                                             </ul>
@@ -424,7 +532,7 @@ Quentin Fonck
                                         <li id="user" class="dropdown favoris hidden-desk hidden-lgdesk" data-menu_level="0" data-id_menu="7">
                                             <a class="dropdown_toggle align center middle" data-toggle="dropdown" href="#">
                                                 <div class="align middle left">
-                                                    Favoris<span class="caret"></span>
+                                                    Favoris<span style="font-size: 1.1em !important;" class="fa fa-star fa-lg"></span>
                                                 </div>
                                             </a>
                                             <ul class="dropdown_menu no_list_style">
@@ -453,19 +561,29 @@ Quentin Fonck
                                         <li id="logout" class="dropdown" data-href="MainLogout.phs">
                                             <a class="dropdown_toggle" data-toggle="dropdown">
                                                 <div class="align middle left">
-                                                    Logout
+                                                    logout<span style="font-size: 1.1em !important;" class="fa fa-sign-out fa-lg"></span>
                                                 </div>
                                             </a>
                                         </li>
-                                        <li id="espace" class="dropdown" data-href="MainLogout.phs"></li>
+                                        <li class="dropdown espace" data-href="MainLogout.phs"></li>
                                     </ul>
                                 </nav>
                             </div>
                         </div>
-                        <div style="padding-left:30px; padding-right: 30px;">
+                        <div style="padding-left:30px; padding-right: 30px; position: relative;">
                             <div class="page-menu row" style="margin: 10px 0px;">
                                 <h4 class="mainTitle phone-12 tab-6" style="display: inline-block;"><span style="font-size: 16px;">Client > </span>Client management</h4>
                                 <ul class="pull-right phone-12 tab-3 align" style="text-align: right; padding: 10px 0px 10px 0px;">
+                                    <li><a style="font-size:0.8em;text-decoration:underline;cursor:pointer" title="retour" onclick="window.frames['site'].history.back();"><i class="fa fa-reply fa-2x"></i></a></li>
+                                    <li><a style="font-size:0.8em;text-decoration:underline;cursor:pointer" title="rafraichîr" onclick="window.frames['site'].location.reload();"><i class="fa fa-refresh fa-2x"></i></a></li>
+                                    <li><a style="font-size:0.8em;text-decoration:underline;cursor:pointer" title="imprimer" onclick="if ('Microsoft Internet Explorer' == navigator.appName)
+                                                window.frames['site'].focus();
+                                            window.frames['site'].print();"><i class="fa fa-print fa-2x"></i></a></li>
+                                    <li>
+                                        <a href="http://shop100.online.lu/Scripts/sql.exe?ContextViewMode=1&amp;SqlDB=MasterTest&amp;Sql=ClientManage.phs&amp;xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&amp;ContextUsage=0&amp;Param=10" title="personnaliser"><i class="fa fa-cog fa-2x"></i></a>
+                                    </li>
+                                </ul>
+                                <ul class="pull-right phone-12 tab-3 align hidden" style="text-align: right; padding: 10px 0px 10px 0px;">
                                     <li><a style="font-size:0.8em;text-decoration:underline;cursor:pointer" title="retour" onclick="window.frames['site'].history.back();"><i class="fa fa-reply fa-2x"></i></a></li>
                                     <li><a style="font-size:0.8em;text-decoration:underline;cursor:pointer" title="rafraichîr" onclick="window.frames['site'].location.reload();"><i class="fa fa-refresh fa-2x"></i></a></li>
                                     <li><a style="font-size:0.8em;text-decoration:underline;cursor:pointer" title="imprimer" onclick="if ('Microsoft Internet Explorer' == navigator.appName)
@@ -537,9 +655,9 @@ Quentin Fonck
                             <hr style="margin-left: -41px; margin-right: -41px; margin-top: 22px;"/>
                             <div class="row">
                                 <div class="align middle">
-                                    <h3 id="option" class="phone-11">Options</h3>
+                                    <h3 class="desk-push-1 phone-11">Options</h3>
                                 </div>
-                                <ul id="list" class="list-group phone-12 desk-push-1 desk-4">
+                                <ul class="list-group phone-12 desk-push-1 desk-4">
                                     <li class="list-group-item active">Compte client</li>
                                     <li class="list-group-item">
                                         <form method="post" action="http://shop100.online.lu/Scripts/sql.exe">
@@ -583,7 +701,7 @@ Quentin Fonck
                                     </li>
                                 </ul>
 
-                                <ul id="list2" class="list-group phone-12 desk-push-2 desk-4">
+                                <ul class="list-group phone-12 desk-push-2 desk-4">
                                     <li class="list-group-item active">Facturation</li>
                                     <li class="list-group-item">
                                         <form method="post" action="http://shop100.online.lu/Scripts/sql.exe">
@@ -640,11 +758,39 @@ Quentin Fonck
                             </div>
                             <hr style="margin-left: -41px; margin-right: -41px; margin-top: 0px;"/>
                             <div class="row" style="margin-bottom: 20px;">
-                                    <span id="bouton_bas"><button class="btn default phone-12 tab-5 desk-3">Chercher nouveau client</button></span>
+                                <form class="phone-12 pull-left" method="post" action="http://shop100.online.lu/Scripts/sql.exe">
+                                    <input type="hidden" name="SqlDB" value="MasterTest">
+                                    <input type="hidden" name="Sql" value="ViewClients.phs">
+                                    <input type="hidden" name="xid" value="1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn">
+                                    <input type="hidden" name="ContextUsage" value="0">
+                                    <button class="btn default phone-12 tab-5 desk-3" type="submit" name="_ParentMenu">Chercher nouveau client</button>
+                                </form>
+                                <script>
+                                    var iBlueChameleonModified = 0;
+                                    function setBlueChameleonModification() {
+                                        iBlueChameleonModified = 1;
+                                        showBlueChameleonModification();
+                                    }
+                                    function resetBlueChameleonModification() {
+                                        iBlueChameleonModified = 0;
+                                        showBlueChameleonModification();
+                                    }
+                                    function getBlueChameleonModification() {
+                                        return iBlueChameleonModified;
+                                    }
+                                    function showBlueChameleonModification() {
+                                    }
+                                    $(function () {
+                                        $(window).on('beforeunload', function (e) {
+                                            if (parseInt(getBlueChameleonModification(), 10) != 0)
+                                            {
+                                                return 'des données saisies pourraient ne pas \\352tre enregistr\\351es.';
+                                            }
+                                        });
+                                    });</script>
                             </div>
                         </div>
                     </div>
-                    <div class="overlay"></div>
                 </div>
             </div>
             <div class="row">
@@ -659,315 +805,7 @@ Quentin Fonck
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="js/ossbo.js"></script>
         <script type="text/javascript" src="js/viewport.js"></script>
-        <script type="text/javascript" src="js/tooltip.js"></script>
-        <script type="text/javascript">
-                            if (parent.document.getElementsByTagName("IFRAME").length != 0)
-                                parent.document.title = "Master Démo - Online Shopping System";
-                            else
-                                document.title = "Master Démo - Online Shopping System";
-        </script>
-        <script>
-            $(function () {
-                // Ecoute blur
-                $(window).blur(function (e) {
-                    close_merchant_menu_option();
-                });
-                $(document).click(function () {
-                    close_merchant_menu_option();
-                });
-                $('#toggle-nav').click(function (event) {
-                    event.stopPropagation();
-                    if ($('#page').hasClass('open-usermenu')) {
-                        $('.LogoArea').css({"width": $('.LogoArea').innerWidth()});
-                        if (viewport().width < 992) {
-                            $('.overlay').fadeTo(200, 0);
-                            $('.overlay').hide();
-                        }
-                    } else {
-                        if (viewport().width <= 992) {
-                            $('.overlay').fadeTo(200, 0.7, function () {
-                                $(this).show();
-                            });
-                            $('.LogoArea').css({"width": "300px"});
-                        } else {
-                            $('.LogoArea').css({"width": (viewport().width) * 0.16666666666666667});
-                        }
-                    }
-                    $('#page').toggleClass('open-usermenu');
-                });
-                $('html').click(function (event) {
-                    if (viewport().width <= 992) {
-                        var element = $('.menu_user_zone');
-                        if (!element.is(event.target) && element.has(event.target).length === 0) {
-                            if ($('#page').hasClass('open-usermenu')) {
-                                $('#page').removeClass('open-usermenu');
-                            }
-                        }
-                    }
-                });
-
-
-                $(window).resize(function () {
-                    $('.LogoArea').css({"width": "100%"});
-                    if (viewport().width < 992) {
-                        if ($('#page').hasClass('open-usermenu')) {
-                            $('#page').removeClass('open-usermenu');
-                        }
-                    }
-                });
-            });
-            function open_merchant_menu_option(event)
-            {
-                $(".option_menu_user").css("top", event.pageY - 31 + "px")
-                        .animate({
-                            opacity: 1,
-                            marginLeft: "1px"
-                        }, 150);
-            }
-            function close_merchant_menu_option()
-            {
-                $(".option_menu_user")
-                        .animate({
-                            opacity: 0,
-                            marginLeft: "-20px"
-                        }, 150);
-            }
-            function openMenuManage() {
-                //window.open("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&_MerchantId=1&Sql=MenuUserManage.phs", "site");
-            }
-        </script>
-        <script>
-            var iBlueChameleonModified = 0;
-            function setBlueChameleonModification() {
-                iBlueChameleonModified = 1;
-                showBlueChameleonModification();
-            }
-            function resetBlueChameleonModification() {
-                iBlueChameleonModified = 0;
-                showBlueChameleonModification();
-            }
-            function getBlueChameleonModification() {
-                return iBlueChameleonModified;
-            }
-            function showBlueChameleonModification() {
-            }
-            $(function () {
-                $(window).on('beforeunload', function (e) {
-                    if (parseInt(getBlueChameleonModification(), 10) != 0)
-                    {
-                        return 'des données saisies pourraient ne pas \\352tre enregistr\\351es.';
-                    }
-                });
-            });
-        </script>
-        <script>
-            function toggleMenu(idObject) {
-                var img_element = $("#more_img_" + idObject);
-                if ($(img_element).attr("src") == "images/expand_more.png")
-                    $(img_element).attr("src", "images/expand_less.png");
-                else
-                    $(img_element).attr("src", "images/expand_more.png");
-                $("#SubMenu_" + idObject).slideToggle('fast');
-            }
-            function open_in_new_window(href) {
-                window.open(href);
-                return false;
-            }
-            function open_in_site_window(href) {
-                window.open(href, "site");
-                //eval("site.location='href'");
-                return false;
-            }
-            $(function () {
-                $(".sub_menu_hide").hide();
-                $(".div_menu_external_link").mouseup(function (e) {
-                    if (e.which != 3)
-                    {
-                        var href = $(this).attr("data-href");
-                        var _link = "";
-                        if (href.indexOf('http://') == -1 && href.indexOf('https://') == -1)
-                            _link = "http://" + href;
-                        else
-                            _link = href;
-                        open_in_new_window(_link);
-                    }
-                });
-                $(".div_menu_internal_link").mouseup(function (e) {
-                    var _url = $(this).attr("data-href");
-                    var _type = parseInt($(this).attr("data-iType"), 10);
-                    var _link = "";
-                    if (_type == 1 || _type == 4)
-                    {
-                        _link = "http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + _url + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear"
-                        if (e.which == 2)
-                            open_in_new_window(_link);
-                        else if (e.which == 1)
-                            open_in_site_window(_link);
-                    }
-                    else if (_type == 2 && e.which != 3)
-                    {
-                        if (_url.indexOf('http://') == -1 && _url.indexOf('https://') == -1)
-                            _link = "http://" + _url;
-                        else
-                            _link = _url;
-                        open_in_new_window(_link);
-                    }
-                    else if (_type == 3 && e.which != 3)
-                        eval(_url);
-                });
-            });
-        </script>
-        <script>
-            function moveIcon() {
-                var user = $('#user');
-                user.detach();
-                if (viewport().width >= 992) {
-                    user.insertAfter($('#nav>li:last'));
-                } else if (viewport().width < 992 && viewport().width >= 520) {
-                    user.insertAfter($('#nav>li:eq(0)'));
-                } else if (viewport().width < 519) {
-                    user.insertAfter($('#nav>li:eq(0)'));
-                }
-            }
-            function open_in_new_window(href) {
-                window.open(href);
-                return false;
-            }
-            function open_in_site_window(href) {
-                window.open(href, "site");
-                return false;
-            }
-            function logout(_link) {
-                $(location).attr('href', _link);
-            }
-            function remove_empty_menu(i_level)
-            {
-                if ($(".menu_level_" + i_level).length > 0)
-                {
-                    $(".menu_level_" + i_level).each(function () {
-                        if ($(".child_of_" + $(this).attr("data-id_menu")).length == 0)
-                            $(this).remove();
-                    });
-                    remove_empty_menu(i_level + 1);
-                }
-            }
-            $(function () {
-                moveIcon();
-                $(window).resize(function () {
-                    moveIcon();
-                });
-                // Ecoute blur
-                $(window).blur(function (e) {
-                    $(".open").toggleClass("open");
-                });
-                $(document).click(function () {
-                    $(".open").toggleClass("open");
-                });
-                $(".menu_click_link").mouseup(function (e) {
-                    var _url = $(this).attr("data-href");
-                    var _type = parseInt($(this).attr("data-iType"), 10);
-                    var _link = "";
-                    if (_type == 1 || _type == 4)
-                    {
-                        _link = "http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + _url + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear"
-                        if (e.which == 2)
-                            open_in_new_window(_link);
-                        else if (e.which == 1)
-                            open_in_site_window(_link);
-                    }
-                    else if (_type == 2 && e.which != 3)
-                    {
-                        if (_url.indexOf('http://') == -1 && _url.indexOf('https://') == -1)
-                            _link = "http://" + _url;
-                        else
-                            _link = _url;
-                        open_in_new_window(_link);
-                    }
-                    else if (_type == 3 && e.which != 3)
-                        eval(_url);
-                });
-                $(".home").mouseup(function (e) {
-                    if (e.which == 2)
-                        open_in_new_window("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + $(this).attr("data-href_ext") + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear");
-                    else if (e.which == 1)
-                        open_in_site_window("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + $(this).attr("data-href_int") + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear");
-                });
-                $(".logout").mouseup(function (e) {
-                    if (e.which == 1)
-                        logout("http://shop100.online.lu/Scripts/sql.exe?SqlDB=MasterTest&Sql=" + $(this).attr("data-href") + "&xid=1430226043mfmlggpjngkfcmclhmmfkgnngaonbbidfdcndimpbiggobimlihofn&idYear=idYear");
-                });
-                $(".dropdown").click(function (e) {
-                    if ($(this).hasClass("home"))
-                    {
-                        $(".open").toggleClass("open");
-                    } else if ($(this).hasClass("favoris") && viewport().width < 520) {
-                        $(".open").toggleClass("open");
-                        $('#page').toggleClass('open-usermenu');
-                    } else {
-                        if ($(this).hasClass("open") == false)
-                        {
-                            $(".open").toggleClass("open");
-                        }
-                        $(this).toggleClass("open");
-                        if ($(this).hasClass("open"))
-                        {
-                            if (viewport().width > 992) {
-                                $(this).find(".dropdown_menu").position(
-                                        {
-                                            of: $(this),
-                                            my: "left top",
-                                            at: "left bottom"
-                                        });
-                            } else if (viewport().width <= 992) {
-                                $('.dropdown-menu').each(function () {
-                                    $(this).css('position', 'initial');
-                                });
-                            }
-                            if ($(this).hasClass('up')) {
-                                $(this).find(".dropdown_menu").position(
-                                        {
-                                            of: $(this),
-                                            my: "left top",
-                                            at: "left bottom"
-                                        });
-                            } else if (viewport().width <= 992) {
-                                $('.dropdown-menu').each(function () {
-                                    $(this).css('position', 'initial');
-                                });
-                            }
-                        }
-                    }
-                    e.stopPropagation();
-                    return false;
-                });
-                $('button.dropdown-toggle').click(function () {
-                    $(this).siblings('ul.dropdown-menu').toggleClass('active');
-                });
-
-                $('p[id=PageZoneField16]>.label').tooltip({
-                    'id': 674
-                });
-
-                $('p[id=PageZoneField22]>.label').tooltip({
-                    'id': 2, 
-                    'size': 500
-                });
-
-                $('p[id=PageZoneField19]>.label').tooltip({
-                    'id': 478
-                });
-                $('#bouton_bas').tooltip({
-                    'id': 5
-                });
-                $('#list').tooltip({
-                    'id': 7
-                });
-                $('#list2').tooltip({
-                    'id': 1
-                });
-
-            });</script>
+        <script type="text/javascript" src="js/ossbo.js"></script>
     </body>
 </html>

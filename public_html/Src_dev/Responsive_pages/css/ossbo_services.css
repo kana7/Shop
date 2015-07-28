@@ -1,0 +1,337 @@
+.OssBody {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+   color: #000000;
+}
+
+.OssTextNormal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+   color: #000000;
+}
+
+.OssTextSmall {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+   color: #000000;
+}
+
+.OssTextError {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #ff0000;
+}
+
+a.OssLink:link {text-decoration: none; color: #000000;}
+a.OssLink:visited {text-decoration: none; color: #000000;}
+a.OssLink:focus {text-decoration: underline; color: #000000;}
+a.OssLink:hover {text-decoration: underline; color: #000000;}
+a.OssLink:active {text-decoration: none; color: #000000;}
+
+.OssMenu {
+   border-spacing: 2px;
+}
+
+.OssMenuHeaderLeft, .OssMenuBlockHeaderLeft, .OssDataHeaderLeft, .OssDataBlockHeaderLeft {
+   background-color: #000099;
+   background-image: url(../images/dot1_BlueL.gif);
+   background-position: center;
+   background-repeat: no-repeat;
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   padding: 1px;
+   width: 12px;
+}
+
+.OssMenuHeader, .OssMenuBlockHeader, .OssDataHeader, .OssDataBlockHeader {
+   background-color: #000099;
+   color: #CCCCFF;
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   font-weight: bold;
+   padding-top: 1px;
+   padding-bottom: 1px;
+   padding-left: 5px;
+   padding-right: 5px;
+}
+
+.OssMenuHeaderRight, .OssMenuBlockHeaderRight, .OssDataHeaderRight, .OssDataBlockHeaderRight {
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   padding: 1px;
+   width: 12px;
+}
+
+.OssMenuFooterLeft, .OssDataFooterLeft {
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   padding: 1px;
+   width: 12px;
+}
+
+.OssMenuFooter, .OssDataFooter {
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   font-weight: bold;
+   padding-top: 1px;
+   padding-bottom: 1px;
+   padding-left: 5px;
+   padding-right: 5px;
+}
+
+.OssMenuFooterRight, .OssDataFooterRight {
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   padding: 1px;
+   width: 12px;
+}
+
+.OssMenuItemLeft, .OssMenuTitleLeft, .OssDataTitleLeft {
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+   font-size: 10px;
+}
+
+.OssMenuItem, .OssMenuButton, .OssMenuTitle, .OssDataTitle {
+   background-color: #D3D3D3;
+   color: #000000;
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   padding-top: 3px;
+   padding-bottom: 3px;
+   padding-left: 5px;
+   padding-right: 5px;
+}
+
+.OssDataSort:hover {
+   background-color: #BCBCBC;
+   cursor: pointer;
+}
+
+.OssMenuItemRight, .OssMenuTitleRight, .OssDataTitleRight {
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+   font-size: 10px;
+}
+
+a.OssMenuLink:link {text-decoration: none; color: #000000;}
+a.OssMenuLink:visited {text-decoration: none; color: #000000;}
+a.OssMenuLink:focus {text-decoration: underline; color: #000000;}
+a.OssMenuLink:hover {text-decoration: underline; color: #000000;}
+a.OssMenuLink:active {text-decoration: none; color: #000000;}
+
+.OssData {
+	border-spacing: 2px;
+}
+
+.OssDataList tr:hover {
+	background-color: #E0E0E0;
+}
+
+.OssDataReport tr:nth-child(even) {
+	background-color: #E0E0E0;
+}
+
+.OssDataLineLeft {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+.OssDataLine {
+	background-color: #F5F5F5;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.OssDataLineHeader {
+	background-color: #E0E0E0;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.OssDataLineLabel {
+	background-color: #D3D3D3;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.OssDataLineData {
+	background-color: #F5F5F5;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.OssDataLineRight {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+.OssDataTotalLeft {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+.OssDataTotalData, .OssDataTotalLabel {
+	background-color: #D8D8D8;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.OssDataTotalDataBold, .OssDataTotalLabelBold {
+	background-color: #D8D8D8;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.OssDataTotalRight {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+a.OssDataHeaderLink:link {text-decoration: none; color: #ffffff;}
+a.OssDataHeaderLink:visited {text-decoration: none; color: #ffffff;}
+a.OssDataHeaderLink:focus {text-decoration: underline; color: #ffffff;}
+a.OssDataHeaderLink:hover {text-decoration: underline; color: #ffffff;}
+a.OssDataHeaderLink:active {text-decoration: none; color: #ffffff;}
+
+a.OssDataLink:link {text-decoration: none; color: #000000;}
+a.OssDataLink:visited {text-decoration: none; color: #000000;}
+a.OssDataLink:focus {text-decoration: underline; color: #000000;}
+a.OssDataLink:hover {text-decoration: underline; color: #000000;}
+a.OssDataLink:active {text-decoration: none; color: #000000;}
+
+.OssTableTitle, .OssTableLine, .OssTableMarkedLine {
+	color: #000000;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.OssTableTitle {
+	background-color: #D3D3D3;
+	font-weight: bold;
+}
+
+.OssTableLine {
+	background-color: #F5F5F5;
+}
+
+.OssTableMarkedLine {
+	background-color: #A9A9A9;
+}
+
+.OssDivInfo {
+	background-color: #E2E2E2;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.OssDivEdit {
+	background-color: #D3D3D3;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.OssFormText {
+	background-color: #F5F5F5;
+	border: 1px solid #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+.OssFormSelect {
+	background-color: #F5F5F5;
+	border: 1px solid #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+.OssFormButton, .OssFormButtonCenter {
+	background-color: #CCCCFF;
+	border: 1px solid #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+.OssFormButtonLeft {
+}
+
+.OssFormButtonRight {
+}
+
+.OssToolTip {
+	margin-top:5px;	
+	padding:5px;
+	/* oga_popup.css div.popup */
+	position: absolute;
+	border:2px solid #636f92;
+	border-radius:6px;
+	/* oga_popup.css tr.popupEnglobantCorps */
+	background-color : #c6d1ec;
+	white-space : nowrap;
+}
+.OssToolTipImgItem {
+	display:none;
+	right:0px;
+	top:-16px;
+	position:absolute
+}
+.OssToolTipTdItem:hover .OssToolTipImgItem {
+	display:block;
+}
+.OssToolTipDescItem {
+	display:none;
+}
+.OssToolTipImgItem:hover .OssToolTipDescItem {
+	display:block;
+}
+
+.OssPopupBtnLine:hover{
+	height:auto;
+	background-color:#edf1fc;
+}
+.OssWidgetHeaderColor {
+	background-color:#c6d1ec;
+}

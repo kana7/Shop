@@ -278,7 +278,9 @@ body{
     display: inline-block;
     height: 35px;
     border-left: 1px solid #FFF;
-
+}
+.dropdown_toggle, .dropdown_toggle:focus{
+    outline: none;
 }
 /*R?gle bug dropdown sur firefox*/
 @-moz-document url-prefix() {

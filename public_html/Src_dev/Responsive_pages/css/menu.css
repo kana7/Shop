@@ -1,0 +1,146 @@
+div#menu {
+    /* background */
+    background: #B0D7ED;
+    /* vertical align */
+    display:inline-block;
+    line-height: 28px;
+    /* Other */
+    min-height: 28px;
+    position: relative;
+    border :0px solid black;
+    color: #FFFFFF;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    width: 99%;
+	border-radius: 10px 10px 2px 2px;
+}
+ul.menu {
+    clear: both;
+    float: none;
+    cursor: pointer;
+    position: relative;
+}
+div#menu ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    float: left;
+    position: relative;
+	
+}
+div#menu li {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    overflow: visible;
+    float: left;
+    height: 25px;
+	border-top: 1px solid transparent;
+}
+
+#menu>ul>li:hover {
+    background: #B0D7ED;
+    border-top: 1px solid #0D88BB;
+    border-radius: 10px 10px 0 0;
+    color: black;
+}
+
+div#menu > ul > li {
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    background: #0D88BB;
+    border-radius: 10px 10px 2px 2px;
+	display:inline-block !important;
+}
+/* menu::level1 */
+ div#menu li a {
+    height: 25px;
+    display: block;
+    float: left;
+    line-height: 25px;
+    text-decoration: none;
+    color: #000000;
+    overflow: hidden;
+    position: relative;
+}
+div#menu li span {
+    color: #FFFFFF;
+    display: block;
+    padding: 0 15px;
+    background-repeat: no-repeat;
+    background-position: 95% 0px;
+    position: relative;
+ }
+
+div#menu li span.bg {
+    display: block;
+    padding: 0;
+    height: 25px;
+    position: relative;
+    float: left;
+}
+div#menu li.current {
+    font-weight: bold;
+}
+div#menu li.current ul {
+    font-weight: normal;
+}
+/* menu::level2 */
+ div#menu ul.menu ul {
+    padding: 0px 0px 10px;
+    background: #B0D7ED;
+    font-size: 1em;
+    display: none;
+    min-width: 165px;
+    white-space:nowrap;
+    position: absolute;
+    top: 25px;
+}
+div#menu ul.menu ul span {
+    color: #000000;
+}
+
+div#menu li li {
+    width: 100%;
+    text-indent: 0px;
+    float: none;
+    height: auto;
+}
+div#menu li li a, div#menu li li span.separator {
+    margin: 0px 1px;
+    padding: 0px;
+    background: black;
+    height: auto;
+    float: none;
+    display: block;
+    line-height: 25px;
+}
+
+div#menu li li a.parent {
+    background: url('/images/rightArrow.gif') no-repeat scroll 100% center;
+}
+
+div#menu li a.parent {
+    /*background: url('images/rightArrow.gif') no-repeat scroll 100% center;*/
+	
+}
+
+/* menu::level3 */
+
+ div#menu li ul ul {
+    margin: -27px 0 0 164px;
+}
+div#menu li ul {
+    border-radius: 0px 2px 10px 2px;
+	z-index: 100;
+}
+.menu_hover{
+	background: #B4BBCC;
+}
+#menu ul>li ul{
+	border-top: 1px solid #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}

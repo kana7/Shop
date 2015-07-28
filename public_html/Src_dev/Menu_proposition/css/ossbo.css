@@ -1,44 +1,27 @@
-BODY{ 
-    font-family: Helvetica, sans-serif;
-    font-size: 12px;
-}
-P{ font-family: Helvetica, sans-serif;
-   font-size: 12px;
-}
-TD{ 
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 12px;
-}
-TH{
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 12px;
-}
-H1{ 
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 16px;
-}
-H2{ 
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 14px;
-}
-H3{ 
-    font-family: Helvetica, sans-serif;
-    font-size: 12px;
-}
-H4{
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 12px;
-}
+BODY		{ font-family: Helvetica, sans-serif; font-size: 12px;}
+
+P		{ font-family: Helvetica, sans-serif; font-size: 12px;}
+
+TD		{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;}
+TH		{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;}
+
+H1		{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 16px;}
+H2		{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px;}
+H3		{ font-family: Helvetica, sans-serif; font-size: 12px;}
+H4		{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;}
+
 fieldset ul {
     padding: 1em 1em 0 1em;
     list-style: none;
 }
+
 fieldset li {
     float: left;
     clear: left;
     width: 100%;
     padding-bottom: 0.25em;
 }
+
 fieldset {
     float: left;
     clear: left;
@@ -47,42 +30,50 @@ fieldset {
     padding: 0;
     border: none;
 }
+
 label {
     float: left;
     width: 20%;
-    /* margin-right: 1em; */
+    margin-right: 1em;
 }
+
 .FormPanel {
     padding: 1em 1em 0 1em;
     list-style: none;
 }
+
 .FormLine {
     float: left;
     clear: left;
     width: 100%;
     padding-bottom: 0.25em;
 }
+
 .FormLabel {
     float: left;
     width: 20%;
     margin-right: 1em;
 }
+
 .ListPanel {
     padding: 0 0 0 1em;
     list-style: none;
 }
+
 .ListLine {
     float: left;
     clear: left;
     width: 100%;
     padding-bottom: 0.25em;
 }
+
 .SelectSeparator {
     background-image:url(../images/pixel.gif);
     background-repeat:repeat-x;
     background-position:50% 50%;
     background-attachment:scroll;
 }
+
 div#MultiColumn2 {
     -moz-column-count: 2;
     -moz-column-gap: 20px;
@@ -91,37 +82,47 @@ div#MultiColumn2 {
     column-count: 2;
     column-gap: 20px;
 }
+
 .OssDataSortable {
 }
+
 .OssDataSortable tr:hover {
     cursor: pointer;
 }
+
 .OssDataSortablePlaceholder {
     border: 1px dotted black;
     visibility: visible;
 }
+
 .OssPopupBtnLine div.OssPopupBtnButton {
     float: left;
     min-height: 16px;
 }
+
 .OssPopupBtnButton {
     display: none;
 }
+
 .OssPopupBtnLine:hover .OssPopupBtnButton {
     display:block;
 }
+
 .OssPopupBtnButton:hover {
     cursor:pointer;
 }
+
 .OssPopupBtnButtonHide {
     display: none !important;
 }
+
 .OssWindowBox {
     position: relative;
     display: block;
     overflow: auto;
     float: left;
 }
+
 .OssWindowCloseButton {
     display: none;
     position: absolute;
@@ -206,9 +207,9 @@ h3{
         font-size: 16px;
 
         white-space: nowrap;
-
+    
         text-align: center;
-    }
+}
     h3{
         font-size: 18px;
     }
@@ -222,10 +223,6 @@ h3{
         float: left;
         text-align: left !important;
     }
-}
-a, a:focus, a:hover{
-    outline: none;
-    text-decoration: none;
 }
 
 @media (min-width:680px){
@@ -259,12 +256,23 @@ p[id^="PageZoneField"]>.field.break{
     text-align: right; 
     margin-top: 11px;
 }
+
 #footerDiv{
     border-top:1px solid #ddd; 
     margin-bottom: 10px;
-    z-index: -1 !important;
+    clear: both;
 }
 
+
+/*added for proposition 2*/
+#page{
+    /* height: 100%; */
+}
+@media(max-width:991px){
+    #page{
+        height:auto;
+    }
+}
 .footer{
     background-color: #428BCA;
     color: #FFF;
@@ -319,6 +327,8 @@ p[id^="PageZoneField"]>.field.break{
 .dropdown.up .sub_menu_content{
     padding: 5px 20px;
 }
+
+
 @media(max-width: 400px){
     #info_client ul, #info_client h3{
         display: block;
@@ -327,6 +337,7 @@ p[id^="PageZoneField"]>.field.break{
     #info_client>div{
         width: 100%;
         display: inline-block;
+        /* margin-bottom: 10px; */
     }
     #info_client ul input{
         width: 100%;
@@ -334,54 +345,4 @@ p[id^="PageZoneField"]>.field.break{
     #info_client h3, h4.mainTitle{
         text-align: center;
     }
-}
-.noselect {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-/*Icones font awesome*/
-@font-face {
-    font-family: 'FontAwesome';
-    src: url('../fonts/fontawesome-webfont.eot?v=4.3.0');
-    src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-.fa {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transform: translate(0, 0);
-}
-.fa-lg {
-    font-size: 1.33333333em;
-    line-height: 0.75em;
-    vertical-align: -15%;
-}
-.fa-home:before {
-    content: "\f015";
-}
-.fa-sign-out:before {
-    content: "\f08b";
-}
-.fa-angle-left:before {
-    content: "\f104";
-}
-.fa-angle-right:before {
-    content: "\f105";
-}
-.fa-gear:before,
-.fa-cog:before {
-    content: "\f013";
-}
-.fa-star:before {
-  content: "\f005";
 }

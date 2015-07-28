@@ -1,0 +1,75 @@
+section{
+    margin-top: 20px;
+}
+
+.box{
+    border-collapse: collapse;
+    border: #000000 solid 1px;
+    background-color: whitesmoke;
+}
+
+.box h3:not([title]){
+    margin-left: 20px;
+}
+
+.row>p{
+    margin-top: 15px;
+    width: 50%;
+}
+
+.row .ligne{
+    height: 215px;
+}
+
+.row .last{
+    height: 250px;
+}
+
+@media all and (max-width: 768px){
+    .row .ligne{
+        height: auto;
+        padding-bottom: 25px;
+    }
+
+    .row .last{
+        height: auto;
+        padding-bottom: 25px;
+    }
+}
+
+
+.button-group{
+    position: relative;
+    margin-top: 20px;
+}
+
+.button-group button{
+    height: 40px;
+    width: 80px;
+}
+
+#select{
+    margin-top: 15px;
+
+}
+
+.button-group button{
+    margin-left: 10%;
+    width: 20%;
+    height: 30px;
+}
+
+table tr th{
+    text-align: center;
+}
+
+.glyphicon {
+    position: relative;
+    top: 1px;
+    font-size: 2.0em;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 45px;
+}

@@ -1,0 +1,201 @@
+
+/*GESTION DU POPUP*/
+div.popupContour{
+	border:0px solid #777777;
+	background : #acacac;//#C6D1EC;
+	z-index:100;
+}
+table.popupContour{
+	width:100%;
+	height : 100%;
+	border : 1px solid #636f92;
+}
+
+tr.popupTitle{
+	width:100%;
+}
+
+tr.popupContourBody{
+	height:95%;
+	width:100%;
+}
+
+/******************Titre**************************/
+div.titleEnglobant{
+	position:relative;
+	height:100%;
+	width:100%;
+	background : #636f92;
+	/*overflow:auto;*/
+}
+
+
+div.titleText{
+	width:90%;
+	height:100%;
+	float:left;
+	font-size:1em;
+	position:relative;
+}
+
+div.titleButton{
+	position:relative;
+	width:100%;
+	margin-right:2px;
+	text-align:right;
+}
+
+/*******************Body*****************/
+
+div.bodyEnglobant{
+	width :100%;
+	position:relative;
+	height:100%;
+	background:white;
+	overflow:auto;
+}
+
+/*Gestion du menu dans le popup*/
+
+div.menuMenu{
+	font-size:1em;
+	margin-left:3px;
+}
+
+div.menuLink{
+	font-size:0.8em;
+	margin-left:10px;
+}
+
+div.menuMenuOn{
+	font-size:1em;
+	margin-left:3px;
+	color:red;
+}
+
+div.menuLinkOn{
+	font-size:0.8em;
+	margin-left:10px;
+	color:red;
+}
+
+
+
+/*Gestion affichage des donn�s dans Popopup*/
+table.tableP{
+	width:100%;
+}
+tr.titleP{
+	width:100%;
+}
+
+td.titleP{
+	font-size:1em;
+	font-weight:bold;
+}
+
+td.bodyP{
+	font-size:0.9em;
+
+}
+
+input.labelP{
+	font-size:0.9em;
+}
+
+select.selectP{
+	font-size:0.9em;
+}
+
+input.buttonP{
+	font-size:0.9em;
+}
+
+td.expandTD{
+	width:100%;
+	text-align : right;
+}
+
+
+
+
+/******************************************/
+div.popup{
+	position: absolute;
+	border:4px outset #636f92;
+}
+
+table.popupEnglobant{
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+tr.popupEnglobantTitre{
+	background-color : #b5c2e4;
+}
+tr.popupEnglobantCorps{
+	background-color : #c6d1ec;
+}
+
+div.popupC{
+	height :200px ;
+	overflow: auto;
+}
+
+
+table.popupTitre{
+	width : 100%;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+tr.popupTitre{
+	background-color : #b5c2e4;
+}
+
+th.popupTitre{
+	text-align : left;
+	font-family:  Arial,Verdana,Helvetica, sans-serif;
+	font-size: 18px;
+}
+
+td.popupTitre{
+	text-align: right;
+}
+
+table.popupC{
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+
+
+tr.popupCT{
+	font-weight:bold;
+	text-align : center;
+	font-family: Arial,Verdana,  Helvetica, sans-serif;
+	font-size: 15px;
+}
+
+tr.popupC{
+	font-family:  Arial,Verdana, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+td.popupC{
+	text-align : left;
+}
+
+td.popupCA{
+	text-align: right;
+}
+
+
+table.alignR{
+	float: right;
+}
+
+tr.popupR{
+	font-weight:bold;
+	font-family:  Arial,Verdana, Helvetica, sans-serif;
+	font-size: 12px;
+}
+

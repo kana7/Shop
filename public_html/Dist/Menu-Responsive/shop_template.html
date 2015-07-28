@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shop Menu Template</title>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="../Responsive-Kit/css/layout-grid.css" rel="stylesheet" type="text/css" />
+        <link href="css/shop_base.css" rel="stylesheet" type="text/css">
+        <link href="css/shop_menu.css" rel="stylesheet" type="text/css">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div id="page" class="container-fluid">
+            <div id="canvas" class="row">
+                <div class="menu_user_zone desk-2">
+                    <div class=" div_menu_user" style="width:100%;">
+                        <div class="RightArea">
+                            <div class="LogoArea div_ellipsis">
+                                <img style="width:100%;" src="img/20140605103159_26038.png" alt="logo" title="Master Démo" class="LogoImg">
+                            </div>
+                            <div id="userProfil">
+                                <div class="profilContainer div_ellipsis">
+                                    <div id="configLink">
+                                        <a href="#">
+                                            <i class="fa fa-gear"></i>
+                                        </a>
+                                    </div>
+                                    <p id="userName" style="margin-bottom: 8px; margin-top: 10px;">Quentin Fonck</p>
+                                    <p id="userGroup" style="margin-bottom: 12px;">Shop Développement</p>
+                                </div>
+                            </div>
+                            <div class="UserMenuArea div_ellipsis">
+                                <div class="div_menu div_menu_internal_link div_ellipsis phone-12" data-href="ViewStatCategories.phs&amp;ContextObjectType=2" data-itype="1"> 
+                                    Catégories de statistiques de facturation</div>	
+                                <div class="div_menu div_menu_internal_link div_ellipsis phone-12" data-href="CatManage.phs" data-itype="1"> 
+                                    Catégories</div>	
+                                <div class="div_menu div_menu_internal_link div_ellipsis phone-12" data-href="ViewReseller.phs" data-itype="1"> 
+                                    Revendeurs</div>	
+                                <div class="div_menu div_menu_internal_link div_ellipsis phone-12" data-href="ViewCustomText.phs" data-itype="1"> 
+                                    Textes personnalisés</div>	
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_zone desk-10 phone-12">
+                    <button id="toggle-nav" class="buttonUserMenu hidden-tab hidden-phone">
+                        <i class="fa fa-angle-right"></i>
+                    </button>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="main_menu">
+                                <nav class="nav_container">
+                                    <ul id="nav" class="no_list_style nav_main">
+                                        <li class="dropdown" data-href_int="WelcomeMain.phs" data-href_ext="MainMenuDefault.phs">
+                                            <a href="#" class="dropdown_toggle" data-toggle="dropdown"> 
+                                                <div class="align middle left">
+                                                    Home<span style="font-size: 1.1em !important;" class="fa fa-home fa-lg"></span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown menu_level_0 menu_3" data-menu_level="0" data-id_menu="3">
+                                            <a class="dropdown_toggle" data-toggle="dropdown" href="#">
+                                                <div class="align middle left">
+                                                    Général<span class="caret"></span>
+                                                </div>
+                                            </a>
+                                            <ul class="dropdown_menu no_list_style">
+                                                <li>
+                                                    <div class="sub_menu_content">
+                                                        <div class="sub_menu_row align spread">
+                                                            <ul class="sub_menu_column no_list_style tab-4 phone-12">
+                                                                <li class="sub_menu_title menu_level_1 menu_15" data-menu_level="_menu_level" data-id_menu="15" title="Commerçant">Commerçant</li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Commerçant" data-href="ViewMerchant.phs" data-itype="1"><span class="sub_menu_link_span"></span>Commerçant </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Magasins" data-href="ViewShops.phs" data-itype="1"><span class="sub_menu_link_span"></span>Magasins </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Caisses enregistreuses" data-href="CashRegisterManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Caisses enregistreuses </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Fournisseurs" data-href="ViewClients.phs&amp;ContextUsage=1" data-itype="1"><span class="sub_menu_link_span"></span>Fournisseurs </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Correspondants" data-href="ViewClients.phs&amp;ContextUsage=2" data-itype="1"><span class="sub_menu_link_span"></span>Correspondants </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Revendeurs" data-href="ViewReseller.phs" data-itype="1"><span class="sub_menu_link_span"></span>Revendeurs </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Vendeurs" data-href="ViewSalesman.phs" data-itype="1"><span class="sub_menu_link_span"></span>Vendeurs </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Contrats de commissions" data-href="ViewCommissionSet.phs" data-itype="1"><span class="sub_menu_link_span"></span>Contrats de commissions </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Modifier commerçant" data-href="ModifyMerchant.phs&amp;Param=1" data-itype="1"><span class="sub_menu_link_span"></span>Modifier commerçant </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Service level agreements" data-href="ViewMerchantSLA.phs" data-itype="1"><span class="sub_menu_link_span"></span>Service level agreements </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_15" title="Classes de contrôle de crédit" data-href="ViewCreditCtrlClass.phs" data-itype="1"><span class="sub_menu_link_span"></span>Classes de contrôle de crédit </li>    
+                                                            </ul>
+                                                            <ul class="sub_menu_column no_list_style tab-4 phone-12">
+                                                                <li class="sub_menu_title menu_level_1 menu_35" data-menu_level="_menu_level" data-id_menu="35" title="Utilisateurs">Utilisateurs</li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_35" title="Droits utilisateurs" data-href="ModifyUserRight.phs" data-itype="1"><span class="sub_menu_link_span"></span>Droits utilisateurs </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_35" title="Utilisateurs" data-href="ViewUsers.phs" data-itype="1"><span class="sub_menu_link_span"></span>Utilisateurs </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_35" title="Groupes utilisateurs" data-href="ViewUserGroups.phs" data-itype="1"><span class="sub_menu_link_span"></span>Groupes utilisateurs </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_35" title="Services utilisateurs" data-href="ViewUserDepartments.phs" data-itype="1"><span class="sub_menu_link_span"></span>Services utilisateurs </li>    
+                                                                <li class="sub_menu_title menu_level_1 menu_38" data-menu_level="_menu_level" data-id_menu="38" title="Divers">Divers</li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Modes de livraison" data-href="ViewDelivery.phs" data-itype="1"><span class="sub_menu_link_span"></span>Modes de livraison </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Sets de livraison" data-href="ViewDeliverySet.phs" data-itype="1"><span class="sub_menu_link_span"></span>Sets de livraison </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Modes de paiement" data-href="ViewPayment.phs" data-itype="1"><span class="sub_menu_link_span"></span>Modes de paiement </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Sets de paiement" data-href="ViewPaymentSet.phs" data-itype="1"><span class="sub_menu_link_span"></span>Sets de paiement </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Taxes" data-href="ViewTaxes.phs" data-itype="1"><span class="sub_menu_link_span"></span>Taxes </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Jetons" data-href="ViewToken.phs" data-itype="1"><span class="sub_menu_link_span"></span>Jetons </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Images" data-href="ViewImages.phs" data-itype="1"><span class="sub_menu_link_span"></span>Images </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Gestion profile commande/facture" data-href="OrderBillProfileManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Gestion profile commande/facture </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Gestion de texte marchand" data-href="ViewMerchantText.phs" data-itype="1"><span class="sub_menu_link_span"></span>Gestion de texte marchand </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_38" title="Gestion des compteurs marchand" data-href="ViewMerchantCounter.phs" data-itype="1"><span class="sub_menu_link_span"></span>Gestion des compteurs marchand </li>    
+                                                            </ul>
+                                                            <ul class="sub_menu_column no_list_style tab-4 phone-12">
+                                                                <li class="sub_menu_title menu_level_1 menu_37" data-menu_level="_menu_level" data-id_menu="37" title="Personnalisation">Personnalisation</li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Etats personnalisés" data-href="ViewCustomStatus.phs" data-itype="1"><span class="sub_menu_link_span"></span>Etats personnalisés </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Configurer états personnalisés" data-href="ConfigCustomStatus.phs" data-itype="1"><span class="sub_menu_link_span"></span>Configurer états personnalisés </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Librairies personnalisées" data-href="ViewLibrary.phs" data-itype="1"><span class="sub_menu_link_span"></span>Librairies personnalisées </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Vérifier librairies personnalisées" data-href="CheckLibrary.phs" data-itype="1"><span class="sub_menu_link_span"></span>Vérifier librairies personnalisées </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Scripts menu" data-href="ViewScripts.phs&amp;Param=2000" data-itype="1"><span class="sub_menu_link_span"></span>Scripts menu </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Scripts personnalisés" data-href="ViewScripts.phs&amp;Param=1000" data-itype="1"><span class="sub_menu_link_span"></span>Scripts personnalisés </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Scripts système" data-href="ViewScripts.phs&amp;Param=0" data-itype="1"><span class="sub_menu_link_span"></span>Scripts système </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Textes personnalisés" data-href="ViewCustomText.phs" data-itype="1"><span class="sub_menu_link_span"></span>Textes personnalisés </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Scripts d'impression" data-href="ViewScripts.phs&amp;Param=3000" data-itype="1"><span class="sub_menu_link_span"></span>Scripts d'impression </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Scripts programmés" data-href="ViewScripts.phs&amp;Param=4000" data-itype="1"><span class="sub_menu_link_span"></span>Scripts programmés </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Gestion de tâches" data-href="TaskManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Gestion de tâches </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_3 child_of_37" title="Modèles d'impression" data-href="ViewPrintTemplate.phs" data-itype="1"><span class="sub_menu_link_span"></span>Modèles d'impression </li>    
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown menu_level_0 menu_36" data-menu_level="0" data-id_menu="36">
+                                            <a class="dropdown_toggle" data-toggle="dropdown" href="#">
+                                                <div class="align middle left">
+                                                    Articles<span class="caret"></span>
+                                                </div>
+                                            </a>
+                                            <ul class="dropdown_menu no_list_style">
+                                                <li>
+                                                    <div class="sub_menu_content">
+                                                        <div class="sub_menu_row">
+                                                            <ul class="sub_menu_column no_list_style desk-12 tab-6 phone-12">
+                                                                <li class="sub_menu_link menu_click_link child_of_36" title="Articles" data-href="ArtManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Articles </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_36" title="Catégories" data-href="CatManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Catégories </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_36" title="Stock" data-href="StockManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Stock </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_36" title="Types d'article" data-href="ViewArtTypes.phs" data-itype="1"><span class="sub_menu_link_span"></span>Types d'article </li>
+                                                            </ul>
+                                                            <ul class="sub_menu_column no_list_style desk-12 tab-6 phone-12">
+                                                                <li class="sub_menu_title menu_level_1 menu_40" data-menu_level="_menu_level" data-id_menu="40" title="Configuration">Configuration</li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_36 child_of_40" title="Index" data-href="IndexManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Index </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_36 child_of_40" title="Clés de recherche" data-href="ViewKeys.phs&amp;Param=0" data-itype="1"><span class="sub_menu_link_span"></span>Clés de recherche </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_36 child_of_40" title="Clés de détail" data-href="ViewKeys.phs&amp;Param=1" data-itype="1"><span class="sub_menu_link_span"></span>Clés de détail </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_36 child_of_40" title="Clés de détail variable" data-href="ViewKeys.phs&amp;Param=2" data-itype="1"><span class="sub_menu_link_span"></span>Clés de détail variable </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_36 child_of_40" title="Types de prix" data-href="ViewPriceType.phs" data-itype="1"><span class="sub_menu_link_span"></span>Types de prix </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_36 child_of_40" title="Catégories de statistiques de commandes" data-href="ViewStatCategories.phs&amp;ContextObjectType=1" data-itype="1"><span class="sub_menu_link_span"></span>Catégories de statistiques de commandes </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_36 child_of_40" title="Catégories de statistiques de facturation" data-href="ViewStatCategories.phs&amp;ContextObjectType=2" data-itype="1"><span class="sub_menu_link_span"></span>Catégories de statistiques de facturation </li>    
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>    
+                                        <li class="dropdown menu_level_0 menu_5" data-menu_level="0" data-id_menu="5">
+                                            <a class="dropdown_toggle" data-toggle="dropdown" href="#">
+                                                <div class="align middle left">
+                                                    Clients<span class="caret"></span>
+                                                </div>
+                                            </a>
+                                            <ul class="dropdown_menu no_list_style">
+                                                <li>
+                                                    <div class="sub_menu_content">
+                                                        <div class="sub_menu_row">
+                                                            <ul class="sub_menu_column no_list_style desk-12 phone-12 tab-6">
+                                                                <li class="sub_menu_link menu_click_link child_of_5" title="Passer commande" data-href="ViewCatArts.phs&amp;_ClearCart=1" data-itype="1"><span class="sub_menu_link_span"></span>Passer commande </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_5" title="Vente en magasin" data-href="AddShopOrder.phs" data-itype="1"><span class="sub_menu_link_span"></span>Vente en magasin </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_5" title="Clients" data-href="ViewClients.phs" data-itype="1"><span class="sub_menu_link_span"></span>Clients </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_5" title="Abonnements" data-href="SubscriptionManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Abonnements </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_5" title="Commandes" data-href="ViewOrders.phs" data-itype="1"><span class="sub_menu_link_span"></span>Commandes </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_5" title="Campagne de marketing" data-href="MarketingCampaign.phs" data-itype="1"><span class="sub_menu_link_span"></span>Campagne de marketing </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_5" title="Statistiques de commandes" data-href="ViewStatistics.phs&amp;ContextObjectType=1" data-itype="1"><span class="sub_menu_link_span"></span>Statistiques de commandes </li>
+                                                            </ul>
+                                                            <ul class="sub_menu_column no_list_style desk-12 phone-12 tab-6">
+                                                                <li class="sub_menu_title menu_level_1 menu_39" data-menu_level="_menu_level" data-id_menu="39" title="Personnalisation">Personnalisation</li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_5 child_of_39" title="Attributs client" data-href="ViewClientAttr.phs" data-itype="1"><span class="sub_menu_link_span"></span>Attributs client </li>
+                                                                <li class="sub_menu_link menu_click_link child_of_5 child_of_39" title="Attributs commande" data-href="ViewOrderAttr.phs" data-itype="1"><span class="sub_menu_link_span"></span>Attributs commande </li>    
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>    
+                                        <li class="dropdown menu_level_0 menu_6" data-menu_level="0" data-id_menu="6">
+                                            <a class="dropdown_toggle" data-toggle="dropdown" href="#">
+                                                <div class="align middle left">
+                                                    Ventes<span class="caret"></span>
+                                                </div>
+                                            </a>
+                                            <ul class="dropdown_menu no_list_style">
+                                                <li>
+                                                    <div class="sub_menu_content">
+                                                        <div class="sub_menu_row">
+                                                            <ul class="sub_menu_column no_list_style desk-12 phone-12 tab-6">
+                                                                <li class="sub_menu_link menu_click_link child_of_6" title="Facturation" data-href="BillManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Facturation </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_6" title="Paiements client" data-href="AccountManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Paiements client </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_6" title="Statistiques de facturation" data-href="ViewStatistics.phs&amp;ContextObjectType=2" data-itype="1"><span class="sub_menu_link_span"></span>Statistiques de facturation </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_6" title="Domiciliations" data-href="DebtOrderManage.phs&amp;ContextObjectType=201" data-itype="1"><span class="sub_menu_link_span"></span>Domiciliations </li>
+                                                            </ul>
+                                                            <ul class="sub_menu_column no_list_style desk-12 phone-12 tab-6">
+                                                                <li class="sub_menu_title menu_level_1 menu_41" data-menu_level="_menu_level" data-id_menu="41" title="Comptes bancaires commerçant">Comptes bancaires commerçant</li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_6 child_of_41" title="Comptes bancaires" data-href="ViewBankAccount.phs&amp;Param2=1" data-itype="1"><span class="sub_menu_link_span"></span>Comptes bancaires </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_6 child_of_41" title="Comptes notes de crédit" data-href="ViewBankAccount.phs&amp;Param2=3" data-itype="1"><span class="sub_menu_link_span"></span>Comptes notes de crédit </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_6 child_of_41" title="Comptes caisse" data-href="ViewBankAccount.phs&amp;Param2=2" data-itype="1"><span class="sub_menu_link_span"></span>Comptes caisse </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_6" title="Système externe" data-href="ExternalManage.phs" data-itype="1"><span class="sub_menu_link_span"></span>Système externe </li>    
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>    
+
+                                        <li class="dropdown menu_level_0 menu_45" data-menu_level="0" data-id_menu="45">
+                                            <a class="dropdown_toggle" data-toggle="dropdown" href="#">
+                                                <div class="align middle left">
+                                                    OGA<span class="caret"></span>
+                                                </div>
+                                            </a>
+                                            <ul class="dropdown_menu no_list_style">
+                                                <li>
+                                                    <div class="sub_menu_content">
+                                                        <div class="sub_menu_row">
+                                                            <ul class="sub_menu_column no_list_style desk-auto phone-12">
+                                                                <li class="sub_menu_title menu_level_1 menu_49" data-menu_level="_menu_level" data-id_menu="49" title="Administration">Administration</li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_45 child_of_49" title="Ajouter code tva" data-href="AddTax.phs" data-itype="1"><span class="sub_menu_link_span"></span>Ajouter code tva </li>    
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>    
+                                        <li class="dropdown menu_level_0 menu_11" data-menu_level="0" data-id_menu="11">
+                                            <a class="dropdown_toggle" data-toggle="dropdown" href="#">
+                                                <div class="align middle left">
+                                                    Options<span class="caret"></span>
+                                                </div>
+                                            </a>
+                                            <ul class="dropdown_menu no_list_style">
+                                                <li>
+                                                    <div class="sub_menu_content">
+                                                        <div class="sub_menu_row">
+                                                            <ul class="sub_menu_column no_list_style">
+                                                                <li class="sub_menu_link menu_click_link child_of_11" title="Configurer le bureau" data-href="WelcomeGetProcList.phs" data-itype="1"><span class="sub_menu_link_span"></span>Configurer le bureau </li>    
+                                                                <li class="sub_menu_link menu_click_link child_of_11" title="Unité de référence personnalisée" data-href="ViewArtQuantityUnit.phs" data-itype="1"><span class="sub_menu_link_span"></span>Unité de référence personnalisée </li>    
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li id="user" class="dropdown favoris hidden-desk hidden-lgdesk" data-menu_level="0" data-id_menu="7">
+                                            <a class="dropdown_toggle align center middle" data-toggle="dropdown" href="#">
+                                                <div class="align middle left">
+                                                    Favoris<span style="font-size: 1.1em !important;" class="fa fa-star fa-lg"></span>
+                                                </div>
+                                            </a>
+                                            <ul class="dropdown_menu no_list_style">
+                                                <li>
+                                                    <div class="sub_menu_content">
+                                                        <div class="sub_menu_row">
+                                                            <ul class="sub_menu_column no_list_style">
+                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="ViewStatCategories.phs&amp;ContextObjectType=2" data-itype="1">
+                                                                    <span class="sub_menu_link_span"></span>Catégories de statistiques de facturation
+                                                                </li>
+                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="CatManage.phs" data-itype="1">
+                                                                    <span class="sub_menu_link_span"></span>Catégories
+                                                                </li>	
+                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="ViewReseller.phs" data-itype="1">
+                                                                    <span class="sub_menu_link_span"></span>Revendeurs
+                                                                </li>	
+                                                                <li class="sub_menu_link menu_click_link child_of_11" data-href="ViewCustomText.phs" data-itype="1">
+                                                                    <span class="sub_menu_link_span"></span>Textes personnalisés
+                                                                </li>	
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li id="logout" class="dropdown" data-href="MainLogout.phs">
+                                            <a href="#" class="dropdown_toggle" data-toggle="dropdown">
+                                                <div class="align middle left">
+                                                    logout<span style="font-size: 1.1em !important;" class="fa fa-sign-out fa-lg"></span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown espace" data-href="MainLogout.phs"></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div id="iframe" style="padding-left:30px; padding-right: 30px; position: relative; min-height: 890px;">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="footerDiv" class="phone-12">
+                    <p style="text-align:center;margin-top:4px;margin-bottom:0px">
+                        <a style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="window.frames['site'].history.back();">Retour</a>
+                        - <a style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="window.frames['site'].location.reload();">Actualiser</a>
+                        - <a style="font-size:0.8em;text-decoration:underline;cursor:pointer" onclick="if ('Microsoft Internet Explorer' == navigator.appName)
+                                    window.frames['site'].focus();
+                                window.frames['site'].print();">Imprimer</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/shop_menu.js"></script>
+        <script type="text/javascript" src="js/shop_mainFunction.js"></script>
+    </body>
+</html>

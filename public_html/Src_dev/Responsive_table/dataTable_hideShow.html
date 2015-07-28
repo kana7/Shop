@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="../Dist/Menu-Responsive/css/layout-grid.css" rel="stylesheet"/>
+        <link href="css/ossbo.css" rel="stylesheet" type="text/css"/>
+        <link href="css/ossbo_box.css" rel="stylesheet" type="text/css"/>
+        <link href="css/ossbo_services.css" rel="stylesheet" type="text/css" media="screen"/>
+        <link href="css/ossprint.css" rel="stylesheet" type="text/css" media="print"/>
+        <link href="http://jquery.bluechameleon.com/js/themes/redmond/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+        <link href="css/main2.css" rel="stylesheet" type="text/css"/>
+        <link href="../Dist/Plugin-Table/hideShowColumn.css" rel="stylesheet" type="text/css"/>
+
+
+
+    </head>
+    <body bgcolor="#FFFFFF">
+        <script language="javascript"><!-- 
+        function SearchAlpha(Letter)
+            {
+                document._searchform.Sql.value = "PhoneBook:PhoneBookList.phs";
+                document._searchform._display.value = displaymode;
+                document._searchform.submit();
+            }
+            function SearchGo(displaymode)
+            {
+                document._searchform.Sql.value = "PhoneBook:PhoneBookList.phs";
+                document._searchform._display.value = displaymode;
+                document._searchform.submit();
+            }
+            function PhoneBookManagement()
+            {
+                document._searchform.Sql.value = "PhoneBook:PBManagement.phs";
+                document._searchform.submit();
+            }
+            function letterOrder(url)
+            {
+                var address = url + "&_SearchStatus=" + document.getElementById("_SearchStatus").value + "&_SearchOrder=" + document.getElementById("_SearchOrder").value;
+                eval("location='" + address + "'");
+            }
+            // --> </script>
+        <div class="container" style="padding-top: 15px;">
+            <form action="/Scripts/sql.exe" method="post" name="_searchform">
+                <input type="hidden" name="Sql" value="PhoneBook:PhoneBookList.phs">
+                <input type="hidden" name="SqlDB" value="ossLOLShop">
+                <input type="hidden" name="xid" value="1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp">
+                <input type="hidden" name="_MerchantId" value="1">
+                <input type="hidden" name="_CustomScriptId" value="53">
+                <input type="hidden" name="_display" value="0">
+                <input type="hidden" name="_FirstTime" value="0">
+                <div class="row">
+                    <div class="control-group desk-3 tab-6 phone-12">
+                        <label class="control-label" for="_SearchText">Chercher:</label>
+                        <input class="form-control" type="text" name="_SearchText" value="">
+                    </div>
+                    <div class="control-group desk-3 tab-6 phone-12">
+                        <label class="control-label" for="_SearchWhere">dans:</label> 
+                        <select class="form-control" name="_SearchWhere">
+                            <option value="1" selected="">Nom</option>
+                            <option value="2">Numéro</option>
+                        </select>
+                    </div>
+                    <div class="control-group desk-3 tab-6 phone-12">
+                        <label class="control-label" for="_SearchOrder">trié par:</label>
+                        <select class="form-control" name="_SearchOrder" id="_SearchOrder">
+                            <option value="0" selected="">Dernière Modif</option>
+                            <option value="1">Nom Prénom</option>
+                            <option value="2">ID Phone Book</option>
+                            <option value="3">Abonnement</option>
+                        </select>
+                    </div>
+                    <div class="control-group desk-3 tab-6 phone-12">
+                        <label class="control-label" for="_SearchStatus">avec statut :</label> 
+                        <select  class="form-control" name="_SearchStatus" id="_SearchStatus">
+                            <option value="-1">Tous les statuts</option>
+                            <option value="0">Non-Validés</option>
+                            <option value="4">En cours</option>
+                            <option value="1">Secret</option>
+                            <option value="2">Normal</option>
+                            <option value="3">Non-Actif</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row phone-4" style="margin-top: 10px">
+                    <input type="button" value="Vue Simple" onclick="SearchGo(0)"> 
+                    <input type="button" value="Vue Detaillee" onclick="SearchGo(1)">
+                    <input type="button" value="Gérer l'Annuaire" onclick="PhoneBookManagement()">
+                </div>
+            </form>
+            <p style="margin-top: 10px" class=" row phone-12">Affichage réduit : <b>25</b> plus récentes inscriptions</p>
+            <!--
+            select * from LOLTEL_PHONEBOOK where (azName like '%')order by iCTimeLastUpdate desc
+            <p>
+            -->
+            <div style="margin-top: 10px" class="row phone-12">
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=A')">A</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=B')">B</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=C')">C</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=D')">D</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=E')">E</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=F')">F</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=G')">G</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=H')">H</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=I')">I</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=J')">J</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=K')">K</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=L')">L</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=M')">M</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=N')">N</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=O')">O</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=P')">P</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=Q')">Q</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=R')">R</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=S')">S</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=T')">T</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=U')">U</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=V')">V</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=W')">W</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=X')">X</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=Y')">Y</a> - 
+                <a href="#" onclick="letterOrder('/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=PhoneBook:PhoneBookList.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_MerchantId=1&amp;_CustomScriptId=53&amp;_display=0&amp;_FirstTime=2&amp;cLetter=Z')">Z</a>
+            </div>
+                <table id="table1" border="1">
+                    <thead>
+                        <tr>
+                            <th bgcolor="#CCCCCC" class="essential">Nom Prénom</th>
+                            <th bgcolor="#CCCCCC" class="essential">Login LOL</th>
+                            <th bgcolor="#CCCCCC" class="optional">Abonnement</th>
+                            <th bgcolor="#CCCCCC">Numéro</th>
+                            <th bgcolor="#CCCCCC">Etat</th>
+                            <th bgcolor="#CCCCCC" class="optional">Status</th>
+                            <th bgcolor="#CCCCCC">Dernière Modif</th>
+                            <th bgcolor="#CCCCCC">Option</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=296884&amp;_MerchantId=1">DEZSO Marianna </a><br></td>
+                            <td>1000033480<br></td>
+                            <td>
+                                Unbundling (<font color="#006600">prêt à activer</font>)<!-- (<i>ID : 214932</i>)-->
+                                <br></td>
+                            <td>
+                                27918682<br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                31/3/2015 14:01</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46388&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=296248&amp;_MerchantId=1">Schumperli Claude </a><br></td>
+                            <td >Schumperli.claude</td>
+                            <td>
+                                Unbundling (<i>commandé d'avance</i>)<!-- (<i>ID : 219620</i>)-->
+                                <br></td>
+                            <td>
+                                27918681<br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                31/3/2015 13:45</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46387&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=293998&amp;_MerchantId=1">Aires Da Veiga Gomes Monica Yara </a><br></td>
+                            <td>monicayara.airesdaveigagomes<br></td>
+                            <td>
+                                Unbundling (<i>commandé d'avance</i>)<!-- (<i>ID : 213703</i>)-->
+                                <br></td>
+                            <td>
+                                27918680<br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                31/3/2015 12:35</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46386&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=294240&amp;_MerchantId=1">Martin Joffrey </a><br></td>
+                            <td>joffrey.martin<br></td>
+                            <td>
+                                Unbundling (<i>commandé d'avance</i>)<!-- (<i>ID : 213979</i>)-->
+                                <br></td>
+                            <td>
+                                27918679<br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                31/3/2015 11:31</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46385&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=293569&amp;_MerchantId=1">SILJAMAKI Henri </a><br></td>
+                            <td>HS1000732253<br></td>
+                            <td>
+                                Unbundling (<font color="#006600">prêt à activer</font>)<!-- (<i>ID : 213156</i>)-->
+                                <br></td>
+                            <td>
+                                27918678<br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                31/3/2015 11:14</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46384&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=296875&amp;_MerchantId=1">Augusto FINDA FUDICIAIRE FINDA </a><br></td>
+                            <td>1000732413<br></td>
+                            <td>
+                                Unbundling (<i>commandé d'avance</i>)<!-- (<i>ID : 214904</i>)-->
+                                <br></td>
+                            <td>
+                                27918677<br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                31/3/2015 11:08</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46383&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=294465&amp;_MerchantId=1">Branislav Magda </a><br></td>
+                            <td>1000586422.mb<br></td>
+                            <td>
+                                Unbundling (<font color="#006600">prêt à activer</font>)<!-- (<i>ID : 214039</i>)-->
+                                <br></td>
+                            <td>
+                                27003254<br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                31/3/2015 11:07</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46382&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=68298&amp;_MerchantId=1">Lembella Menga Sosthene </a><br></td>
+                            <td>lembella.ms<br></td>
+                            <td>
+                                Portabilite (<font color="#00FF00">activé</font>)<!-- (<i>ID : 219591</i>)-->
+                                <br></td>
+                            <td>
+                                <font color="#888888"><i>26502645</i></font>
+                                <br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                31/3/2015 11:06</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46381&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=145789&amp;_MerchantId=1">Vinther Hans Jorn </a><br></td>
+                            <td>hansjvinther<br></td>
+                            <td>
+                                Unbundling (<i>commandé d'avance</i>)<!-- (<i>ID : 214308</i>)-->
+                                <br></td>
+                            <td>
+                                27918676<br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                31/3/2015 10:55</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46380&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=296895&amp;_MerchantId=1">Butaud Stephane </a><br></td>
+                            <td>stephane.butaud<br></td>
+                            <td>
+                                Unbundling (<font color="#006600">prêt à activer</font>)<!-- (<i>ID : 214952</i>)-->
+                                <br></td>
+                            <td>
+                                26953093<br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                31/3/2015 10:50</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46379&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=184155&amp;_MerchantId=1">Dejoie Cyrille </a><br></td>
+                            <td>cyrille.dejoie<br></td>
+                            <td>
+                                Unbundling (<font color="#00FF00">activé</font>)<!-- (<i>ID : 213919</i>)-->
+                                <br></td>
+                            <td>
+                                <font color="#888888"><i>27992985</i></font>
+                                <br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                31/3/2015 9:56</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46378&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=192342&amp;_MerchantId=1">HOLBAUM  Gérard </a><br></td>
+                            <td>im.grillo<br></td>
+                            <td>
+                                I-Phone (<font color="#00FF00">activé</font>)<!-- (<i>ID : 187020</i>)-->
+                                <br></td>
+                            <td>
+                                20992723<br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                            </td>
+                            <td>
+                                31/3/2015 9:03</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=41003&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=296883&amp;_MerchantId=1">ISEKI Takeru </a><br></td>
+                            <td>takeru.iseki<br></td>
+                            <td>
+                                Unbundling (<font color="#006600">prêt à activer</font>)<!-- (<i>ID : 214961</i>)-->
+                                <br></td>
+                            <td>
+                                27918675<br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                31/3/2015 8:30</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46377&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=295372&amp;_MerchantId=1">TOUSSAINT Fernand </a><br></td>
+                            <td>fernand.toussaint<br></td>
+                            <td>
+                                Portabilite (<font color="#00FF00">activé</font>)<!-- (<i>ID : 214412</i>)-->
+                                <br></td>
+                            <td>
+                                <font color="#888888"><i>27858814</i></font>
+                                <br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                31/3/2015 7:00</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46376&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=294379&amp;_MerchantId=1">Morais-Alves Suzanna </a><br></td>
+                            <td>suzanna.morais-alves<br></td>
+                            <td>
+                                L.R.S. (<font color="#00FF00">activé</font>)<!-- (<i>ID : 214045</i>)-->
+                                <br></td>
+                            <td>
+                                27849513<br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                31/3/2015 7:00</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46375&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=296975&amp;_MerchantId=1">BAUR Myriam </a><br></td>
+                            <td>myri.baur<br></td>
+                            <td>
+                                Unbundling (<i>commandé d'avance</i>)<!-- (<i>ID : 215016</i>)-->
+                                <br></td>
+                            <td>
+                                27918674<br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                30/3/2015 18:04</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46374&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=296975&amp;_MerchantId=1">BAUR Myriam </a><br></td>
+                            <td>myri.baur<br></td>
+                            <td>
+                                Unbundling (<i>commandé d'avance</i>)<!-- (<i>ID : 215039</i>)-->
+                                <br></td>
+                            <td>
+                                27918672<br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                30/3/2015 18:04</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46373&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=298697&amp;_MerchantId=1">Muhic Esad </a><br></td>
+                            <td>esad.muhic<br></td>
+                            <td>
+                                Unbundling (<font color="#006600">prêt à activer</font>)<!-- (<i>ID : 218197</i>)-->
+                                <br></td>
+                            <td>
+                                27918673<br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                30/3/2015 17:19</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46372&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=296887&amp;_MerchantId=1">CZAPOR Arkadiusz </a><br></td>
+                            <td>1000067801<br></td>
+                            <td>
+                                Unbundling (<font color="#006600">prêt à activer</font>)<!-- (<i>ID : 214936</i>)-->
+                                <br></td>
+                            <td>
+                                26258445<br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                30/3/2015 17:09</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46371&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=97362&amp;_MerchantId=1">Buck Caroline </a><br></td>
+                            <td>olivier.buck<br></td>
+                            <td>
+                                LOLMobile (<font color="#00FF00">activé</font>)
+                                <br></td>
+                            <td>
+                                <font color="#888888"><i>661154550</i></font>
+                                <br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                30/3/2015 16:54</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46370&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=295076&amp;_MerchantId=1">Sudlow Graham </a><br></td>
+                            <td>1000529381.gs<br></td>
+                            <td>
+                                Unbundling (<font color="#006600">prêt à activer</font>)<!-- (<i>ID : 214169</i>)-->
+                                <br></td>
+                            <td>
+                                27126237<br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                30/3/2015 16:52</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46369&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=297869&amp;_MerchantId=1">KLOSKOWICZ Anna </a><br></td>
+                            <td>anna.kloskowicz<br></td>
+                            <td>
+                                Unbundling (<i>commandé d'avance</i>)<!-- (<i>ID : 216819</i>)-->
+                                <br></td>
+                            <td>
+                                27918671<br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                30/3/2015 16:38</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46368&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=189503&amp;_MerchantId=1">Larsson Lars Marcus </a><br></td>
+                            <td>larsmarc<br></td>
+                            <td>
+                                LOLMobile (<font color="#00FF00">activé</font>)
+                                <br></td>
+                            <td>
+                                <font color="#888888"><i>621498889</i></font>
+                                <br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                30/3/2015 16:08</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46367&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=295559&amp;_MerchantId=1">Costa Figueiredo Dany </a><br></td>
+                            <td>costa.dany<br></td>
+                            <td>
+                                LOLMobile (<font color="#00FF00">activé</font>)
+                                <br></td>
+                            <td>
+                                <font color="#888888"><i>691585640</i></font>
+                                <br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                30/3/2015 15:58</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46366&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=ossbo:OSSClientManage.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;Param=298682&amp;_MerchantId=1">LDHOME Delmer Lauriane </a><br></td>
+                            <td>delmer.lauriane<br></td>
+                            <td>
+                                Unbundling (<font color="#006600">prêt à activer</font>)<!-- (<i>ID : 218185</i>)-->
+                                <br></td>
+                            <td>
+                                27918670<br>
+                            </td>
+                            <td>
+                                <font color="#00ff00">Actif</font>
+                            </td>
+                            <td>
+                                Normal
+                                (<i><font color="#ff0000">Non-Validé</font></i>)
+                            </td>
+                            <td>
+                                30/3/2015 15:24</td>
+                            <td>
+                                <a href="/Scripts/sql.exe?Sql=PhoneBook:ViewSubscription.phs&amp;SqlDB=ossLOLShop&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp&amp;_PhoneBookId=46365&amp;_MerchantId=1&amp;_CustomScriptId=53">View</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="8">Nb d'inscriptions trouvées avec status "<b><i>Tous les status</i></b>" : <b>19443</b></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <ul class="phone-12" style="text-align: center;">
+                <li style="display: inline-block; margin-right: 15px;"><a href="/Scripts/sql.exe?SqlDB=ossLOLShop&amp;Sql=MainMenu.phs&amp;xid=1427803917hohhgkmdnijkoocepemkhhnbegoemkohoaafblpfhldbdahojjdfkp">Menu principal</a></li>
+                <li style="display: inline-block;"><a href="javascript:history.back()">Retour</a></li>
+                </ul>
+        </div>
+        <script type="text/javascript" src="http://jquery.bluechameleon.com/js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="http://jquery.bluechameleon.com/js/ui-new/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/ossbo.js"></script>
+        <script type="text/javascript" src="../Ressources/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="../Dist/hideShowColumn.js"></script>
+        <script type="text/javascript" src="pluginTable/stickyTableHeader.js"></script>
+        <script type="text/javascript">
+                    $(document).ready(function () {
+                        $('#table1').hideShowColumn().stickyTableHeader();
+                        $('#table1').DataTable();
+                    });
+        </script>
+    </body>
+</html>
